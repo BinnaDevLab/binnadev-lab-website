@@ -3,7 +3,7 @@ import { H1, H2, Body, Mono } from "@/components/ui/Typography";
 import { PartnersMarquee } from "@/components/home/PartnersMarquee";
 import { ServicesGrid } from "@/components/collaborate/ServicesGrid";
 import { CaseStudiesSection } from "@/components/collaborate/CaseStudiesSection";
-import { ClientMarquee } from "@/components/collaborate/ClientMarquee";
+import { CollaboratorFieldNotes } from "@/components/collaborate/CollaboratorFieldNotes";
 import { CollaborationProcessSection } from "@/components/collaborate/CollaborationProcessSection";
 import { InquiryForm } from "@/components/collaborate/InquiryForm";
 import { Metadata } from "next";
@@ -51,7 +51,7 @@ export default function CollaboratePage() {
               alt="BinnaDev Lab Engineering" 
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+              className="object-cover opacity-60 group-hover:opacity-100 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-royal/10 mix-blend-overlay" />
           </div>
@@ -73,7 +73,7 @@ export default function CollaboratePage() {
       <CaseStudiesSection />
 
       {/* 6. Client Testimonials */}
-      <ClientMarquee />
+      <CollaboratorFieldNotes />
 
       {/* 7. Collaboration Process */}
       <CollaborationProcessSection />

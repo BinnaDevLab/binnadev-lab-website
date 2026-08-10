@@ -9,10 +9,14 @@ interface AnimatedCounterProps {
   duration?: number;
 }
 
-export function AnimatedCounter({ value, suffix = "", duration = 2000 }: AnimatedCounterProps) {
+export function AnimatedCounter({
+  value,
+  suffix = "",
+  duration = 2000,
+}: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
-  
+
   const spring = useSpring(0, {
     bounce: 0,
     duration,
@@ -31,7 +35,7 @@ export function AnimatedCounter({ value, suffix = "", duration = 2000 }: Animate
       // Format number (e.g., 2400 -> 2.4k, 15000 -> 15k)
       let formatted = Math.floor(latest).toString();
       if (latest >= 10000) {
-        formatted = (Math.floor(latest / 1000)) + "k";
+        formatted = Math.floor(latest / 1000) + "k";
       } else if (latest >= 1000) {
         formatted = (Math.floor(latest / 100) / 10).toFixed(1) + "k";
       }
@@ -41,7 +45,8 @@ export function AnimatedCounter({ value, suffix = "", duration = 2000 }: Animate
 
   return (
     <motion.span ref={ref} className="inline-block">
-      {displayValue}{suffix}
+      {displayValue}
+      {suffix}
     </motion.span>
   );
 }

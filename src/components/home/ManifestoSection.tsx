@@ -13,39 +13,40 @@ export function ManifestoSection() {
   });
 
   // Calculate opacity and scale for the three sentences
+  // Tighter timing to prevent dead space between Hero and Manifesto
   const opacity1 = useTransform(
     scrollYProgress,
-    [0, 0.15, 0.25, 0.35],
+    [0, 0.08, 0.25, 0.32],
     [0, 1, 1, 0],
   );
-  const scale1 = useTransform(scrollYProgress, [0, 0.15], [0.95, 1]);
+  const scale1 = useTransform(scrollYProgress, [0, 0.08], [0.95, 1]);
   const filter1 = useTransform(
     scrollYProgress,
-    [0, 0.15],
+    [0, 0.08],
     ["blur(10px)", "blur(0px)"],
   );
 
   const opacity2 = useTransform(
     scrollYProgress,
-    [0.3, 0.45, 0.55, 0.65],
+    [0.3, 0.38, 0.55, 0.62],
     [0, 1, 1, 0],
   );
-  const scale2 = useTransform(scrollYProgress, [0.3, 0.45], [0.95, 1]);
+  const scale2 = useTransform(scrollYProgress, [0.3, 0.38], [0.95, 1]);
   const filter2 = useTransform(
     scrollYProgress,
-    [0.3, 0.45],
+    [0.3, 0.38],
     ["blur(10px)", "blur(0px)"],
   );
 
   const opacity3 = useTransform(
     scrollYProgress,
-    [0.6, 0.75, 0.9, 1],
+    [0.6, 0.68, 0.85, 1],
     [0, 1, 1, 0],
   );
-  const scale3 = useTransform(scrollYProgress, [0.6, 0.75], [0.95, 1]);
+  const scale3 = useTransform(scrollYProgress, [0.6, 0.68], [0.95, 1]);
   const filter3 = useTransform(
     scrollYProgress,
-    [0.6, 0.75],
+    [0.6, 0.68],
     ["blur(10px)", "blur(0px)"],
   );
 
@@ -53,7 +54,7 @@ export function ManifestoSection() {
     <section
       ref={containerRef}
       id="manifesto"
-      className="relative h-[250vh] bg-obsidian border-t border-white/5"
+      className="relative h-[175vh] bg-obsidian border-t border-white/5"
     >
       {/* Noise Texture Overlay */}
       <div

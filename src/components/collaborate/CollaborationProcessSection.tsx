@@ -7,17 +7,20 @@ export function CollaborationProcessSection() {
     <section className="py-32 relative">
       <Container>
         <div className="mb-20 text-center max-w-2xl mx-auto">
-          <Mono className="text-gold mb-4 block tracking-widest uppercase">Methodology</Mono>
+          <Mono className="text-gold mb-4 block tracking-widest uppercase">
+            Methodology
+          </Mono>
           <H2 className="text-4xl">How We Collaborate</H2>
           <Body className="text-muted mt-4 text-lg">
-            A structured, rigorous engagement model designed to deliver production-grade results with complete transparency.
+            A structured, rigorous engagement model designed to deliver
+            production-grade results with complete transparency.
           </Body>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {collaborationProcess.map((step) => (
-            <div 
-              key={step.id} 
+            <div
+              key={step.id}
               className="group p-8 rounded-xl border border-white/5 bg-carbon/30 hover:border-royal/50 transition-colors duration-300 relative overflow-hidden"
             >
               {/* Background Step Number (Large, faded) */}
@@ -28,11 +31,11 @@ export function CollaborationProcessSection() {
               <Mono className="text-royal mb-6 block text-sm border border-royal/20 bg-royal/5 rounded-full w-fit px-3 py-1">
                 Step {step.number}
               </Mono>
-              
+
               <H3 className="text-xl mb-4 text-white group-hover:text-gold transition-colors relative z-10">
                 {step.title}
               </H3>
-              
+
               <Body className="text-muted leading-relaxed relative z-10">
                 {step.description}
               </Body>

@@ -53,7 +53,7 @@ export default async function CurriculumPage() {
                     alt={book.title} 
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
-                    className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                    className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000"
                   />
                   <div className="absolute top-6 left-6 z-20">
                     <span className="px-3 py-1 bg-obsidian/80 backdrop-blur border border-white/10 rounded-full text-xs font-mono tracking-widest uppercase text-white shadow-lg">

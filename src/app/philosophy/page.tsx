@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { H1, H2, H3, Body, Mono } from "@/components/ui/Typography";
 import { ArrowRight, Cpu, Network, ShieldAlert } from "lucide-react";
 import Image from "next/image";
+import { BlueprintImage } from "@/components/ui/BlueprintImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MANIFESTO_POINTS } from "@/data";
@@ -79,15 +80,14 @@ export default function PhilosophyPage() {
                   </Body>
                 </div>
 
-                <div className={`relative h-[600px] w-full rounded-2xl overflow-hidden border border-white/10 ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}>
-                  <Image 
+                <div className={`relative h-[600px] w-full rounded-2xl overflow-hidden ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                  <BlueprintImage 
                     src={point.image} 
                     alt={point.title} 
                     fill
+                    overlayColor={idx % 2 === 0 ? "royal" : "gold"}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
                   />
-                  <div className="absolute inset-0 bg-royal/10 mix-blend-overlay" />
                 </div>
 
               </div>

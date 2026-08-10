@@ -10,14 +10,17 @@ export function CTASection() {
     <section className="relative py-40 md:py-56 bg-obsidian border-t border-white/5 flex items-center justify-center overflow-hidden">
       {/* Cinematic Video Background */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover opacity-15 filter grayscale contrast-150 mix-blend-screen"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-server-racks-in-a-data-center-43306-large.mp4" type="video/mp4" />
+          <source
+            src="https://assets.codepen.io/3364143/7btrrd.mp4"
+            type="video/mp4"
+          />
         </video>
         {/* Dark Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-obsidian" />
@@ -37,11 +40,13 @@ export function CTASection() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center"
         >
-          <H2 className="mb-6 text-5xl md:text-6xl tracking-tight">The Lab is Open.</H2>
+          <H2 className="mb-6 text-5xl md:text-6xl tracking-tight">
+            The Lab is Open.
+          </H2>
           <Body className="mb-12 text-xl text-muted/80 max-w-lg mx-auto">
             Stop memorizing syntax. Start architecting systems.
           </Body>
-          
+
           <Link href="/curriculum">
             <button className="group relative px-12 py-5 bg-transparent overflow-hidden rounded-sm transition-all duration-500 hover:shadow-[0_0_40px_rgba(107,63,160,0.3)]">
               {/* Animated Gradient Border */}
@@ -51,7 +56,9 @@ export function CTASection() {
               {/* Text content */}
               <span className="relative z-10 font-mono text-lg tracking-widest text-foreground group-hover:text-white transition-colors flex items-center gap-3">
                 ENTER THE LAB
-                <span className="group-hover:translate-x-2 transition-transform duration-500">-&gt;</span>
+                <span className="group-hover:translate-x-2 transition-transform duration-500">
+                  -&gt;
+                </span>
               </span>
             </button>
           </Link>

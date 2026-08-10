@@ -25,5 +25,9 @@ export interface ContentProvider {
   getBooks(): Promise<Book[]>;
   getBook(bookId: string): Promise<Book | null>;
   getLevel(bookId: string, levelId: string): Promise<Level | null>;
-  getLesson(bookId: string, levelId: string, lessonId: string): Promise<Lesson | null>;
+  getLesson(
+    bookId: string,
+    levelId: string,
+    lessonId: string,
+  ): Promise<Lesson | null>;
 }

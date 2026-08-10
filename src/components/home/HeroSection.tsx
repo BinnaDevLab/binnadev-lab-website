@@ -17,12 +17,9 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-20 filter grayscale"
+          className="w-full h-full object-cover opacity-50 mix-blend-screen"
         >
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-digital-network-background-22606-large.mp4"
-            type="video/mp4"
-          />
+          <source src="/hero.mp4" type="video/mp4" />
         </video>
         {/* Dark Overlays for depth */}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent" />

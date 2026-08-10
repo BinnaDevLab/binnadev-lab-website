@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono } from "@/components/ui/Typography";
 import { ArrowRight, Users, Quote } from "lucide-react";
-import { TestimonialMarquee } from "@/components/culture/TestimonialMarquee";
+import { CaseFileReview } from "@/components/culture/TestimonialMarquee";
 
 export function CulturePreviewSection() {
   return (
@@ -32,7 +32,7 @@ export function CulturePreviewSection() {
       </Container>
       
       <div className="mt-8">
-        <TestimonialMarquee />
+        <CaseFileReview />
       </div>
 
     </section>

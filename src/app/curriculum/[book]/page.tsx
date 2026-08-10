@@ -69,7 +69,13 @@ export default async function BookOverviewPage({
                 
                 <div className="mb-6">
                   <span className="font-mono text-xs tracking-widest uppercase text-muted block mb-2">Phase 0{levelIndex + 1}</span>
-                  <H3 className="text-2xl text-white group-hover:text-gold transition-colors">{level.title}</H3>
+                  {level.lessons.length > 0 ? (
+                    <Link href={`/curriculum/${book.id}/${level.id}/${level.lessons[0].id}`}>
+                      <H3 className="text-2xl text-white hover:text-gold transition-colors inline-block">{level.title}</H3>
+                    </Link>
+                  ) : (
+                    <H3 className="text-2xl text-white">{level.title}</H3>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-4">

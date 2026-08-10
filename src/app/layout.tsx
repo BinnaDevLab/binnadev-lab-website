@@ -4,6 +4,8 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AppLoader } from "@/components/layout/AppLoader";
+import { InstallPrompt } from "@/components/ui/InstallPrompt";
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,12 +82,14 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-obsidian text-foreground">
+      <body className="min-h-full flex flex-col bg-obsidian text-foreground pb-[72px] md:pb-0">
         <AppLoader />
+        <InstallPrompt />
         <SmoothScroll>
           <Header />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
+          <MobileBottomNav />
         </SmoothScroll>
       </body>
     </html>

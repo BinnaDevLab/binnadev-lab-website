@@ -1,21 +1,32 @@
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "Workshop" | "Whiteboarding" | "Hackathon" | "Conference" | "Deep Work" | "Architecture";
+  category: "Research" | "Engineering" | "Collaboration" | "Building" | "The Lab" | "Impact";
   imageUrl: string;
 }
 
 export const galleryPool: GalleryItem[] = [
-  { id: "g1", title: "Architecture Whiteboarding", category: "Whiteboarding", imageUrl: "https://images.pexels.com/photos/7516361/pexels-photo-7516361.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g2", title: "Threat Modeling Session", category: "Workshop", imageUrl: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g3", title: "ETHGlobal Collaboration", category: "Hackathon", imageUrl: "https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g4", title: "Web3 Security Summit", category: "Conference", imageUrl: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g5", title: "Zero Knowledge Proofs", category: "Architecture", imageUrl: "https://images.pexels.com/photos/17489155/pexels-photo-17489155/free-photo-of-geometric-shapes.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g6", title: "State Transition Audit", category: "Deep Work", imageUrl: "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g7", title: "Late Night Optimization", category: "Deep Work", imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g8", title: "Cross-Chain Protocol Design", category: "Whiteboarding", imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g9", title: "Live Exploitation Demo", category: "Workshop", imageUrl: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g10", title: "Mentorship Session", category: "Workshop", imageUrl: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g11", title: "Data Flow Analysis", category: "Architecture", imageUrl: "https://images.pexels.com/photos/1624895/pexels-photo-1624895.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
-  { id: "g12", title: "Security Keynote", category: "Conference", imageUrl: "https://images.pexels.com/photos/2774566/pexels-photo-2774566.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  // 1. Research & Analysis
+  { id: "g1", title: "Threat Modeling Analysis", category: "Research", imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  { id: "g2", title: "Cryptoeconomic Research", category: "Research", imageUrl: "https://images.pexels.com/photos/7516361/pexels-photo-7516361.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  
+  // 2. Engineering & Architecture
+  { id: "g3", title: "Protocol Architecture", category: "Engineering", imageUrl: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  { id: "g4", title: "Invariant Testing", category: "Engineering", imageUrl: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  
+  // 3. Collaboration & Whiteboarding
+  { id: "g5", title: "System State Whiteboarding", category: "Collaboration", imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  { id: "g6", title: "Security Review Session", category: "Collaboration", imageUrl: "https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  
+  // 4. Building & Execution
+  { id: "g7", title: "Smart Contract Implementation", category: "Building", imageUrl: "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  { id: "g8", title: "EVM Optimization", category: "Building", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  
+  // 5. The Lab Environment
+  { id: "g9", title: "BinnaDev Headquarters", category: "The Lab", imageUrl: "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  { id: "g10", title: "Late Night Operations", category: "The Lab", imageUrl: "https://images.pexels.com/photos/2881232/pexels-photo-2881232.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+
+  // 6. Output & Impact
+  { id: "g11", title: "Global Deployment", category: "Impact", imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
+  { id: "g12", title: "Community Education", category: "Impact", imageUrl: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2" },
 ];

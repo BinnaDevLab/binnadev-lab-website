@@ -14,7 +14,7 @@ export function ResearchPreviewSection() {
   return (
     <section className="py-32 bg-obsidian border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-royal/5 blur-[200px] rounded-full pointer-events-none" />
-      
+
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
@@ -23,7 +23,9 @@ export function ResearchPreviewSection() {
             </Mono>
             <H2 className="mb-6">Research & Engineering</H2>
             <Body className="text-lg text-muted">
-              We do more than teach. The BinnaDev collective actively builds smart contract protocols, publishes security research, and develops open-source fuzzing harnesses.
+              We do more than teach. The BinnaDev collective actively builds
+              smart contract protocols, publishes security research, and
+              develops open-source fuzzing harnesses.
             </Body>
           </div>
           <Link href="/research">
@@ -48,13 +50,20 @@ export function ResearchPreviewSection() {
                 <span className="px-3 py-1 bg-obsidian border border-white/10 rounded-full text-xs font-mono text-muted">
                   {project.category}
                 </span>
-                <span className="font-mono text-xs text-muted/50">{project.date}</span>
+                <span className="font-mono text-xs text-muted/50">
+                  {project.date}
+                </span>
               </div>
-              <h3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">{project.title}</h3>
+              <h3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">
+                {project.title}
+              </h3>
               <p className="text-sm text-muted mb-6">{project.description}</p>
               <div className="flex gap-2">
                 {project.technologies.slice(0, 3).map((tech) => (
-                  <span key={tech} className="text-[10px] uppercase tracking-wider font-mono text-muted/80 bg-white/5 px-2 py-1 rounded">
+                  <span
+                    key={tech}
+                    className="text-[10px] uppercase tracking-wider font-mono text-muted/80 bg-white/5 px-2 py-1 rounded"
+                  >
                     {tech}
                   </span>
                 ))}

@@ -4,28 +4,33 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { galleryPool, GalleryItem } from "@/data/gallery";
 import { H3 } from "@/components/ui/Typography";
-import Image from "next/image";
+import { BlueprintImage } from "@/components/ui/BlueprintImage";
 
-const getRandomItem = (excludeIds: string[]) => {
-  const available = galleryPool.filter((item) => !excludeIds.includes(item.id));
-  if (available.length === 0) return galleryPool[Math.floor(Math.random() * galleryPool.length)];
-  return available[Math.floor(Math.random() * available.length)];
-};
-
-function GalleryTile({ initialItem, index }: { initialItem: GalleryItem; index: number }) {
-  const [currentItem, setCurrentItem] = useState(initialItem);
+function GalleryTile({
+  itemA,
+  itemB,
+  index,
+}: {
+  itemA: GalleryItem;
+  itemB: GalleryItem;
+  index: number;
+}) {
+  const [showB, setShowB] = useState(false);
+  const currentItem = showB ? itemB : itemA;
 
   useEffect(() => {
-    // Randomize the swap interval between 4s to 8s so the tiles swap independently
-    const intervalTime = Math.floor(Math.random() * 4000) + 4000;
-    
-    // Add a slight initial delay based on index so they don't all swap at once initially
+    // Stagger the transitions so the gallery feels alive but not frantic
+    const baseInterval = 6000;
+    // Add offset based on index so they don't all flip at the same time
+    const initialDelay = index * 1500;
+
     const timeout = setTimeout(() => {
+      setShowB(true); // First flip
       const interval = setInterval(() => {
-        setCurrentItem((prev) => getRandomItem([prev.id]));
-      }, intervalTime);
+        setShowB((prev) => !prev);
+      }, baseInterval);
       return () => clearInterval(interval);
-    }, index * 1000);
+    }, initialDelay);
 
     return () => clearTimeout(timeout);
   }, [index]);
@@ -41,12 +46,12 @@ function GalleryTile({ initialItem, index }: { initialItem: GalleryItem; index: 
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0 w-full h-full"
         >
-          <Image 
-            src={currentItem.imageUrl} 
-            alt={currentItem.title} 
+          <BlueprintImage
+            src={currentItem.imageUrl}
+            alt={currentItem.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-1000"
+            overlayColor="gold"
           />
         </motion.div>
       </AnimatePresence>
@@ -59,23 +64,35 @@ function GalleryTile({ initialItem, index }: { initialItem: GalleryItem; index: 
             {currentItem.category}
           </span>
         </div>
-        <H3 className="text-lg md:text-xl font-medium text-white">{currentItem.title}</H3>
+        <H3 className="text-lg md:text-xl font-medium text-white">
+          {currentItem.title}
+        </H3>
       </div>
     </div>
   );
 }
 
 export function CinematicGallery() {
-  // Select initial grid of 6 items deterministically to prevent hydration mismatch
-  const [initialTiles] = useState<GalleryItem[]>(() => {
-    return galleryPool.slice(0, 6);
-  });
+  // Use all 12 items from the pool (6 pairs)
+  const tilePairs = [
+    { a: galleryPool[0], b: galleryPool[1] },
+    { a: galleryPool[2], b: galleryPool[3] },
+    { a: galleryPool[4], b: galleryPool[5] },
+    { a: galleryPool[6], b: galleryPool[7] },
+    { a: galleryPool[8], b: galleryPool[9] },
+    { a: galleryPool[10], b: galleryPool[11] },
+  ];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {initialTiles.map((item, index) => (
-        <div key={index} className={index === 0 || index === 3 ? "md:col-span-2 lg:col-span-1" : ""}>
-           <GalleryTile initialItem={item} index={index} />
+      {tilePairs.map((pair, index) => (
+        <div
+          key={index}
+          className={
+            index === 0 || index === 3 ? "md:col-span-2 lg:col-span-1" : ""
+          }
+        >
+          <GalleryTile itemA={pair.a} itemB={pair.b} index={index} />
         </div>
       ))}
     </div>

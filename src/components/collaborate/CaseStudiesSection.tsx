@@ -29,12 +29,12 @@ export function CaseStudiesSection() {
               {/* Image Side */}
               <div className="w-full lg:w-1/2 relative group">
                 <div className="relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-white/5 bg-carbon">
-                  <Image 
-                    src={study.imageUrl} 
+                  <Image
+                    src={study.imageUrl}
                     alt={study.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-80" />
 

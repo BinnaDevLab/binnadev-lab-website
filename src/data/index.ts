@@ -13,3 +13,4 @@ export * from './clientTestimonials';
 export * from './collaborationProcess';
 export * from './architect';
 export * from './philosophy';
+export * from './youtube';

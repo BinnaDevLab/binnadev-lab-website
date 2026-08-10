@@ -41,27 +41,53 @@ export function LevelsSection() {
           <H2>5 Architectural Layers of Reasoning</H2>
         </div>
 
-        <div className="flex flex-col space-y-6 relative before:absolute before:inset-y-0 before:left-[19px] md:before:left-[27px] before:w-[2px] before:bg-white/5">
+        {/* Mobile Vertical Stack View (Progressive Reveal) */}
+        <div className="md:hidden flex flex-col space-y-4">
+          {levels.map((item, index) => (
+            <motion.div 
+              key={`mobile-${item.level}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative bg-carbon/50 backdrop-blur-md border border-white/5 p-6 overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-royal/30" />
+              
+              {/* Layer Number Indicator */}
+              <div className="absolute top-4 right-4 text-xs font-mono text-white/20">
+                0{index + 1} / 05
+              </div>
+              
+              <Mono className="text-royal mb-2 block tracking-widest text-[10px]">{item.level}</Mono>
+              <H3 className="mb-3 text-lg">{item.title}</H3>
+              <Body className="text-sm text-muted">{item.desc}</Body>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop Vertical Timeline View */}
+        <div className="hidden md:flex flex-col space-y-6 relative before:absolute before:inset-y-0 before:left-[27px] before:w-[2px] before:bg-white/5">
           {levels.map((item, index) => (
             <motion.div
-              key={item.level}
+              key={`desktop-${item.level}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative pl-12 md:pl-20 group"
+              className="relative pl-20 group"
             >
               {/* Timeline dot */}
-              <div className="absolute left-[15px] md:left-[23px] top-8 w-[10px] h-[10px] rounded-full bg-obsidian border-2 border-royal group-hover:border-gold transition-colors duration-300 shadow-[0_0_10px_rgba(107,63,160,0.5)] group-hover:shadow-[0_0_10px_rgba(214,175,54,0.5)]" />
+              <div className="absolute left-[23px] top-8 w-[10px] h-[10px] rounded-full bg-obsidian border-2 border-royal group-hover:border-gold transition-colors duration-300 shadow-[0_0_10px_rgba(107,63,160,0.5)] group-hover:shadow-[0_0_10px_rgba(214,175,54,0.5)]" />
               
-              <div className="relative bg-carbon/50 backdrop-blur-md border border-white/5 p-8 md:p-10 rounded-lg group-hover:border-royal/50 transition-all duration-500 overflow-hidden transform group-hover:-translate-y-1 group-hover:shadow-[0_10px_30px_rgba(107,63,160,0.1)]">
+              <div className="relative bg-carbon/50 backdrop-blur-md border border-white/5 p-10 group-hover:border-royal/50 transition-all duration-500 overflow-hidden transform group-hover:-translate-y-1 group-hover:shadow-[0_10px_30px_rgba(107,63,160,0.1)]">
                 {/* Subtle internal gradient on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-royal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10">
-                  <Mono className="text-royal mb-2 block">{item.level}</Mono>
+                  <Mono className="text-royal mb-2 block tracking-widest text-[10px]">{item.level}</Mono>
                   <H3 className="mb-4 text-foreground/90 group-hover:text-foreground transition-colors">{item.title}</H3>
-                  <Body className="text-sm md:text-base">{item.desc}</Body>
+                  <Body className="text-base text-muted">{item.desc}</Body>
                 </div>
               </div>
             </motion.div>

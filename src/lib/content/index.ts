@@ -1,17 +1,26 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { Book, Level, Lesson, ContentProvider } from './types';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { Book, Level, Lesson, ContentProvider } from "./types";
 
 // During development, we read directly from the adjacent academy repository.
 // The content retrieval logic is fully decoupled from the UI.
-const ACADEMY_REPO_PATH = path.join(process.cwd(), '../GitHub/progressive-smart-contract-security-academy');
+const ACADEMY_REPO_PATH = path.resolve(
+  process.cwd(),
+  "../progressive-smart-contract-security-academy",
+);
+
+console.log("ACADEMY_REPO_PATH:", ACADEMY_REPO_PATH);
 
 export class LocalMarkdownContentProvider implements ContentProvider {
   private async readDirectory(dirPath: string): Promise<string[]> {
     try {
-      const dirents = await fs.promises.readdir(dirPath, { withFileTypes: true });
-      return dirents.filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
+      const dirents = await fs.promises.readdir(dirPath, {
+        withFileTypes: true,
+      });
+      return dirents
+        .filter((dirent) => dirent.isDirectory())
+        .map((dirent) => dirent.name);
     } catch {
       return [];
     }
@@ -19,7 +28,7 @@ export class LocalMarkdownContentProvider implements ContentProvider {
 
   private parseMarkdownContent(filePath: string) {
     try {
-      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const fileContents = fs.readFileSync(filePath, "utf8");
       const { data, content } = matter(fileContents);
       return { data, content };
     } catch {
@@ -28,9 +37,9 @@ export class LocalMarkdownContentProvider implements ContentProvider {
   }
 
   async getBooks(): Promise<Book[]> {
-    const booksDir = path.join(ACADEMY_REPO_PATH, 'books');
+    const booksDir = path.join(ACADEMY_REPO_PATH, "books");
     const bookFolders = await this.readDirectory(booksDir);
-    
+
     // Sort books by name (e.g., book-0, book-1, etc.)
     bookFolders.sort();
 
@@ -45,14 +54,16 @@ export class LocalMarkdownContentProvider implements ContentProvider {
   }
 
   async getBook(bookId: string): Promise<Book | null> {
-    const bookPath = path.join(ACADEMY_REPO_PATH, 'books', bookId);
+    const bookPath = path.join(ACADEMY_REPO_PATH, "books", bookId);
     if (!fs.existsSync(bookPath)) return null;
 
     const levelFolders = await this.readDirectory(bookPath);
     levelFolders.sort();
 
     // Default title from folder name if no overarching metadata
-    const title = bookId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const title = bookId
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase());
 
     const levels: Level[] = [];
     for (const folder of levelFolders) {
@@ -64,18 +75,20 @@ export class LocalMarkdownContentProvider implements ContentProvider {
       id: bookId,
       title: title,
       description: `Deep dive into ${title}.`,
-      levels
+      levels,
     };
   }
 
   async getLevel(bookId: string, levelId: string): Promise<Level | null> {
-    const levelPath = path.join(ACADEMY_REPO_PATH, 'books', bookId, levelId);
+    const levelPath = path.join(ACADEMY_REPO_PATH, "books", bookId, levelId);
     if (!fs.existsSync(levelPath)) return null;
 
     const lessonFolders = await this.readDirectory(levelPath);
     lessonFolders.sort();
 
-    const title = levelId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const title = levelId
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase());
 
     const lessons: Lesson[] = [];
     for (const folder of lessonFolders) {
@@ -87,18 +100,31 @@ export class LocalMarkdownContentProvider implements ContentProvider {
       id: levelId,
       title,
       description: `Exploring ${title}`,
-      lessons
+      lessons,
     };
   }
 
-  async getLesson(bookId: string, levelId: string, lessonId: string): Promise<Lesson | null> {
-    const lessonPath = path.join(ACADEMY_REPO_PATH, 'books', bookId, levelId, lessonId, 'README.md');
-    
+  async getLesson(
+    bookId: string,
+    levelId: string,
+    lessonId: string,
+  ): Promise<Lesson | null> {
+    const lessonPath = path.join(
+      ACADEMY_REPO_PATH,
+      "books",
+      bookId,
+      levelId,
+      lessonId,
+      "README.md",
+    );
+
     const parsed = this.parseMarkdownContent(lessonPath);
     if (!parsed) return null;
 
     const titleMatch = parsed.content.match(/^#\s+(.+)/m);
-    const title = titleMatch ? titleMatch[1] : lessonId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const title = titleMatch
+      ? titleMatch[1]
+      : lessonId.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
     // Basic heuristic: ~200 words per minute
     const wordCount = parsed.content.split(/\s+/).length;
@@ -107,10 +133,10 @@ export class LocalMarkdownContentProvider implements ContentProvider {
     return {
       id: lessonId,
       title,
-      description: parsed.data.description || '',
+      description: parsed.data.description || "",
       markdown: parsed.content,
       estimatedTime: `${estimatedMinutes} min`,
-      xp: 100 // Placeholder gamification element
+      xp: 100, // Placeholder gamification element
     };
   }
 }

@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { H1, H2, H3, Body, Mono } from "@/components/ui/Typography";
 import { communityStats, communityHighlights, team } from "@/data";
 import { Users, Code, MessagesSquare, Users2, Quote, Play, GitBranch, Briefcase, MessageCircle } from "lucide-react";
-import { TestimonialMarquee } from "@/components/culture/TestimonialMarquee";
+import { CaseFileReview } from "@/components/culture/TestimonialMarquee";
 import { CinematicGallery } from "@/components/culture/CinematicGallery";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { YouTubeShowcase } from "@/components/culture/YouTubeShowcase";
@@ -149,15 +149,17 @@ export default function CulturePage() {
 
       </Container>
       
-      {/* Collaborator Field Notes (Testimonials) - Full Width */}
-      <section id="testimonials" className="border-t border-white/5 pt-32 pb-16 bg-carbon/20">
-        <div className="mb-12 text-center max-w-2xl mx-auto px-6">
-          <Quote className="w-8 h-8 text-gold mx-auto mb-6 opacity-50" />
-          <H2 className="text-3xl">Collaborator Field Notes</H2>
-          <Body className="text-muted mt-4">Insights from researchers traversing the curriculum.</Body>
-        </div>
-
-        <TestimonialMarquee />
+      {/* 4. Testimonials (Field Notes) */}
+      <section className="py-24 bg-obsidian border-t border-white/5">
+        <Container>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <H2 className="mb-4 text-3xl">Field Notes</H2>
+            <Body className="text-muted">
+              What founders, engineers, and researchers say about their time in the Lab.
+            </Body>
+          </div>
+        </Container>
+        <CaseFileReview />
       </section>
 
     </div>
