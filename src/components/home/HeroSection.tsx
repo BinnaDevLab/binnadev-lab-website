@@ -2,93 +2,141 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { H1, Body, Mono } from "@/components/ui/Typography";
-import { Button } from "@/components/ui/Button";
+import { H1, Body, Mono, Meta } from "@/components/ui/Typography";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-obsidian border-b border-white/5">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-50 mix-blend-screen"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-        {/* Dark Overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/50 to-transparent" />
-        {/* Noise Texture */}
-        <div
-          className="absolute inset-0 opacity-10 mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E\")",
-          }}
-        />
+    <section className="relative min-h-[100svh] w-full bg-obsidian flex flex-col justify-between overflow-hidden">
+      
+      {/* 1. Architectural Notation & Framing (The "Visual Language") */}
+      <div className="absolute inset-0 pointer-events-none z-20">
+        {/* Frame borders */}
+        <div className="absolute left-6 md:left-12 top-0 bottom-0 w-[1px] bg-white/5" />
+        <div className="absolute right-6 md:right-12 top-0 bottom-0 w-[1px] bg-white/5" />
+        
+        {/* Corner markers */}
+        <div className="absolute top-24 left-6 md:left-12 w-4 h-[1px] bg-white/30" />
+        <div className="absolute top-24 left-6 md:left-12 w-[1px] h-4 bg-white/30" />
+        <div className="absolute bottom-12 right-6 md:right-12 w-4 h-[1px] bg-white/30" />
+        <div className="absolute bottom-12 right-6 md:right-12 w-[1px] h-4 bg-white/30 transform -translate-y-full translate-x-full" />
+        
+        {/* Coordinates / Lab Data */}
+        <div className="absolute top-24 right-6 md:right-12 hidden md:flex flex-col items-end gap-1">
+          <Mono className="text-[10px] text-white/30 tracking-widest">SYS.INIT.01</Mono>
+          <Mono className="text-[10px] text-white/30 tracking-widest">COORD: 40.7128° N, 74.0060° W</Mono>
+        </div>
       </div>
 
-      {/* Abstract Grid (Keep as secondary texture) */}
-      <div
-        className="absolute inset-0 z-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: `
-          linear-gradient(to right, #ffffff 1px, transparent 1px),
-          linear-gradient(to bottom, #ffffff 1px, transparent 1px)
-        `,
-          backgroundSize: "4rem 4rem",
-          maskImage:
-            "radial-gradient(ellipse 60% 60% at 50% 50%, #000 20%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 60% 60% at 50% 50%, #000 20%, transparent 100%)",
-        }}
-      />
+      {/* 2. Intelligent Background Video Composition */}
+      {/* 
+        Desktop: Video occupies the right side of the screen, masked cleanly. 
+        Mobile: Video sits absolute at the top right, fading into the background.
+      */}
+      <div className="absolute top-0 right-0 w-full md:w-[60%] lg:w-[50%] h-[50vh] md:h-full z-0">
+        <div className="relative w-full h-full border-b md:border-b-0 md:border-l border-white/10 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-40 md:opacity-50"
+          >
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
+          {/* Gradients to merge video into the obsidian background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-obsidian/20 via-transparent to-obsidian md:bg-gradient-to-l md:from-transparent md:to-obsidian" />
+          
+          {/* Subtle architectural overlay on the video */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] pointer-events-none mix-blend-overlay" />
+        </div>
+      </div>
 
-      <Container className="relative z-10 text-center max-w-4xl pt-20">
+      {/* 3. Main Content Composition */}
+      <Container className="relative z-10 w-full max-w-[1800px] px-6 md:px-12 lg:px-24 flex-grow flex flex-col justify-center pt-32 pb-24">
+        
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center"
+          className="max-w-5xl w-full"
         >
-          <H1 className="mt-8 mb-8 leading-[1.1]">
-            Reasoning <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal to-gold">
-              Precedes Coding.
+          {/* Lab Identifier */}
+          <div className="flex items-center gap-4 mb-8 md:mb-12">
+            <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+            <Mono className="text-gold tracking-widest uppercase text-xs">BinnaDev Lab_</Mono>
+          </div>
+          
+          {/* Authored Headline */}
+          <H1 className="font-display tracking-tighter leading-[0.85] text-white uppercase flex flex-col gap-2 md:gap-4 mb-12">
+            <span className="text-[clamp(3.5rem,10vw,11rem)]">Reasoning</span>
+            <span className="text-[clamp(3rem,8vw,9rem)] text-white/40 md:pl-16">Precedes</span>
+            <span className="text-[clamp(4rem,11vw,12rem)] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 relative w-fit">
+              Coding.
+              {/* Architectural underline on the final word */}
+              <span className="absolute -bottom-2 md:-bottom-4 left-0 w-[60%] h-[4px] md:h-[6px] bg-gold" />
             </span>
           </H1>
 
-          <Body className="mb-12 text-xl md:text-2xl text-muted max-w-2xl mx-auto leading-relaxed">
-            The elite architecture lab for Smart Contract Engineers. Learn how
-            to think, not just how to type.
-          </Body>
+          {/* Intellectual Tension Copy */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
+            <div className="md:col-span-8 lg:col-span-6">
+              <Body className="text-lg md:text-xl text-white/70 leading-relaxed">
+                Syntax is the baseline. We engineer resilient decentralized systems built to survive adversarial reality. Architecture over execution. Comprehension over code.
+              </Body>
+            </div>
+          </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/cohorts">
-              <Button
-                size="lg"
-                className="px-10 py-6 text-lg relative overflow-hidden group"
-              >
-                <span className="relative z-10">View Current Cohort</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-gold to-royal opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              </Button>
+          {/* Interaction & CTAs */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 md:gap-12 w-full">
+            
+            {/* Primary CTA: "ENTER THE LAB" */}
+            <Link href="/cohorts" className="group relative flex items-center gap-6 cursor-pointer">
+              {/* Dynamic Line Extension interaction */}
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0 h-[1px] bg-gold group-hover:w-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100" />
+              
+              <div className="relative z-10 w-14 h-14 rounded-full border border-gold flex items-center justify-center bg-obsidian transition-colors duration-500 group-hover:bg-gold">
+                <ArrowRight className="w-5 h-5 text-gold group-hover:text-obsidian transition-colors duration-500" />
+              </div>
+              <Mono className="relative z-10 text-white uppercase tracking-widest text-sm font-semibold group-hover:text-gold transition-colors duration-500 bg-obsidian pr-4">
+                Enter The Lab
+              </Mono>
             </Link>
+            
+            {/* Secondary CTA: "JOIN THE INITIATIVE" */}
             <Link
-              href="#manifesto"
-              className="group flex items-center gap-2 text-muted hover:text-foreground transition-colors py-4"
+              href="/collaborate"
+              className="group flex items-center gap-3 text-white/40 hover:text-white transition-colors duration-300"
             >
-              <Mono className="text-sm">Read the Manifesto</Mono>
-              <ArrowDownRight className="w-4 h-4 group-hover:translate-y-1 group-hover:translate-x-1 transition-transform" />
+              <Mono className="text-xs uppercase tracking-widest">Join The Initiative</Mono>
+              <div className="w-4 h-[1px] bg-white/40 group-hover:w-8 group-hover:bg-white transition-all duration-300" />
             </Link>
           </div>
+
         </motion.div>
       </Container>
+
+      {/* 4. Reason to Scroll / Narrative Progression */}
+      <div className="relative z-20 w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-24 pb-8 flex justify-between items-end">
+        <div className="flex items-center gap-4">
+          <Mono className="text-[10px] text-white/40 tracking-widest">01 / 05</Mono>
+          <div className="w-[1px] h-8 bg-white/20 relative overflow-hidden">
+            <motion.div 
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+              className="absolute inset-0 w-full h-1/2 bg-white"
+            />
+          </div>
+          <Mono className="text-[10px] text-white/40 tracking-widest uppercase">Begin Progression</Mono>
+        </div>
+        
+        {/* Scroll indicator for mobile (hidden on desktop since it might clash with video) */}
+        <div className="md:hidden">
+          <ArrowDown className="w-4 h-4 text-white/20 animate-bounce" />
+        </div>
+      </div>
+      
     </section>
   );
 }

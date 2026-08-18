@@ -55,7 +55,7 @@ export function CaseStudiesSection() {
 
               {/* Content Side */}
               <div className="w-full lg:w-1/2">
-                <Mono className="text-royal mb-4 block tracking-widest uppercase text-sm">
+                <Mono className="text-gold mb-4 block tracking-widest uppercase text-sm">
                   {study.client}
                 </Mono>
                 <H3 className="text-3xl mb-8 leading-tight">{study.title}</H3>

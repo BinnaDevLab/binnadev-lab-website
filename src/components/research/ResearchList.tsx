@@ -25,7 +25,7 @@ export function ResearchList() {
         {currentProjects.map((project) => (
           <div
             key={project.id}
-            className="group overflow-hidden rounded-xl border border-white/5 bg-carbon hover:border-royal/50 transition-all duration-300 flex flex-col cursor-pointer"
+            className="group overflow-hidden rounded-xl border border-white/5 bg-carbon hover:border-gold/50 transition-all duration-300 flex flex-col cursor-pointer"
           >
             <div className="h-48 overflow-hidden relative border-b border-white/5">
               <Image
@@ -57,7 +57,7 @@ export function ResearchList() {
               </p>
 
               <div className="flex items-center gap-4 mt-auto">
-                <div className="flex items-center gap-1.5 text-royal">
+                <div className="flex items-center gap-1.5 text-gold">
                   <GitBranch className="w-4 h-4" />
                   <Mono className="text-xs tracking-wider">{project.date}</Mono>
                 </div>

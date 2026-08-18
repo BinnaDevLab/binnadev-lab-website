@@ -123,7 +123,7 @@ export function InstallPrompt() {
               className="bg-obsidian border border-white/5 p-4 rounded-sm flex flex-col gap-2"
             >
               <Body className="text-sm text-muted flex items-center gap-2">
-                1. Tap the <Share className="w-4 h-4 text-royal" /> Share button in Safari.
+                1. Tap the <Share className="w-4 h-4 text-gold" /> Share button in Safari.
               </Body>
               <Body className="text-sm text-muted">
                 2. Scroll down and select <strong>"Add to Home Screen"</strong>.

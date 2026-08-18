@@ -14,3 +14,5 @@ export * from './collaborationProcess';
 export * from './architect';
 export * from './philosophy';
 export * from './youtube';
+export * from './social';
+export * from './events';

@@ -124,7 +124,7 @@ export function CaseFileReview() {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full bg-obsidian border border-white/10 flex items-center justify-center font-mono text-royal">
+                    <div className="w-full h-full bg-obsidian border border-white/10 flex items-center justify-center font-mono text-gold">
                       {active.author.charAt(0)}
                     </div>
                   )}
@@ -151,7 +151,7 @@ export function CaseFileReview() {
                       href={active.socialLinks.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 border border-white/5 hover:border-royal/50 hover:text-royal transition-colors"
+                      className="p-2 border border-white/5 hover:border-gold/50 hover:text-gold transition-colors"
                     >
                       <MessageCircle className="w-4 h-4" />
                     </a>
@@ -161,7 +161,7 @@ export function CaseFileReview() {
                       href={active.socialLinks.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 border border-white/5 hover:border-royal/50 hover:text-royal transition-colors"
+                      className="p-2 border border-white/5 hover:border-gold/50 hover:text-gold transition-colors"
                     >
                       <Briefcase className="w-4 h-4" />
                     </a>
@@ -171,7 +171,7 @@ export function CaseFileReview() {
                       href={active.socialLinks.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 border border-white/5 hover:border-royal/50 hover:text-royal transition-colors"
+                      className="p-2 border border-white/5 hover:border-gold/50 hover:text-gold transition-colors"
                     >
                       <GitBranch className="w-4 h-4" />
                     </a>

@@ -82,7 +82,7 @@ export function InquiryForm() {
                     htmlFor="name"
                     className="text-sm font-medium text-white/80"
                   >
-                    Full Name <span className="text-royal">*</span>
+                    Full Name <span className="text-gold">*</span>
                   </label>
                   <input
                     required
@@ -98,7 +98,7 @@ export function InquiryForm() {
                     htmlFor="email"
                     className="text-sm font-medium text-white/80"
                   >
-                    Professional Email <span className="text-royal">*</span>
+                    Professional Email <span className="text-gold">*</span>
                   </label>
                   <input
                     required
@@ -114,7 +114,7 @@ export function InquiryForm() {
                     htmlFor="company"
                     className="text-sm font-medium text-white/80"
                   >
-                    Company / Organization <span className="text-royal">*</span>
+                    Company / Organization <span className="text-gold">*</span>
                   </label>
                   <input
                     required
@@ -148,7 +148,7 @@ export function InquiryForm() {
                     htmlFor="inquiryType"
                     className="text-sm font-medium text-white/80"
                   >
-                    Type of Inquiry <span className="text-royal">*</span>
+                    Type of Inquiry <span className="text-gold">*</span>
                   </label>
                   <select
                     required
@@ -171,7 +171,7 @@ export function InquiryForm() {
                       Smart Contract Development
                     </option>
                     <option value="architecture">Protocol Architecture</option>
-                    <option value="partnership">Strategic Partnership</option>
+                    <option value="partnership">Strategic Collaboration</option>
                     <option value="training">Technical Training</option>
                     <option value="general">General Inquiry</option>
                   </select>
@@ -238,7 +238,7 @@ export function InquiryForm() {
                     className="text-sm font-medium text-white/80"
                   >
                     Tell Us About Your Project{" "}
-                    <span className="text-royal">*</span>
+                    <span className="text-gold">*</span>
                   </label>
                   <Mono className="text-xs text-white/40">
                     Markdown Supported
@@ -254,8 +254,8 @@ export function InquiryForm() {
               </div>
 
               <div className="flex items-center gap-3 bg-royal/10 border border-royal/20 p-4 rounded-lg">
-                <AlertCircle className="w-5 h-5 text-royal flex-shrink-0" />
-                <p className="text-sm text-royal">
+                <AlertCircle className="w-5 h-5 text-gold flex-shrink-0" />
+                <p className="text-sm text-gold">
                   All communications are strictly confidential. We are happy to
                   sign an NDA before reviewing any private repositories or
                   architectural documents.

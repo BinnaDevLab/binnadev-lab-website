@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | BinnaDev Lab",
     default: "BinnaDev Lab | Reasoning Precedes Coding",
   },
-  description: "An elite engineering laboratory where developers are trained to think, reason, interrogate systems, and architect secure smart contracts.",
+  description: "Elite smart contract engineering, security research, and decentralized protocol architecture.",
   keywords: ["smart contracts", "web3 security", "solidity", "EVM", "blockchain", "engineering", "BinnaDev"],
   authors: [{ name: "Obinna Franklin Duru" }],
   openGraph: {

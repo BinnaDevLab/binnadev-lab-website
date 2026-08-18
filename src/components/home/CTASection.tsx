@@ -1,69 +1,68 @@
 "use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { H2, Body } from "@/components/ui/Typography";
+import { Display, Body, Mono, Meta } from "@/components/ui/Typography";
+import { socialLinks } from "@/data/social";
 
 export function CTASection() {
   return (
-    <section className="relative py-40 md:py-56 bg-obsidian border-t border-white/5 flex items-center justify-center overflow-hidden">
-      {/* Cinematic Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-15 filter grayscale contrast-150 mix-blend-screen"
-        >
-          <source
-            src="https://assets.codepen.io/3364143/7btrrd.mp4"
-            type="video/mp4"
-          />
-        </video>
-        {/* Dark Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-obsidian" />
+    <section className="relative py-32 md:py-64 bg-obsidian border-t border-white/5 overflow-hidden flex flex-col justify-center">
+      
+      {/* Structural background lines */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20" />
+        <div className="absolute top-0 left-1/2 w-[1px] h-full bg-white/20 hidden md:block" />
       </div>
 
-      {/* Background glow orb */}
-      <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-        <div className="w-[800px] h-[400px] bg-royal/15 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="w-[300px] h-[300px] bg-gold/10 blur-[100px] rounded-full mix-blend-screen absolute" />
-      </div>
+      <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
+        
+        <div className="mb-16">
+          <Meta className="text-gold mb-6 block">SYSTEM_STATUS: OPEN</Meta>
+          <Display className="text-white">
+            The Work <br className="hidden md:block"/> Starts Here.
+          </Display>
+        </div>
 
-      <Container className="relative z-10 text-center max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center"
-        >
-          <H2 className="mb-6 text-5xl md:text-6xl tracking-tight">
-            The Lab is Open.
-          </H2>
-          <Body className="mb-12 text-xl text-muted/80 max-w-lg mx-auto">
-            Stop memorizing syntax. Start architecting systems.
-          </Body>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end border-t border-white/10 pt-16">
+          
+          <div className="md:col-span-5 lg:col-span-4">
+            <Body className="text-xl md:text-2xl text-white/50">
+              Stop collecting bookmarks. Stop meaning to start. 
+              The work is happening now, with people who take it seriously.
+            </Body>
+          </div>
 
-          <Link href="/cohorts">
-            <button className="group relative px-12 py-5 bg-transparent overflow-hidden rounded-sm transition-all duration-500 hover:shadow-[0_0_40px_rgba(107,63,160,0.3)]">
-              {/* Animated Gradient Border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-royal via-gold to-royal bg-[length:200%_auto] animate-gradient opacity-80" />
-              {/* Inner dark background */}
-              <div className="absolute inset-[1px] bg-obsidian transition-colors duration-500 group-hover:bg-obsidian/90" />
-              {/* Text content */}
-              <span className="relative z-10 font-mono text-lg tracking-widest text-foreground group-hover:text-white transition-colors flex items-center gap-3">
-                VIEW CURRENT COHORT
-                <span className="group-hover:translate-x-2 transition-transform duration-500">
-                  -&gt;
-                </span>
-              </span>
-            </button>
-          </Link>
-        </motion.div>
+          <div className="md:col-span-7 lg:col-span-8 flex flex-col sm:flex-row gap-4 md:gap-8 justify-end w-full">
+            <Link
+              href={socialLinks.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex-1 max-w-sm flex items-center justify-between p-8 border border-white/20 hover:border-gold hover:bg-white/[0.02] transition-all duration-300"
+            >
+              <div className="flex flex-col gap-2">
+                <Meta className="text-white/40 group-hover:text-gold/50 transition-colors">Action</Meta>
+                <Mono className="text-white group-hover:text-gold transition-colors">Join Discord</Mono>
+              </div>
+              <ArrowRight className="w-6 h-6 text-white/50 group-hover:text-gold group-hover:translate-x-2 transition-all duration-300" />
+            </Link>
+
+            <Link
+              href="/cohorts"
+              className="group flex-1 max-w-sm flex items-center justify-between p-8 border border-white/10 hover:border-white/40 transition-all duration-300"
+            >
+              <div className="flex flex-col gap-2">
+                <Meta className="text-white/40 transition-colors">Explore</Meta>
+                <Mono className="text-white/70 group-hover:text-white transition-colors">View Cohorts</Mono>
+              </div>
+              <ArrowRight className="w-6 h-6 text-white/30 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
+            </Link>
+          </div>
+
+        </div>
       </Container>
     </section>
   );
 }
+
+

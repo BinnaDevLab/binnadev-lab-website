@@ -18,7 +18,7 @@ export const team: TeamMember[] = [
     name: "Obinna Franklin Duru",
     role: "Founder & Architect",
     bio: "Lead architect of the BinnaDev framework, bridging theoretical cryptography with adversarial EVM security models.",
-    avatarUrl: "https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2", // Professional placeholder
+    avatarUrl: "/images/team/team-asset-1.jpeg", // Professional placeholder
     category: "Leadership",
     socialLinks: { twitter: "https://twitter.com", github: "https://github.com/obinnafranklinduru" }
   },
@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
     name: "Alex V.",
     role: "Head of Protocol Engineering",
     bio: "Specializes in cross-chain bridge architectures and MEV-resistant mechanism design.",
-    avatarUrl: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2",
+    avatarUrl: "/images/team/team-asset-2.jpeg",
     category: "Engineering",
     socialLinks: { github: "https://github.com" }
   },
@@ -36,7 +36,7 @@ export const team: TeamMember[] = [
     name: "Dr. Samira K.",
     role: "Lead Security Researcher",
     bio: "Former academic cryptographer focused on zero-knowledge proof implementations and formal verification.",
-    avatarUrl: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2",
+    avatarUrl: "/images/shared/shared-asset-9.jpeg",
     category: "Research",
     socialLinks: { twitter: "https://twitter.com", linkedin: "https://linkedin.com" }
   },
@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
     name: "Jonathan C.",
     role: "Technical Writer & Educator",
     bio: "Translates complex state transition exploits into structured, pedagogical learning tracks.",
-    avatarUrl: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2",
+    avatarUrl: "/images/team/team-asset-3.jpeg",
     category: "Community",
     socialLinks: { twitter: "https://twitter.com" }
   },
@@ -54,7 +54,7 @@ export const team: TeamMember[] = [
     name: "Priya M.",
     role: "Smart Contract Auditor",
     bio: "Defi protocol veteran. Conducts intense peer reviews of all Lab curriculum material before release.",
-    avatarUrl: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&dpr=2",
+    avatarUrl: "/images/team/team-asset-4.jpeg",
     category: "Engineering",
     socialLinks: { linkedin: "https://linkedin.com", github: "https://github.com" }
   }

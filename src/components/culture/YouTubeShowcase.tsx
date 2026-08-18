@@ -10,7 +10,7 @@ export function YouTubeShowcase() {
     <section className="mb-32">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <Mono className="text-royal mb-4 block tracking-widest uppercase flex items-center gap-2">
+          <Mono className="text-gold mb-4 block tracking-widest uppercase flex items-center gap-2">
             <Video className="w-4 h-4" /> Lab Media
           </Mono>
           <H2>Official Channel</H2>
@@ -22,7 +22,7 @@ export function YouTubeShowcase() {
           href="https://youtube.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 hover:border-royal/50 rounded-lg text-sm font-mono text-white transition-all group"
+          className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 hover:border-gold/50 rounded-lg text-sm font-mono text-white transition-all group"
         >
           Subscribe
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -32,7 +32,7 @@ export function YouTubeShowcase() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {youtubeVideos.map((video) => (
           <div key={video.id} className="group cursor-pointer">
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-carbon border border-white/5 mb-4 group-hover:border-royal/50 transition-colors">
+            <div className="relative aspect-video rounded-xl overflow-hidden bg-carbon border border-white/5 mb-4 group-hover:border-gold/50 transition-colors">
               <Image
                 src={video.thumbnail}
                 alt={video.title}

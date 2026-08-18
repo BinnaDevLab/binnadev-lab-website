@@ -57,7 +57,7 @@ export function CollaboratorFieldNotes() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <Mono className="text-royal mb-2 flex items-center gap-2 text-sm uppercase tracking-widest">
+          <Mono className="text-gold mb-2 flex items-center gap-2 text-sm uppercase tracking-widest">
             <FileText className="w-4 h-4" /> Case Files
           </Mono>
           <H3 className="text-3xl text-white">Collaborator Field Notes</H3>
@@ -160,7 +160,7 @@ export function CollaboratorFieldNotes() {
               </div>
 
               <div className="flex-1">
-                <Mono className="text-royal mb-4 text-sm uppercase tracking-widest">
+                <Mono className="text-gold mb-4 text-sm uppercase tracking-widest">
                   Review Notes
                 </Mono>
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed italic font-light">

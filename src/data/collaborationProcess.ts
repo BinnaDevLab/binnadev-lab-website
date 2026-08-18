@@ -40,6 +40,6 @@ export const collaborationProcess: ProcessStep[] = [
     id: "step-6",
     number: "06",
     title: "Long-Term Support",
-    description: "BinnaDev Lab remains a strategic technical partner, offering ongoing protocol maintenance, upgrades, and developer training."
+    description: "BinnaDev Lab remains a strategic technical resource, offering ongoing protocol maintenance, upgrades, and developer training."
   }
 ];

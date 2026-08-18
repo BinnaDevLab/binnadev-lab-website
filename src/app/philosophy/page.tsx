@@ -18,11 +18,11 @@ export default function PhilosophyPage() {
         {/* Background Video/Image */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+            src="/images/shared/shared-asset-1.jpeg" 
             alt="Philosophy Background" 
             fill
             sizes="100vw"
-            className="object-cover opacity-30 grayscale"
+            className="object-cover opacity-30"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-obsidian/80 to-obsidian" />
@@ -119,17 +119,17 @@ export default function PhilosophyPage() {
               <p className="text-sm text-muted">Designing protocols mathematically before writing a single line of Solidity.</p>
             </div>
             <div className="p-8 bg-carbon/50 border border-white/10 rounded-xl">
-              <ShieldAlert className="w-8 h-8 text-royal mb-6" />
+              <ShieldAlert className="w-8 h-8 text-gold mb-6" />
               <H3 className="text-xl mb-3">Adversarial Testing</H3>
               <p className="text-sm text-muted">Replacing unit tests with stateful fuzzing, invariants, and formal verification.</p>
             </div>
           </div>
 
-          <Link 
-            href="/curriculum" 
+          <Link
+            href="/cohorts"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-obsidian rounded-sm font-medium hover:bg-gold transition-colors"
           >
-            Explore the Curriculum <ArrowRight className="w-4 h-4" />
+            Explore the Cohorts <ArrowRight className="w-4 h-4" />
           </Link>
         </Container>
       </section>
@@ -153,7 +153,7 @@ export default function PhilosophyPage() {
               href="/collaborate" 
               className="inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-mono uppercase tracking-widest text-sm"
             >
-              Partner with the Lab <ArrowRight className="w-4 h-4" />
+              Work with the Lab <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </Container>

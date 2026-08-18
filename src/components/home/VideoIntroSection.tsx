@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono } from "@/components/ui/Typography";
 import { Play, Video, X } from "lucide-react";
 import Image from "next/image";
+import { channelIntroVideoId } from "@/data/youtube";
 
 export function VideoIntroSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,11 +18,10 @@ export function VideoIntroSection() {
             <Mono className="text-gold mb-4 block tracking-widest uppercase flex items-center gap-2">
               <Video className="w-4 h-4" /> Lab Overview
             </Mono>
-            <H2 className="mb-6">Inside the Laboratory</H2>
+            <H2 className="mb-6">Watch. Learn. Build.</H2>
             <Body className="text-lg text-muted">
-              Watch an overview of the BinnaDev framework, our core pedagogical
-              methodology, and how we approach adversarial smart contract
-              security.
+              Get to know the ecosystem. An overview of how we operate, why we focus
+              on fundamental architecture, and how to get involved.
             </Body>
           </div>
         </div>
@@ -33,11 +33,11 @@ export function VideoIntroSection() {
             className={`absolute inset-0 transition-opacity duration-700 ${isPlaying ? "opacity-0 pointer-events-none" : "opacity-100"}`}
           >
             <Image
-              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+              src="/images/shared/shared-asset-1.jpeg"
               alt="BinnaDev Lab Operations"
               fill
               sizes="100vw"
-              className="object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+              className="object-cover opacity-60 transition-all duration-700 transform group-hover:scale-105"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent" />
@@ -53,13 +53,13 @@ export function VideoIntroSection() {
             </div>
           </div>
 
-          {/* Actual Video Iframe (Placeholder) */}
+          {/* Actual Video Iframe */}
           {isPlaying && (
             <div className="absolute inset-0 bg-obsidian">
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
+                src={`https://www.youtube-nocookie.com/embed/${channelIntroVideoId}?autoplay=1&modestbranding=1&rel=0`}
                 title="BinnaDev Lab Overview"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

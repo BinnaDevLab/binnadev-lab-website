@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <div className="flex flex-col min-h-[90vh] items-center justify-center">
       <Container className="text-center flex flex-col items-center">
-        <H1 className="mb-6 text-royal">404</H1>
+        <H1 className="mb-6 text-gold">404</H1>
         <Body className="mb-10 text-xl max-w-lg mx-auto">
           The node you are looking for does not exist in this architecture.
         </Body>

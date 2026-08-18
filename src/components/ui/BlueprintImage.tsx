@@ -30,7 +30,7 @@ export function BlueprintImage({
 
   const overlayClass = overlayColor === "royal" ? "bg-royal/10" : "bg-gold/10";
   const lineClass = overlayColor === "royal" ? "bg-royal/40" : "bg-gold/40";
-  const textClass = overlayColor === "royal" ? "text-royal" : "text-gold";
+  const textClass = overlayColor === "royal" ? "text-gold" : "text-gold";
   const borderClass = overlayColor === "royal" ? "border-royal" : "border-gold";
 
   return (

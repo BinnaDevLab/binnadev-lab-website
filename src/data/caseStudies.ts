@@ -18,7 +18,7 @@ export const caseStudies: CaseStudy[] = [
     approach: "We developed a custom stateful fuzzing harness using Echidna to model the protocol's complex mathematical invariants. We then conducted a line-by-line manual audit of the core logic.",
     outcome: "Identified and mitigated 3 critical vulnerabilities prior to deployment. The protocol launched successfully and has secured over $500M without incident.",
     technologies: ["Solidity", "Foundry", "Echidna", "Huff"],
-    imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+    imageUrl: "/images/shared/shared-asset-7.jpeg"
   },
   {
     id: "2",
@@ -28,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     approach: "We designed a novel relayer infrastructure using zero-knowledge proofs for state validation, minimizing the on-chain verification costs. We authored the smart contracts and the off-chain Go relayer.",
     outcome: "Reduced bridging gas costs by 40% compared to industry standards while maintaining cryptoeconomic security guarantees.",
     technologies: ["Solidity", "Go", "Circom", "Next.js"],
-    imageUrl: "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+    imageUrl: "/images/caseStudies/caseStudies-asset-1.jpeg"
   },
   {
     id: "3",
@@ -38,6 +38,6 @@ export const caseStudies: CaseStudy[] = [
     approach: "We built a specialized extension of the Safe (formerly Gnosis Safe) architecture, writing custom modules in Solidity to enforce daily spending limits and multi-tier approval hierarchies.",
     outcome: "Successfully processed over $2B in institutional transactions with zero security breaches. Delivered a full-stack React application for the trading desk.",
     technologies: ["Solidity", "Safe Core", "React", "Node.js"],
-    imageUrl: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+    imageUrl: "/images/caseStudies/caseStudies-asset-2.jpeg"
   }
 ];

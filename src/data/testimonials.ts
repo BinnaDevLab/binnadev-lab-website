@@ -19,7 +19,7 @@ export const testimonials: Testimonial[] = [
     author: "Elena R.",
     role: "Senior Security Researcher",
     organization: "0xAudits",
-    avatarUrl: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+    avatarUrl: "/images/testimonials/testimonials-asset-3.jpeg",
     socialLinks: { twitter: "https://twitter.com", github: "https://github.com" }
   },
   {
@@ -28,7 +28,7 @@ export const testimonials: Testimonial[] = [
     author: "David M.",
     role: "Protocol Architect",
     organization: "DeFi Builder",
-    avatarUrl: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+    avatarUrl: "/images/testimonials/testimonials-asset-1.jpeg",
     socialLinks: { linkedin: "https://linkedin.com", github: "https://github.com" }
   },
   {
@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
     quote: "This isn't a coding bootcamp. It's an engineering laboratory that instills a philosophy of defensive programming from day one. Invaluable for any serious Web3 developer.",
     author: "Sarah K.",
     role: "Lead Smart Contract Engineer",
-    avatarUrl: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+    avatarUrl: "/images/shared/shared-asset-8.jpeg",
     socialLinks: { twitter: "https://twitter.com" }
   },
   {
@@ -44,7 +44,7 @@ export const testimonials: Testimonial[] = [
     quote: "I've been in Web3 for 5 years, and the BinnaDev framework still managed to break down my bad habits and rebuild my auditing process from scratch. Pure engineering excellence.",
     author: "Marcus T.",
     role: "Independent Auditor",
-    avatarUrl: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+    avatarUrl: "/images/testimonials/testimonials-asset-2.jpeg",
     socialLinks: { github: "https://github.com" }
   },
   {
@@ -53,7 +53,7 @@ export const testimonials: Testimonial[] = [
     author: "Jessica W.",
     role: "Core Developer",
     organization: "ZK Protocol",
-    avatarUrl: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=256&h=256&dpr=2",
+    avatarUrl: "/images/testimonials/testimonials-asset-4.jpeg",
     socialLinks: { twitter: "https://twitter.com", linkedin: "https://linkedin.com" }
   }
 ];

@@ -1,11 +1,12 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { VideoIntroSection } from "@/components/home/VideoIntroSection";
+import { YouTubeSection } from "@/components/home/YouTubeSection";
 import { ManifestoSection } from "@/components/home/ManifestoSection";
 import { StorySection } from "@/components/home/StorySection";
 import { ArchitectSection } from "@/components/home/ArchitectSection";
 import { CTASection } from "@/components/home/CTASection";
 import { ResearchPreviewSection } from "@/components/home/ResearchPreviewSection";
-import { CulturePreviewSection } from "@/components/home/CulturePreviewSection";
+import { CommunitySection } from "@/components/home/CommunitySection";
 import { PartnersMarquee } from "@/components/home/PartnersMarquee";
 import { CollaborationPreviewSection } from "@/components/home/CollaborationPreviewSection";
 import { Metadata } from "next";
@@ -37,12 +38,12 @@ export default function Home() {
       />
       <HeroSection />
       <PartnersMarquee />
-      <VideoIntroSection />
+      <YouTubeSection />
       <ManifestoSection />
       <StorySection />
       <ResearchPreviewSection />
       <ArchitectSection />
-      <CulturePreviewSection />
+      <CommunitySection />
       <CollaborationPreviewSection />
       <CTASection />
     </div>

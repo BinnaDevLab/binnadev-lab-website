@@ -29,7 +29,7 @@ export function PublicationList() {
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <FileText className="w-4 h-4 text-royal" />
+                <FileText className="w-4 h-4 text-gold" />
                 <Mono className="text-xs text-white/60 uppercase tracking-widest">
                   {pub.type}
                 </Mono>
@@ -49,7 +49,7 @@ export function PublicationList() {
             <div className="flex items-center gap-4 border-t border-white/5 pt-4">
               <Mono className="text-xs text-white/40">{pub.date}</Mono>
               <div className="w-1 h-1 rounded-full bg-white/20" />
-              <Mono className="text-xs text-royal">{pub.readTime}</Mono>
+              <Mono className="text-xs text-gold">{pub.readTime}</Mono>
             </div>
           </a>
         ))}

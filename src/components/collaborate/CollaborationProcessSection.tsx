@@ -21,14 +21,14 @@ export function CollaborationProcessSection() {
           {collaborationProcess.map((step) => (
             <div
               key={step.id}
-              className="group p-8 rounded-xl border border-white/5 bg-carbon/30 hover:border-royal/50 transition-colors duration-300 relative overflow-hidden"
+              className="group p-8 rounded-xl border border-white/5 bg-carbon/30 hover:border-gold/50 transition-colors duration-300 relative overflow-hidden"
             >
               {/* Background Step Number (Large, faded) */}
               <div className="absolute -right-4 -bottom-8 text-9xl font-display font-bold text-white/[0.02] group-hover:text-gold/[0.05] transition-colors duration-500 select-none pointer-events-none">
                 {step.number}
               </div>
 
-              <Mono className="text-royal mb-6 block text-sm border border-royal/20 bg-royal/5 rounded-full w-fit px-3 py-1">
+              <Mono className="text-gold mb-6 block text-sm border border-royal/20 bg-royal/5 rounded-full w-fit px-3 py-1">
                 Step {step.number}
               </Mono>
 

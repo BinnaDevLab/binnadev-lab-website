@@ -57,7 +57,7 @@ export function ArchitectSection() {
               className="block relative aspect-[4/5] w-full h-full"
             >
               <BlueprintImage
-                src="/BinnaDev Branding/B1.jpg"
+                src="/images/architect/B1.jpg"
                 alt="Obinna Franklin Duru"
                 fill
                 overlayColor="gold"

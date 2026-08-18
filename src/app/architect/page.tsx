@@ -2,16 +2,15 @@
 
 import { Container } from "@/components/ui/Container";
 import { H1, H2, H3, Body, Mono } from "@/components/ui/Typography";
-import {
-  ArrowRight,
-  Terminal,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowRight, Terminal, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { TIMELINE, PRINCIPLES, RESEARCH } from "@/data";
+import { socialLinks } from "@/data/social";
+import { youtubeVideos } from "@/data/youtube";
+import { Play, Clock } from "lucide-react";
 
 export default function ArchitectPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,11 +70,11 @@ export default function ArchitectPage() {
           <div className="relative">
             <div className="aspect-[4/5] relative rounded-xl overflow-hidden border border-white/10 group bg-carbon/50">
               <Image
-                src="/images/B2.jpg"
+                src="/images/architect/B2.jpg"
                 alt="Obinna Franklin Duru"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                className="object-cover opacity-90 transition-all duration-1000 scale-105 group-hover:scale-100"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent opacity-80" />
@@ -119,7 +118,7 @@ export default function ArchitectPage() {
             {PRINCIPLES.map((principle, idx) => (
               <div
                 key={idx}
-                className="p-8 border border-white/10 rounded-xl bg-carbon/30 hover:bg-carbon hover:border-royal/50 transition-all group"
+                className="p-8 border border-white/10 rounded-xl bg-carbon/30 hover:bg-carbon hover:border-gold/50 transition-all group"
               >
                 <Mono className="text-gold mb-4 block">0{idx + 1}</Mono>
                 <H3 className="text-xl mb-4 text-white group-hover:text-gold transition-colors">
@@ -207,7 +206,66 @@ export default function ArchitectPage() {
           </div>
         </section>
 
-        {/* 5. Media & Closing */}
+        {/* 5. YouTube */}
+        <section className="mb-40">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8 border-b border-white/10 pb-8">
+            <div>
+              <H2 className="text-4xl md:text-5xl mb-4">On YouTube</H2>
+              <Body className="text-xl text-muted max-w-xl">
+                Everything I make is free. Deep-dive sessions, live audits,
+                system walkthroughs. Subscribe and watch anything that pulls you
+                in.
+              </Body>
+            </div>
+            <a
+              href={socialLinks.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-mono uppercase tracking-widest text-sm"
+            >
+              View Channel <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {youtubeVideos.map((video) => (
+              <a
+                key={video.id}
+                href={video.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden border border-white/10 hover:border-gold/50 transition-colors duration-500 bg-carbon/20"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={video.thumbnail}
+                    alt={video.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-royal/80 flex items-center justify-center border border-white/20 group-hover:bg-gold group-hover:scale-110 transition-all duration-300">
+                      <Play className="w-5 h-5 ml-0.5 text-white group-hover:text-obsidian" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-3 right-3 flex items-center gap-1 px-2 py-1 bg-obsidian/80 border border-white/10 rounded text-[10px] font-mono text-muted">
+                    <Clock className="w-3 h-3" />
+                    {video.duration}
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-display font-medium text-sm text-foreground group-hover:text-gold transition-colors">
+                    {video.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* 6. Closing */}
         <section className="border-t border-white/10 pt-32 text-center">
           <Mono className="text-gold mb-6 block tracking-widest uppercase">
             The Mission Continues
@@ -220,9 +278,17 @@ export default function ArchitectPage() {
             Let&apos;s build systems that endure.
           </Body>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             <a
-              href="https://x.com/BinnaDev"
+              href={socialLinks.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border border-white/20 rounded-sm hover:bg-white hover:text-obsidian transition-colors font-medium"
+            >
+              YouTube
+            </a>
+            <a
+              href={socialLinks.twitter}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-white/20 rounded-sm hover:bg-white hover:text-obsidian transition-colors font-medium"
@@ -230,12 +296,28 @@ export default function ArchitectPage() {
               X (Twitter)
             </a>
             <a
-              href="https://linkedin.com/in/obinna-franklin-duru"
+              href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-white/20 rounded-sm hover:bg-white hover:text-obsidian transition-colors font-medium"
             >
               LinkedIn
+            </a>
+            <a
+              href={socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border border-white/20 rounded-sm hover:bg-white hover:text-obsidian transition-colors font-medium"
+            >
+              GitHub
+            </a>
+            <a
+              href={socialLinks.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border border-white/20 rounded-sm hover:bg-white hover:text-obsidian transition-colors font-medium"
+            >
+              Discord
             </a>
             <Link
               href="/collaborate"
