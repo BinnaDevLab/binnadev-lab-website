@@ -42,7 +42,7 @@ export function AppLoader() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Image 
-                src="/BinnaDev Branding/logos/L1.svg" 
+                src="/favicon.svg" 
                 alt="BinnaDev Lab" 
                 width={180} 
                 height={120} 

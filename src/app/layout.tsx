@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/apple-icon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.ico",
+    apple: "/icons/apple-touch-icon.png",
   },
 };
 
@@ -85,12 +85,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-obsidian text-foreground pb-[72px] md:pb-0">
         <AppLoader />
         <InstallPrompt />
+        <Header />
         <SmoothScroll>
-          <Header />
-          <main className="flex-1 flex flex-col">{children}</main>
+          <main className="flex-1 flex flex-col mt-20">{children}</main>
           <Footer />
-          <MobileBottomNav />
         </SmoothScroll>
+        <MobileBottomNav />
       </body>
     </html>
   );

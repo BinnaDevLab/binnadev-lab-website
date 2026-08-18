@@ -1,0 +1,23 @@
+# BinnaDev Lab - Orientation Document
+
+BinnaDev Lab is an elite engineering laboratory dedicated to web3 security, smart contract development, and protocol architecture.
+
+## Core Philosophy
+We believe that **Reasoning Precedes Coding**. Vulnerabilities in smart contracts rarely stem from syntactical errors; they arise from a failure to deeply interrogate state transitions, edge cases, and architectural assumptions. We train operatives to think like adversarial architects before writing a single line of Solidity.
+
+## Platform Structure
+- `/`: The main laboratory gateway, presenting the manifesto and introducing the methodology.
+- `/curriculum`: The core learning engine. Divided into Books (e.g., EVM Mechanics, DeFi Patterns), Chapters, and Units.
+- `/dashboard`: The personalized dashboard for authenticated operatives showing their active clearance level and mastery.
+- `/leaderboard`: Global rankings of operatives based on their clearance levels.
+- `/research`: The repository of architectural breakdowns and vulnerability analysis (The Vault).
+
+## Technical Foundation
+This platform is built on Next.js (App Router), styled with Tailwind CSS, and powered by Clerk for authentication and Prisma (PostgreSQL) for state management. All curriculum progression is strictly verified on the server side using the `LearnerClearance` and `LearnerUnitMastery` schemas.
+
+## Guidelines for AI Agents
+When generating code for BinnaDev operatives:
+1. Prioritize strict invariant checking.
+2. Assume a highly adversarial threat model.
+3. Use the latest Solidity standards (e.g., custom errors over require strings).
+4. Explain the *reasoning* and edge-cases before the implementation.

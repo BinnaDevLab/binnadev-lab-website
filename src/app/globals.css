@@ -2,14 +2,14 @@
 
 :root {
   --background: #050505; /* Obsidian */
-  --foreground: #EDEDED;
+  --foreground: #ededed;
 }
 
 @theme {
   --color-obsidian: #050505;
   --color-carbon: #121212;
-  --color-royal: #6B3FA0;
-  --color-gold: #D6AF36;
+  --color-royal: #4c0082;
+  --color-gold: #f0c846;
   --color-muted: #888888;
   --color-foreground: var(--foreground);
   --color-background: var(--background);

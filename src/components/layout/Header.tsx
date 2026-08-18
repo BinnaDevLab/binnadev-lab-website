@@ -4,9 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { mainNavigation } from "@/data";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export function Header() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-obsidian/80 backdrop-blur-md border-b border-white/5">
@@ -44,14 +48,40 @@ export function Header() {
               })}
             </nav>
 
-            <Link href="/curriculum" className="hidden md:flex">
-              <button className="px-6 py-2 bg-white/5 border border-white/10 hover:border-gold/50 rounded text-sm font-mono transition-all hover:text-gold">
-                Enter Lab
-              </button>
-            </Link>
-
+            {/* Mobile Hamburger Button */}
+            <button 
+              className="md:hidden relative z-50 p-2 text-white/80 hover:text-white transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </Container>
+
+        {/* Mobile Navbar Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-obsidian border-b border-white/5 shadow-2xl z-40 p-6 flex flex-col gap-6 animate-in slide-in-from-top-2 duration-200">
+            <nav className="flex flex-col gap-4">
+              {mainNavigation.map((link) => {
+                const isActive =
+                  pathname === link.href ||
+                  (link.href !== "/" && pathname.startsWith(link.href));
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-lg tracking-wider uppercase font-mono transition-colors ${
+                      isActive ? "text-gold" : "text-muted hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );

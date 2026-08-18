@@ -14,10 +14,12 @@ export function InstallPrompt() {
 
   useEffect(() => {
     // Check if already installed
-    const isStandaloneMode = window.matchMedia("(display-mode: standalone)").matches || (window.navigator as any).standalone;
-    setIsStandalone(isStandaloneMode);
-
-    if (isStandaloneMode) return;
+    const isStandaloneMode = window.matchMedia("(display-mode: standalone)").matches || (window.navigator as unknown as { standalone: boolean }).standalone;
+    
+    if (isStandaloneMode) {
+      setIsStandalone(true);
+      return;
+    }
 
     // Check if dismissed
     const dismissed = localStorage.getItem("binnadev_pwa_dismissed");

@@ -22,15 +22,23 @@ export function PartnersMarquee() {
               key={`${partner.id}-${idx}`}
               className="group relative flex-shrink-0 h-32 w-64 border border-white/5 bg-carbon flex flex-col justify-end overflow-hidden transition-colors hover:border-royal/50"
             >
-              {/* Temporary Visual Asset */}
+              {/* Visual Asset */}
               <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
-                <Image
-                  src={partner.logoUrl}
-                  alt={`${partner.name} Demo Asset`}
-                  fill
-                  className="object-cover"
-                  sizes="256px"
-                />
+                {partner.logoUrl === "/images/placeholder.svg" ? (
+                  <div className="absolute inset-0 flex items-center justify-center bg-obsidian">
+                    <span className="font-display text-4xl font-bold tracking-tighter text-white/10 uppercase select-none mix-blend-overlay w-full text-center leading-none">
+                      {partner.name.substring(0, 3)}
+                    </span>
+                  </div>
+                ) : (
+                  <Image
+                    src={partner.logoUrl}
+                    alt={`${partner.name} Demo Asset`}
+                    fill
+                    className="object-cover opacity-80"
+                    sizes="256px"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent" />
               </div>
 
@@ -42,7 +50,7 @@ export function PartnersMarquee() {
 
               <div className="p-4 relative z-10 w-full mt-auto">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-royal block mb-1 opacity-80">
-                  Partner // {partner.id.padStart(2, "0")}
+                  Ecosystem // {partner.id.padStart(2, "0")}
                 </span>
                 <span className="font-display font-medium text-base text-white tracking-wide drop-shadow-md">
                   {partner.name}

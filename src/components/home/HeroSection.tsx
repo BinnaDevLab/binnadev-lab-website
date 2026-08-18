@@ -70,12 +70,12 @@ export function HeroSection() {
           </Body>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/curriculum">
+            <Link href="/cohorts">
               <Button
                 size="lg"
                 className="px-10 py-6 text-lg relative overflow-hidden group"
               >
-                <span className="relative z-10">Explore the Curriculum</span>
+                <span className="relative z-10">View Current Cohort</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-gold to-royal opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
               </Button>
             </Link>

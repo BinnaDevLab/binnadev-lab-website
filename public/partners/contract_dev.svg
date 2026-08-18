@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 40" width="480" height="400">
+  <title>Contract Development Logo</title>
+  <defs>
+    <linearGradient id="light" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6F7FF"/>
+      <stop offset="0.52" stop-color="#E2E3FF"/>
+      <stop offset="1" stop-color="#C9CAF7"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#D6D5FF"/>
+      <stop offset="0.5" stop-color="#A9A7F0"/>
+      <stop offset="1" stop-color="#827FDF"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0.15" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#6653D9"/>
+      <stop offset="0.5" stop-color="#5135C6"/>
+      <stop offset="1" stop-color="#35119A"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M 10.000,17.000 Q 0.000,12.000 0.000,16.500 Q 0.000,21.000 1.000,22.000 Q 2.000,23.000 7.000,25.500 Q 12.000,28.000 12.000,31.500 Q 12.000,35.000 16.000,37.000 Q 20.000,39.000 21.000,39.000 Q 22.000,39.000 22.000,31.500 Q 22.000,24.000 21.000,23.000 Q 20.000,22.000 10.000,17.000 Z" fill="url(#light)"/>
+  <path d="M 21.500,10.500 Q 12.000,6.000 12.000,10.500 Q 12.000,15.000 17.000,17.500 Q 22.000,20.000 23.500,22.000 Q 25.000,24.000 25.000,29.500 Q 25.000,35.000 29.500,37.000 Q 34.000,39.000 34.500,38.500 Q 35.000,38.000 35.000,29.000 Q 35.000,20.000 34.500,19.000 Q 34.000,18.000 32.500,16.500 Q 31.000,15.000 21.500,10.500 Z" fill="url(#mid)"/>
+  <path d="M 34.500,4.500 Q 25.000,0.000 25.000,4.500 Q 25.000,9.000 29.000,11.000 Q 33.000,13.000 35.000,15.000 Q 37.000,17.000 37.000,26.000 Q 37.000,35.000 41.000,37.000 Q 45.000,39.000 46.000,39.000 Q 47.000,39.000 47.000,26.000 Q 47.000,13.000 46.500,12.000 Q 46.000,11.000 45.000,10.000 Q 44.000,9.000 34.500,4.500 Z" fill="url(#dark)"/>
+</svg>

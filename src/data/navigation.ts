@@ -5,7 +5,6 @@ export interface NavLink {
 
 export const mainNavigation: NavLink[] = [
   { label: "Lab", href: "/" },
-  { label: "Curriculum", href: "/curriculum" },
   { label: "Research", href: "/research" },
   { label: "Culture", href: "/culture" },
   { label: "Collaborate", href: "/collaborate" },
@@ -13,8 +12,6 @@ export const mainNavigation: NavLink[] = [
 
 export const footerNavigation = {
   academy: [
-    { label: "Curriculum", href: "/curriculum" },
-    { label: "Books", href: "/curriculum" },
     { label: "Methodology", href: "/philosophy" },
     { label: "The Architect", href: "/architect" },
   ],

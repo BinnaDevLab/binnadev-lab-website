@@ -71,7 +71,7 @@ export default function ArchitectPage() {
           <div className="relative">
             <div className="aspect-[4/5] relative rounded-xl overflow-hidden border border-white/10 group bg-carbon/50">
               <Image
-                src="/BinnaDev Branding/pfp 1.jpg"
+                src="/images/B2.jpg"
                 alt="Obinna Franklin Duru"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

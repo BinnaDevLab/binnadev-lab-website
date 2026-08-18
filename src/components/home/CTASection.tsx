@@ -47,7 +47,7 @@ export function CTASection() {
             Stop memorizing syntax. Start architecting systems.
           </Body>
 
-          <Link href="/curriculum">
+          <Link href="/cohorts">
             <button className="group relative px-12 py-5 bg-transparent overflow-hidden rounded-sm transition-all duration-500 hover:shadow-[0_0_40px_rgba(107,63,160,0.3)]">
               {/* Animated Gradient Border */}
               <div className="absolute inset-0 bg-gradient-to-r from-royal via-gold to-royal bg-[length:200%_auto] animate-gradient opacity-80" />
@@ -55,7 +55,7 @@ export function CTASection() {
               <div className="absolute inset-[1px] bg-obsidian transition-colors duration-500 group-hover:bg-obsidian/90" />
               {/* Text content */}
               <span className="relative z-10 font-mono text-lg tracking-widest text-foreground group-hover:text-white transition-colors flex items-center gap-3">
-                ENTER THE LAB
+                VIEW CURRENT COHORT
                 <span className="group-hover:translate-x-2 transition-transform duration-500">
                   -&gt;
                 </span>
