@@ -104,12 +104,12 @@ export function HeroSection() {
               </Mono>
             </Link>
             
-            {/* Secondary CTA: "JOIN THE INITIATIVE" */}
+            {/* Secondary CTA */}
             <Link
               href="/collaborate"
               className="group flex items-center gap-3 text-white/40 hover:text-white transition-colors duration-300"
             >
-              <Mono className="text-xs uppercase tracking-widest">Join The Initiative</Mono>
+              <Mono className="text-xs uppercase tracking-widest">Request Engineering Services</Mono>
               <div className="w-4 h-[1px] bg-white/40 group-hover:w-8 group-hover:bg-white transition-all duration-300" />
             </Link>
           </div>

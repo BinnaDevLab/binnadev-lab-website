@@ -1,9 +1,8 @@
 // Central source for all social and community channel links.
-// Update these values when real URLs are available.
 export const socialLinks = {
-  youtube: "https://youtube.com/@BinnaDev",
-  discord: "https://discord.gg/placeholder",
-  telegram: "https://t.me/placeholder",
+  youtube: "https://youtube.com/@binnadevlab",
+  discord: "https://discord.gg/UZzPMpKZA",
+  telegram: "https://discord.gg/UZzPMpKZA", // Using discord as fallback if telegram isn't provided, or remove it
   twitter: "https://x.com/BinnaDev",
   github: "https://github.com/obinnafranklinduru",
   linkedin: "https://linkedin.com/in/obinna-franklin-duru",

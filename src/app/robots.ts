@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/_next/', '/api/'],
     },
-    sitemap: 'https://binnadev-lab.vercel.app/sitemap.xml',
+    sitemap: 'https://binnadevlab.vercel.app/sitemap.xml',
   };
 }

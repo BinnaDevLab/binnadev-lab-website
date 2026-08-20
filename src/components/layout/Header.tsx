@@ -81,12 +81,14 @@ export function Header() {
               className="flex items-center gap-3 group relative z-[110]"
               onClick={() => setMobileMenuOpen(false)}
             >
+              {/* Mobile: Standalone logo only */}
               <img
                 src="/favicon.svg"
                 alt="BinnaDev Lab Logo"
-                className="w-8 h-8 md:w-10 md:h-10 transition-transform group-hover:scale-105"
+                className="w-8 h-8 md:hidden transition-transform group-hover:scale-105"
               />
-              <span className="hidden md:inline-block font-display font-semibold tracking-wider text-foreground">
+              {/* Desktop: Wordmark only */}
+              <span className="hidden md:inline-block font-display font-semibold tracking-wider text-foreground text-xl">
                 BinnaDev<span className="text-gold">_</span>Lab
               </span>
             </Link>

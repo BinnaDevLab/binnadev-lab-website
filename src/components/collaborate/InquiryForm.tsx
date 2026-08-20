@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useForm, ValidationError } from '@formspree/react';
+
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
@@ -88,7 +90,7 @@ export function InquiryForm() {
                     required
                     type="text"
                     id="name"
-                    placeholder="Satoshi Nakamoto"
+                    placeholder="Your full name" name="name"
                     className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
                   />
                 </div>
@@ -104,7 +106,7 @@ export function InquiryForm() {
                     required
                     type="email"
                     id="email"
-                    placeholder="founder@protocol.com"
+                    placeholder="hello@example.com" name="email"
                     className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
                   />
                 </div>
@@ -120,7 +122,7 @@ export function InquiryForm() {
                     required
                     type="text"
                     id="company"
-                    placeholder="Nexus Finance"
+                    placeholder="Your organization" name="company"
                     className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
                   />
                 </div>
@@ -135,7 +137,7 @@ export function InquiryForm() {
                   <input
                     type="text"
                     id="title"
-                    placeholder="Chief Technology Officer"
+                    placeholder="Your role" name="title"
                     className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
                   />
                 </div>
@@ -152,7 +154,7 @@ export function InquiryForm() {
                   </label>
                   <select
                     required
-                    id="inquiryType"
+                    id="inquiryType" name="inquiryType"
                     defaultValue=""
                     className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all appearance-none"
                     style={{
@@ -185,7 +187,7 @@ export function InquiryForm() {
                     Project Budget (Optional)
                   </label>
                   <select
-                    id="budget"
+                    id="budget" name="budget"
                     defaultValue=""
                     className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all appearance-none"
                     style={{
@@ -231,6 +233,10 @@ export function InquiryForm() {
               </div>
 
               {/* Textarea */}
+              
+              {/* Hidden Input for Multi-Select */}
+              <input type="hidden" name="services" value={selectedServices.join(', ')} />
+
               <div className="pt-6 border-t border-white/5 space-y-2">
                 <div className="flex justify-between items-center">
                   <label
@@ -246,7 +252,7 @@ export function InquiryForm() {
                 </div>
                 <textarea
                   required
-                  id="details"
+                  id="details" name="details"
                   rows={6}
                   placeholder="Describe your protocol, current development stage, and what you need help with..."
                   className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all resize-y"

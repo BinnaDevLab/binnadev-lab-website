@@ -4,7 +4,7 @@ export * from './publications';
 export * from './gallery';
 export * from './community';
 export * from './testimonials';
-export * from './curriculum';
+
 export * from './team';
 export * from './partners';
 export * from './services';

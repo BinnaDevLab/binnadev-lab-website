@@ -36,7 +36,13 @@ export function CommunityHighlightsList() {
               <Mono className="text-xs text-gold mb-3 block px-3 py-1 bg-obsidian border border-white/10 rounded-full w-fit">
                 {highlight.date}
               </Mono>
-              <H3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">{highlight.title}</H3>
+              {highlight.link ? (
+                <a href={highlight.link} target="_blank" rel="noopener noreferrer" className="block group/link">
+                  <H3 className="text-xl font-medium text-white mb-3 group-hover/link:text-gold transition-colors">{highlight.title}</H3>
+                </a>
+              ) : (
+                <H3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">{highlight.title}</H3>
+              )}
               <p className="text-sm text-muted leading-relaxed">{highlight.description}</p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +10,18 @@ import { youtubeVideos } from "@/data/youtube";
 import { socialLinks } from "@/data/social";
 
 export function YouTubeSection() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const getYoutubeId = (url: string) => {
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname.includes('youtu.be')) return parsed.pathname.slice(1);
+      return parsed.searchParams.get('v') || '';
+    } catch {
+      return url.split('/').pop() || '';
+    }
+  };
+
   if (!youtubeVideos || youtubeVideos.length < 3) return null;
 
   const featured = youtubeVideos[0];
@@ -48,31 +61,40 @@ export function YouTubeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
           
           {/* Featured Video (Left 8 columns) */}
-          <motion.a
-            href={featured.youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="lg:col-span-8 group block relative"
           >
-            <div className="relative aspect-video w-full overflow-hidden bg-carbon mb-6">
-              <Image
-                src={featured.thumbnail}
-                alt={featured.title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-royal/90 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
-                  <Play className="w-8 h-8 ml-2 text-white group-hover:text-obsidian transition-colors" />
+            {activeVideo === featured.id ? (
+              <div className="relative aspect-video w-full mb-6 border border-white/5">
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${getYoutubeId(featured.youtubeUrl)}?autoplay=1`}
+                  title={featured.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : (
+              <div onClick={() => setActiveVideo(featured.id)} className="relative aspect-video w-full overflow-hidden bg-carbon mb-6 border border-white/5 cursor-pointer group">
+                <Image
+                  src={featured.thumbnail}
+                  alt={featured.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-royal/90 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
+                    <Play className="w-8 h-8 ml-2 text-white group-hover:text-obsidian transition-colors" />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             
             <div className="flex justify-between items-start gap-4">
               <div>
@@ -82,43 +104,52 @@ export function YouTubeSection() {
                 </h3>
               </div>
             </div>
-          </motion.a>
+          </motion.div>
 
           {/* Secondary Stack (Right 4 columns) */}
           <div className="lg:col-span-4 flex flex-col gap-8 md:gap-12 lg:border-l lg:border-white/10 lg:pl-16">
             {secondary.map((video, i) => (
-              <motion.a
+              <motion.div
                 key={video.id}
-                href={video.youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 className="group block relative"
               >
-                <div className="relative aspect-video w-full overflow-hidden bg-carbon mb-4 border border-white/5">
-                  <Image
-                    src={video.thumbnail}
-                    alt={video.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-obsidian/80 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
-                      <Play className="w-5 h-5 ml-1 text-white group-hover:text-obsidian transition-colors" />
+                {activeVideo === video.id ? (
+                  <div className="relative aspect-video w-full mb-4 border border-white/5">
+                    <iframe
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${getYoutubeId(video.youtubeUrl)}?autoplay=1`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                ) : (
+                  <div onClick={() => setActiveVideo(video.id)} className="relative aspect-video w-full overflow-hidden bg-carbon mb-4 border border-white/5 cursor-pointer group">
+                    <Image
+                      src={video.thumbnail}
+                      alt={video.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors duration-500" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-obsidian/80 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
+                        <Play className="w-5 h-5 ml-1 text-white group-hover:text-obsidian transition-colors" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
                 
                 <Meta className="text-white/40 mb-2 block">{video.duration}</Meta>
                 <h3 className="font-display text-lg text-white/80 group-hover:text-white transition-colors leading-snug">
                   {video.title}
                 </h3>
-              </motion.a>
+              </motion.div>
             ))}
             
             {/* View All Prompt */}

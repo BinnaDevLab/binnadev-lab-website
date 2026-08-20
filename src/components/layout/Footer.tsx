@@ -27,8 +27,6 @@ export function Footer() {
             <Body className="text-muted max-w-sm mb-8">
               A lab where developers come to sharpen their minds, build real things, and grow together. Reasoning precedes coding.
             </Body>
-
-            <NewsletterForm />
           </div>
 
           <div>

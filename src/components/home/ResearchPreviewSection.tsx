@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { H2, Body, Mono } from "@/components/ui/Typography";
+import { H2, Body, Mono, H3 } from "@/components/ui/Typography";
 import { projects } from "@/data";
-import { ArrowRight, Beaker } from "lucide-react";
+import { ArrowRight, Beaker, GitBranch, ArrowUpRight } from "lucide-react";
 
 export function ResearchPreviewSection() {
   // Take only the first 2 projects for the preview
@@ -36,7 +37,7 @@ export function ResearchPreviewSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {previewProjects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -44,34 +45,78 @@ export function ResearchPreviewSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-8 bg-carbon/50 border border-white/5 hover:border-royal/30 rounded-xl transition-colors group"
             >
-              <div className="flex justify-between items-start mb-6">
-                <span className="px-3 py-1 bg-obsidian border border-white/10 rounded-full text-xs font-mono text-muted">
-                  {project.category}
-                </span>
-                <span className="font-mono text-xs text-muted/50">
-                  {project.date}
-                </span>
-              </div>
-              <h3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted mb-6">{project.description}</p>
-              <div className="flex gap-2">
-                {project.technologies.slice(0, 3).map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-[10px] uppercase tracking-wider font-mono text-muted/80 bg-white/5 px-2 py-1 rounded"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group overflow-hidden rounded-xl border border-white/5 bg-carbon hover:border-gold/50 transition-all duration-300 flex flex-col cursor-pointer h-full block"
+                >
+                  <ProjectCardContent project={project} />
+                </a>
+              ) : (
+                <div className="group overflow-hidden rounded-xl border border-white/5 bg-carbon hover:border-gold/50 transition-all duration-300 flex flex-col h-full">
+                  <ProjectCardContent project={project} />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
       </Container>
     </section>
+  );
+}
+
+function ProjectCardContent({ project }: { project: any }) {
+  return (
+    <>
+      <div className="h-48 md:h-64 overflow-hidden relative border-b border-white/5">
+        <Image
+          src={project.imageUrl}
+          alt={project.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover opacity-60 transition-all duration-700 transform group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent" />
+
+        <div className="absolute top-4 left-4 flex gap-2">
+          <Mono className="text-xs text-obsidian bg-gold px-3 py-1 rounded-full font-bold">
+            {project.category}
+          </Mono>
+          <Mono className="text-xs text-white bg-obsidian/80 backdrop-blur border border-white/10 px-3 py-1 rounded-full">
+            {project.status}
+          </Mono>
+        </div>
+      </div>
+
+      <div className="p-6 flex-1 flex flex-col">
+        <H3 className="text-xl mb-3 group-hover:text-gold transition-colors flex items-center justify-between">
+          {project.title}
+          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity text-gold" />
+        </H3>
+        <p className="text-muted text-sm leading-relaxed mb-6 flex-1">
+          {project.description}
+        </p>
+
+        <div className="flex items-center gap-4 mt-auto">
+          <div className="flex items-center gap-1.5 text-gold">
+            <GitBranch className="w-4 h-4" />
+            <Mono className="text-xs tracking-wider">{project.date}</Mono>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.slice(0, 3).map((tech: string) => (
+              <span
+                key={tech}
+                className="text-xs font-mono text-white/60 bg-white/5 px-2 py-1 rounded"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

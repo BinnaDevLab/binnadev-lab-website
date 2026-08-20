@@ -1,10 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { H2, Body, Mono, Display, Meta } from "@/components/ui/Typography";
+import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { socialLinks } from "@/data/social";
 
 const channels = [
@@ -12,7 +11,7 @@ const channels = [
     id: "discord",
     label: "Discord",
     headline: "Come into the room.",
-    body: "Bring the questions nobody has answered for you yet. The community is open to everyone — beginners, experts, and everyone in between.",
+    body: "Bring the questions nobody has answered for you yet. The community is open to everyone, beginners, experts, and everyone in between.",
     href: socialLinks.discord,
   },
   {
@@ -34,7 +33,6 @@ const channels = [
 export function CommunitySection() {
   return (
     <section className="relative py-24 md:py-48 bg-obsidian border-t border-white/5 overflow-hidden">
-      
       {/* Background Grid Pattern */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
@@ -48,9 +46,7 @@ export function CommunitySection() {
       />
 
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
-        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          
           {/* Left Column: Massive Statement */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
@@ -59,10 +55,10 @@ export function CommunitySection() {
                 <Mono>The Environment</Mono>
               </div>
               <H2 className="text-5xl md:text-6xl mb-8 leading-[1.1]">
-                Your home <br className="hidden lg:block"/> away from home.
+                Your home <br className="hidden lg:block" /> away from home.
               </H2>
             </div>
-            
+
             <Body className="text-xl md:text-2xl text-white/50 max-w-md hidden lg:block">
               A place to sharpen your thinking, share what you know, and build
               with people who take engineering seriously.
@@ -104,11 +100,8 @@ export function CommunitySection() {
               ))}
             </div>
           </div>
-
         </div>
       </Container>
     </section>
   );
 }
-
-

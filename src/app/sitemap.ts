@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://binnadev-lab.vercel.app';
+  const baseUrl = 'https://binnadevlab.vercel.app';
 
   const routes: MetadataRoute.Sitemap = [
     {

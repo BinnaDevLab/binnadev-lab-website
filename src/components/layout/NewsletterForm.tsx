@@ -21,7 +21,7 @@ export function NewsletterForm() {
 
   return (
     <div className="mt-8">
-      <p className="text-sm text-white mb-4 font-medium">Subscribe to Lab Dispatches</p>
+      
       <form onSubmit={handleSubmit} className="relative max-w-sm">
         <div className="relative flex items-center">
           <Mail className="absolute left-4 w-4 h-4 text-muted" />

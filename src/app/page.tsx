@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/home/HeroSection";
-import { VideoIntroSection } from "@/components/home/VideoIntroSection";
 import { YouTubeSection } from "@/components/home/YouTubeSection";
 import { ManifestoSection } from "@/components/home/ManifestoSection";
 import { StorySection } from "@/components/home/StorySection";
@@ -9,6 +8,7 @@ import { ResearchPreviewSection } from "@/components/home/ResearchPreviewSection
 import { CommunitySection } from "@/components/home/CommunitySection";
 import { PartnersMarquee } from "@/components/home/PartnersMarquee";
 import { CollaborationPreviewSection } from "@/components/home/CollaborationPreviewSection";
+import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     name: "BinnaDev Lab",
-    url: "https://binnadev-lab.vercel.app",
+    url: "https://binnadevlab.vercel.app",
     description: "An elite engineering laboratory where developers are trained to think, reason, interrogate systems, and architect secure smart contracts.",
     sameAs: [
       "https://github.com/obinnafranklinduru"
@@ -45,6 +45,7 @@ export default function Home() {
       <ArchitectSection />
       <CommunitySection />
       <CollaborationPreviewSection />
+      <NewsletterSection />
       <CTASection />
     </div>
   );

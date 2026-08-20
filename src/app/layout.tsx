@@ -24,18 +24,18 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://binnadev-lab.vercel.app'),
+  metadataBase: new URL('https://binnadevlab.vercel.app'),
   title: {
     template: "%s | BinnaDev Lab",
-    default: "BinnaDev Lab | Reasoning Precedes Coding",
+    default: "BinnaDev Lab | Smart Contract Engineering & Security",
   },
-  description: "Elite smart contract engineering, security research, and decentralized protocol architecture.",
+  description: "Think Deeper. Build Better. Engineer What Matters. In a world where AI can help you write the code, we go deeper into understanding the systems, reasoning behind the decisions, and engineering judgment required to build things that matter.",
   keywords: ["smart contracts", "web3 security", "solidity", "EVM", "blockchain", "engineering", "BinnaDev"],
   authors: [{ name: "Obinna Franklin Duru" }],
   openGraph: {
-    title: "BinnaDev Lab | Reasoning Precedes Coding",
-    description: "An elite engineering laboratory for web3 security and protocol architecture.",
-    url: "https://binnadev-lab.vercel.app",
+    title: "BinnaDev Lab | Smart Contract Engineering & Security",
+    description: "Think Deeper. Build Better. Engineer What Matters. We go deeper into understanding the systems and reasoning required to build things that matter.",
+    url: "https://binnadevlab.vercel.app",
     siteName: "BinnaDev Lab",
     images: [
       {
