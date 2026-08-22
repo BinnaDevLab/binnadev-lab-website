@@ -71,7 +71,7 @@ export function ResearchList() {
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="text-xs font-mono text-white/40 px-1 py-1">
+                    <span className="text-xs font-mono text-white/60 px-1 py-1">
                       +{project.technologies.length - 3}
                     </span>
                   )}

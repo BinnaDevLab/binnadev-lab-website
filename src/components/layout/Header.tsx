@@ -72,8 +72,8 @@ export function Header() {
     <>
       <header className="fixed top-0 inset-x-0 z-[100]">
         {/* Dynamic header background to ensure contrast */}
-        <div 
-          className={`absolute inset-0 transition-all duration-500 ${mobileMenuOpen ? 'bg-transparent' : 'bg-obsidian/80 backdrop-blur-md border-b border-white/5'}`}
+        <div
+          className={`absolute inset-0 transition-all duration-500 ${mobileMenuOpen ? "bg-transparent" : "bg-obsidian/80 backdrop-blur-md border-b border-white/5"}`}
         />
 
         <Container className="relative">
@@ -84,7 +84,13 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {/* Mobile: Standalone logo only */}
-              <Image src="/favicon.svg" alt="BinnaDev Lab Logo" width={32} height={32} className="w-8 h-8 md:hidden transition-transform group-hover:scale-105" />
+              <Image
+                src="/favicon.svg"
+                alt="BinnaDev Lab"
+                width={32}
+                height={32}
+                className="w-8 h-8 md:hidden transition-transform group-hover:scale-105"
+              />
               {/* Desktop: Wordmark only */}
               <span className="hidden md:inline-block font-display font-semibold tracking-wider text-foreground text-xl">
                 BinnaDev<span className="text-gold">_</span>Lab
@@ -92,7 +98,10 @@ export function Header() {
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden xl:flex items-center gap-8 relative z-[110]">
+            <nav
+              aria-label="Main navigation"
+              className="hidden xl:flex items-center gap-8 relative z-[110]"
+            >
               {mainNavigation.map((link) => {
                 const isActive =
                   !link.external &&
@@ -120,18 +129,24 @@ export function Header() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
             >
-              <motion.span 
-                animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              <motion.span
+                animate={
+                  mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }
+                }
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="block w-6 h-[2px] bg-white rounded-full"
               />
-              <motion.span 
-                animate={mobileMenuOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0 }}
+              <motion.span
+                animate={
+                  mobileMenuOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0 }
+                }
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="block w-6 h-[2px] bg-white rounded-full"
               />
-              <motion.span 
-                animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+              <motion.span
+                animate={
+                  mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
+                }
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="block w-6 h-[2px] bg-white rounded-full"
               />
@@ -152,34 +167,47 @@ export function Header() {
             >
               {/* Background ambient gradient to create depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-royal/5 via-obsidian to-carbon pointer-events-none" />
-              
+
               <div className="relative z-10 flex-grow flex flex-col">
                 <motion.div variants={fadeVariants} className="mb-8 pl-4">
-                  <Mono className="text-white/30 text-[10px] tracking-widest uppercase">Navigation</Mono>
+                  <Mono className="text-white/30 text-[10px] tracking-widest uppercase">
+                    Navigation
+                  </Mono>
                   <div className="w-12 h-[1px] bg-gold mt-4" />
                 </motion.div>
 
-                <nav className="flex flex-col gap-2">
+                <nav
+                  aria-label="Mobile navigation"
+                  className="flex flex-col gap-2"
+                >
                   {mainNavigation.map((link, idx) => {
                     const isActive =
                       !link.external &&
                       (pathname === link.href ||
                         (link.href !== "/" && pathname.startsWith(link.href)));
-                    
+
                     return (
                       <motion.div key={link.label} variants={itemVariants}>
                         <Link
                           href={link.href}
                           target={link.external ? "_blank" : undefined}
-                          rel={link.external ? "noopener noreferrer" : undefined}
+                          rel={
+                            link.external ? "noopener noreferrer" : undefined
+                          }
                           className="group flex items-center gap-6 py-3 px-4 rounded-xl hover:bg-white/5 transition-colors"
                         >
-                          <Mono className={`text-xs transition-colors ${isActive ? "text-gold" : "text-white/20 group-hover:text-white/40"}`}>
+                          <Mono
+                            className={`text-xs transition-colors ${isActive ? "text-gold" : "text-white/60 group-hover:text-white"}`}
+                          >
                             0{idx + 1}
                           </Mono>
-                          <span className={`text-3xl sm:text-4xl font-display tracking-tight transition-colors ${
-                            isActive ? "text-gold" : "text-white/80 group-hover:text-white"
-                          }`}>
+                          <span
+                            className={`text-3xl sm:text-4xl font-display tracking-tight transition-colors ${
+                              isActive
+                                ? "text-gold"
+                                : "text-white/80 group-hover:text-white"
+                            }`}
+                          >
                             {link.label}
                           </span>
                           {isActive && (
@@ -200,19 +228,47 @@ export function Header() {
                 </nav>
 
                 <div className="mt-auto pt-12 pb-8">
-                  <motion.div variants={fadeVariants} className="bg-carbon/50 border border-white/5 p-6 rounded-2xl mb-8">
+                  <motion.div
+                    variants={fadeVariants}
+                    className="bg-carbon/50 border border-white/5 p-6 rounded-2xl mb-8"
+                  >
                     <p className="text-sm text-white/60 leading-relaxed font-light mb-4">
-                      Bridging the gap between writing code and architecting resilient digital infrastructure.
+                      Bridging the gap between writing code and architecting
+                      resilient digital infrastructure.
                     </p>
-                    <Link href="/collaborate" className="inline-flex items-center gap-2 text-gold hover:text-white text-sm font-mono uppercase tracking-widest transition-colors">
+                    <Link
+                      href="/collaborate"
+                      className="inline-flex items-center gap-2 text-gold hover:text-white text-sm font-mono uppercase tracking-widest transition-colors"
+                    >
                       Work with the Lab <ArrowRight className="w-4 h-4" />
                     </Link>
                   </motion.div>
 
-                  <motion.div variants={fadeVariants} className="flex flex-wrap gap-x-6 gap-y-4 px-4">
-                    <Link href={socialLinks.youtube} target="_blank" className="font-mono text-xs text-white/40 hover:text-white transition-colors uppercase tracking-widest">YouTube</Link>
-                    <Link href={socialLinks.twitter} target="_blank" className="font-mono text-xs text-white/40 hover:text-white transition-colors uppercase tracking-widest">X (Twitter)</Link>
-                    <Link href={socialLinks.github} target="_blank" className="font-mono text-xs text-white/40 hover:text-white transition-colors uppercase tracking-widest">GitHub</Link>
+                  <motion.div
+                    variants={fadeVariants}
+                    className="flex flex-wrap gap-x-6 gap-y-4 px-4"
+                  >
+                    <Link
+                      href={socialLinks.youtube}
+                      target="_blank"
+                      className="font-mono text-xs text-white/60 hover:text-white transition-colors uppercase tracking-widest"
+                    >
+                      YouTube
+                    </Link>
+                    <Link
+                      href={socialLinks.twitter}
+                      target="_blank"
+                      className="font-mono text-xs text-white/60 hover:text-white transition-colors uppercase tracking-widest"
+                    >
+                      X (Twitter)
+                    </Link>
+                    <Link
+                      href={socialLinks.github}
+                      target="_blank"
+                      className="font-mono text-xs text-white/60 hover:text-white transition-colors uppercase tracking-widest"
+                    >
+                      GitHub
+                    </Link>
                   </motion.div>
                 </div>
               </div>

@@ -2,7 +2,7 @@
 export const socialLinks = {
   youtube: "https://youtube.com/@binnadevlab",
   discord: "https://discord.gg/UZzPMpKZA",
-  telegram: "https://discord.gg/UZzPMpKZA", // Using discord as fallback if telegram isn't provided, or remove it
+  telegram: "https://discord.gg/UZzPMpKZA",
   twitter: "https://x.com/BinnaDev",
   github: "https://github.com/obinnafranklinduru",
   linkedin: "https://linkedin.com/in/obinna-franklin-duru",

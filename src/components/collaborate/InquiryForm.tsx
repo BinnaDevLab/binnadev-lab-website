@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono } from "@/components/ui/Typography";
-import { Button } from "@/components/ui/Button";
-import { AlertCircle, Send, Terminal } from "lucide-react";
-import { FadeIn, StaggerGroup, StaggerItem } from "@/components/ui/FadeIn";
+import { AlertCircle, Terminal } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export function InquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,22 +27,28 @@ export function InquiryForm() {
           {/* Left: Context */}
           <FadeIn className="lg:col-span-5">
             <Mono className="text-gold mb-6 block text-sm tracking-widest uppercase">
-              // Contact
+              Contact
             </Mono>
             <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1]">
-              Tell Us What You're Building.
+              Tell Us What You&apos;re Building.
             </H2>
             <Body className="text-xl text-white/60 mb-8 font-light leading-relaxed max-w-lg">
-              We do not believe in high-pressure sales funnels. If you have a complex engineering problem, submit the details below. We will review it and let you know if we are the right team to solve it.
+              We do not believe in high-pressure sales funnels. If you have a
+              complex engineering problem, submit the details below. We will
+              review it and let you know if we are the right team to solve it.
             </Body>
-            
+
             <div className="flex flex-col gap-6 mt-12 pt-12 border-t border-white/10">
               <div>
-                <Mono className="text-gold text-xs tracking-widest uppercase mb-2">Location</Mono>
+                <Mono className="text-gold text-xs tracking-widest uppercase mb-2">
+                  Location
+                </Mono>
                 <Body className="text-white/80">Global / Remote First</Body>
               </div>
               <div>
-                <Mono className="text-gold text-xs tracking-widest uppercase mb-2">Response Time</Mono>
+                <Mono className="text-gold text-xs tracking-widest uppercase mb-2">
+                  Response Time
+                </Mono>
                 <Body className="text-white/80">Typically within 48 hours</Body>
               </div>
             </div>
@@ -56,13 +61,20 @@ export function InquiryForm() {
                 <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
                   <Terminal className="w-8 h-8 text-gold" />
                 </div>
-                <H2 className="text-3xl mb-4 text-white">Transmission Received</H2>
+                <H2 className="text-3xl mb-4 text-white">
+                  Transmission Received
+                </H2>
                 <Body className="text-white/70 max-w-md mx-auto">
-                  We have securely received your inquiry. One of our lead engineers will review the details and reach out to you shortly.
+                  We have securely received your inquiry. One of our lead
+                  engineers will review the details and reach out to you
+                  shortly.
                 </Body>
               </FadeIn>
             ) : (
-              <FadeIn delay={0.2} className="bg-carbon/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+              <FadeIn
+                delay={0.2}
+                className="bg-carbon/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
+              >
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 p-4 border-l border-b border-white/10 bg-obsidian/50 text-xs font-mono text-white/30 uppercase tracking-widest flex items-center gap-2">
                   <Terminal className="w-3 h-3" /> SECURE CHANNEL
@@ -72,25 +84,33 @@ export function InquiryForm() {
                   {/* Personal Info */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                      <label
+                        htmlFor="name"
+                        className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs"
+                      >
                         Name
                       </label>
                       <input
                         required
                         type="text"
-                        id="name" name="name"
+                        id="name"
+                        name="name"
                         placeholder="John Doe"
                         className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all font-light"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs"
+                      >
                         Email Address
                       </label>
                       <input
                         required
                         type="email"
-                        id="email" name="email"
+                        id="email"
+                        name="email"
                         placeholder="john@organization.com"
                         className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all font-light"
                       />
@@ -99,13 +119,17 @@ export function InquiryForm() {
 
                   {/* Organization Info */}
                   <div className="space-y-2">
-                    <label htmlFor="organization" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                    <label
+                      htmlFor="organization"
+                      className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs"
+                    >
                       Organization / Protocol
                     </label>
                     <input
                       required
                       type="text"
-                      id="organization" name="organization"
+                      id="organization"
+                      name="organization"
                       placeholder="What are you building?"
                       className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all font-light"
                     />
@@ -114,13 +138,17 @@ export function InquiryForm() {
                   {/* Textarea */}
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <label htmlFor="details" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                      <label
+                        htmlFor="details"
+                        className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs"
+                      >
                         What problem do you need help solving?
                       </label>
                     </div>
                     <textarea
                       required
-                      id="details" name="details"
+                      id="details"
+                      name="details"
                       rows={6}
                       placeholder="Describe the architectural challenge, security concerns, or engineering constraints..."
                       className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all resize-y font-light leading-relaxed"
@@ -130,7 +158,8 @@ export function InquiryForm() {
                   <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-lg">
                     <AlertCircle className="w-5 h-5 text-gold flex-shrink-0" />
                     <p className="text-xs font-mono text-white/60 leading-relaxed uppercase tracking-wider">
-                      Communications are confidential. We are happy to sign an NDA before reviewing private repositories.
+                      Communications are confidential. We are happy to sign an
+                      NDA before reviewing private repositories.
                     </p>
                   </div>
 
@@ -145,7 +174,9 @@ export function InquiryForm() {
                       ) : (
                         <>
                           Start the Conversation
-                          <span className="group-hover:translate-x-1 transition-transform">→</span>
+                          <span className="group-hover:translate-x-1 transition-transform">
+                            →
+                          </span>
                         </>
                       )}
                     </button>

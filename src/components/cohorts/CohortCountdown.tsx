@@ -30,7 +30,9 @@ export function CohortCountdown({ startDate }: CohortCountdownProps) {
         setIsLive(false);
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          hours: Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          ),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
         });
@@ -48,7 +50,9 @@ export function CohortCountdown({ startDate }: CohortCountdownProps) {
     return (
       <div className="flex items-center gap-4 bg-obsidian border border-gold/30 px-6 py-4 rounded-sm inline-flex">
         <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-        <Mono className="text-gold tracking-widest uppercase">Cohort is Live</Mono>
+        <Mono className="text-gold tracking-widest uppercase">
+          Cohort is Live
+        </Mono>
       </div>
     );
   }
@@ -67,7 +71,9 @@ export function CohortCountdown({ startDate }: CohortCountdownProps) {
           <div className="text-3xl md:text-4xl font-display font-medium text-white tracking-tight tabular-nums">
             {String(unit.value).padStart(2, "0")}
           </div>
-          <Mono className="text-[10px] text-white/40 tracking-widest mt-1 uppercase">{unit.label}</Mono>
+          <Mono className="text-[10px] text-white/60 tracking-widest mt-1 uppercase">
+            {unit.label}
+          </Mono>
         </div>
       ))}
     </div>

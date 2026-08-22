@@ -22,7 +22,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
-    
+
     setLenisInstance(lenis);
 
     function raf(time: number) {

@@ -8,7 +8,7 @@ export function CohortHero() {
     <section className="relative pt-40 pb-32 overflow-hidden">
       {/* Subtle map/grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
-      
+
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-end">
           <motion.div
@@ -21,8 +21,11 @@ export function CohortHero() {
               Engineering Practice
             </Mono>
             <H1 className="text-5xl md:text-7xl lg:text-[5.5rem] mb-10 leading-[1.05] tracking-tight">
-              Start with the fundamentals.<br />
-              <span className="text-white/40">Stay long enough to understand them.</span>
+              Start with the fundamentals.
+              <br />
+              <span className="text-white/60">
+                Stay long enough to understand them.
+              </span>
             </H1>
           </motion.div>
 
@@ -34,10 +37,15 @@ export function CohortHero() {
           >
             <div className="w-12 h-[1px] bg-gold/50 mb-8" />
             <Body className="text-xl text-white/70 leading-relaxed font-light">
-              This is not another place promising to teach you how to use AI-generated code. This is a place asking you to understand what you are building.
+              This is not another place promising to teach you how to use
+              AI-generated code. This is a place asking you to understand what
+              you are building.
             </Body>
             <Body className="text-lg text-white/50 leading-relaxed font-light">
-              BinnaDev Lab cohorts are focused learning experiences designed for curious people willing to put in the work. We value depth, engineering thinking, and deliberate practice over simply consuming tutorials.
+              BinnaDev Lab cohorts are focused learning experiences designed for
+              curious people willing to put in the work. We value depth,
+              engineering thinking, and deliberate practice over simply
+              consuming tutorials.
             </Body>
           </motion.div>
         </div>

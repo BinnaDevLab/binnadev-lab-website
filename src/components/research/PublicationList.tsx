@@ -35,7 +35,7 @@ export function PublicationList() {
                 </Mono>
               </div>
               {pub.isExternal && (
-                <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-gold transition-colors" />
+                <ExternalLink className="w-4 h-4 text-white/60 group-hover:text-gold transition-colors" />
               )}
             </div>
 
@@ -47,7 +47,7 @@ export function PublicationList() {
             </p>
 
             <div className="flex items-center gap-4 border-t border-white/5 pt-4">
-              <Mono className="text-xs text-white/40">{pub.date}</Mono>
+              <Mono className="text-xs text-white/60">{pub.date}</Mono>
               <div className="w-1 h-1 rounded-full bg-white/20" />
               <Mono className="text-xs text-gold">{pub.readTime}</Mono>
             </div>

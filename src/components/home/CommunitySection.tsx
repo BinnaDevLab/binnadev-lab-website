@@ -89,7 +89,7 @@ export function CommunitySection() {
                   </div>
 
                   <div className="flex flex-col sm:items-end text-left sm:text-right max-w-xs">
-                    <Body className="text-sm mb-4 text-white/40 group-hover:text-white/70 transition-colors">
+                    <Body className="text-sm mb-4 text-white/60 group-hover:text-white/70 transition-colors">
                       {channel.body}
                     </Body>
                     <ArrowUpRight className="w-8 h-8 text-white/20 group-hover:text-gold transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 group-hover:translate-x-1" />
@@ -103,4 +103,3 @@ export function CommunitySection() {
     </section>
   );
 }
-

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "BinnaDev Lab",
     short_name: "BinnaDev Lab",
     description:
-      "An elite engineering laboratory where developers are trained to architect secure smart contracts.",
+      "BinnaDev Lab is an elite software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts.",
     start_url: "/",
     display: "standalone",
     background_color: "#050505",

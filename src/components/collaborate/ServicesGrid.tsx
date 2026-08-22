@@ -46,11 +46,11 @@ export function ServicesGrid() {
             <div className="grid grid-cols-2 gap-4 mt-6">
               <div className="p-6 border border-white/5 bg-white/[0.02] rounded-lg">
                 <Mono className="text-gold text-2xl mb-1">05</Mono>
-                <Meta className="text-white/40 uppercase tracking-widest text-[10px]">Specialized Domains</Meta>
+                <Meta className="text-white/60 uppercase tracking-widest text-[10px]">Specialized Domains</Meta>
               </div>
               <div className="p-6 border border-white/5 bg-white/[0.02] rounded-lg">
                 <Mono className="text-gold text-2xl mb-1">E2E</Mono>
-                <Meta className="text-white/40 uppercase tracking-widest text-[10px]">Architecture Design</Meta>
+                <Meta className="text-white/60 uppercase tracking-widest text-[10px]">Architecture Design</Meta>
               </div>
             </div>
           </FadeIn>
@@ -76,7 +76,7 @@ export function ServicesGrid() {
                     </div>
                     
                     <div className="flex-grow">
-                      <Mono className={cn("text-sm uppercase tracking-widest mb-3 transition-colors duration-300", isActive ? "text-gold" : "text-white/40 group-hover:text-white/60")}>
+                      <Mono className={cn("text-sm uppercase tracking-widest mb-3 transition-colors duration-300", isActive ? "text-gold" : "text-white/60 group-hover:text-white/60")}>
                         {service.problem}
                       </Mono>
                       <H3 className={cn("text-2xl md:text-3xl mb-4 transition-colors duration-300", isActive ? "text-white" : "text-white/60 group-hover:text-white/80")}>
@@ -113,3 +113,4 @@ export function ServicesGrid() {
     </section>
   );
 }
+

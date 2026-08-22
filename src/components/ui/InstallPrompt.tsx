@@ -5,11 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, Share } from "lucide-react";
 import { Mono, Body } from "@/components/ui/Typography";
 
-interface BeforeInstallPromptEvent extends Event { prompt(): Promise<void>; userChoice: Promise<{ outcome: 'accepted' | 'dismissed', platform: string }>; }
-
+interface BeforeInstallPromptEvent extends Event {
+  prompt(): Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
+}
 
 export function InstallPrompt() {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [deferredPrompt, setDeferredPrompt] =
+    useState<BeforeInstallPromptEvent | null>(null);
   const [isIOS] = useState(() => {
     if (typeof window === "undefined") return false;
     const userAgent = window.navigator.userAgent.toLowerCase();
@@ -17,7 +20,10 @@ export function InstallPrompt() {
   });
   const [isStandalone] = useState(() => {
     if (typeof window === "undefined") return false;
-    return window.matchMedia("(display-mode: standalone)").matches || (window.navigator as unknown as { standalone: boolean }).standalone;
+    return (
+      window.matchMedia("(display-mode: standalone)").matches ||
+      (window.navigator as unknown as { standalone: boolean }).standalone
+    );
   });
   const [showPrompt, setShowPrompt] = useState(false);
   const [showIOSInstructions, setShowIOSInstructions] = useState(false);
@@ -25,7 +31,7 @@ export function InstallPrompt() {
   useEffect(() => {
     // If already installed or dismissed, do nothing
     if (isStandalone) return;
-    
+
     const dismissed = localStorage.getItem("binnadev_pwa_dismissed");
     if (dismissed) return;
 
@@ -35,7 +41,10 @@ export function InstallPrompt() {
       setDeferredPrompt(e);
     };
 
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt as EventListener);
+    window.addEventListener(
+      "beforeinstallprompt",
+      handleBeforeInstallPrompt as EventListener,
+    );
 
     // Show prompt after scrolling past hero section
     const handleScroll = () => {
@@ -51,7 +60,10 @@ export function InstallPrompt() {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt as EventListener);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt as EventListener,
+      );
       window.removeEventListener("scroll", handleScroll);
     };
   }, [deferredPrompt, isIOS, isStandalone]);
@@ -92,8 +104,8 @@ export function InstallPrompt() {
           {/* Blueprint styling lines */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-royal/50 to-transparent" />
-          
-          <button 
+
+          <button
             onClick={handleDismiss}
             className="absolute top-4 right-4 text-muted hover:text-white transition-colors"
             aria-label="Dismiss"
@@ -112,31 +124,34 @@ export function InstallPrompt() {
           </div>
 
           <Body className="text-sm text-muted">
-            Keep the Lab on your home screen. Launch faster, access field notes offline, and maintain continuous architectural alignment.
+            Keep the Lab on your home screen. Launch faster, access field notes
+            offline, and maintain continuous architectural alignment.
           </Body>
 
           {showIOSInstructions ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               className="bg-obsidian border border-white/5 p-4 rounded-sm flex flex-col gap-2"
             >
               <Body className="text-sm text-muted flex items-center gap-2">
-                1. Tap the <Share className="w-4 h-4 text-gold" /> Share button in Safari.
+                1. Tap the <Share className="w-4 h-4 text-gold" /> Share button
+                in Safari.
               </Body>
               <Body className="text-sm text-muted">
-                2. Scroll down and select <strong>&quot;Add to Home Screen&quot;</strong>.
+                2. Scroll down and select{" "}
+                <strong>&quot;Add to Home Screen&quot;</strong>.
               </Body>
             </motion.div>
           ) : (
             <div className="flex items-center gap-3 mt-2">
-              <button 
+              <button
                 onClick={handleInstallClick}
                 className="flex-1 bg-royal/10 hover:bg-royal/20 border border-royal/30 text-white text-sm py-2 transition-colors font-mono uppercase tracking-wider"
               >
                 Install
               </button>
-              <button 
+              <button
                 onClick={handleDismiss}
                 className="flex-1 bg-transparent hover:bg-white/5 border border-transparent hover:border-white/10 text-muted hover:text-white text-sm py-2 transition-colors font-mono uppercase tracking-wider"
               >

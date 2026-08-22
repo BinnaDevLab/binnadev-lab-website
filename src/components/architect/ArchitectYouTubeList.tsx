@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Play, Clock } from "lucide-react";
-import { Mono } from "@/components/ui/Typography";
 import { youtubeVideos } from "@/data/youtube";
 
 export function ArchitectYouTubeList() {
@@ -22,7 +21,7 @@ export function ArchitectYouTubeList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {youtubeVideos.map((video) => (
-        <div 
+        <div
           key={video.id}
           className="group block overflow-hidden border border-white/10 rounded-xl hover:border-gold/50 transition-colors duration-500 bg-carbon/20"
         >
@@ -37,7 +36,7 @@ export function ArchitectYouTubeList() {
               ></iframe>
             </div>
           ) : (
-            <div 
+            <div
               onClick={() => setActiveVideo(video.id)}
               className="relative aspect-video overflow-hidden cursor-pointer"
             >
@@ -61,7 +60,7 @@ export function ArchitectYouTubeList() {
             </div>
           )}
           <div className="p-6">
-            <h3 
+            <h3
               className="font-display font-medium text-lg text-white group-hover:text-gold transition-colors leading-tight cursor-pointer"
               onClick={() => !activeVideo && setActiveVideo(video.id)}
             >

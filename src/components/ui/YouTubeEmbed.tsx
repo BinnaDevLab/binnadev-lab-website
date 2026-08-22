@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export function YouTubeEmbed({ youtubeId }: { youtubeId: string }) {
   if (!youtubeId) return null;
@@ -8,7 +8,7 @@ export function YouTubeEmbed({ youtubeId }: { youtubeId: string }) {
       {/* Decorative gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-royal/10 via-transparent to-gold/10 opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      
+
       <div className="aspect-video relative z-10 p-1 bg-obsidian/50 backdrop-blur-sm">
         <iframe
           className="w-full h-full rounded-xl border border-white/5 shadow-2xl"

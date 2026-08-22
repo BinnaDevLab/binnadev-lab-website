@@ -16,6 +16,7 @@ export function Pagination({
   return (
     <div className="flex items-center justify-center gap-2 mt-12">
       <button
+        aria-label="Previous page"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className="w-10 h-10 flex items-center justify-center rounded border border-white/10 bg-carbon text-white hover:border-gold hover:text-gold disabled:opacity-50 disabled:hover:border-white/10 disabled:hover:text-white transition-colors"
@@ -42,6 +43,7 @@ export function Pagination({
       })}
 
       <button
+        aria-label="Next page"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className="w-10 h-10 flex items-center justify-center rounded border border-white/10 bg-carbon text-white hover:border-gold hover:text-gold disabled:opacity-50 disabled:hover:border-white/10 disabled:hover:text-white transition-colors"

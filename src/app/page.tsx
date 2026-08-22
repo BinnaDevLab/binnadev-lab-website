@@ -12,30 +12,17 @@ import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Smart Contract Engineering & Security Laboratory",
+  description:
+    "BinnaDev Lab is an elite software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and rigorous technical cohorts.",
   alternates: {
     canonical: "/",
   },
 };
 
 export default function Home() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    name: "BinnaDev Lab",
-    url: "https://binnadevlab.vercel.app",
-    description: "An elite engineering laboratory where developers are trained to think, reason, interrogate systems, and architect secure smart contracts.",
-    sameAs: [
-      "https://github.com/obinnafranklinduru"
-    ]
-  };
-
   return (
     <div className="bg-obsidian min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <HeroSection />
       <PartnersMarquee />
       <YouTubeSection />

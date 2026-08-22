@@ -112,6 +112,3 @@ function ProjectCardContent({ project }: { project: Project }) {
     </>
   );
 }
-
-
-

@@ -6,16 +6,44 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "@/data/social";
+import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Research & Projects",
+  title: "Research & Publications | Web3 Security & EVM Architecture",
   description:
-    "Architectural case studies, smart contract experiments, and protocol analysis from BinnaDev Lab.",
+    "Deep technical research, security disclosures, and architectural patterns published by BinnaDev Lab on EVM mechanics and smart contract vulnerabilities.",
+  alternates: {
+    canonical: "/research",
+  },
 };
 
 export default function ResearchPage() {
+  const projectsJsonLd = projects.map((p) => ({
+    "@type": "SoftwareApplication",
+    name: p.title,
+    description: p.description,
+    applicationCategory: "BlockchainApplication",
+    url: p.link,
+    author: {
+      "@type": "Organization",
+      name: "BinnaDev Lab",
+    },
+  }));
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "BinnaDev Lab Research & Projects",
+    description: "Smart contract architectures and protocol research.",
+    hasPart: projectsJsonLd,
+  };
+
   return (
     <div className="bg-obsidian min-h-screen relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Full-bleed visual header */}
       <div className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0">

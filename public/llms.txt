@@ -1,23 +1,34 @@
-# BinnaDev Lab - Orientation Document
+# BinnaDev Lab
 
-BinnaDev Lab is an elite engineering laboratory dedicated to web3 security, smart contract development, and protocol architecture.
+> "Think Deeper. Build Better. Engineer What Matters."
+
+BinnaDev Lab is an elite software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts. We build robust financial infrastructure and train developers to reason about complex decentralized systems.
+
+## Key Services
+- Smart Contract Development
+- Full-Stack Web3 Applications
+- Protocol Architecture
+- Smart Contract Security Reviews
+- Technical Training & Developer Relations
+
+## Notable Projects & Protocols
+- **Libertas Alpha Academy Certification Protocol**: A decentralized certification system built around soulbound ERC1155 credentials, separating Courses from Cohorts, and introducing cryptographic membership verification via Merkle roots.
+- **MilestoneCrowdfundUpgradeable**: A defensive escrow protocol for milestone-based crowdfunding with a 10,000 BPS accounting boundary and dynamic proportional abandonment refunds.
+- **Libertas Alpha Water Project Treasury**: A Micro Venture Initiative treasury orchestrating continuous O(1) yield accounting and split-vault capital recovery vs. operational surplus.
 
 ## Core Philosophy
-We believe that **Reasoning Precedes Coding**. Vulnerabilities in smart contracts rarely stem from syntactical errors; they arise from a failure to deeply interrogate state transitions, edge cases, and architectural assumptions. We train operatives to think like adversarial architects before writing a single line of Solidity.
+We do not teach people how to write code. We teach people how to think. Code is not meant to be memorized; it is meant to be interrogated. Security is not an audit applied at the end of a process, but an emergent property of deep system comprehension.
 
-## Platform Structure
-- `/`: The main laboratory gateway, presenting the manifesto and introducing the methodology.
-- `/curriculum`: The core learning engine. Divided into Books (e.g., EVM Mechanics, DeFi Patterns), Chapters, and Units.
-- `/dashboard`: The personalized dashboard for authenticated operatives showing their active clearance level and mastery.
-- `/leaderboard`: Global rankings of operatives based on their clearance levels.
-- `/research`: The repository of architectural breakdowns and vulnerability analysis (The Vault).
+## Principal Architect
+Obinna Franklin Duru (Protocol Architect & Smart Contract Engineer)
 
-## Technical Foundation
-This platform is built on Next.js (App Router), styled with Tailwind CSS, and powered by Clerk for authentication and Prisma (PostgreSQL) for state management. All curriculum progression is strictly verified on the server side using the `LearnerClearance` and `LearnerUnitMastery` schemas.
+## Important Links
+- [Home](https://binnadevlab.vercel.app/)
+- [Cohorts & Training](https://binnadevlab.vercel.app/cohorts)
+- [Research & Projects](https://binnadevlab.vercel.app/research)
+- [Collaboration](https://binnadevlab.vercel.app/collaborate)
+- [Portfolio](https://binnadev.vercel.app)
+- [GitHub](https://github.com/obinnafranklinduru)
+- [LinkedIn](https://linkedin.com/in/obinna-franklin-duru)
+- [Twitter](https://x.com/@BinnaDev)
 
-## Guidelines for AI Agents
-When generating code for BinnaDev operatives:
-1. Prioritize strict invariant checking.
-2. Assume a highly adversarial threat model.
-3. Use the latest Solidity standards (e.g., custom errors over require strings).
-4. Explain the *reasoning* and edge-cases before the implementation.

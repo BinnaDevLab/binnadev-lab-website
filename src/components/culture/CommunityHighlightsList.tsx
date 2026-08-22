@@ -14,18 +14,21 @@ export function CommunityHighlightsList() {
 
   const currentHighlights = communityHighlights.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    currentPage * ITEMS_PER_PAGE,
   );
 
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
         {currentHighlights.map((highlight) => (
-          <div key={highlight.id} className="group overflow-hidden rounded-xl border border-white/5 bg-carbon/50 hover:border-royal/40 transition-colors">
+          <div
+            key={highlight.id}
+            className="group overflow-hidden rounded-xl border border-white/5 bg-carbon/50 hover:border-royal/40 transition-colors"
+          >
             <div className="h-48 overflow-hidden relative">
-              <Image 
-                src={highlight.imageUrl} 
-                alt={highlight.title} 
+              <Image
+                src={highlight.imageUrl}
+                alt={highlight.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover opacity-60 transition-all duration-700 transform group-hover:scale-105"
@@ -37,23 +40,34 @@ export function CommunityHighlightsList() {
                 {highlight.date}
               </Mono>
               {highlight.link ? (
-                <a href={highlight.link} target="_blank" rel="noopener noreferrer" className="block group/link">
-                  <H3 className="text-xl font-medium text-white mb-3 group-hover/link:text-gold transition-colors">{highlight.title}</H3>
+                <a
+                  href={highlight.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group/link"
+                >
+                  <H3 className="text-xl font-medium text-white mb-3 group-hover/link:text-gold transition-colors">
+                    {highlight.title}
+                  </H3>
                 </a>
               ) : (
-                <H3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">{highlight.title}</H3>
+                <H3 className="text-xl font-medium text-white mb-3 group-hover:text-gold transition-colors">
+                  {highlight.title}
+                </H3>
               )}
-              <p className="text-sm text-muted leading-relaxed">{highlight.description}</p>
+              <p className="text-sm text-muted leading-relaxed">
+                {highlight.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
       {totalPages > 1 && (
-        <Pagination 
-          currentPage={currentPage} 
-          totalPages={totalPages} 
-          onPageChange={setCurrentPage} 
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
         />
       )}
     </>

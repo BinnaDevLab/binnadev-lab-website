@@ -78,7 +78,7 @@ export function CohortOverview({ cohort }: CohortOverviewProps) {
               )}
 
               <div className="p-8 md:p-12 bg-carbon">
-                <Mono className="text-white/40 tracking-[0.2em] text-[10px] uppercase mb-8 block">
+                <Mono className="text-white/60 tracking-[0.2em] text-[10px] uppercase mb-8 block">
                   Logistics
                 </Mono>
 
@@ -120,5 +120,3 @@ export function CohortOverview({ cohort }: CohortOverviewProps) {
     </section>
   );
 }
-
-

@@ -10,7 +10,7 @@ export function NewsletterForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    
+
     setStatus("loading");
     // Simulate network request
     setTimeout(() => {
@@ -21,20 +21,20 @@ export function NewsletterForm() {
 
   return (
     <div className="mt-8">
-      
       <form onSubmit={handleSubmit} className="relative max-w-sm">
         <div className="relative flex items-center">
           <Mail className="absolute left-4 w-4 h-4 text-muted" />
-          <input 
-            type="email" 
+          <input
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="engineering@protocol.xyz" 
+            placeholder="engineering@protocol.xyz"
             disabled={status === "loading" || status === "success"}
-            className="w-full bg-carbon border border-white/10 rounded-lg py-3 pl-12 pr-12 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-royal/50 transition-colors disabled:opacity-50"
+            className="w-full bg-carbon border border-white/10 rounded-lg py-3 pl-12 pr-12 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-royal/50 transition-colors disabled:opacity-50"
           />
-          <button 
-            type="submit" 
+          <button
+            aria-label="Subscribe to newsletter"
+            type="submit"
             disabled={status === "loading" || status === "success" || !email}
             className="absolute right-2 p-1.5 bg-obsidian rounded-md text-white hover:text-gold transition-colors disabled:opacity-50"
           >

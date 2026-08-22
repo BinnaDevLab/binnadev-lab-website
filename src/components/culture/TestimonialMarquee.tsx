@@ -65,14 +65,12 @@ export function CaseFileReview() {
             {testimonials.length.toString().padStart(2, "0")}
           </span>
           <div className="flex gap-2">
-            <button
-              onClick={handlePrev}
+            <button aria-label="Previous Testimonial" onClick={handlePrev}
               className="p-2 border border-white/10 hover:border-gold/50 hover:text-gold transition-colors bg-carbon"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <button
-              onClick={handleNext}
+            <button aria-label="Next Testimonial" onClick={handleNext}
               className="p-2 border border-white/10 hover:border-gold/50 hover:text-gold transition-colors bg-carbon"
             >
               <ChevronRight className="w-4 h-4" />
@@ -185,3 +183,4 @@ export function CaseFileReview() {
     </div>
   );
 }
+

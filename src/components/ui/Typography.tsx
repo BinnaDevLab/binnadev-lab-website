@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 // Display: Massive, brutalist, grid-breaking typography
 export function Display({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1
+    <div
       className={cn(
         "font-display text-6xl md:text-[8rem] lg:text-[10rem] font-bold tracking-tighter text-foreground leading-[0.85] uppercase",
         className
@@ -17,7 +17,7 @@ export function Display({ className, ...props }: React.HTMLAttributes<HTMLHeadin
 // H1: Standard large section headers
 export function H1({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2
+    <h1
       className={cn(
         "font-display text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1]",
         className
@@ -30,7 +30,7 @@ export function H1({ className, ...props }: React.HTMLAttributes<HTMLHeadingElem
 // H2: Subsection headers
 export function H2({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3
+    <h2
       className={cn(
         "font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground leading-[1.1]",
         className
@@ -43,7 +43,7 @@ export function H2({ className, ...props }: React.HTMLAttributes<HTMLHeadingElem
 // H3: Item headers
 export function H3({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h4
+    <h3
       className={cn(
         "font-display text-xl md:text-2xl font-medium tracking-tight text-foreground",
         className
@@ -91,3 +91,4 @@ export function Meta({ className, ...props }: React.HTMLAttributes<HTMLSpanEleme
     />
   );
 }
+

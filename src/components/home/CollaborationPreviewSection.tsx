@@ -51,7 +51,7 @@ export function CollaborationPreviewSection() {
           <div className="absolute top-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-700 ease-out" />
 
           <div className="flex flex-col items-start gap-1 text-left">
-            <Meta className="text-white/40 group-hover:text-gold/60 transition-colors">
+            <Meta className="text-white/60 group-hover:text-gold/60 transition-colors">
               Client Services
             </Meta>
             <Mono className="text-white group-hover:text-gold transition-colors text-sm">

@@ -8,14 +8,30 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Collaborate | BinnaDev Lab",
+  title: "Collaborate | Protocol Architecture & Smart Contract Development",
   description:
-    "Strategic collaboration, protocol architecture, and smart contract security reviews.",
+    "Engage BinnaDev Lab for protocol architecture, full-stack Web3 development, smart contract security reviews, and developer relations training.",
+  alternates: {
+    canonical: "/collaborate",
+  },
 };
 
 export default function CollaboratePage() {
   return (
     <div className="pt-32 pb-20 relative overflow-hidden bg-obsidian selection:bg-gold selection:text-obsidian">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Collaborate with BinnaDev Lab",
+            description:
+              "Engage BinnaDev Lab for smart contract development, protocol architecture, and Web3 security services.",
+            url: "https://binnadevlab.vercel.app/collaborate",
+          }),
+        }}
+      />
       {/* Background Ambience */}
       <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-royal/5 via-carbon/20 to-transparent opacity-60 pointer-events-none" />
 
@@ -27,24 +43,28 @@ export default function CollaboratePage() {
               Commercial Engineering
             </Mono>
             <H1 className="mb-8 text-5xl md:text-7xl leading-[1.1] tracking-tight">
-              We don't just implement features. <br className="hidden md:block" />
+              We don&apos;t just implement features.{" "}
+              <br className="hidden md:block" />
               We reason about systems.
             </H1>
             <div className="space-y-6">
               <Body className="text-2xl text-white/90 font-light leading-relaxed max-w-2xl">
-                If your organization has a difficult Web3 engineering problem, BinnaDev Lab can help you think through it, architect it, build it, secure it, and deliver it responsibly.
+                If your organization has a difficult Web3 engineering problem,
+                BinnaDev Lab can help you think through it, architect it, build
+                it, secure it, and deliver it responsibly.
               </Body>
               <Body className="text-xl text-white/60 font-light leading-relaxed max-w-2xl">
-                We design systems where important rules, money, trust, and failure conditions have to be absolutely correct.
+                We design systems where important rules, money, trust, and
+                failure conditions have to be absolutely correct.
               </Body>
             </div>
           </div>
-          
+
           {/* Hero Visual */}
           <div className="xl:col-span-5 relative hidden xl:block">
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image 
-                src="/images/shared/shared-asset-3.jpeg" 
+              <Image
+                src="/images/shared/shared-asset-3.jpeg"
                 alt="Engineering Architecture"
                 fill
                 className="object-cover opacity-80"
@@ -56,8 +76,12 @@ export default function CollaboratePage() {
                 <div className="w-24 h-24 border border-gold/40 rounded-full border-dashed animate-spin-slow" />
               </div>
               <div className="absolute bottom-10 left-10 p-6 bg-obsidian/80 backdrop-blur-md border border-white/10 rounded-lg">
-                <Mono className="text-xs text-gold tracking-widest uppercase mb-1">Status</Mono>
-                <div className="text-white font-mono text-sm">Systemic Invariants: Enforced</div>
+                <Mono className="text-xs text-gold tracking-widest uppercase mb-1">
+                  Status
+                </Mono>
+                <div className="text-white font-mono text-sm">
+                  Systemic Invariants: Enforced
+                </div>
               </div>
             </div>
           </div>
@@ -75,20 +99,28 @@ export default function CollaboratePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
             <H2 className="text-3xl md:text-5xl mb-8 leading-tight">
-              The systems are different.<br />
-              <span className="text-gold">The engineering discipline is the same.</span>
+              The systems are different.
+              <br />
+              <span className="text-gold">
+                The engineering discipline is the same.
+              </span>
             </H2>
             <Body className="text-xl text-white/70 leading-relaxed font-light mb-8">
-              We bring that discipline to projects involving smart contracts, decentralized applications, financial infrastructure, protocol architecture, security, and technical teams that need deeper engineering capability. 
+              We bring that discipline to projects involving smart contracts,
+              decentralized applications, financial infrastructure, protocol
+              architecture, security, and technical teams that need deeper
+              engineering capability.
             </Body>
             <Body className="text-lg text-white/50 leading-relaxed font-light">
-              Commercial work funds our research and our community, and that community produces the engineering rigor we bring to your protocol.
+              Commercial work funds our research and our community, and that
+              community produces the engineering rigor we bring to your
+              protocol.
             </Body>
           </div>
           <div className="lg:col-span-6">
             <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image 
-                src="/images/shared/shared-asset-4.jpeg" 
+              <Image
+                src="/images/shared/shared-asset-4.jpeg"
                 alt="Engineering Discipline"
                 fill
                 className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"

@@ -7,17 +7,27 @@ import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { MANIFESTO_POINTS } from "@/data";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Philosophy | Our Engineering Principles",
+  description:
+    "The core engineering principles of BinnaDev Lab: Interrogating systems, prioritizing mental models, and treating security as an emergent property of deep comprehension.",
+  alternates: {
+    canonical: "/philosophy",
+  },
+};
+
 export default function PhilosophyPage() {
   return (
     <div className="bg-obsidian min-h-screen relative selection:bg-gold selection:text-obsidian">
-      
       {/* 1. Immersive Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video/Image */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/shared/shared-asset-1.jpeg" 
-            alt="Philosophy Background" 
+          <Image
+            src="/images/shared/shared-asset-1.jpeg"
+            alt="Philosophy Background"
             fill
             sizes="100vw"
             className="object-cover opacity-30"
@@ -28,14 +38,24 @@ export default function PhilosophyPage() {
 
         <Container className="relative z-10 text-center max-w-4xl">
           <FadeIn delay={0.2} direction="up">
-            <Mono className="text-gold mb-8 block tracking-widest uppercase">The Manifesto</Mono>
-            <H1 className="text-6xl md:text-8xl mb-8 leading-tight">Reasoning<br/>Precedes<br/>Coding.</H1>
+            <Mono className="text-gold mb-8 block tracking-widest uppercase">
+              The Manifesto
+            </Mono>
+            <H1 className="text-6xl md:text-8xl mb-8 leading-tight">
+              Reasoning
+              <br />
+              Precedes
+              <br />
+              Coding.
+            </H1>
             <Body className="text-2xl text-muted font-light max-w-2xl mx-auto">
-              BinnaDev Lab exists to bridge the gap between writing code and architecting resilient, secure, and permanent digital infrastructure.
+              BinnaDev Lab exists to bridge the gap between writing code and
+              architecting resilient, secure, and permanent digital
+              infrastructure.
             </Body>
           </FadeIn>
         </Container>
-        
+
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-[1px] h-16 bg-gradient-to-b from-gold to-transparent" />
         </div>
@@ -47,11 +67,16 @@ export default function PhilosophyPage() {
           <div className="max-w-4xl mx-auto text-center">
             <QuoteIcon className="w-12 h-12 text-white/10 mx-auto mb-8" />
             <H2 className="text-4xl md:text-5xl leading-tight mb-8">
-              The industry is optimizing for speed.<br/>
+              The industry is optimizing for speed.
+              <br />
               <span className="text-gold">We are optimizing for truth.</span>
             </H2>
             <Body className="text-xl text-muted leading-relaxed">
-              Most educational platforms fail because they treat programming as a trade. They teach you the syntax of a language, but not the architecture of a system. They teach you how to deploy a contract, but not how to mathematically prove it cannot be exploited. We believe this paradigm is broken.
+              Most educational platforms fail because they treat programming as
+              a trade. They teach you the syntax of a language, but not the
+              architecture of a system. They teach you how to deploy a contract,
+              but not how to mathematically prove it cannot be exploited. We
+              believe this paradigm is broken.
             </Body>
           </div>
         </Container>
@@ -60,30 +85,37 @@ export default function PhilosophyPage() {
       {/* 3. Sticky Storytelling Section */}
       <section className="relative bg-carbon/20">
         {MANIFESTO_POINTS.map((point, idx) => (
-          <div key={idx} className="min-h-screen flex items-center sticky top-0 bg-obsidian overflow-hidden border-t border-white/5">
+          <div
+            key={idx}
+            className="min-h-screen flex items-center sticky top-0 bg-obsidian overflow-hidden border-t border-white/5"
+          >
             <Container>
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                
-                <div className={idx % 2 !== 0 ? 'lg:order-2' : ''}>
+              <div
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${idx % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+              >
+                <div className={idx % 2 !== 0 ? "lg:order-2" : ""}>
                   <Mono className="text-gold mb-6 block tracking-widest uppercase flex items-center gap-4">
                     <point.icon className="w-5 h-5" /> Chapter 0{idx + 1}
                   </Mono>
-                  <H2 className="text-4xl md:text-6xl mb-8 leading-tight">{point.title}</H2>
+                  <H2 className="text-4xl md:text-6xl mb-8 leading-tight">
+                    {point.title}
+                  </H2>
                   <Body className="text-xl text-muted leading-relaxed">
                     {point.content}
                   </Body>
                 </div>
 
-                <div className={`relative h-[600px] w-full rounded-2xl overflow-hidden ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}>
-                  <BlueprintImage 
-                    src={point.image} 
-                    alt={point.title} 
+                <div
+                  className={`relative h-[600px] w-full rounded-2xl overflow-hidden ${idx % 2 !== 0 ? "lg:order-1" : ""}`}
+                >
+                  <BlueprintImage
+                    src={point.image}
+                    alt={point.title}
                     fill
                     overlayColor={idx % 2 === 0 ? "royal" : "gold"}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-
               </div>
             </Container>
           </div>
@@ -93,41 +125,68 @@ export default function PhilosophyPage() {
       {/* 4. The Practice */}
       <section className="py-40 bg-obsidian relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(43,76,126,0.2)_0%,_transparent_70%)] pointer-events-none" />
-        
+
         <Container className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <Mono className="text-gold mb-6 block tracking-[0.2em] uppercase text-sm">The Consequence</Mono>
-            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">From Philosophy to Practice</H2>
+            <Mono className="text-gold mb-6 block tracking-[0.2em] uppercase text-sm">
+              The Consequence
+            </Mono>
+            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">
+              From Philosophy to Practice
+            </H2>
             <div className="space-y-6">
               <Body className="text-xl text-white/70 leading-relaxed font-light">
-                The ideas behind BinnaDev Lab are not meant to remain on a page. They shape how we build, how we research, how we teach, and how we engage with other engineers.
+                The ideas behind BinnaDev Lab are not meant to remain on a page.
+                They shape how we build, how we research, how we teach, and how
+                we engage with other engineers.
               </Body>
               <Body className="text-xl text-white/70 leading-relaxed font-light">
-                Through <strong className="text-white font-medium">research, technical writing, YouTube, workshops, cohorts, community discussions, and real engineering work</strong>, the Lab creates spaces where developers can move beyond simply learning how to use tools and begin understanding why systems behave the way they do.
+                Through{" "}
+                <strong className="text-white font-medium">
+                  research, technical writing, YouTube, workshops, cohorts,
+                  community discussions, and real engineering work
+                </strong>
+                , the Lab creates spaces where developers can move beyond simply
+                learning how to use tools and begin understanding why systems
+                behave the way they do.
               </Body>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-24">
             <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
-              <Cpu className="w-8 h-8 text-white/40 group-hover:text-gold transition-colors mb-8" />
-              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">Think Deeper</H3>
+              <Cpu className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">
+                Think Deeper
+              </H3>
               <p className="text-base text-white/60 leading-relaxed font-light">
-                Go beneath the syntax. Understand the systems, assumptions, trade-offs, and decisions that make software work. The goal is not to memorize another framework, but to develop the judgment to reason about unfamiliar systems.
+                Go beneath the syntax. Understand the systems, assumptions,
+                trade-offs, and decisions that make software work. The goal is
+                not to memorize another framework, but to develop the judgment
+                to reason about unfamiliar systems.
               </p>
             </div>
             <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
-              <Network className="w-8 h-8 text-white/40 group-hover:text-gold transition-colors mb-8" />
-              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">Build With Intention</H3>
+              <Network className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">
+                Build With Intention
+              </H3>
               <p className="text-base text-white/60 leading-relaxed font-light">
-                Architecture comes before implementation. We explore how protocols should be designed, how responsibilities should be separated, and how systems can remain understandable as their complexity grows.
+                Architecture comes before implementation. We explore how
+                protocols should be designed, how responsibilities should be
+                separated, and how systems can remain understandable as their
+                complexity grows.
               </p>
             </div>
             <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
-              <ShieldAlert className="w-8 h-8 text-white/40 group-hover:text-gold transition-colors mb-8" />
-              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">Interrogate Everything</H3>
+              <ShieldAlert className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">
+                Interrogate Everything
+              </H3>
               <p className="text-base text-white/60 leading-relaxed font-light">
-                Do not trust the happy path. Challenge assumptions through adversarial thinking, property-based testing, invariant fuzzing, experimentation, and rigorous engineering practice.
+                Do not trust the happy path. Challenge assumptions through
+                adversarial thinking, property-based testing, invariant fuzzing,
+                experimentation, and rigorous engineering practice.
               </p>
             </div>
           </div>
@@ -138,7 +197,9 @@ export default function PhilosophyPage() {
                 The goal is not to create developers who can write more code.
               </p>
               <p className="text-2xl md:text-3xl font-display leading-tight text-white/80">
-                It is to help create engineers who know what deserves to be built, why it should work, and how to question it when it doesn't.
+                It is to help create engineers who know what deserves to be
+                built, why it should work, and how to question it when it
+                doesn&apos;t.
               </p>
             </blockquote>
           </div>
@@ -149,14 +210,18 @@ export default function PhilosophyPage() {
       <section className="h-screen flex items-center justify-center bg-carbon relative border-t border-white/10 overflow-hidden">
         <Container className="relative z-10 text-center">
           <FadeIn delay={0} direction="up">
-            <H2 className="text-5xl md:text-8xl text-white/20 font-bold uppercase tracking-tighter mb-8 leading-none">
-              Engineering<br/>is a<br/>Responsibility.
+            <H2 className="text-5xl md:text-8xl text-white/50 font-bold uppercase tracking-tighter mb-8 leading-none">
+              Engineering
+              <br />
+              is a<br />
+              Responsibility.
             </H2>
             <Body className="text-2xl text-white/60 max-w-2xl mx-auto mb-12">
-              Join the collective. Help us build the future of decentralized systems.
+              Join the collective. Help us build the future of decentralized
+              systems.
             </Body>
-            <Link 
-              href="/collaborate" 
+            <Link
+              href="/collaborate"
               className="inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-mono uppercase tracking-widest text-sm"
             >
               Work with the Lab <ArrowRight className="w-4 h-4" />
@@ -164,7 +229,6 @@ export default function PhilosophyPage() {
           </FadeIn>
         </Container>
       </section>
-
     </div>
   );
 }
@@ -181,5 +245,3 @@ function QuoteIcon(props: any) {
     </svg>
   );
 }
-
-

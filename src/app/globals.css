@@ -10,7 +10,7 @@
   --color-carbon: #121212;
   --color-royal: #4c0082;
   --color-gold: #f0c846;
-  --color-muted: #888888;
+  --color-muted: #a3a3a3;
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --font-sans: var(--font-inter), sans-serif;
@@ -66,6 +66,10 @@ body {
 }
 
 @keyframes scroll-line {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }

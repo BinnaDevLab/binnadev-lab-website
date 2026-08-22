@@ -1,12 +1,5 @@
 import {
   LucideIcon,
-  Terminal,
-  BookOpen,
-  GitBranch,
-  Shield,
-  ExternalLink,
-  GraduationCap,
-  Building2,
   CheckCircle,
   BrainCircuit,
   Award,

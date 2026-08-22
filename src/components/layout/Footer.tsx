@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Body, Mono } from "@/components/ui/Typography";
 import { footerNavigation } from "@/data";
-import { NewsletterForm } from "@/components/layout/NewsletterForm";
 
 export function Footer() {
   return (
@@ -13,25 +12,36 @@ export function Footer() {
 
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-
           <div className="md:col-span-2 pr-8">
             <div className="flex items-center gap-3 mb-6">
-              <Image src="/favicon.svg" alt="BinnaDev Lab Logo" width={32} height={32} className="w-8 h-8" />
+              <Image
+                src="/favicon.svg"
+                alt="BinnaDev Lab"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-display font-semibold tracking-wider text-foreground">
                 BinnaDev<span className="text-gold">_</span>Lab
               </span>
             </div>
             <Body className="text-muted max-w-sm mb-8">
-              A lab where developers come to sharpen their minds, build real things, and grow together. Reasoning precedes coding.
+              A lab where developers come to sharpen their minds, build real
+              things, and grow together. Reasoning precedes coding.
             </Body>
           </div>
 
           <div>
-            <Mono className="text-sm tracking-widest uppercase text-foreground mb-6 block">Lab</Mono>
+            <Mono className="text-sm tracking-widest uppercase text-foreground mb-6 block">
+              Lab
+            </Mono>
             <ul className="space-y-4">
               {footerNavigation.lab.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-muted hover:text-gold transition-colors text-sm">
+                  <Link
+                    href={link.href}
+                    className="text-muted hover:text-gold transition-colors text-sm"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -40,18 +50,22 @@ export function Footer() {
           </div>
 
           <div>
-            <Mono className="text-sm tracking-widest uppercase text-foreground mb-6 block">Services</Mono>
+            <Mono className="text-sm tracking-widest uppercase text-foreground mb-6 block">
+              Services
+            </Mono>
             <ul className="space-y-4">
               {footerNavigation.services.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-muted hover:text-gold transition-colors text-sm">
+                  <Link
+                    href={link.href}
+                    className="text-muted hover:text-gold transition-colors text-sm"
+                  >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
         </div>
 
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 md:gap-4">

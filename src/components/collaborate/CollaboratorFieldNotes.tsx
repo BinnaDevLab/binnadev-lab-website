@@ -10,7 +10,8 @@ export function CollaboratorFieldNotes() {
   // Hash generator for aesthetic purposes to simulate cryptographic signatures
   const generateHash = (str: string) => {
     let hash = 0;
-    for (let i = 0; i < str.length; i++) hash = Math.imul(31, hash) + str.charCodeAt(i) | 0;
+    for (let i = 0; i < str.length; i++)
+      hash = (Math.imul(31, hash) + str.charCodeAt(i)) | 0;
     return `0x${Math.abs(hash).toString(16).padStart(8, "0")}`;
   };
 
@@ -21,22 +22,23 @@ export function CollaboratorFieldNotes() {
     <section className="py-32 relative bg-obsidian border-t border-white/5 overflow-hidden">
       {/* Background Ambient */}
       <div className="absolute inset-0 bg-gradient-to-b from-carbon/40 to-transparent pointer-events-none" />
-      
+
       <div className="relative z-10 px-6 md:px-12 lg:px-24 mb-20 max-w-[1800px] mx-auto">
         <Mono className="text-gold mb-4 block tracking-widest uppercase">
-          // Peer Review
+          Peer Review
         </Mono>
         <H2 className="text-4xl md:text-5xl tracking-tight leading-tight mb-6">
           Verified Attestations
         </H2>
         <Body className="text-xl text-white/60 font-light leading-relaxed max-w-3xl">
-          The hardest engineering problems require immense trust. Here is what technical leaders, founders, and engineers say after reviewing our code and collaborating with the Lab.
+          The hardest engineering problems require immense trust. Here is what
+          technical leaders, founders, and engineers say after reviewing our
+          code and collaborating with the Lab.
         </Body>
       </div>
 
       {/* Marquee Track */}
       <div className="relative z-10 flex overflow-hidden w-full py-8 group">
-        
         {/* Left Fade */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-obsidian to-transparent z-20 pointer-events-none" />
 
@@ -50,11 +52,10 @@ export function CollaboratorFieldNotes() {
           }}
         >
           {marqueeItems.map((t, idx) => (
-            <div 
-              key={`${t.id}-${idx}`} 
+            <div
+              key={`${t.id}-${idx}`}
               className="w-[450px] md:w-[600px] inline-block whitespace-normal bg-carbon/60 border border-white/10 rounded-xl p-8 md:p-10 relative hover:border-gold/30 transition-colors duration-500 shadow-2xl hover:shadow-gold/5 flex flex-col h-[400px]"
             >
-              
               {/* Top Tech Bar */}
               <div className="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
                 <Mono className="text-xs text-white/30 tracking-widest truncate max-w-[150px]">
@@ -89,7 +90,8 @@ export function CollaboratorFieldNotes() {
                     {t.name}
                   </div>
                   <Mono className="text-xs text-gold uppercase tracking-widest truncate block">
-                    {t.role} <span className="text-white/20 mx-1">//</span> {t.company}
+                    {t.role} <span className="text-white/20 mx-1">||</span>{" "}
+                    {t.company}
                   </Mono>
                 </div>
               </div>

@@ -15,10 +15,10 @@ export function YouTubeSection() {
   const getYoutubeId = (url: string) => {
     try {
       const parsed = new URL(url);
-      if (parsed.hostname.includes('youtu.be')) return parsed.pathname.slice(1);
-      return parsed.searchParams.get('v') || '';
+      if (parsed.hostname.includes("youtu.be")) return parsed.pathname.slice(1);
+      return parsed.searchParams.get("v") || "";
     } catch {
-      return url.split('/').pop() || '';
+      return url.split("/").pop() || "";
     }
   };
 
@@ -28,9 +28,11 @@ export function YouTubeSection() {
   const secondary = youtubeVideos.slice(1, 3);
 
   return (
-    <section id="youtube" className="py-24 md:py-48 bg-obsidian relative overflow-hidden">
+    <section
+      id="youtube"
+      className="py-24 md:py-48 bg-obsidian relative overflow-hidden"
+    >
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
-        
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
@@ -38,7 +40,11 @@ export function YouTubeSection() {
               <span className="w-8 h-[1px] bg-royal" />
               <Mono>Broadcasts</Mono>
             </div>
-            <H2 className="text-4xl md:text-6xl mb-6">Don&apos;t just read about it.<br/>Watch it.</H2>
+            <H2 className="text-4xl md:text-6xl mb-6">
+              Don&apos;t just read about it.
+              <br />
+              Watch it.
+            </H2>
             <Body className="text-xl">
               Every video goes past the surface. No syntax drills. No
               follow-along tutorials that leave you more confused than when you
@@ -52,14 +58,15 @@ export function YouTubeSection() {
             rel="noopener noreferrer"
             className="group flex-shrink-0 flex items-center gap-4 px-6 py-4 border border-white/20 hover:border-gold transition-colors duration-300"
           >
-            <Mono className="text-white text-xs group-hover:text-gold transition-colors">Subscribe</Mono>
+            <Mono className="text-white text-xs group-hover:text-gold transition-colors">
+              Subscribe
+            </Mono>
             <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-gold group-hover:translate-x-1 transition-all" />
           </Link>
         </div>
 
         {/* Asymmetrical Editorial Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
-          
           {/* Featured Video (Left 8 columns) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +86,10 @@ export function YouTubeSection() {
                 ></iframe>
               </div>
             ) : (
-              <div onClick={() => setActiveVideo(featured.id)} className="relative aspect-video w-full overflow-hidden bg-carbon mb-6 border border-white/5 cursor-pointer group">
+              <div
+                onClick={() => setActiveVideo(featured.id)}
+                className="relative aspect-video w-full overflow-hidden bg-carbon mb-6 border border-white/5 cursor-pointer group"
+              >
                 <Image
                   src={featured.thumbnail}
                   alt={featured.title}
@@ -95,10 +105,12 @@ export function YouTubeSection() {
                 </div>
               </div>
             )}
-            
+
             <div className="flex justify-between items-start gap-4">
               <div>
-                <Meta className="text-gold mb-2 block">Featured // {featured.duration}</Meta>
+                <Meta className="text-gold mb-2 block">
+                  Featured // {featured.duration}
+                </Meta>
                 <h3 className="font-display text-2xl md:text-3xl text-foreground group-hover:text-gold transition-colors">
                   {featured.title}
                 </h3>
@@ -128,7 +140,10 @@ export function YouTubeSection() {
                     ></iframe>
                   </div>
                 ) : (
-                  <div onClick={() => setActiveVideo(video.id)} className="relative aspect-video w-full overflow-hidden bg-carbon mb-4 border border-white/5 cursor-pointer group">
+                  <div
+                    onClick={() => setActiveVideo(video.id)}
+                    className="relative aspect-video w-full overflow-hidden bg-carbon mb-4 border border-white/5 cursor-pointer group"
+                  >
                     <Image
                       src={video.thumbnail}
                       alt={video.title}
@@ -144,25 +159,28 @@ export function YouTubeSection() {
                     </div>
                   </div>
                 )}
-                
-                <Meta className="text-white/40 mb-2 block">{video.duration}</Meta>
+
+                <Meta className="text-white/60 mb-2 block">
+                  {video.duration}
+                </Meta>
                 <h3 className="font-display text-lg text-white/80 group-hover:text-white transition-colors leading-snug">
                   {video.title}
                 </h3>
               </motion.div>
             ))}
-            
+
             {/* View All Prompt */}
-            <Link 
-              href={socialLinks.youtube} 
-              target="_blank" 
+            <Link
+              href={socialLinks.youtube}
+              target="_blank"
               className="mt-auto pt-8 border-t border-white/10 flex items-center justify-between group"
             >
-              <Mono className="text-white/40 group-hover:text-white transition-colors">View full archive</Mono>
-              <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all" />
+              <Mono className="text-white/60 group-hover:text-white transition-colors">
+                View full archive
+              </Mono>
+              <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all" />
             </Link>
           </div>
-
         </div>
       </Container>
     </section>

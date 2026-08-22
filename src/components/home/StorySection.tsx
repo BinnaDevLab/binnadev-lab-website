@@ -110,7 +110,7 @@ export function StorySection() {
                 >
                   <div className="flex items-baseline gap-4 mb-2">
                     <Meta className="text-gold">[{item.id}]</Meta>
-                    <Mono className="text-white/40 uppercase tracking-widest text-sm">
+                    <Mono className="text-white/60 uppercase tracking-widest text-sm">
                       {item.phase}
                     </Mono>
                   </div>
@@ -129,4 +129,5 @@ export function StorySection() {
     </section>
   );
 }
+
 

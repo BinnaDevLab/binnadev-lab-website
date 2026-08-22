@@ -17,9 +17,9 @@ export default function EventMap({ location }: EventMapProps) {
   useEffect(() => {
     setTimeout(() => setMounted(true), 0);
     // Unregister any stale service workers that might cache old CSP headers or block tiles
-    if ('serviceWorker' in navigator) {
+    if ("serviceWorker" in navigator) {
       navigator.serviceWorker.getRegistrations().then((registrations) => {
-        for (let registration of registrations) {
+        for (const registration of registrations) {
           registration.unregister();
         }
       });
@@ -68,16 +68,25 @@ export default function EventMap({ location }: EventMapProps) {
         Leaflet needs a defined height/width and an explicit z-index to stay behind nextjs overlays 
         The style tag sets the z-index strictly on the map container.
       */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .leaflet-container { z-index: 10 !important; font-family: inherit; }
         .custom-leaflet-marker { background: transparent; border: none; }
-      ` }} />
-      
-      <MapContainer 
-        center={[location.latitude, location.longitude]} 
-        zoom={15} 
+      `,
+        }}
+      />
+
+      <MapContainer
+        center={[location.latitude, location.longitude]}
+        zoom={15}
         scrollWheelZoom={true}
-        style={{ width: '100%', height: '100%', position: 'absolute', inset: 0 }}
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          inset: 0,
+        }}
         zoomControl={true}
       >
         <TileLayer
@@ -85,13 +94,13 @@ export default function EventMap({ location }: EventMapProps) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxZoom={19}
         />
-        
-        <Marker 
-          position={[location.latitude, location.longitude]} 
-          icon={customMarkerIcon} 
+
+        <Marker
+          position={[location.latitude, location.longitude]}
+          icon={customMarkerIcon}
         />
       </MapContainer>
-      
+
       {/* Get Directions Button */}
       <a
         href={getDirectionsUrl}

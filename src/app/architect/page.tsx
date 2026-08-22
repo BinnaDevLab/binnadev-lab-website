@@ -4,8 +4,6 @@ import {
   ArrowRight,
   Terminal,
   ExternalLink,
-  Play,
-  Clock,
   CheckCircle,
   BrainCircuit,
   Award,
@@ -15,6 +13,17 @@ import Link from "next/link";
 import { TIMELINE, PRINCIPLES, RESEARCH } from "@/data/architect";
 import { socialLinks } from "@/data/social";
 import { ArchitectYouTubeList } from "@/components/architect/ArchitectYouTubeList";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Architect | Protocol Design & Smart Contract Engineering",
+  description:
+    "Obinna Franklin Duru is a senior protocol architect and smart contract engineer specializing in EVM mechanics, formal verification, and secure financial infrastructure.",
+  alternates: {
+    canonical: "/architect",
+  },
+};
 
 export default function ArchitectPage() {
   const renderDescription = (description: string | string[]) => {
@@ -67,10 +76,7 @@ export default function ArchitectPage() {
   ];
 
   return (
-    <div
-      className="bg-obsidian min-h-screen pt-32 pb-32 relative selection:bg-gold selection:text-obsidian"
-      
-    >
+    <div className="bg-obsidian min-h-screen pt-32 pb-32 relative selection:bg-gold selection:text-obsidian">
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-royal/5 via-carbon/10 to-transparent opacity-60" />
@@ -180,7 +186,7 @@ export default function ArchitectPage() {
                     <Mono className="text-gold/50 text-xl font-light">
                       0{idx + 1}
                     </Mono>
-                    <div className="w-12 h-12 rounded-lg border border-white/10 flex items-center justify-center bg-obsidian/50 text-white/40 group-hover:text-gold group-hover:scale-110 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-lg border border-white/10 flex items-center justify-center bg-obsidian/50 text-white/60 group-hover:text-gold group-hover:scale-110 transition-all duration-300">
                       {idx === 0 && <CheckCircle className="w-5 h-5" />}
                       {idx === 1 && <BrainCircuit className="w-5 h-5" />}
                       {idx === 2 && <Award className="w-5 h-5" />}
@@ -189,7 +195,7 @@ export default function ArchitectPage() {
                   <H3 className="text-3xl mb-3 text-white group-hover:text-gold transition-colors tracking-tight">
                     {principle.title}
                   </H3>
-                  <Mono className="text-[10px] text-white/40 uppercase tracking-widest mb-6 block border-b border-white/10 pb-4">
+                  <Mono className="text-[10px] text-white/60 uppercase tracking-widest mb-6 block border-b border-white/10 pb-4">
                     {principleSubtitles[idx]}
                   </Mono>
                   <p className="text-white/60 leading-relaxed font-light text-base md:text-lg flex-1">
@@ -339,8 +345,9 @@ export default function ArchitectPage() {
               View Channel <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-
-          <ArchitectYouTubeList />`r`n        </section>
+          <ArchitectYouTubeList />
+          `r`n{" "}
+        </section>
 
         {/* 6. Closing */}
         <section className="border-t border-white/10 pt-32 text-center pb-16">
@@ -348,19 +355,14 @@ export default function ArchitectPage() {
             The Mission Continues
           </Mono>
           <H2 className="text-3xl md:text-5xl lg:text-6xl mb-12 max-w-4xl mx-auto leading-tight tracking-tight">
-            "Reliability is the foundation of innovation. Thoughtful design
-            prevents risk, and excellence turns code into craftsmanship."
+            &quot;Reliability is the foundation of innovation. Thoughtful design
+            prevents risk, and excellence turns code into craftsmanship.&quot;
           </H2>
           <Body className="text-xl text-white/60 mb-12 font-light">
-            Let's build systems that endure.
+            Let&apos;s build systems that endure.
           </Body>
         </section>
       </Container>
     </div>
   );
 }
-
-
-
-
-

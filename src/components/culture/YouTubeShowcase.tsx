@@ -16,9 +16,13 @@ export function YouTubeShowcase() {
           <Mono className="text-gold mb-4 tracking-widest uppercase flex items-center gap-2">
             <Video className="w-4 h-4" /> Archive
           </Mono>
-          <H2 className="text-3xl md:text-5xl mb-4 tracking-tight">Ideas Worth Taking Home</H2>
+          <H2 className="text-3xl md:text-5xl mb-4 tracking-tight">
+            Ideas Worth Taking Home
+          </H2>
           <Body className="text-xl text-white/60 font-light leading-relaxed mt-2">
-            Some conversations deserve more than a passing message. We capture questions, debates, experiments, and lessons that are worth carrying beyond the Lab.
+            Some conversations deserve more than a passing message. We capture
+            questions, debates, experiments, and lessons that are worth carrying
+            beyond the Lab.
           </Body>
         </div>
         <a
@@ -39,8 +43,8 @@ export function YouTubeShowcase() {
 
           return (
             <div key={video.id} className="group flex flex-col h-full">
-              <div 
-                className={`relative aspect-video rounded-xl overflow-hidden bg-carbon border mb-4 transition-colors ${isActive ? 'border-gold' : 'border-white/5 group-hover:border-gold/50 cursor-pointer'}`}
+              <div
+                className={`relative aspect-video rounded-xl overflow-hidden bg-carbon border mb-4 transition-colors ${isActive ? "border-gold" : "border-white/5 group-hover:border-gold/50 cursor-pointer"}`}
                 onClick={() => {
                   if (!isActive) setActiveVideoId(video.id);
                 }}
@@ -75,7 +79,7 @@ export function YouTubeShowcase() {
               </div>
 
               <div>
-                <a 
+                <a
                   href={video.youtubeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -89,7 +93,7 @@ export function YouTubeShowcase() {
                   <Mono className="text-xs text-muted tracking-wider">
                     {video.duration}
                   </Mono>
-                  <a 
+                  <a
                     href={video.youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"

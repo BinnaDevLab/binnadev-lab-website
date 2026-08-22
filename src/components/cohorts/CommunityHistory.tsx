@@ -29,7 +29,7 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
           transition={{ duration: 0.8 }}
           className="mb-32 text-center max-w-3xl mx-auto relative z-10"
         >
-          <Mono className="text-white/40 tracking-[0.2em] text-xs uppercase mb-6 block">
+          <Mono className="text-white/60 tracking-[0.2em] text-xs uppercase mb-6 block">
             Evolution
           </Mono>
           <H2 className="text-3xl md:text-5xl leading-tight tracking-tight">
@@ -139,7 +139,7 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
                             <div className="text-2xl text-white mb-1 font-display">
                               {m.value}
                             </div>
-                            <div className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-mono">
+                            <div className="text-[10px] text-white/60 uppercase tracking-[0.2em] font-mono">
                               {m.label}
                             </div>
                           </div>
@@ -150,7 +150,7 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
                     <div className="mb-10 space-y-6">
                       {evt.guest && (
                         <div>
-                          <span className="text-[10px] text-white/40 font-mono uppercase tracking-[0.2em] block mb-2">
+                          <span className="text-[10px] text-white/60 font-mono uppercase tracking-[0.2em] block mb-2">
                             Special Guest
                           </span>
                           <span className="text-sm text-white/80">
@@ -160,7 +160,7 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
                       )}
                       {(evt.speakers || evt.team) && (
                         <div>
-                          <span className="text-[10px] text-white/40 font-mono uppercase tracking-[0.2em] block mb-2">
+                          <span className="text-[10px] text-white/60 font-mono uppercase tracking-[0.2em] block mb-2">
                             {evt.speakers ? "Speakers" : "Core Team"}
                           </span>
                           <div
