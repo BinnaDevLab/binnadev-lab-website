@@ -1,9 +1,9 @@
-import { Code2, ShieldAlert, Lightbulb, Scale } from "lucide-react";
+import { LucideIcon, Code2, ShieldAlert, Lightbulb, Scale } from "lucide-react";
 
 export interface ManifestoPoint {
   title: string;
   content: string;
-  icon: any; // Lucide icon
+  icon: LucideIcon; // Lucide icon
   image: string;
 }
 

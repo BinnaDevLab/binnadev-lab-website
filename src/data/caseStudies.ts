@@ -1,43 +1,121 @@
+export interface ArchNode {
+  style: "flow" | "milestone" | "box" | "split" | "note";
+  label: string;
+  value?: string;
+  secondaryLabel?: string;
+}
+
 export interface CaseStudy {
   id: string;
   client: string;
+  clientWebsite?: string;
+  parentCompany?: string;
+  parentWebsite?: string;
   title: string;
   challenge: string;
+  architectureInsight: string;
   approach: string;
   outcome: string;
   technologies: string[];
   imageUrl: string;
+  projectLink?: string;
+  architectureNodes: ArchNode[];
 }
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "1",
-    client: "DeFi Yield Protocol",
-    title: "Securing $500M TVL through rigorous invariant testing.",
-    challenge: "A leading DeFi protocol required a comprehensive security review of their v3 vault architecture before mainnet launch, specifically looking for edge cases in flash-loan manipulation.",
-    approach: "We developed a custom stateful fuzzing harness using Echidna to model the protocol's complex mathematical invariants. We then conducted a line-by-line manual audit of the core logic.",
-    outcome: "Identified and mitigated 3 critical vulnerabilities prior to deployment. The protocol launched successfully and has secured over $500M without incident.",
-    technologies: ["Solidity", "Foundry", "Echidna", "Huff"],
-    imageUrl: "/images/shared/shared-asset-7.jpeg"
+    id: "libertas-alpha-academy",
+    client: "Libertas Alpha",
+    clientWebsite: "https://libertasalpha.com/",
+    title: "Libertas Alpha Academy Certification Protocol",
+    challenge:
+      "Academic credentials are traditionally trusted because an institution says they are valid. We needed a system where the rules governing a credential could be enforced by the protocol itself.",
+    architectureInsight:
+      "Courses and Cohorts are fundamentally different. A Course is permanent, self-paced, and independent. A Cohort is time-bound, event-specific, and group-based. We modeled these as distinct concepts rather than forcing them into one abstraction.",
+    approach:
+      "We built a decentralized certification system using soulbound ERC1155 credentials. A hybrid architecture allows a conventional frontend and backend relayer to manage state, while critical rules, certificate issuance, Merkle-proof verification, token namespaces, and cryptographic revocation, remain strictly on-chain.",
+    outcome:
+      "We translated messy real-world organizational rules into enforceable protocol architecture, establishing explicit invariants around token supply and state transitions.",
+    technologies: [
+      "ERC1155",
+      "Soulbound Tokens",
+      "Merkle Trees",
+      "Hybrid Architecture",
+    ],
+    imageUrl: "/images/shared/shared-asset-7.jpeg",
+    projectLink:
+      "https://github.com/Ikenga-Software-Solutions-LTD/libertasalpha-academy-certification-contracts/blob/main/README.md",
+    architectureNodes: [
+      { style: "flow", label: "Student Completes", value: "Backend" },
+      { style: "flow", label: "Cohort Graduates", value: "Merkle Root" },
+      { style: "box", label: "On-Chain Vault (ERC1155)" },
+    ],
   },
   {
-    id: "2",
-    client: "Layer 2 Bridge",
-    title: "Architecting a trust-minimized cross-chain messaging bridge.",
-    challenge: "The client needed a highly scalable, gas-efficient bridge to transfer liquidity between Ethereum mainnet and a new optimistic rollup, without relying on centralized validators.",
-    approach: "We designed a novel relayer infrastructure using zero-knowledge proofs for state validation, minimizing the on-chain verification costs. We authored the smart contracts and the off-chain Go relayer.",
-    outcome: "Reduced bridging gas costs by 40% compared to industry standards while maintaining cryptoeconomic security guarantees.",
-    technologies: ["Solidity", "Go", "Circom", "Next.js"],
-    imageUrl: "/images/caseStudies/caseStudies-asset-1.jpeg"
+    id: "milestone-crowdfund",
+    client: "United 4 Change",
+    clientWebsite: "https://united-4-change.org/",
+    parentCompany: "Black Spectre Tech",
+    parentWebsite: "https://black-spectre.com/",
+    title: "MilestoneCrowdfundUpgradeable",
+    challenge:
+      "Crowdfunding assumes a creator will finish what they promised. We asked: What if capital is released because evidence shows that the next stage has been earned, rather than because someone promised to deliver?",
+    architectureInsight:
+      "This is a Defensive Escrow architecture. Capital is locked and progressively released according to milestones. But failure is explicitly designed into the protocol. If a project is abandoned, remaining funds become refundable via a forward-only state machine.",
+    approach:
+      "Every campaign strictly accounts for 10,000 BPS (100%). If 30% has been released, a contributor has an exact mathematical entitlement to their remaining refundable capital. Built with UUPS upgradeability, ERC-4337 Account Abstraction, and emergency halt mechanisms.",
+    outcome:
+      "We design financial systems around failure, not just the happy path. The protocol handles native ETH, allowlisted ERC20s, and fiat contribution pathways securely.",
+    technologies: [
+      "Defensive Escrow",
+      "ERC-4337",
+      "UUPS Upgradeability",
+      "State Machines",
+    ],
+    imageUrl: "/images/caseStudies/caseStudies-asset-1.jpeg",
+    projectLink:
+      "https://github.com/Blackspectre-tech/smartcontract/blob/main/README.md",
+    architectureNodes: [
+      { style: "milestone", label: "Milestone 1", value: "2,000 BPS" },
+      { style: "milestone", label: "Milestone 2", value: "3,000 BPS" },
+      { style: "milestone", label: "Milestone 3", value: "5,000 BPS" },
+      {
+        style: "note",
+        label:
+          "Failure state active. Remaining 5,000 BPS mathematically refundable.",
+      },
+    ],
   },
   {
-    id: "3",
-    client: "Institutional Custodian",
-    title: "Building an enterprise-grade multi-signature wallet ecosystem.",
-    challenge: "An institutional asset manager required a custom non-custodial wallet solution with complex role-based access control (RBAC) and spending limits for their internal trading teams.",
-    approach: "We built a specialized extension of the Safe (formerly Gnosis Safe) architecture, writing custom modules in Solidity to enforce daily spending limits and multi-tier approval hierarchies.",
-    outcome: "Successfully processed over $2B in institutional transactions with zero security breaches. Delivered a full-stack React application for the trading desk.",
-    technologies: ["Solidity", "Safe Core", "React", "Node.js"],
-    imageUrl: "/images/caseStudies/caseStudies-asset-2.jpeg"
-  }
+    id: "libertas-water-project",
+    client: "Libertas Alpha",
+    clientWebsite: "https://libertasalpha.com/",
+    title: "Libertas Alpha Water Project Treasury",
+    challenge:
+      "How can funding for physical infrastructure become transparent, accountable, and programmable? The system needed to connect physical water infrastructure with on-chain economic infrastructure.",
+    architectureInsight:
+      "We implemented a Split-Vault architecture separating the Operational Vault and the Yield Vault. This separation makes capital recovery and operational surplus structurally distinct.",
+    approach:
+      "Contributor participation is represented through ERC721 Impact Tokens. Yield is calculated against a global snapshot and the contributor's pool share for an O(1) claim model. Operational grants require EIP-712 threshold authorization through a MultiSigController.",
+    outcome:
+      "We connected blockchain infrastructure with real-world economic systems, making responsibilities, permissions, and financial boundaries mathematically explicit.",
+    technologies: [
+      "ERC721 Impact Tokens",
+      "Split-Vault Treasury",
+      "EIP-712",
+      "O(1) Yield Claims",
+    ],
+    imageUrl: "/images/caseStudies/caseStudies-asset-2.jpeg",
+    projectLink:
+      "https://github.com/LibertasAlpha/lawp-treasury-contracts/blob/main/README.md",
+    architectureNodes: [
+      { style: "box", label: "Contribution Pool (cNGN)" },
+      {
+        style: "split",
+        label: "Operational Vault",
+        secondaryLabel: "Yield Vault",
+      },
+      { style: "note", label: "O(1) Claims Infrastructure" },
+    ],
+  },
 ];

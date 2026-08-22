@@ -6,7 +6,7 @@ import { H3, Mono } from "@/components/ui/Typography";
 import { FileText, ExternalLink } from "lucide-react";
 import { Pagination } from "@/components/ui/Pagination";
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 4;
 
 export function PublicationList() {
   const [currentPage, setCurrentPage] = useState(1);

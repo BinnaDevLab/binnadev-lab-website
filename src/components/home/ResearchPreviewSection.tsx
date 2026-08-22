@@ -1,11 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, H3 } from "@/components/ui/Typography";
-import { projects } from "@/data";
+import { projects, Project } from "@/data";
 import { ArrowRight, Beaker, GitBranch, ArrowUpRight } from "lucide-react";
 
 export function ResearchPreviewSection() {
@@ -14,7 +12,7 @@ export function ResearchPreviewSection() {
 
   return (
     <section className="py-32 bg-obsidian border-t border-white/5 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-royal/5 blur-[200px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(43,76,126,0.15)_0%,_transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
@@ -39,13 +37,7 @@ export function ResearchPreviewSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {previewProjects.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-            >
+            <FadeIn key={project.id} delay={i * 0.1} direction="up">
               {project.link ? (
                 <a
                   href={project.link}
@@ -60,7 +52,7 @@ export function ResearchPreviewSection() {
                   <ProjectCardContent project={project} />
                 </div>
               )}
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </Container>
@@ -68,12 +60,12 @@ export function ResearchPreviewSection() {
   );
 }
 
-function ProjectCardContent({ project }: { project: any }) {
+function ProjectCardContent({ project }: { project: Project }) {
   return (
     <>
       <div className="h-48 md:h-64 overflow-hidden relative border-b border-white/5">
         <Image
-          src={project.imageUrl}
+          src={project.imageUrl || "/images/shared/shared-asset-1.jpeg"}
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -120,3 +112,6 @@ function ProjectCardContent({ project }: { project: any }) {
     </>
   );
 }
+
+
+

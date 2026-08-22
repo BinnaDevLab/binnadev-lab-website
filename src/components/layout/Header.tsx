@@ -1,11 +1,12 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { mainNavigation } from "@/data/navigation";
 import { socialLinks } from "@/data/social";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Mono } from "@/components/ui/Typography";
 import { ArrowRight } from "lucide-react";
 
@@ -27,10 +28,11 @@ export function Header() {
 
   // Close menu on route change
   useEffect(() => {
-    setMobileMenuOpen(false);
+    const timer = setTimeout(() => setMobileMenuOpen(false), 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
-  const menuVariants: any = {
+  const menuVariants: Variants = {
     closed: {
       clipPath: "circle(0% at 100% 0%)",
       transition: {
@@ -52,7 +54,7 @@ export function Header() {
     },
   };
 
-  const itemVariants: any = {
+  const itemVariants: Variants = {
     closed: { opacity: 0, x: -20 },
     open: {
       opacity: 1,
@@ -61,7 +63,7 @@ export function Header() {
     },
   };
 
-  const fadeVariants: any = {
+  const fadeVariants: Variants = {
     closed: { opacity: 0, y: 10 },
     open: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
   };
@@ -82,11 +84,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {/* Mobile: Standalone logo only */}
-              <img
-                src="/favicon.svg"
-                alt="BinnaDev Lab Logo"
-                className="w-8 h-8 md:hidden transition-transform group-hover:scale-105"
-              />
+              <Image src="/favicon.svg" alt="BinnaDev Lab Logo" width={32} height={32} className="w-8 h-8 md:hidden transition-transform group-hover:scale-105" />
               {/* Desktop: Wordmark only */}
               <span className="hidden md:inline-block font-display font-semibold tracking-wider text-foreground text-xl">
                 BinnaDev<span className="text-gold">_</span>Lab

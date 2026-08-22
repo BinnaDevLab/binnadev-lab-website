@@ -1,291 +1,158 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, ValidationError } from '@formspree/react';
-
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { AlertCircle, Send, Terminal } from "lucide-react";
+import { FadeIn, StaggerGroup, StaggerItem } from "@/components/ui/FadeIn";
 
 export function InquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  // Custom multi-select state
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const servicesList = [
-    "Smart Contract Audit",
-    "Protocol Architecture",
-    "Smart Contract Development",
-    "Full-Stack Web3",
-    "Infrastructure",
-    "Technical Training",
-  ];
-
-  const toggleService = (service: string) => {
-    setSelectedServices((prev) =>
-      prev.includes(service)
-        ? prev.filter((s) => s !== service)
-        : [...prev, service],
-    );
-  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate network request
+    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsSuccess(true);
+      setIsSubmitted(true);
     }, 1500);
   };
 
   return (
-    <section id="inquiry" className="py-32 border-t border-white/5 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-carbon/20 to-obsidian pointer-events-none" />
-
-      <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <Mono className="text-gold mb-4 block tracking-widest uppercase">
-              Start The Conversation
+    <section id="contact" className="py-32 relative bg-obsidian">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          {/* Left: Context */}
+          <FadeIn className="lg:col-span-5">
+            <Mono className="text-gold mb-6 block text-sm tracking-widest uppercase">
+              // Contact
             </Mono>
-            <H2 className="text-4xl mb-4">Let&apos;s Build Together.</H2>
-            <Body className="text-muted text-lg max-w-2xl mx-auto">
-              Tell us about your organization, your engineering challenges, and
-              how BinnaDev Lab can help you achieve production-grade security
-              and scale.
+            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1]">
+              Tell Us What You're Building.
+            </H2>
+            <Body className="text-xl text-white/60 mb-8 font-light leading-relaxed max-w-lg">
+              We do not believe in high-pressure sales funnels. If you have a complex engineering problem, submit the details below. We will review it and let you know if we are the right team to solve it.
             </Body>
-          </div>
+            
+            <div className="flex flex-col gap-6 mt-12 pt-12 border-t border-white/10">
+              <div>
+                <Mono className="text-gold text-xs tracking-widest uppercase mb-2">Location</Mono>
+                <Body className="text-white/80">Global / Remote First</Body>
+              </div>
+              <div>
+                <Mono className="text-gold text-xs tracking-widest uppercase mb-2">Response Time</Mono>
+                <Body className="text-white/80">Typically within 48 hours</Body>
+              </div>
+            </div>
+          </FadeIn>
 
-          <div className="bg-carbon/40 backdrop-blur-xl border border-white/5 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-            {/* Success State Overlay */}
-            {isSuccess && (
-              <div className="absolute inset-0 bg-carbon/95 backdrop-blur-3xl z-20 flex flex-col items-center justify-center p-8 text-center border border-royal/30 rounded-2xl">
-                <CheckCircle2 className="w-16 h-16 text-green-500 mb-6" />
-                <H2 className="text-3xl mb-4">Inquiry Received</H2>
-                <Body className="text-muted text-lg max-w-md mb-8">
-                  Thank you for reaching out. An architect from the Lab will
-                  review your requirements and be in touch shortly.
+          {/* Right: The Form */}
+          <div className="lg:col-span-7">
+            {isSubmitted ? (
+              <FadeIn className="bg-carbon border border-gold/20 p-12 rounded-2xl text-center h-full flex flex-col justify-center items-center">
+                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                  <Terminal className="w-8 h-8 text-gold" />
+                </div>
+                <H2 className="text-3xl mb-4 text-white">Transmission Received</H2>
+                <Body className="text-white/70 max-w-md mx-auto">
+                  We have securely received your inquiry. One of our lead engineers will review the details and reach out to you shortly.
                 </Body>
-                <Button onClick={() => setIsSuccess(false)} variant="outline">
-                  Submit Another Inquiry
-                </Button>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
-              {/* Personal Info Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="name"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Full Name <span className="text-gold">*</span>
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    id="name"
-                    placeholder="Your full name" name="name"
-                    className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
-                  />
+              </FadeIn>
+            ) : (
+              <FadeIn delay={0.2} className="bg-carbon/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 p-4 border-l border-b border-white/10 bg-obsidian/50 text-xs font-mono text-white/30 uppercase tracking-widest flex items-center gap-2">
+                  <Terminal className="w-3 h-3" /> SECURE CHANNEL
                 </div>
 
-                <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Professional Email <span className="text-gold">*</span>
-                  </label>
-                  <input
-                    required
-                    type="email"
-                    id="email"
-                    placeholder="hello@example.com" name="email"
-                    className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
-                  />
-                </div>
+                <form onSubmit={handleSubmit} className="space-y-8 mt-4">
+                  {/* Personal Info */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                        Name
+                      </label>
+                      <input
+                        required
+                        type="text"
+                        id="name" name="name"
+                        placeholder="John Doe"
+                        className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all font-light"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                        Email Address
+                      </label>
+                      <input
+                        required
+                        type="email"
+                        id="email" name="email"
+                        placeholder="john@organization.com"
+                        className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all font-light"
+                      />
+                    </div>
+                  </div>
 
-                <div className="space-y-2">
-                  <label
-                    htmlFor="company"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Company / Organization <span className="text-gold">*</span>
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    id="company"
-                    placeholder="Your organization" name="company"
-                    className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
-                  />
-                </div>
+                  {/* Organization Info */}
+                  <div className="space-y-2">
+                    <label htmlFor="organization" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                      Organization / Protocol
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      id="organization" name="organization"
+                      placeholder="What are you building?"
+                      className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all font-light"
+                    />
+                  </div>
 
-                <div className="space-y-2">
-                  <label
-                    htmlFor="title"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Job Title
-                  </label>
-                  <input
-                    type="text"
-                    id="title"
-                    placeholder="Your role" name="title"
-                    className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all"
-                  />
-                </div>
-              </div>
+                  {/* Textarea */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <label htmlFor="details" className="text-sm font-medium text-white/80 font-mono uppercase tracking-wider text-xs">
+                        What problem do you need help solving?
+                      </label>
+                    </div>
+                    <textarea
+                      required
+                      id="details" name="details"
+                      rows={6}
+                      placeholder="Describe the architectural challenge, security concerns, or engineering constraints..."
+                      className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all resize-y font-light leading-relaxed"
+                    />
+                  </div>
 
-              {/* Project Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-white/5">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="inquiryType"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Type of Inquiry <span className="text-gold">*</span>
-                  </label>
-                  <select
-                    required
-                    id="inquiryType" name="inquiryType"
-                    defaultValue=""
-                    className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all appearance-none"
-                    style={{
-                      backgroundImage:
-                        "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "right 1rem center",
-                      backgroundSize: "1em",
-                    }}
-                  >
-                    <option value="" disabled>
-                      Select an option...
-                    </option>
-                    <option value="audit">Smart Contract Audit</option>
-                    <option value="development">
-                      Smart Contract Development
-                    </option>
-                    <option value="architecture">Protocol Architecture</option>
-                    <option value="partnership">Strategic Collaboration</option>
-                    <option value="training">Technical Training</option>
-                    <option value="general">General Inquiry</option>
-                  </select>
-                </div>
+                  <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-lg">
+                    <AlertCircle className="w-5 h-5 text-gold flex-shrink-0" />
+                    <p className="text-xs font-mono text-white/60 leading-relaxed uppercase tracking-wider">
+                      Communications are confidential. We are happy to sign an NDA before reviewing private repositories.
+                    </p>
+                  </div>
 
-                <div className="space-y-2">
-                  <label
-                    htmlFor="budget"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Project Budget (Optional)
-                  </label>
-                  <select
-                    id="budget" name="budget"
-                    defaultValue=""
-                    className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all appearance-none"
-                    style={{
-                      backgroundImage:
-                        "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "right 1rem center",
-                      backgroundSize: "1em",
-                    }}
-                  >
-                    <option value="" disabled>
-                      Select a range...
-                    </option>
-                    <option value="tier1">&lt; $50k</option>
-                    <option value="tier2">$50k - $150k</option>
-                    <option value="tier3">$150k - $500k</option>
-                    <option value="tier4">$500k+</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Multi-Select Services */}
-              <div className="pt-6 border-t border-white/5 space-y-4">
-                <label className="text-sm font-medium text-white/80">
-                  Services Interested In (Multi-select)
-                </label>
-                <div className="flex flex-wrap gap-3">
-                  {servicesList.map((service) => (
+                  <div className="pt-4">
                     <button
-                      key={service}
-                      type="button"
-                      onClick={() => toggleService(service)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                        selectedServices.includes(service)
-                          ? "bg-royal text-obsidian border border-royal"
-                          : "bg-obsidian text-white/70 border border-white/10 hover:border-white/30"
-                      }`}
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-white text-obsidian hover:bg-gold transition-colors duration-300 py-4 rounded-lg font-mono text-sm uppercase tracking-widest font-semibold flex items-center justify-center gap-2 group"
                     >
-                      {service}
+                      {isSubmitting ? (
+                        "Transmitting..."
+                      ) : (
+                        <>
+                          Start the Conversation
+                          <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </>
+                      )}
                     </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Textarea */}
-              
-              {/* Hidden Input for Multi-Select */}
-              <input type="hidden" name="services" value={selectedServices.join(', ')} />
-
-              <div className="pt-6 border-t border-white/5 space-y-2">
-                <div className="flex justify-between items-center">
-                  <label
-                    htmlFor="details"
-                    className="text-sm font-medium text-white/80"
-                  >
-                    Tell Us About Your Project{" "}
-                    <span className="text-gold">*</span>
-                  </label>
-                  <Mono className="text-xs text-white/40">
-                    Markdown Supported
-                  </Mono>
-                </div>
-                <textarea
-                  required
-                  id="details" name="details"
-                  rows={6}
-                  placeholder="Describe your protocol, current development stage, and what you need help with..."
-                  className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-royal/50 focus:ring-1 focus:ring-royal/50 transition-all resize-y"
-                />
-              </div>
-
-              <div className="flex items-center gap-3 bg-royal/10 border border-royal/20 p-4 rounded-lg">
-                <AlertCircle className="w-5 h-5 text-gold flex-shrink-0" />
-                <p className="text-sm text-gold">
-                  All communications are strictly confidential. We are happy to
-                  sign an NDA before reviewing any private repositories or
-                  architectural documents.
-                </p>
-              </div>
-
-              <div className="pt-4 flex justify-end">
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full md:w-auto min-w-[200px]"
-                >
-                  {isSubmitting ? (
-                    "Transmitting..."
-                  ) : (
-                    <>
-                      Start the Conversation
-                      <Send className="w-4 h-4 ml-2" />
-                    </>
-                  )}
-                </Button>
-              </div>
-            </form>
+                  </div>
+                </form>
+              </FadeIn>
+            )}
           </div>
         </div>
       </Container>

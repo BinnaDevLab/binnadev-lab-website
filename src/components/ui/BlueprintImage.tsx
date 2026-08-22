@@ -14,6 +14,7 @@ export function BlueprintImage({
   containerClassName, 
   overlayColor = "royal",
   className,
+  alt,
   ...props 
 }: BlueprintImageProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -44,7 +45,7 @@ export function BlueprintImage({
       {/* Base Image */}
       <Image 
         className={cn("object-cover transition-transform duration-700 ease-out", isHovered ? "scale-105" : "scale-100", className)}
-        {...props} 
+        {...props} alt={alt || ""} 
       />
 
       {/* Blueprint Base Overlay */}

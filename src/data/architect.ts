@@ -1,4 +1,5 @@
 import {
+  LucideIcon,
   Terminal,
   BookOpen,
   GitBranch,
@@ -20,13 +21,13 @@ export interface TimelineNode {
   phase: string;
   title: string;
   description: string | string[];
-  icon: any; // Lucide icon
+  icon: LucideIcon; // Lucide icon
 }
 
 export interface Principle {
   title: string;
   description: string;
-  icon?: any;
+  icon?: LucideIcon;
 }
 
 export interface ResearchItem {

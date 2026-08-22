@@ -47,4 +47,16 @@ export const projects: Project[] = [
     status: "Completed",
     date: "2026",
   },
+  {
+    id: "proj-4",
+    title: "Decentralized Stablecoin Smart Contract",
+    category: "Experiment",
+    description:
+      "A minimal, exogenous, crypto-backed stablecoin protocol built with a strong emphasis on mathematical solvency and protocol safety.",
+    technologies: ["Solidity", "Foundry", "Stateful Fuzzing", "ERC-20"],
+    imageUrl: "/images/shared/shared-asset-4.jpeg",
+    link: "https://x.com/BinnaDev/status/1995555619747614984",
+    status: "Completed",
+    date: "2025",
+  },
 ];

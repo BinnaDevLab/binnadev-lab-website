@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Body, Mono } from "@/components/ui/Typography";
@@ -15,11 +16,7 @@ export function Footer() {
 
           <div className="md:col-span-2 pr-8">
             <div className="flex items-center gap-3 mb-6">
-              <img
-                src="/favicon.svg"
-                alt="BinnaDev Lab Logo"
-                className="w-8 h-8"
-              />
+              <Image src="/favicon.svg" alt="BinnaDev Lab Logo" width={32} height={32} className="w-8 h-8" />
               <span className="font-display font-semibold tracking-wider text-foreground">
                 BinnaDev<span className="text-gold">_</span>Lab
               </span>

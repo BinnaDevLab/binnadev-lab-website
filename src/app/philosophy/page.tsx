@@ -1,12 +1,10 @@
-"use client";
-
 import { Container } from "@/components/ui/Container";
 import { H1, H2, H3, Body, Mono } from "@/components/ui/Typography";
 import { ArrowRight, Cpu, Network, ShieldAlert } from "lucide-react";
 import Image from "next/image";
 import { BlueprintImage } from "@/components/ui/BlueprintImage";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/FadeIn";
 import { MANIFESTO_POINTS } from "@/data";
 
 export default function PhilosophyPage() {
@@ -29,17 +27,13 @@ export default function PhilosophyPage() {
         </div>
 
         <Container className="relative z-10 text-center max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
+          <FadeIn delay={0.2} direction="up">
             <Mono className="text-gold mb-8 block tracking-widest uppercase">The Manifesto</Mono>
             <H1 className="text-6xl md:text-8xl mb-8 leading-tight">Reasoning<br/>Precedes<br/>Coding.</H1>
             <Body className="text-2xl text-muted font-light max-w-2xl mx-auto">
               BinnaDev Lab exists to bridge the gap between writing code and architecting resilient, secure, and permanent digital infrastructure.
             </Body>
-          </motion.div>
+          </FadeIn>
         </Container>
         
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
@@ -96,53 +90,65 @@ export default function PhilosophyPage() {
         ))}
       </section>
 
-      {/* 4. The Academy Connection */}
+      {/* 4. The Practice */}
       <section className="py-40 bg-obsidian relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-royal/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(43,76,126,0.2)_0%,_transparent_70%)] pointer-events-none" />
         
-        <Container className="relative z-10 text-center max-w-4xl">
-          <Mono className="text-gold mb-8 block tracking-widest uppercase">The Consequence</Mono>
-          <H2 className="text-5xl md:text-6xl mb-10 leading-tight">From Philosophy to Curriculum</H2>
-          <Body className="text-xl text-muted leading-relaxed mb-12">
-            The Progressive Smart Contract Security Academy is the direct manifestation of this philosophy. It is not a bootcamp. It is a grueling, comprehensive engineering laboratory designed to strip away bad habits, instill first-principles thinking, and forge elite security researchers.
-          </Body>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16">
-            <div className="p-8 bg-carbon/50 border border-white/10 rounded-xl">
-              <Cpu className="w-8 h-8 text-white mb-6" />
-              <H3 className="text-xl mb-3">EVM Mechanics</H3>
-              <p className="text-sm text-muted">We begin at the base layer. Understanding memory, storage, and execution at the byte level.</p>
-            </div>
-            <div className="p-8 bg-carbon/50 border border-white/10 rounded-xl">
-              <Network className="w-8 h-8 text-gold mb-6" />
-              <H3 className="text-xl mb-3">Systems Architecture</H3>
-              <p className="text-sm text-muted">Designing protocols mathematically before writing a single line of Solidity.</p>
-            </div>
-            <div className="p-8 bg-carbon/50 border border-white/10 rounded-xl">
-              <ShieldAlert className="w-8 h-8 text-gold mb-6" />
-              <H3 className="text-xl mb-3">Adversarial Testing</H3>
-              <p className="text-sm text-muted">Replacing unit tests with stateful fuzzing, invariants, and formal verification.</p>
+        <Container className="relative z-10 max-w-5xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <Mono className="text-gold mb-6 block tracking-[0.2em] uppercase text-sm">The Consequence</Mono>
+            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">From Philosophy to Practice</H2>
+            <div className="space-y-6">
+              <Body className="text-xl text-white/70 leading-relaxed font-light">
+                The ideas behind BinnaDev Lab are not meant to remain on a page. They shape how we build, how we research, how we teach, and how we engage with other engineers.
+              </Body>
+              <Body className="text-xl text-white/70 leading-relaxed font-light">
+                Through <strong className="text-white font-medium">research, technical writing, YouTube, workshops, cohorts, community discussions, and real engineering work</strong>, the Lab creates spaces where developers can move beyond simply learning how to use tools and begin understanding why systems behave the way they do.
+              </Body>
             </div>
           </div>
 
-          <Link
-            href="/cohorts"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-obsidian rounded-sm font-medium hover:bg-gold transition-colors"
-          >
-            Explore the Cohorts <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-24">
+            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
+              <Cpu className="w-8 h-8 text-white/40 group-hover:text-gold transition-colors mb-8" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">Think Deeper</H3>
+              <p className="text-base text-white/60 leading-relaxed font-light">
+                Go beneath the syntax. Understand the systems, assumptions, trade-offs, and decisions that make software work. The goal is not to memorize another framework, but to develop the judgment to reason about unfamiliar systems.
+              </p>
+            </div>
+            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
+              <Network className="w-8 h-8 text-white/40 group-hover:text-gold transition-colors mb-8" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">Build With Intention</H3>
+              <p className="text-base text-white/60 leading-relaxed font-light">
+                Architecture comes before implementation. We explore how protocols should be designed, how responsibilities should be separated, and how systems can remain understandable as their complexity grows.
+              </p>
+            </div>
+            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
+              <ShieldAlert className="w-8 h-8 text-white/40 group-hover:text-gold transition-colors mb-8" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">Interrogate Everything</H3>
+              <p className="text-base text-white/60 leading-relaxed font-light">
+                Do not trust the happy path. Challenge assumptions through adversarial thinking, property-based testing, invariant fuzzing, experimentation, and rigorous engineering practice.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <blockquote className="border-l-[3px] border-gold pl-6 md:pl-10 text-white italic my-10 py-2">
+              <p className="text-2xl md:text-3xl font-display leading-tight mb-4">
+                The goal is not to create developers who can write more code.
+              </p>
+              <p className="text-2xl md:text-3xl font-display leading-tight text-white/80">
+                It is to help create engineers who know what deserves to be built, why it should work, and how to question it when it doesn't.
+              </p>
+            </blockquote>
+          </div>
         </Container>
       </section>
 
       {/* 5. Cinematic Closing */}
       <section className="h-screen flex items-center justify-center bg-carbon relative border-t border-white/10 overflow-hidden">
         <Container className="relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
-          >
+          <FadeIn delay={0} direction="up">
             <H2 className="text-5xl md:text-8xl text-white/20 font-bold uppercase tracking-tighter mb-8 leading-none">
               Engineering<br/>is a<br/>Responsibility.
             </H2>
@@ -155,7 +161,7 @@ export default function PhilosophyPage() {
             >
               Work with the Lab <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
+          </FadeIn>
         </Container>
       </section>
 
@@ -175,3 +181,5 @@ function QuoteIcon(props: any) {
     </svg>
   );
 }
+
+

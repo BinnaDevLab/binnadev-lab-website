@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -36,14 +34,14 @@ export function HeroSection() {
       */}
       <div className="absolute top-0 right-0 w-full md:w-[60%] lg:w-[50%] h-[50vh] md:h-full z-0">
         <div className="relative w-full h-full border-b md:border-b-0 md:border-l border-white/10 overflow-hidden">
-          <video
+          <video poster="/videos/hero-poster.jpg"
             autoPlay
             loop
             muted
             playsInline
             className="w-full h-full object-cover opacity-40 md:opacity-50"
           >
-            <source src="/videos/hero.mp4" type="video/mp4" />
+            <source src="/videos/hero-optimized.mp4" type="video/mp4" />
           </video>
           {/* Gradients to merge video into the obsidian background */}
           <div className="absolute inset-0 bg-gradient-to-b from-obsidian/20 via-transparent to-obsidian md:bg-gradient-to-l md:from-transparent md:to-obsidian" />
@@ -56,12 +54,7 @@ export function HeroSection() {
       {/* 3. Main Content Composition */}
       <Container className="relative z-10 w-full max-w-[1800px] px-6 md:px-12 lg:px-24 flex-grow flex flex-col justify-center pt-32 pb-24">
         
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl w-full"
-        >
+        <FadeIn delay={0} direction="up" className="max-w-5xl w-full">
           {/* Lab Identifier */}
           <div className="flex items-center gap-4 mb-8 md:mb-12">
             <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
@@ -114,7 +107,7 @@ export function HeroSection() {
             </Link>
           </div>
 
-        </motion.div>
+        </FadeIn>
       </Container>
 
       {/* 4. Reason to Scroll / Narrative Progression */}
@@ -122,11 +115,7 @@ export function HeroSection() {
         <div className="flex items-center gap-4">
           <Mono className="text-[10px] text-white/40 tracking-widest">01 / 05</Mono>
           <div className="w-[1px] h-8 bg-white/20 relative overflow-hidden">
-            <motion.div 
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-              className="absolute inset-0 w-full h-1/2 bg-white"
-            />
+            <div className="absolute inset-0 w-full h-1/2 bg-white animate-[scroll-line_2s_linear_infinite]" />
           </div>
           <Mono className="text-[10px] text-white/40 tracking-widest uppercase">Begin Progression</Mono>
         </div>
@@ -140,3 +129,6 @@ export function HeroSection() {
     </section>
   );
 }
+
+
+

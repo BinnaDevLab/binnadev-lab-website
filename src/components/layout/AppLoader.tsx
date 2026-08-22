@@ -11,7 +11,7 @@ export function AppLoader() {
     // Hide the loader after a minimum duration to guarantee the splash experience
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
@@ -32,7 +32,7 @@ export function AppLoader() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="absolute inset-0 bg-gold/10 blur-[80px] rounded-full animate-pulse" 
+              className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.2)_0%,_transparent_70%)] animate-pulse" 
             />
             
             {/* The Official BinnaDev Lab Logo */}
@@ -56,3 +56,4 @@ export function AppLoader() {
     </AnimatePresence>
   );
 }
+

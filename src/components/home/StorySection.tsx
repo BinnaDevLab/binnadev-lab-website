@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { H2, H3, Body, Mono, Meta } from "@/components/ui/Typography";
@@ -132,3 +129,4 @@ export function StorySection() {
     </section>
   );
 }
+

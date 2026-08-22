@@ -1,20 +1,20 @@
 import { Container } from "@/components/ui/Container";
-import { H1, H2, H3, Body, Mono } from "@/components/ui/Typography";
-import { communityStats, communityHighlights } from "@/data";
+import { H1, H2, Body, Mono } from "@/components/ui/Typography";
 import { socialLinks } from "@/data/social";
-import { Users, Code, MessagesSquare, Users2, GitBranch } from "lucide-react";
 import { CaseFileReview } from "@/components/culture/TestimonialMarquee";
 import { CinematicGallery } from "@/components/culture/CinematicGallery";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { YouTubeShowcase } from "@/components/culture/YouTubeShowcase";
 import { CommunityHighlightsList } from "@/components/culture/CommunityHighlightsList";
+import { FadeIn, StaggerGroup, StaggerItem } from "@/components/ui/FadeIn";
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Community | BinnaDev Lab",
-  description: "Your home away from home. A place to sharpen your thinking, share what you know, and build with people who take engineering seriously.",
+  title: "Culture | BinnaDev Lab",
+  description:
+    "Your home away from home. A place to sharpen your thinking, share what you know, and build with people who take engineering seriously.",
 };
 
 const channels = [
@@ -22,7 +22,7 @@ const channels = [
     id: "discord",
     label: "Discord",
     headline: "Come into the room.",
-    body: "Ask the questions nobody has answered for you yet. The server is open to everyone — beginners, experts, and everyone still figuring it out.",
+    body: "Ask the questions nobody has answered for you yet. The server is open to everyone—beginners, experts, and everyone still figuring it out.",
     cta: "Join Discord",
     href: socialLinks.discord,
     accent: "group-hover:border-[#5865F2]/50",
@@ -47,127 +47,261 @@ const channels = [
   },
 ];
 
+const philosophy = [
+  {
+    title: "Curiosity over performance",
+    body: "You don't need to pretend to know everything. We believe that good questions are an essential part of serious engineering. Arrive curious.",
+    imageUrl: "/images/shared/shared-asset-1.jpeg",
+  },
+  {
+    title: "Depth over noise",
+    body: "We care less about keeping up with every fleeting trend, and more about deeply understanding the foundational concepts that actually matter.",
+    imageUrl: "/images/gallery/gallery-asset-1.jpeg",
+  },
+  {
+    title: "Teach what you discover",
+    body: "Knowledge becomes exponentially more valuable when you bring someone else along. When you figure something out, leave a trail for the next person.",
+    imageUrl: "/images/shared/shared-asset-2.jpeg",
+  },
+  {
+    title: "A seat at the table",
+    body: "Beginners, builders, researchers, and mentors all have something to contribute. We value shared curiosity across every experience level.",
+    imageUrl: "/images/gallery/gallery-asset-3.jpeg",
+  },
+];
+
 export default function CulturePage() {
   return (
     <div className="min-h-screen pt-32 pb-32 bg-obsidian relative overflow-hidden">
-      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-royal/5 to-transparent opacity-50" />
+      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-royal/5 to-transparent opacity-50 pointer-events-none" />
 
       <Container className="relative z-10">
-
-        {/* Page header */}
-        <div className="mb-24 max-w-3xl border-b border-white/5 pb-12">
-          <Mono className="text-gold mb-4 block tracking-widest uppercase flex items-center gap-2">
-            <Users className="w-4 h-4" /> Community
-          </Mono>
-          <H1 className="mb-6">Your home away from home.</H1>
-          <Body className="text-xl text-muted leading-relaxed">
-            A place to sharpen your thinking, share what you know, and build
-            with people who take engineering seriously. Everyone is welcome.
-          </Body>
+        {/* 1. Page header - 2 Column Visual Storytelling */}
+        <div className="mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <StaggerGroup className="lg:col-span-6">
+            <StaggerItem>
+              <Mono className="text-gold mb-6 block tracking-widest uppercase flex items-center gap-2">
+                <Users className="w-4 h-4" /> Culture
+              </Mono>
+            </StaggerItem>
+            <StaggerItem>
+              <H1 className="mb-8 text-5xl md:text-7xl tracking-tight leading-tight">
+                Your home away <br className="hidden md:block" /> from home.
+              </H1>
+            </StaggerItem>
+            <div className="space-y-6">
+              <StaggerItem>
+                <Body className="text-2xl text-white/80 font-light leading-relaxed">
+                  This is a place where you can belong, learn, and build with
+                  people who take engineering seriously—without feeling like you
+                  have to figure everything out alone.
+                </Body>
+              </StaggerItem>
+              <StaggerItem>
+                <Body className="text-xl text-white/50 font-light leading-relaxed">
+                  You can arrive curious. You can ask questions without
+                  pretending to know everything. Serious engineering and genuine
+                  human connection coexist here.
+                </Body>
+              </StaggerItem>
+            </div>
+          </StaggerGroup>
+          <FadeIn delay={0.3} direction="none" className="lg:col-span-6">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-1000 hover:scale-[1.02] group">
+              <Image
+                src="/images/gallery/gallery-asset-4.jpeg"
+                alt="Community whiteboarding session"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              {/* Subtle inner gradient to blend with the dark theme */}
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 to-transparent mix-blend-multiply" />
+            </div>
+          </FadeIn>
         </div>
 
-        {/* Community channels */}
-        <section className="mb-32">
-          <div className="mb-12">
-            <H2>Find us here.</H2>
-            <Body className="text-muted mt-2">Join the conversation wherever you are most comfortable.</Body>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {channels.map((channel) => (
+        {/* 2. Cultural Philosophy with Visual Storytelling */}
+        <section className="mb-40">
+          <FadeIn className="mb-16">
+            <H2 className="text-3xl md:text-5xl tracking-tight">
+              What we believe
+            </H2>
+          </FadeIn>
+
+          <div className="flex flex-col gap-24">
+            {philosophy.map((item, i) => (
               <div
-                key={channel.id}
-                className={`group border border-white/5 ${channel.accent} bg-carbon transition-all duration-500 p-8 flex flex-col`}
+                key={i}
+                className={`flex flex-col ${i % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-10 lg:gap-20`}
               >
-                <Mono className="text-muted mb-6 block text-xs tracking-widest">{channel.label}</Mono>
-                <h3 className="font-display font-semibold text-xl text-foreground mb-3 group-hover:text-gold transition-colors">
-                  {channel.headline}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed mb-8 flex-1">{channel.body}</p>
-                <Link
-                  href={channel.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-mono text-foreground/70 hover:text-white transition-colors group/link"
+                <FadeIn
+                  direction={i % 2 !== 0 ? "right" : "left"}
+                  className="w-full lg:w-1/2"
                 >
-                  {channel.cta}
-                  <span className="group-hover/link:translate-x-1 transition-transform">&#8594;</span>
-                </Link>
+                  <div className="relative aspect-[16/9] lg:aspect-[4/3] rounded-xl overflow-hidden border border-white/5 bg-carbon transition-transform duration-700 hover:scale-[1.02] group">
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                  </div>
+                </FadeIn>
+                <StaggerGroup staggerDelay={0.2} className="w-full lg:w-1/2">
+                  <StaggerItem direction={i % 2 !== 0 ? "left" : "right"}>
+                    <h3 className="font-display font-semibold text-3xl text-foreground mb-6">
+                      {item.title}
+                    </h3>
+                  </StaggerItem>
+                  <StaggerItem direction={i % 2 !== 0 ? "left" : "right"}>
+                    <p className="text-white/60 font-light text-xl leading-relaxed max-w-lg">
+                      {item.body}
+                    </p>
+                  </StaggerItem>
+                </StaggerGroup>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Gallery */}
-        <section id="gallery" className="mb-32">
-          <div className="mb-12">
-            <H2>Lab Gallery</H2>
-            <Body className="text-muted mt-2">A living window into our whiteboarding sessions, workshops, and research groups.</Body>
-          </div>
-          <CinematicGallery />
+        {/* 3. Gallery (Life Inside the Lab) */}
+        <section id="gallery" className="mb-40">
+          <FadeIn className="mb-16 max-w-3xl">
+            <H2 className="text-3xl md:text-5xl mb-6 tracking-tight">
+              Life Inside the Lab
+            </H2>
+            <Body className="text-xl text-white/60 font-light leading-relaxed">
+              Some of the most important parts of the Lab happen outside a
+              formal curriculum. Around a whiteboard, during an unexpected
+              conversation, or the exact moment someone finally understands a
+              difficult concept. This is what it feels like to be here.
+            </Body>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <CinematicGallery />
+          </FadeIn>
         </section>
 
-        {/* Community stats + highlights */}
-        <section id="community" className="mb-32">
-          <div className="mb-12">
-            <H2>Community Hub</H2>
-            <Body className="text-muted mt-2">The pulse of the collective.</Body>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            <div className="p-6 bg-carbon/30 border border-white/5 rounded-lg flex flex-col items-center justify-center text-center">
-              <MessagesSquare className="w-6 h-6 text-gold mb-4" />
-              <div className="text-3xl font-display font-bold text-white mb-1">
-                <AnimatedCounter value={communityStats.discordMembers.value} suffix={communityStats.discordMembers.suffix} />
-              </div>
-              <Mono className="text-xs text-muted uppercase tracking-wider mt-1">Discord Members</Mono>
-            </div>
-            <div className="p-6 bg-carbon/30 border border-white/5 rounded-lg flex flex-col items-center justify-center text-center">
-              <Code className="w-6 h-6 text-gold mb-4" />
-              <div className="text-3xl font-display font-bold text-white mb-1">
-                <AnimatedCounter value={communityStats.githubCommits.value} suffix={communityStats.githubCommits.suffix} />
-              </div>
-              <Mono className="text-xs text-muted uppercase tracking-wider mt-1">Code Commits</Mono>
-            </div>
-            <div className="p-6 bg-carbon/30 border border-white/5 rounded-lg flex flex-col items-center justify-center text-center">
-              <Users2 className="w-6 h-6 text-gold mb-4" />
-              <div className="text-3xl font-display font-bold text-white mb-1">
-                <AnimatedCounter value={communityStats.studyGroups.value} suffix={communityStats.studyGroups.suffix} />
-              </div>
-              <Mono className="text-xs text-muted uppercase tracking-wider mt-1">Study Groups</Mono>
-            </div>
-            <div className="p-6 bg-carbon/30 border border-white/5 rounded-lg flex flex-col items-center justify-center text-center">
-              <GitBranch className="w-6 h-6 text-gold mb-4" />
-              <div className="text-3xl font-display font-bold text-white mb-1">
-                <AnimatedCounter value={communityStats.openSourceContributors.value} suffix={communityStats.openSourceContributors.suffix} />
-              </div>
-              <Mono className="text-xs text-muted uppercase tracking-wider mt-1">Contributors</Mono>
-            </div>
-          </div>
-
-          <div className="mb-12">
-            <H3 className="mb-6">Lab Highlights</H3>
+        {/* 4. Community events / highlights (Field Record) */}
+        <section id="community" className="mb-40">
+          <FadeIn className="mb-16 max-w-3xl">
+            <H2 className="text-3xl md:text-5xl mb-6 tracking-tight">
+              Field Record
+            </H2>
+            <Body className="text-xl text-white/60 font-light leading-relaxed">
+              A look at our past gatherings, workshops, and milestones. Evidence
+              of a living community building and growing alongside one another.
+            </Body>
+          </FadeIn>
+          <FadeIn delay={0.2}>
             <CommunityHighlightsList />
-          </div>
+          </FadeIn>
         </section>
 
-        {/* YouTube showcase */}
-        <YouTubeShowcase />
-
+        {/* 5. YouTube showcase (Ideas Worth Taking Home) */}
+        <FadeIn className="mb-40">
+          <YouTubeShowcase />
+        </FadeIn>
       </Container>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-obsidian border-t border-white/5">
-        <Container>
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <H2 className="mb-4 text-3xl">Field Notes</H2>
-            <Body className="text-muted">
-              What founders, engineers, and researchers say about their time in the Lab.
+      {/* 6. Testimonials (Field Notes) */}
+      <section className="py-32 bg-obsidian border-y border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-carbon/50 to-transparent pointer-events-none" />
+        <Container className="relative z-10">
+          <FadeIn className="text-center mb-20 max-w-3xl mx-auto">
+            <H2 className="text-3xl md:text-5xl mb-6 tracking-tight">
+              Field Notes
+            </H2>
+            <Body className="text-xl text-white/60 font-light leading-relaxed">
+              Every community leaves traces. These are a few of the thoughts,
+              lessons, and memories people have carried with them from the Lab.
             </Body>
-          </div>
+          </FadeIn>
         </Container>
         <CaseFileReview />
       </section>
 
+      {/* 7. Community channels (The Doors) & 8. CTA */}
+      <Container className="relative z-10 pt-32">
+        <section className="mb-32">
+          <FadeIn className="mb-16 max-w-2xl">
+            <H2 className="text-3xl md:text-5xl mb-6 tracking-tight">
+              The doors are open.
+            </H2>
+            <Body className="text-xl text-white/60 font-light leading-relaxed">
+              Now that you know who we are and what we believe, here are the
+              doors you can walk through to join the conversation.
+            </Body>
+          </FadeIn>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {channels.map((channel) => (
+              <StaggerItem key={channel.id}>
+                <div
+                  className={`h-full group border border-white/5 ${channel.accent} bg-carbon transition-all duration-500 p-8 flex flex-col hover:-translate-y-1 hover:shadow-2xl`}
+                >
+                  <Mono className="text-muted mb-6 block text-xs tracking-widest">
+                    {channel.label}
+                  </Mono>
+                  <h3 className="font-display font-semibold text-xl text-foreground mb-3 group-hover:text-gold transition-colors">
+                    {channel.headline}
+                  </h3>
+                  <p className="text-white/50 font-light text-sm leading-relaxed mb-8 flex-1">
+                    {channel.body}
+                  </p>
+                  <Link
+                    href={channel.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-mono text-foreground/70 hover:text-white transition-colors group/link"
+                  >
+                    {channel.cta}
+                    <span className="group-hover/link:translate-x-1 transition-transform">
+                      &#8594;
+                    </span>
+                  </Link>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </section>
+
+        {/* 8. Final Invitation CTA */}
+        <section className="py-24 max-w-4xl mx-auto text-center">
+          <StaggerGroup>
+            <StaggerItem>
+              <H2 className="text-4xl md:text-6xl tracking-tight mb-8">
+                There&apos;s a place for you here.
+              </H2>
+            </StaggerItem>
+            <StaggerItem>
+              <Body className="text-xl text-white/60 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                Whether you are writing your first smart contract, auditing your
+                hundredth, researching a new idea, or simply trying to
+                understand something deeply, you don&apos;t have to figure it
+                all out alone.
+              </Body>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link
+                  href={socialLinks.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-white text-obsidian rounded-lg font-mono text-sm uppercase tracking-widest font-semibold hover:bg-gold hover:text-obsidian transition-colors w-full sm:w-auto hover:-translate-y-1 shadow-lg hover:shadow-gold/20"
+                >
+                  Join the Community
+                </Link>
+                <Link
+                  href="/cohorts"
+                  className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg font-mono text-sm uppercase tracking-widest hover:border-white/60 transition-colors w-full sm:w-auto hover:-translate-y-1"
+                >
+                  Attend an Event
+                </Link>
+              </div>
+            </StaggerItem>
+          </StaggerGroup>
+        </section>
+      </Container>
     </div>
   );
 }
