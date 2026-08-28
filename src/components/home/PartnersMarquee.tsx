@@ -11,14 +11,13 @@ export function PartnersMarquee() {
     <section className="py-24 border-y border-white/5 bg-obsidian overflow-hidden relative">
       <Container className="relative z-20">
         <div className="text-center mb-16">
-          <Mono className="mb-4 block">Organizations & Ecosystem</Mono>
+          <Mono className="mb-4 block">Organizations &amp; Ecosystem</Mono>
           <H2 className="text-3xl md:text-4xl text-white">
-            Where Theory Meets Production
+            Protocols & Organisations
           </H2>
           <Body className="mt-4 max-w-2xl mx-auto">
-            Working alongside protocols and engineering teams to test ideas,
-            solve hard problems, and build decentralized systems that hold up in
-            the real world.
+            Protocols and organisations BinnaDevLab has engaged with, built for,
+            or is actively building alongside.
           </Body>
         </div>
       </Container>

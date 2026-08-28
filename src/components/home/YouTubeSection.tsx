@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, ArrowRight } from "lucide-react";
+import { Play, ArrowRight, Loader2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { youtubeVideos } from "@/data/youtube";
@@ -11,6 +11,11 @@ import { socialLinks } from "@/data/social";
 
 export function YouTubeSection() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [loadedVideos, setLoadedVideos] = useState<Set<string>>(new Set());
+
+  const handleIframeLoad = (id: string) => {
+    setLoadedVideos((prev) => new Set(prev).add(id));
+  };
 
   const getYoutubeId = (url: string) => {
     try {
@@ -45,6 +50,7 @@ export function YouTubeSection() {
               <br />
               Watch it.
             </H2>
+
             <Body className="text-xl">
               Every video goes past the surface. No syntax drills. No
               follow-along tutorials that leave you more confused than when you
@@ -75,20 +81,36 @@ export function YouTubeSection() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-8 group block relative"
           >
-            {activeVideo === featured.id ? (
-              <div className="relative aspect-video w-full mb-6 border border-white/5">
+            <div
+              onClick={() => setActiveVideo(featured.id)}
+              className="relative aspect-video w-full overflow-hidden bg-carbon mb-6 border border-white/5 cursor-pointer"
+            >
+              {/* Iframe loads behind thumbnail when active */}
+              {activeVideo === featured.id && (
                 <iframe
-                  className="w-full h-full"
+                  className="absolute inset-0 w-full h-full z-10"
                   src={`https://www.youtube.com/embed/${getYoutubeId(featured.youtubeUrl)}?autoplay=1`}
                   title={featured.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  onLoad={() => handleIframeLoad(featured.id)}
                 ></iframe>
-              </div>
-            ) : (
+              )}
+
+              {/* Loading State Spinner */}
+              {activeVideo === featured.id && !loadedVideos.has(featured.id) && (
+                <div className="absolute inset-0 z-15 flex items-center justify-center bg-carbon">
+                  <Loader2 className="w-8 h-8 text-gold animate-spin" />
+                </div>
+              )}
+
+              {/* Thumbnail overlay fades out on click */}
               <div
-                onClick={() => setActiveVideo(featured.id)}
-                className="relative aspect-video w-full overflow-hidden bg-carbon mb-6 border border-white/5 cursor-pointer group"
+                className={`absolute inset-0 z-20 transition-opacity duration-1000 ${
+                  activeVideo === featured.id && loadedVideos.has(featured.id)
+                    ? "opacity-0 pointer-events-none"
+                    : "opacity-100 group"
+                }`}
               >
                 <Image
                   src={featured.thumbnail}
@@ -100,11 +122,15 @@ export function YouTubeSection() {
                 <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-20 h-20 bg-royal/90 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
-                    <Play className="w-8 h-8 ml-2 text-white group-hover:text-obsidian transition-colors" />
+                    {activeVideo === featured.id ? (
+                      <Loader2 className="w-8 h-8 text-white animate-spin" />
+                    ) : (
+                      <Play className="w-8 h-8 ml-2 text-white group-hover:text-obsidian transition-colors" />
+                    )}
                   </div>
                 </div>
               </div>
-            )}
+            </div>
 
             <div className="flex justify-between items-start gap-4">
               <div>
@@ -129,20 +155,36 @@ export function YouTubeSection() {
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 className="group block relative"
               >
-                {activeVideo === video.id ? (
-                  <div className="relative aspect-video w-full mb-4 border border-white/5">
+                <div
+                  onClick={() => setActiveVideo(video.id)}
+                  className="relative aspect-video w-full overflow-hidden bg-carbon mb-4 border border-white/5 cursor-pointer"
+                >
+                  {/* Iframe loads behind thumbnail when active */}
+                  {activeVideo === video.id && (
                     <iframe
-                      className="w-full h-full"
+                      className="absolute inset-0 w-full h-full z-10"
                       src={`https://www.youtube.com/embed/${getYoutubeId(video.youtubeUrl)}?autoplay=1`}
                       title={video.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                      onLoad={() => handleIframeLoad(video.id)}
                     ></iframe>
-                  </div>
-                ) : (
+                  )}
+
+                  {/* Loading State Spinner */}
+                  {activeVideo === video.id && !loadedVideos.has(video.id) && (
+                    <div className="absolute inset-0 z-15 flex items-center justify-center bg-carbon">
+                      <Loader2 className="w-6 h-6 text-gold animate-spin" />
+                    </div>
+                  )}
+
+                  {/* Thumbnail overlay fades out on click */}
                   <div
-                    onClick={() => setActiveVideo(video.id)}
-                    className="relative aspect-video w-full overflow-hidden bg-carbon mb-4 border border-white/5 cursor-pointer group"
+                    className={`absolute inset-0 z-20 transition-opacity duration-1000 ${
+                      activeVideo === video.id && loadedVideos.has(video.id)
+                        ? "opacity-0 pointer-events-none"
+                        : "opacity-100 group"
+                    }`}
                   >
                     <Image
                       src={video.thumbnail}
@@ -154,11 +196,15 @@ export function YouTubeSection() {
                     <div className="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors duration-500" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-12 h-12 bg-obsidian/80 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
-                        <Play className="w-5 h-5 ml-1 text-white group-hover:text-obsidian transition-colors" />
+                        {activeVideo === video.id ? (
+                          <Loader2 className="w-5 h-5 text-white animate-spin" />
+                        ) : (
+                          <Play className="w-5 h-5 ml-1 text-white group-hover:text-obsidian transition-colors" />
+                        )}
                       </div>
                     </div>
                   </div>
-                )}
+                </div>
 
                 <Meta className="text-white/60 mb-2 block">
                   {video.duration}

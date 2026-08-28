@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
-import { mainNavigation } from "@/data/navigation";
+import { mainNavigation, mobileNavigation } from "@/data/navigation";
 import { socialLinks } from "@/data/social";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -31,6 +31,17 @@ export function Header() {
     const timer = setTimeout(() => setMobileMenuOpen(false), 0);
     return () => clearTimeout(timer);
   }, [pathname]);
+
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
 
   const menuVariants: Variants = {
     closed: {
@@ -86,7 +97,7 @@ export function Header() {
               {/* Mobile: Standalone logo only */}
               <Image
                 src="/favicon.svg"
-                alt="BinnaDev Lab"
+                alt="BinnaDevLab"
                 width={32}
                 height={32}
                 className="w-8 h-8 md:hidden transition-transform group-hover:scale-105"
@@ -123,33 +134,37 @@ export function Header() {
               })}
             </nav>
 
-            {/* Mobile Hamburger / Close Button - Custom Animated SVG */}
+            {/* Mobile Hamburger / Close Button */}
             <button
-              className="xl:hidden relative z-[110] w-12 h-12 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+              className="xl:hidden relative z-[110] w-12 h-12 flex justify-center items-center focus:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
             >
-              <motion.span
-                animate={
-                  mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }
-                }
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="block w-6 h-[2px] bg-white rounded-full"
-              />
-              <motion.span
-                animate={
-                  mobileMenuOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0 }
-                }
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="block w-6 h-[2px] bg-white rounded-full"
-              />
-              <motion.span
-                animate={
-                  mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
-                }
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="block w-6 h-[2px] bg-white rounded-full"
-              />
+              <div className="relative w-6 h-6">
+                <motion.div
+                  initial={false}
+                  animate={{ opacity: mobileMenuOpen ? 0 : 1, rotate: mobileMenuOpen ? 90 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex flex-col justify-center gap-1.5"
+                >
+                  <span className="block w-6 h-[2px] bg-white rounded-full" />
+                  <span className="block w-6 h-[2px] bg-white rounded-full" />
+                  <span className="block w-4 h-[2px] bg-white rounded-full self-end" />
+                </motion.div>
+                
+                <motion.div
+                  initial={false}
+                  animate={{ opacity: mobileMenuOpen ? 1 : 0, rotate: mobileMenuOpen ? 0 : -90 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </motion.div>
+              </div>
             </button>
           </div>
         </Container>
@@ -180,7 +195,7 @@ export function Header() {
                   aria-label="Mobile navigation"
                   className="flex flex-col gap-2"
                 >
-                  {mainNavigation.map((link, idx) => {
+                  {mobileNavigation.map((link, idx) => {
                     const isActive =
                       !link.external &&
                       (pathname === link.href ||

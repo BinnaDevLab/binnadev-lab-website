@@ -14,14 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2 pr-8">
             <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="/favicon.svg"
-                alt="BinnaDev Lab"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
-              <span className="font-display font-semibold tracking-wider text-foreground">
+              <span className="font-display font-semibold tracking-wider text-foreground text-xl">
                 BinnaDev<span className="text-gold">_</span>Lab
               </span>
             </div>

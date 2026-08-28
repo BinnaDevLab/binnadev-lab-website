@@ -24,8 +24,8 @@ export function CTASection() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end border-t border-white/10 pt-16">
           <div className="md:col-span-5 lg:col-span-4">
             <Body className="text-xl md:text-2xl text-white/50">
-              Stop collecting bookmarks. Stop meaning to start. The work is
-              happening now, with people who take it seriously.
+              The community is open. The cohorts are running. The work is
+              happening now.
             </Body>
           </div>
 

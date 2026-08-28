@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { H2, H3, Body, Mono, Meta } from "@/components/ui/Typography";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const narrative = [
   {
@@ -36,7 +38,7 @@ const narrative = [
     id: "05",
     phase: "The Research",
     title: "Beyond the Norm",
-    desc: "We push the boundaries of invariant testing, formal verification, fuzzing, and advanced mitigation strategies to protect billion-dollar value accruals.",
+    desc: "Invariant testing, formal verification, and adversarial fuzzing applied to production-grade systems. Not as audit theatre, but as genuine safety guarantees.",
     image: "/images/shared/shared-asset-14.jpeg",
   },
   {
@@ -55,11 +57,17 @@ export function StorySection() {
       className="py-16 md:py-32 bg-carbon relative overflow-hidden border-b border-white/5"
     >
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
-        <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-16 md:mb-24 flex flex-col items-center text-center"
+        >
           <div className="flex items-center gap-4 mb-6 justify-center">
             <span className="w-8 h-[1px] bg-royal" />
             <Mono className="text-gold uppercase tracking-widest text-sm">
-              The Methodology
+              The Standard
             </Mono>
             <span className="w-8 h-[1px] bg-royal" />
           </div>
@@ -67,15 +75,19 @@ export function StorySection() {
             Engineering from <br />
             First Principles.
           </H2>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col border-t border-white/10">
           {narrative.map((item, index) => {
             // Alternate layout left/right on desktop
             const isEven = index % 2 === 0;
             return (
-              <div
+              <motion.div
                 key={item.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-150px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 className="py-12 md:py-24 border-b border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
               >
                 {/* Image Side */}
@@ -121,7 +133,7 @@ export function StorySection() {
                     {item.desc}
                   </Body>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

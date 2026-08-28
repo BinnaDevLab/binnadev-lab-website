@@ -18,13 +18,13 @@ export function ResearchPreviewSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
             <Mono className="text-gold mb-4 block tracking-widest uppercase flex items-center gap-2">
-              <Beaker className="w-4 h-4" /> Lab Output
+              <Beaker className="w-4 h-4" /> The Evidence
             </Mono>
             <H2 className="mb-6">Research & Engineering</H2>
             <Body className="text-lg text-muted">
-              We do more than teach. The BinnaDev collective actively builds
-              smart contract protocols, publishes security research, and
-              develops open-source fuzzing harnesses.
+              Where the Lab&apos;s thinking becomes observable. Protocols,
+              security research, and open-source fuzzing harnesses. The actual
+              output of the practice.
             </Body>
           </div>
           <Link href="/research">

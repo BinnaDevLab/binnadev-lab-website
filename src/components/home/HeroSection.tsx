@@ -21,13 +21,13 @@ export function HeroSection() {
         <div className="absolute bottom-12 right-6 md:right-12 w-4 h-[1px] bg-white/30" />
         <div className="absolute bottom-12 right-6 md:right-12 w-[1px] h-4 bg-white/30 transform -translate-y-full translate-x-full" />
 
-        {/* Coordinates / Lab Data */}
+        {/* Lab Origin Coordinates */}
         <div className="absolute top-24 right-6 md:right-12 hidden md:flex flex-col items-end gap-1">
           <Mono className="text-[10px] text-white/30 tracking-widest">
             SYS.INIT.01
           </Mono>
           <Mono className="text-[10px] text-white/30 tracking-widest">
-            COORD: 40.7128° N, 74.0060° W
+            COORD: 6.4550° N, 3.3841° E
           </Mono>
         </div>
       </div>
@@ -87,9 +87,9 @@ export function HeroSection() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
             <div className="md:col-span-8 lg:col-span-6">
               <Body className="text-lg md:text-xl text-white/70 leading-relaxed">
-                Syntax is the baseline. We engineer resilient decentralized
-                systems built to survive adversarial reality. Architecture over
-                execution. Comprehension over code.
+                An engineering laboratory where understanding systems comes
+                before writing code. A rigorous environment for research,
+                collective learning, and building things that hold up.
               </Body>
             </div>
           </div>

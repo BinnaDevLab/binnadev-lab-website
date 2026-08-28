@@ -7,25 +7,30 @@ export interface NavLink {
 }
 
 export const mainNavigation: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Architect", href: "/architect" },
-  { label: "Methodology", href: "/philosophy" },
+  { label: "Philosophy", href: "/philosophy" },
   { label: "Cohorts", href: "/cohorts" },
-  { label: "Research", href: "/research" },
-  { label: "Culture", href: "/culture" },
   { label: "Collaborate", href: "/collaborate" },
+  { label: "Community", href: "/culture" },
+];
+
+export const mobileNavigation: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Philosophy", href: "/philosophy" },
+  { label: "Cohorts", href: "/cohorts" },
+  { label: "Architect", href: "/architect" },
+  { label: "Research", href: "/research" },
+  { label: "Community", href: "/culture" },
 ];
 
 export const footerNavigation = {
   lab: [
-    { label: "Methodology", href: "/philosophy" },
+    { label: "Philosophy", href: "/philosophy" },
     { label: "The Architect", href: "/architect" },
     { label: "Research", href: "/research" },
-    { label: "Culture", href: "/culture" },
+    { label: "Community", href: "/culture" },
   ],
   services: [
     { label: "Collaborate", href: "/collaborate" },
-    { label: "Services", href: "/collaborate#services" },
     { label: "Cohorts", href: "/cohorts" },
   ],
   socials: [

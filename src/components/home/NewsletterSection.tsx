@@ -10,9 +10,10 @@ export function NewsletterSection() {
       
       <Container className="relative z-10 max-w-4xl text-center">
         <Mono className="text-gold tracking-[0.2em] uppercase text-xs mb-6 block">Lab Dispatches</Mono>
-        <H3 className="text-3xl md:text-5xl mb-6">Stay ahead of the curve.</H3>
+        <H3 className="text-3xl md:text-5xl mb-6">Lab Dispatches.</H3>
         <Body className="text-lg text-white/60 max-w-xl mx-auto mb-10 font-light">
-          Join a private network of engineers. We share unfiltered research, architectural patterns, security breakdowns, and early access to our curriculum.
+          Engineering notes from the practice. Research, security breakdowns,
+          and cohort updates, directly from the Lab.
         </Body>
         <div className="flex justify-center text-left">
           <div className="w-full max-w-md">

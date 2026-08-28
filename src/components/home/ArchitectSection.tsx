@@ -19,27 +19,28 @@ export function ArchitectSection() {
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <Mono className="mb-4 block text-gold">The Architect</Mono>
+            <Mono className="mb-4 block text-gold">The Origin</Mono>
             <H2 className="mb-8 leading-tight">Obinna Franklin Duru</H2>
             <div className="space-y-6">
               <Body>
-                Smart Contract Engineer focused on building reliable, secure,
-                and efficient onchain systems.
+                A rigorous engineering practice began with one person. It grew
+                from individual curiosity into a discipline, and from a
+                discipline into an environment.
               </Body>
               <Body>
-                The vision behind BinnaDev Lab is simple: to build decentralized
-                technologies people can trust by blending deep technical
-                knowledge with a reflective approach.
+                BinnaDev is the origin. BinnaDevLab is what emerged when the
+                practice became something others could join. A place to learn,
+                research, build, and grow together.
               </Body>
               <blockquote className="pl-6 border-l-2 border-royal italic text-muted text-lg my-8">
-                &quot;Let&apos;s build something you can trust with clarity,
-                purpose, and excellence.&quot;
+                &quot;The excellence of the work should be visible in how it is
+                built, not in how loudly it is claimed.&quot;
               </blockquote>
               <Link
                 href="/architect"
                 className="inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-mono uppercase tracking-widest text-sm mt-4"
               >
-                Read the Profile →
+                Read the Origin →
               </Link>
             </div>
           </motion.div>
