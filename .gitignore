@@ -48,3 +48,8 @@ next-env.d.ts
 
 # clerk configuration (can include secrets)
 /.clerk/
+
+#Docs
+Vision_Document.md
+Brand_Story_Book.md
+BinnaDev_Lab_Private_Preview_Contact_Information.csv
