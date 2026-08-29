@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/home/HeroSection";
+import { IntroVideoSection } from "@/components/home/IntroVideoSection";
 import { ManifestoSection } from "@/components/home/ManifestoSection";
 import { StorySection } from "@/components/home/StorySection";
 import { YouTubeSection } from "@/components/home/YouTubeSection";
@@ -26,6 +27,8 @@ export default function Home() {
     <div className="bg-obsidian min-h-screen">
       {/* 1 — Orientation */}
       <HeroSection />
+      {/* 1.5 — The Hook */}
+      <IntroVideoSection />
       {/* 2 — The conviction */}
       <ManifestoSection />
       {/* 3 — The standard */}

@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AppLoader } from "@/components/layout/AppLoader";
 import { InstallPrompt } from "@/components/ui/InstallPrompt";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 import "./globals.css";
 
@@ -136,6 +137,7 @@ export default function RootLayout({
           <main className="flex-1 flex flex-col mt-20">{children}</main>
           <Footer />
         </SmoothScroll>
+        <CustomCursor />
       </body>
     </html>
   );

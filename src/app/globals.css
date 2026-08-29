@@ -73,3 +73,24 @@ body {
     transform: translateY(100%);
   }
 }
+
+::selection {
+  background-color: rgba(240, 200, 70, 0.2); /* gold with opacity */
+  color: #f0c846; /* gold */
+}
+
+::-moz-selection {
+  background-color: rgba(240, 200, 70, 0.2);
+  color: #f0c846;
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}

@@ -49,7 +49,7 @@ export function HeroSection() {
             playsInline
             className="w-full h-full object-cover opacity-40 md:opacity-50"
           >
-            <source src="/videos/hero-optimized.mp4" type="video/mp4" />
+            <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
           {/* Gradients to merge video into the obsidian background */}
           <div className="absolute inset-0 bg-gradient-to-b from-obsidian/20 via-transparent to-obsidian md:bg-gradient-to-l md:from-transparent md:to-obsidian" />
