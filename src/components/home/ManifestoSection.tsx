@@ -1,62 +1,39 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { H2 } from "@/components/ui/Typography";
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
 export function ManifestoSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Calculate opacity and scale for the three sentences
-  // Tighter timing to prevent dead space between Hero and Manifesto
-  const opacity1 = useTransform(
-    scrollYProgress,
-    [0, 0.08, 0.25, 0.32],
-    [0, 1, 1, 0],
-  );
-  const scale1 = useTransform(scrollYProgress, [0, 0.08], [0.95, 1]);
-  const filter1 = useTransform(
-    scrollYProgress,
-    [0, 0.08],
-    ["blur(10px)", "blur(0px)"],
-  );
-
-  const opacity2 = useTransform(
-    scrollYProgress,
-    [0.3, 0.38, 0.55, 0.62],
-    [0, 1, 1, 0],
-  );
-  const scale2 = useTransform(scrollYProgress, [0.3, 0.38], [0.95, 1]);
-  const filter2 = useTransform(
-    scrollYProgress,
-    [0.3, 0.38],
-    ["blur(10px)", "blur(0px)"],
-  );
-
-  const opacity3 = useTransform(
-    scrollYProgress,
-    [0.6, 0.68, 0.85, 1],
-    [0, 1, 1, 0],
-  );
-  const scale3 = useTransform(scrollYProgress, [0.6, 0.68], [0.95, 1]);
-  const filter3 = useTransform(
-    scrollYProgress,
-    [0.6, 0.68],
-    ["blur(10px)", "blur(0px)"],
-  );
-
   return (
     <section
-      ref={containerRef}
       id="manifesto"
-      className="relative h-[175vh] bg-obsidian border-t border-white/5"
+      className="relative min-h-[80vh] flex items-center bg-obsidian border-t border-white/5 py-32 overflow-hidden"
     >
-      {/* Noise Texture Overlay */}
       <div
         className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay"
         style={{
@@ -65,35 +42,34 @@ export function ManifestoSection() {
         }}
       />
 
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden z-10">
-        <Container className="text-center relative">
-          <motion.div
-            style={{ opacity: opacity1, scale: scale1, filter: filter1 }}
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2"
-          >
-            <H2 className="text-muted leading-tight">
-              Code is not meant to be memorized.
+      <Container className="relative z-10 w-full">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex flex-col gap-10 md:gap-16 max-w-5xl mx-auto"
+        >
+          <motion.div variants={itemVariants}>
+            <H2 className="text-4xl md:text-5xl lg:text-7xl text-white/60 font-medium leading-[1.1] tracking-tight">
+              Code is not meant <br className="md:hidden" /> to be memorized.
             </H2>
           </motion.div>
-          <motion.div
-            style={{ opacity: opacity2, scale: scale2, filter: filter2 }}
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2"
-          >
-            <H2 className="text-foreground leading-tight">
-              It is meant to be understood.
+
+          <motion.div variants={itemVariants} className="md:pl-16 lg:pl-32">
+            <H2 className="text-4xl md:text-5xl lg:text-7xl text-white font-medium leading-[1.1] tracking-tight">
+              It is meant to be <br className="md:hidden" /> understood.
             </H2>
           </motion.div>
-          <motion.div
-            style={{ opacity: opacity3, scale: scale3, filter: filter3 }}
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2"
-          >
-            <H2 className="text-gold leading-tight">
-              Learn how to engineer resilient systems{" "}
-              <br className="hidden md:block" /> from first principles.
+
+          <motion.div variants={itemVariants} className="md:pl-32 lg:pl-64">
+            <H2 className="text-4xl md:text-5xl lg:text-7xl text-gold font-medium leading-[1.1] tracking-tight">
+              Engineer resilient systems <br className="hidden md:block" /> from
+              first principles.
             </H2>
           </motion.div>
-        </Container>
-      </div>
+        </motion.div>
+      </Container>
     </section>
   );
 }
