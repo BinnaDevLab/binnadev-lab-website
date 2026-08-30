@@ -8,7 +8,7 @@ import { footerNavigation } from "@/data";
 export function Footer() {
   return (
     <footer className="bg-obsidian border-t border-white/5 py-20 relative overflow-hidden">
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-royal/50 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
 
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">

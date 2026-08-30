@@ -15,7 +15,7 @@ export function CohortCurriculum({ curriculum }: CohortCurriculumProps) {
             The Objective
           </Mono>
           <H2 className="text-3xl md:text-5xl tracking-tight">
-            What you will actually learn.
+            What you will master.
           </H2>
         </div>
 

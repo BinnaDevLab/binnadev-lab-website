@@ -83,27 +83,23 @@ export function HeroSection() {
             </span>
           </H1>
 
-          {/* Intellectual Tension Copy */}
+          {/* Clear Value Proposition */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
             <div className="md:col-span-8 lg:col-span-6">
-              <Body className="text-lg md:text-xl text-white/70 leading-relaxed">
-                An engineering laboratory where understanding systems comes
-                before writing code. A rigorous environment for research,
-                collective learning, and building things that hold up.
+              <Body className="text-lg md:text-xl text-white/80 leading-relaxed font-light">
+                BinnaDev Lab is an engineering space that connects global Web3 protocols with local talent. We help developers transition from just writing code to architecting secure, reliable systems that survive in the real world.
               </Body>
             </div>
           </div>
 
           {/* Interaction & CTAs */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 md:gap-12 w-full">
-            {/* Primary CTA: "ENTER THE LAB" */}
+            {/* Primary CTA */}
             <Link
               href="/cohorts"
               className="group relative flex items-center gap-6 cursor-pointer"
             >
-              {/* Dynamic Line Extension interaction */}
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0 h-[1px] bg-gold group-hover:w-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100" />
-
               <div className="relative z-10 w-14 h-14 rounded-full border border-gold flex items-center justify-center bg-obsidian transition-colors duration-500 group-hover:bg-gold">
                 <ArrowRight className="w-5 h-5 text-gold group-hover:text-obsidian transition-colors duration-500" />
               </div>

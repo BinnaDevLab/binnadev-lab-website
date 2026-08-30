@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
@@ -38,9 +38,15 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     };
   }, []);
 
-  // Reset scroll position on route change
+  const isInitialMount = useRef(true);
+
+  // Reset scroll position on route change, but not on initial load/reload
   useEffect(() => {
     if (lenisInstance) {
+      if (isInitialMount.current) {
+        isInitialMount.current = false;
+        return;
+      }
       // Small timeout to allow React to render the new page before scrolling
       setTimeout(() => {
         lenisInstance.scrollTo(0, { immediate: true });

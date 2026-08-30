@@ -30,11 +30,16 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
           className="mb-32 text-center max-w-3xl mx-auto relative z-10"
         >
           <Mono className="text-white/60 tracking-[0.2em] text-xs uppercase mb-6 block">
-            Evolution
+            The Bond
           </Mono>
-          <H2 className="text-3xl md:text-5xl leading-tight tracking-tight">
-            The community existed before the cohort.
+          <H2 className="text-3xl md:text-5xl leading-tight tracking-tight mb-6">
+            The community predates the curriculum.
           </H2>
+          <Body className="text-xl text-white/50 font-light">
+            Before there was a Lab, there was a collective. Driven by the
+            absolute belief that you can build world-class infrastructure from
+            anywhere, provided you have the right people.
+          </Body>
         </motion.div>
 
         <div className="max-w-6xl mx-auto relative">

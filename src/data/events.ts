@@ -44,7 +44,7 @@ export const COMMUNITY_EVENTS: CommunityEvent[] = [
     date: "2026-10-19T10:00:00Z",
     status: "UPCOMING",
     description:
-      "An intensive half-day workshop focused on moving from writing code to designing systems. We will deconstruct real-world architectures and understand the trade-offs behind scaling infrastructure in Monad Ecosystem.",
+      "An intensive half-day engineering workshop. We will deconstruct real-world architectures, analyze state layouts, and understand the deep trade-offs of building scalable infrastructure within the Monad Ecosystem.",
     category: "Workshop",
     location: {
       type: "in-person",

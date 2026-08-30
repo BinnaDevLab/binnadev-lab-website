@@ -181,7 +181,7 @@ export function Header() {
               className="fixed inset-0 z-[100] bg-obsidian flex flex-col pt-28 pb-safe px-6 md:px-12 overflow-y-auto"
             >
               {/* Background ambient gradient to create depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-royal/5 via-obsidian to-carbon pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-obsidian to-carbon pointer-events-none" />
 
               <div className="relative z-10 flex-grow flex flex-col">
                 <motion.div variants={fadeVariants} className="mb-8 pl-4">

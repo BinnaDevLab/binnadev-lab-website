@@ -103,7 +103,7 @@ export function InstallPrompt() {
         >
           {/* Blueprint styling lines */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-          <div className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-royal/50 to-transparent" />
+          <div className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-white/50 to-transparent" />
 
           <button
             onClick={handleDismiss}
@@ -147,7 +147,7 @@ export function InstallPrompt() {
             <div className="flex items-center gap-3 mt-2">
               <button
                 onClick={handleInstallClick}
-                className="flex-1 bg-royal/10 hover:bg-royal/20 border border-royal/30 text-white text-sm py-2 transition-colors font-mono uppercase tracking-wider"
+                className="flex-1 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm py-2 transition-colors font-mono uppercase tracking-wider"
               >
                 Install
               </button>

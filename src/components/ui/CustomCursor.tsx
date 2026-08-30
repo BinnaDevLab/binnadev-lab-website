@@ -56,7 +56,7 @@ export function CustomCursor() {
 
   if (!isVisible) return null;
 
-  // We use a bright neon purple (#9d4edd) instead of the deep royal purple (#4c0082)
+  // We use a bright neon purple (#9d4edd) instead of the deep white purple (#4c0082)
   // because deep purple is nearly invisible against the obsidian black background.
   return (
     <>

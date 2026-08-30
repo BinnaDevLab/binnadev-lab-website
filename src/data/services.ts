@@ -33,8 +33,8 @@ export const services: ServiceCategory[] = [
   },
   {
     id: "full-stack",
-    title: "Full-Stack Web3",
-    problem: "When the product needs more than a contract.",
+    title: "End-to-End Decentralized Systems",
+    problem: "When the protocol needs a production-grade interface.",
     description:
       "From protocol-level smart contracts and robust backend relayers to seamless web and mobile interfaces. We architect the entire decentralized application stack.",
     icon: LayoutTemplate,
@@ -47,8 +47,8 @@ export const services: ServiceCategory[] = [
   },
   {
     id: "training",
-    title: "Technical Training & DevRel",
-    problem: "When the team needs deeper capability.",
+    title: "Engineering Enablement",
+    problem: "When the internal team needs architectural rigor.",
     description:
       "Corporate workshops, engineering upskilling, technical enablement, and developer relations designed for teams that need to elevate their architectural rigor.",
     icon: GraduationCap,
@@ -75,8 +75,8 @@ export const services: ServiceCategory[] = [
   },
   {
     id: "custom",
-    title: "Endless Possibilities",
-    problem: "Bring us the problem.",
+    title: "Advanced Diagnostics & R&D",
+    problem: "When the problem defies standard solutions.",
     description:
       "We are available for difficult technical problems that require serious engineering thinking. If your problem sits somewhere between protocol design, application engineering, security, and infrastructure, that is exactly where we can help.",
     icon: Blocks,

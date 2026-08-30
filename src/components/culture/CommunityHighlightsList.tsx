@@ -23,7 +23,7 @@ export function CommunityHighlightsList() {
         {currentHighlights.map((highlight) => (
           <div
             key={highlight.id}
-            className="group overflow-hidden rounded-xl border border-white/5 bg-carbon/50 hover:border-royal/40 transition-colors"
+            className="group overflow-hidden rounded-xl border border-white/5 bg-carbon/50 hover:border-white/40 transition-colors"
           >
             <div className="h-48 overflow-hidden relative">
               <Image

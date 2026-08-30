@@ -37,15 +37,15 @@ export function CohortHero() {
           >
             <div className="w-12 h-[1px] bg-gold/50 mb-8" />
             <Body className="text-xl text-white/70 leading-relaxed font-light">
-              This is not another place promising to teach you how to use
-              AI-generated code. This is a place asking you to understand what
-              you are building.
+              This is not another bootcamp promising to teach you how to stitch together
+              AI-generated code. This is an engineering environment that demands you
+              understand what you are building.
             </Body>
             <Body className="text-lg text-white/50 leading-relaxed font-light">
-              BinnaDev Lab cohorts are focused learning experiences designed for
-              curious people willing to put in the work. We value depth,
-              engineering thinking, and deliberate practice over simply
-              consuming tutorials.
+              BinnaDev Lab cohorts are intensive technical sprints designed for
+              developers willing to do the hard work. We value architectural
+              depth, critical reasoning, and deliberate practice over passive
+              tutorials.
             </Body>
           </motion.div>
         </div>

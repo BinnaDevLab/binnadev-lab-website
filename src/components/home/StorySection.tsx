@@ -10,42 +10,42 @@ const narrative = [
     id: "01",
     phase: "The Problem",
     title: "Syntax Over Reasoning",
-    desc: "The industry teaches developers how to write code, but not how to read or reason about complex systems. The result is brittle architecture that collapses under adversarial conditions.",
+    desc: "The industry trains developers to write code, but often ignores how to reason about complex systems. The result is brittle architecture that collapses under pressure.",
     image: "/images/shared/shared-asset-3.jpeg",
   },
   {
     id: "02",
     phase: "The Philosophy",
     title: "Architectural Thinking",
-    desc: "We focus on the mental models required to understand the EVM at a fundamental level. Security is not an audit checklist; it is an emergent property of deep comprehension.",
+    desc: "Security is not a checklist added at the end of a project. We focus on the mental models required to understand a system so deeply that security becomes a natural outcome of the architecture.",
     image: "/images/shared/shared-asset-13.jpeg",
   },
   {
     id: "03",
     phase: "The Engineering",
     title: "Building the Foundation",
-    desc: "Constructing robust systems requires a rigorous approach to factory patterns, state layout, proxy architectures, and complex cross-contract execution flows.",
+    desc: "Robust infrastructure requires a strong foundation. We train developers to master state management, component design, and execution flows, the core elements of systems that do not fail.",
     image: "/images/shared/shared-asset-5.jpeg",
   },
   {
     id: "04",
     phase: "The Security",
     title: "Threat Modeling",
-    desc: "Understanding how attackers exploit trust boundaries, manipulate state, and chain vulnerabilities across DeFi legos to execute devastating economic attacks.",
+    desc: "To defend a system, you must know how to compromise it. We teach threat modeling so you can anticipate attacks and build software that survives in adversarial environments.",
     image: "/images/shared/shared-asset-4.jpeg",
   },
   {
     id: "05",
     phase: "The Research",
     title: "Beyond the Norm",
-    desc: "Invariant testing, formal verification, and adversarial fuzzing applied to production-grade systems. Not as audit theatre, but as genuine safety guarantees.",
+    desc: "We push beyond standard testing. Through adversarial fuzzing and deep invariant research, we work to establish mathematically proven safety guarantees for production systems.",
     image: "/images/shared/shared-asset-14.jpeg",
   },
   {
     id: "06",
     phase: "The Cohort",
     title: "Collective Intelligence",
-    desc: "Engineering in isolation is flawed. We learn and build in focused cohorts, with everyone bringing their questions, their answers, and their code.",
+    desc: "Engineering in isolation is flawed. We learn, research, and build in highly focused cohorts where developers share their insights, challenge assumptions, and write code together.",
     image: "/images/shared/shared-asset-2.jpeg",
   },
 ];
@@ -65,11 +65,11 @@ export function StorySection() {
           className="mb-16 md:mb-24 flex flex-col items-center text-center"
         >
           <div className="flex items-center gap-4 mb-6 justify-center">
-            <span className="w-8 h-[1px] bg-royal" />
+            <span className="w-8 h-[1px] bg-white" />
             <Mono className="text-gold uppercase tracking-widest text-sm">
               The Standard
             </Mono>
-            <span className="w-8 h-[1px] bg-royal" />
+            <span className="w-8 h-[1px] bg-white" />
           </div>
           <H2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] max-w-4xl">
             Engineering from <br />
@@ -141,5 +141,3 @@ export function StorySection() {
     </section>
   );
 }
-
-

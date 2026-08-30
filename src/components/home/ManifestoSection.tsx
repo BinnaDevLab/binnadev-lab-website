@@ -72,7 +72,7 @@ export function ManifestoSection() {
             className="absolute inset-x-0 top-1/2 -translate-y-1/2"
           >
             <H2 className="text-muted leading-tight">
-              We do not teach people how to write Code.
+              Code is not meant to be memorized.
             </H2>
           </motion.div>
           <motion.div
@@ -80,7 +80,7 @@ export function ManifestoSection() {
             className="absolute inset-x-0 top-1/2 -translate-y-1/2"
           >
             <H2 className="text-foreground leading-tight">
-              We teach people how to think.
+              It is meant to be understood.
             </H2>
           </motion.div>
           <motion.div
@@ -88,8 +88,8 @@ export function ManifestoSection() {
             className="absolute inset-x-0 top-1/2 -translate-y-1/2"
           >
             <H2 className="text-gold leading-tight">
-              Code is not meant to be memorized.{" "}
-              <br className="hidden md:block" /> It is meant to be interrogated.
+              Learn how to engineer resilient systems{" "}
+              <br className="hidden md:block" /> from first principles.
             </H2>
           </motion.div>
         </Container>

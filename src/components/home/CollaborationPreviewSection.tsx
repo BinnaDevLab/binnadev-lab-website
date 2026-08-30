@@ -10,7 +10,7 @@ const paths = [
     tag: "Learn",
     label: "Enter the Lab",
     description:
-      "Structured learning in reasoning, security, and on-chain systems, with people who take engineering seriously.",
+      "Structured learning for developers who want to master system design, Web3 security, and on-chain architecture alongside people who take engineering seriously.",
     href: "/cohorts",
     external: false,
   },
@@ -18,7 +18,7 @@ const paths = [
     tag: "Build",
     label: "Commission the Lab",
     description:
-      "Commercial engineering. Smart contract architecture, security research, and production-grade implementation.",
+      "Commercial engineering. We architect secure smart contracts, conduct rigorous security research, and ship production-grade systems.",
     href: "/collaborate",
     external: false,
   },

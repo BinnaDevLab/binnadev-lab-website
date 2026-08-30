@@ -38,9 +38,9 @@ export const COHORTS: Cohort[] = [
     format: "Live Sessions",
     platform: "Google Meet",
     description:
-      "A concentrated 2-week technical sprint designed to strip away abstraction. This cohort will rebuild your foundational understanding of blockchain systems, focusing heavily on Monad and smart contract mechanics.",
+      "A concentrated 2-week technical sprint designed to strip away abstraction. We rebuild your foundational understanding of decentralized systems, focusing heavily on protocol architecture and secure smart contract mechanics.",
     topics: [
-      "Monad architecture",
+      "Protocol architecture",
       "EVM mechanics",
       "Reading complex codebases",
       "Deconstructing smart contracts",

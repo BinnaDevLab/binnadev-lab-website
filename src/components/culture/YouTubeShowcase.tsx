@@ -8,6 +8,22 @@ import { youtubeVideos } from "@/data/youtube";
 
 export function YouTubeShowcase() {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+
+  const getYoutubeId = (url: string) => {
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname.includes("youtu.be")) return parsed.pathname.slice(1);
+      return parsed.searchParams.get("v") || "";
+    } catch {
+      return url.split("/").pop() || "";
+    }
+  };
+
+  const handlePlay = (id: string) => {
+    setActiveVideoId(id);
+    setIsVideoLoading(true);
+  };
 
   return (
     <section className="mb-32">
@@ -38,7 +54,6 @@ export function YouTubeShowcase() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {youtubeVideos.map((video) => {
-          const videoId = video.youtubeUrl.split("/").pop();
           const isActive = activeVideoId === video.id;
 
           return (
@@ -46,34 +61,49 @@ export function YouTubeShowcase() {
               <div
                 className={`relative aspect-video rounded-xl overflow-hidden bg-carbon border mb-4 transition-colors ${isActive ? "border-gold" : "border-white/5 group-hover:border-gold/50 cursor-pointer"}`}
                 onClick={() => {
-                  if (!isActive) setActiveVideoId(video.id);
+                  if (!isActive) handlePlay(video.id);
                 }}
               >
-                {isActive ? (
-                  <iframe
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-                    title={video.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                ) : (
-                  <>
-                    <Image
-                      src={video.thumbnail}
-                      alt={video.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover opacity-60 transition-all duration-700 transform group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
+                {/* Always render thumbnail */}
+                <Image
+                  src={video.thumbnail}
+                  alt={video.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className={`object-cover transition-all duration-700 transform ${isActive ? "opacity-30" : "opacity-60 group-hover:scale-105"}`}
+                />
 
+                {/* Overlays (only when not active) */}
+                {!isActive && (
+                  <>
+                    <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-obsidian/80 backdrop-blur-md flex items-center justify-center border border-white/20 text-white group-hover:bg-royal group-hover:scale-110 transition-all duration-300">
+                      <div className="w-16 h-16 rounded-full bg-obsidian/80 backdrop-blur-md flex items-center justify-center border border-white/20 text-white group-hover:bg-gold group-hover:text-obsidian group-hover:scale-110 transition-all duration-300">
                         <Play className="w-6 h-6 ml-1" />
                       </div>
                     </div>
+                  </>
+                )}
+
+                {/* Iframe & Loading (only when active) */}
+                {isActive && (
+                  <>
+                    {/* Loading Spinner */}
+                    {isVideoLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                      </div>
+                    )}
+                    {/* Iframe */}
+                    <iframe
+                      className={`absolute inset-0 z-20 w-full h-full transition-opacity duration-500 ${isVideoLoading ? "opacity-0" : "opacity-100"}`}
+                      src={`https://www.youtube.com/embed/${getYoutubeId(video.youtubeUrl)}?autoplay=1&rel=0`}
+                      title={video.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      onLoad={() => setIsVideoLoading(false)}
+                    />
                   </>
                 )}
               </div>

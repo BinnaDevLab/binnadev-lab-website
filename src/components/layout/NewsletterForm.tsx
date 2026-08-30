@@ -30,7 +30,7 @@ export function NewsletterForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="engineering@protocol.xyz"
             disabled={status === "loading" || status === "success"}
-            className="w-full bg-carbon border border-white/10 rounded-lg py-3 pl-12 pr-12 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-royal/50 transition-colors disabled:opacity-50"
+            className="w-full bg-carbon border border-white/10 rounded-lg py-3 pl-12 pr-12 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white/50 transition-colors disabled:opacity-50"
           />
           <button
             aria-label="Subscribe to newsletter"

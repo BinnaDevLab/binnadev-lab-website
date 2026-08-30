@@ -11,7 +11,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Research & Publications | Web3 Security & EVM Architecture",
   description:
-    "Deep technical research, security disclosures, and architectural patterns published by BinnaDev Lab on EVM mechanics and smart contract vulnerabilities.",
+    "Deep technical research, security disclosures, and architectural patterns published by BinnaDev Lab on EVM mechanics, smart contracts, and decentralized systems.",
   alternates: {
     canonical: "/research",
   },
@@ -65,9 +65,9 @@ export default function ResearchPage() {
           </Mono>
           <H1 className="mb-6 max-w-3xl">Open work. Shared knowledge.</H1>
           <Body className="text-lg text-muted max-w-2xl">
-            The Lab builds, audits, and open-sources tools that push the
-            boundaries of Blockchain Technology. Everything we learn, we try to
-            share. Publicly.
+            The Lab engineers, audits, and open-sources tools that push the
+            boundaries of decentralized systems. Every architecture we deconstruct
+            is rigorously documented and shared. Publicly.
           </Body>
         </Container>
       </div>
@@ -104,7 +104,7 @@ export default function ResearchPage() {
               href={socialLinks.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 px-8 py-4 bg-royal hover:bg-royal/80 text-white font-mono text-sm tracking-widest uppercase transition-colors"
+              className="flex-shrink-0 px-8 py-4 bg-gold hover:bg-gold/80 text-obsidian font-bold text-sm tracking-widest uppercase transition-colors"
             >
               Subscribe
             </Link>

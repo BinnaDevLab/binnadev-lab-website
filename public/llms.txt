@@ -1,34 +1,40 @@
 # BinnaDev Lab
 
-> "Think Deeper. Build Better. Engineer What Matters."
+> "Reasoning Precedes Coding."
 
-BinnaDev Lab is an elite software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts. We build robust financial infrastructure and train developers to reason about complex decentralized systems.
+BinnaDev Lab is an engineering collective specializing in smart contract architecture, Web3 security, and building decentralized systems from first principles. 
 
-## Key Services
-- Smart Contract Development
-- Full-Stack Web3 Applications
-- Protocol Architecture
-- Smart Contract Security Reviews
-- Technical Training & Developer Relations
+We act as a bridge between global Web3 protocols and elite local talent, producing the extreme engineering rigor required to protect complex financial infrastructure. We do not just implement features; we architect resilient systems where important rules, money, trust, and failure conditions have to be absolutely correct.
 
-## Notable Projects & Protocols
+## Engineering Domains
+- **Smart Contract Architecture**: State Machine Design, Cryptoeconomic Invariants, Gas-Optimized Implementation.
+- **End-to-End Decentralized Systems**: Hybrid Web2/Web3 Architectures, Indexer & Relayer Development, Account Abstraction.
+- **Protocol Architecture & Security**: Threat Modelling, Defensive Escrows, Incident Response Architecture.
+- **Engineering Enablement**: Rigorous technical cohorts, adversarial thinking workshops, and architecture seminars for internal teams.
+- **Advanced Diagnostics & R&D**: System diagnostics and bespoke R&D for problems that defy commodity solutions.
+
+## Applied Research & Systems
 - **Libertas Alpha Academy Certification Protocol**: A decentralized certification system built around soulbound ERC1155 credentials, separating Courses from Cohorts, and introducing cryptographic membership verification via Merkle roots.
 - **MilestoneCrowdfundUpgradeable**: A defensive escrow protocol for milestone-based crowdfunding with a 10,000 BPS accounting boundary and dynamic proportional abandonment refunds.
 - **Libertas Alpha Water Project Treasury**: A Micro Venture Initiative treasury orchestrating continuous O(1) yield accounting and split-vault capital recovery vs. operational surplus.
 
-## Core Philosophy
-We do not teach people how to write code. We teach people how to think. Code is not meant to be memorized; it is meant to be interrogated. Security is not an audit applied at the end of a process, but an emergent property of deep system comprehension.
+## Core Axioms
+- **Interrogation over performance**: Rigorous questioning is the foundation of serious engineering.
+- **Architectural depth over noise**: We ignore fleeting trends in favor of deeply understanding foundational mechanics.
+- **Document what you discover**: Knowledge scales when you leave a trail. Every architecture deconstructed is rigorously documented.
+- **Security as an Emergent Property**: Security is not a phase applied at the end of a process; it is an emergent property of rigorous systemic comprehension.
 
 ## Principal Architect
 Obinna Franklin Duru (Protocol Architect & Smart Contract Engineer)
 
-## Important Links
+## System Links
 - [Home](https://binnadevlab.vercel.app/)
-- [Cohorts & Training](https://binnadevlab.vercel.app/cohorts)
-- [Research & Projects](https://binnadevlab.vercel.app/research)
-- [Collaboration](https://binnadevlab.vercel.app/collaborate)
-- [Portfolio](https://binnadev.vercel.app)
+- [Philosophy](https://binnadevlab.vercel.app/philosophy)
+- [Cohorts](https://binnadevlab.vercel.app/cohorts)
+- [Research](https://binnadevlab.vercel.app/research)
+- [Commercial Engineering](https://binnadevlab.vercel.app/collaborate)
+- [The Collective](https://binnadevlab.vercel.app/culture)
+- [The Architect](https://binnadevlab.vercel.app/architect)
 - [GitHub](https://github.com/obinnafranklinduru)
 - [LinkedIn](https://linkedin.com/in/obinna-franklin-duru)
-- [Twitter](https://x.com/@BinnaDev)
-
+- [X/Twitter](https://x.com/BinnaDev)

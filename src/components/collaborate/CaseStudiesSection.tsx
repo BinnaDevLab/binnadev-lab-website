@@ -27,7 +27,7 @@ function ArchitectureDiagram({ nodes }: { nodes: ArchNode[] }) {
           return (
             <div
               key={idx}
-              className="p-4 border border-royal/30 bg-royal/10 rounded-md text-center text-white"
+              className="p-4 border border-white/30 bg-white/10 rounded-md text-center text-white"
             >
               {node.label}
             </div>
@@ -60,7 +60,7 @@ function ArchitectureDiagram({ nodes }: { nodes: ArchNode[] }) {
               <div className="p-4 border border-gold/30 bg-gold/5 rounded text-center text-xs">
                 {node.label}
               </div>
-              <div className="p-4 border border-royal/30 bg-royal/5 rounded text-center text-xs">
+              <div className="p-4 border border-white/30 bg-white/5 rounded text-center text-xs">
                 {node.secondaryLabel}
               </div>
             </div>

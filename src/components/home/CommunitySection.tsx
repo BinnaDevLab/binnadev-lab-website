@@ -49,7 +49,7 @@ export function CommunitySection() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-4 mb-8">
-                <span className="w-8 h-[1px] bg-royal" />
+                <span className="w-8 h-[1px] bg-white" />
                 <Mono>The Environment</Mono>
               </div>
               <H2 className="text-5xl md:text-6xl mb-8 leading-[1.1]">

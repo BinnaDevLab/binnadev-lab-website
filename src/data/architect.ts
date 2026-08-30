@@ -37,8 +37,8 @@ export const TIMELINE: TimelineNode[] = [
     phase: "01. Foundation",
     title: "Learning to Think in Systems",
     description: [
-      "Software engineering at FUTO became the foundation, but the goal was never simply to learn how to write software. It was to understand how systems are designed, how their parts depend on one another, and what happens when those dependencies fail.",
-      "The foundation was built around **System Design, Engineering, and Critical Thinking**: learning to break complex problems apart, understand their relationships, question assumptions, and design solutions that remain understandable beyond the first implementation.",
+      "Software engineering at FUTO became the foundation, but the goal was never simply to learn how to write software. It was to understand how systems are designed, how their parts depend on one another, and what happens when those dependencies shatter.",
+      "This era was built entirely on **System Design, Engineering, and Critical Thinking**: learning to break complex problems apart, question assumptions, and design solutions that remain understandable beyond the first implementation.",
     ],
     icon: Layers,
   },
@@ -48,8 +48,8 @@ export const TIMELINE: TimelineNode[] = [
     title: "When Code Started Carrying Value",
     description: [
       "Smart contracts changed the question.",
-      "Software could now control assets, enforce agreements, and coordinate people without a traditional intermediary. That meant a bug was no longer just a bug. It could become a financial loss, a broken protocol, or a failure of trust.",
-      "Working across **Monad, Ethereum, Base, and Polygon**, the focus shifted from simply making decentralized applications work to understanding how systems that handle real value should be designed, reasoned about, and defended.",
+      "Software could now control assets, enforce agreements, and coordinate people without a traditional intermediary. That meant a bug was no longer just a bug. It could become a total financial loss, a broken protocol, or a catastrophic failure of trust.",
+      "Working across **Monad, Ethereum, Base, and Polygon**, the focus shifted from simply making decentralized applications work to understanding how systems that hold real value must be architected, reasoned about, and defended.",
     ],
     icon: Cpu,
   },
@@ -59,9 +59,9 @@ export const TIMELINE: TimelineNode[] = [
     title: 'Stop Asking "Does It Work?"',
     description: [
       "The deeper the systems became, the harder the questions became.",
-      "A handful of passing tests could prove that the code behaves correctly in scenarios we imagined. They could not prove what happens in the scenarios we never considered.",
+      "A handful of passing tests could prove that the code behaves correctly in imagined scenarios. They could not prove what happens in the scenarios never considered.",
       "That led to a different approach: **interrogate the architecture.**",
-      "Property-based testing, stateful invariant fuzzing, handler-based testing, adversarial scenarios, and ghost variables became tools for challenging assumptions and searching for states the happy path never reveals.",
+      "Property-based testing, stateful invariant fuzzing, adversarial scenarios, and ghost variables became the primary tools for challenging assumptions and hunting for vulnerabilities the happy path never reveals.",
       'The question became less:\n\n> "Does this function work?"\n\nand more:\n\n> **"What must always remain true, even when everything goes wrong?"**',
     ],
     icon: Search,
@@ -69,14 +69,12 @@ export const TIMELINE: TimelineNode[] = [
   {
     id: "binnadev",
     phase: "04. BinnaDev Lab",
-    title: "Turning the Practice Into an Institution",
+    title: "The Bond & The Institution",
     description: [
-      "BinnaDev Lab is the natural evolution of that journey.",
-      "Not simply another developer community. Not simply an academy. Not simply a place to publish code.",
-      "A **research and engineering institution** built around deeper thinking, rigorous engineering, shared knowledge, and the people willing to question how things are built.",
-      "A place where developers learn to look beneath the syntax, engineers challenge their assumptions, researchers share what they discover, and the community grows together.",
-      "Because the principle remains simple:\n\n> **Code is not meant to be memorized. It is meant to be interrogated.**",
-      "And in an age where AI can generate code faster than ever, **the ability to understand, question, and take responsibility for what that code creates matters more than ever.**",
+      "BinnaDev Lab is the natural evolution of that journey, born from a profound realization: engineering in isolation has a ceiling.",
+      "Through organizing local events and leading communities, it became clear that while enthusiasm is easy to generate, producing world-class engineers requires a deep, enduring commitment. It requires **The Bond**, a collective of people willing to learn, fail, and build together.",
+      "The Lab is a **research and engineering institution** built around rigorous reasoning, shared knowledge, and the belief that you can build world-class infrastructure from a small place, provided you have the right people.",
+      "Because the core principle remains simple:\n\n> **Code is not meant to be memorized. It is meant to be interrogated.**",
     ],
     icon: Book,
   },
@@ -86,19 +84,19 @@ export const PRINCIPLES: Principle[] = [
   {
     title: "Reliable",
     description:
-      "We build systems that deserve to be trusted. Reliability begins with questioning assumptions. We do not treat 'it works' as the finish line. We ask what happens when the inputs change, the state becomes unexpected, the environment turns hostile, or an adversary deliberately pushes the system toward its boundaries.",
+      "Architecting systems that deserve to be trusted. Reliability begins with questioning assumptions. 'It works' is never treated as the finish line. The true test is what happens when inputs change, the state becomes corrupted, the environment turns hostile, or an adversary deliberately pushes the system to its absolute limits.",
     icon: CheckCircle,
   },
   {
     title: "Thoughtful",
     description:
-      "We think before we build. Good engineering is not about writing more code. It is about understanding the problem deeply enough to know what should be built, what should not be built, and why. We design with intention, especially when working with systems where mistakes can become irreversible.",
+      "Thinking before building. Good engineering is not about writing more code; it is about understanding the problem deeply enough to know what should be built, what should not be built, and exactly why. Designing with extreme intention is non-negotiable when engineering financial systems where mistakes are permanent.",
     icon: BrainCircuit,
   },
   {
     title: "Excellent",
     description:
-      "We refuse to confuse 'working' with 'finished.' Excellence lives in the details: a correctly defined invariant, a simpler state transition, a safer abstraction, a meaningful test, an efficient implementation, a clearer explanation, or a decision that removes unnecessary complexity.",
+      "Refusing to confuse 'working' with 'finished.' Excellence lives in the rigorous details: a correctly defined invariant, a simpler state transition, a safer abstraction, a mathematically sound test, and the deliberate removal of all unnecessary complexity.",
     icon: Award,
   },
 ];

@@ -32,7 +32,7 @@ export function ArchitectSection() {
                 practice became something others could join. A place to learn,
                 research, build, and grow together.
               </Body>
-              <blockquote className="pl-6 border-l-2 border-royal italic text-muted text-lg my-8">
+              <blockquote className="pl-6 border-l-2 border-white italic text-muted text-lg my-8">
                 &quot;The excellence of the work should be visible in how it is
                 built, not in how loudly it is claimed.&quot;
               </blockquote>

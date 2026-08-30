@@ -8,9 +8,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Collaborate | Protocol Architecture & Smart Contract Development",
+  title: "Commercial Engineering | Protocol Architecture & Smart Contracts",
   description:
-    "Engage BinnaDev Lab for protocol architecture, full-stack Web3 development, smart contract security reviews, and developer relations training.",
+    "Engage BinnaDev Lab for protocol architecture, end-to-end decentralized systems, smart contract security, and advanced R&D.",
   alternates: {
     canonical: "/collaborate",
   },
@@ -33,7 +33,7 @@ export default function CollaboratePage() {
         }}
       />
       {/* Background Ambience */}
-      <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-royal/5 via-carbon/20 to-transparent opacity-60 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-white/5 via-carbon/20 to-transparent opacity-60 pointer-events-none" />
 
       {/* 1. Hero */}
       <Container className="relative z-10">
@@ -45,13 +45,14 @@ export default function CollaboratePage() {
             <H1 className="mb-8 text-5xl md:text-7xl leading-[1.1] tracking-tight">
               We don&apos;t just implement features.{" "}
               <br className="hidden md:block" />
-              We reason about systems.
+              We architect resilient systems.
             </H1>
             <div className="space-y-6">
               <Body className="text-2xl text-white/90 font-light leading-relaxed max-w-2xl">
-                If your organization has a difficult Web3 engineering problem,
-                BinnaDev Lab can help you think through it, architect it, build
-                it, secure it, and deliver it responsibly.
+                If your protocol faces a complex engineering challenge,
+                BinnaDev Lab provides the architectural clarity, rigorous
+                implementation, and security posture required to deliver it
+                securely.
               </Body>
               <Body className="text-xl text-white/60 font-light leading-relaxed max-w-2xl">
                 We design systems where important rules, money, trust, and
@@ -112,9 +113,9 @@ export default function CollaboratePage() {
               engineering capability.
             </Body>
             <Body className="text-lg text-white/50 leading-relaxed font-light">
-              Commercial work funds our research and our community, and that
-              community produces the engineering rigor we bring to your
-              protocol.
+              Commercial engagements fund our localized research and community
+              building. In turn, that community produces the extreme engineering
+              rigor we deploy to protect your protocol.
             </Body>
           </div>
           <div className="lg:col-span-6">

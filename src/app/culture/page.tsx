@@ -12,9 +12,9 @@ import Image from "next/image";
 import { Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Culture | BinnaDev Lab",
+  title: "The Collective | BinnaDev Lab Culture",
   description:
-    "Your home away from home. A place to sharpen your thinking, share what you know, and build with people who take engineering seriously.",
+    "The Engineering Collective. A place to architect, research, and build alongside people who take decentralized systems seriously.",
 };
 
 const channels = [
@@ -22,7 +22,7 @@ const channels = [
     id: "discord",
     label: "Discord",
     headline: "Come into the room.",
-    body: "Ask the questions nobody has answered for you yet. The server is open to everyone—beginners, experts, and everyone still figuring it out.",
+    body: "Ask the questions nobody has answered for you yet. The server is open to everyone, beginners, experts, and everyone still figuring it out.",
     cta: "Join Discord",
     href: socialLinks.discord,
     accent: "group-hover:border-[#5865F2]/50",
@@ -49,23 +49,23 @@ const channels = [
 
 const philosophy = [
   {
-    title: "Curiosity over performance",
-    body: "You don't need to pretend to know everything. We believe that good questions are an essential part of serious engineering. Arrive curious.",
+    title: "Interrogation over performance",
+    body: "You don't need to pretend to know everything. We believe that rigorous questioning is the foundation of serious engineering. Arrive ready to interrogate.",
     imageUrl: "/images/shared/shared-asset-1.jpeg",
   },
   {
-    title: "Depth over noise",
-    body: "We care less about keeping up with every fleeting trend, and more about deeply understanding the foundational concepts that actually matter.",
+    title: "Architectural depth over noise",
+    body: "We ignore fleeting trends in favor of deeply understanding the foundational mechanics that actually govern decentralized systems.",
     imageUrl: "/images/gallery/gallery-asset-1.jpeg",
   },
   {
-    title: "Teach what you discover",
-    body: "Knowledge becomes exponentially more valuable when you bring someone else along. When you figure something out, leave a trail for the next person.",
+    title: "Document what you discover",
+    body: "Knowledge scales when you leave a trail. When you deconstruct a difficult concept, you are expected to document it for the next engineer.",
     imageUrl: "/images/shared/shared-asset-2.jpeg",
   },
   {
-    title: "A seat at the table",
-    body: "Beginners, builders, researchers, and mentors all have something to contribute. We value shared curiosity across every experience level.",
+    title: "The Collective Bond",
+    body: "Beginners, security researchers, and protocol architects all have something to contribute. We value shared, relentless curiosity across every experience level.",
     imageUrl: "/images/gallery/gallery-asset-3.jpeg",
   },
 ];
@@ -73,7 +73,7 @@ const philosophy = [
 export default function CulturePage() {
   return (
     <div className="min-h-screen pt-32 pb-32 bg-obsidian relative overflow-hidden">
-      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-royal/5 to-transparent opacity-50 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-white/5 to-transparent opacity-50 pointer-events-none" />
 
       <Container className="relative z-10">
         {/* 1. Page header - 2 Column Visual Storytelling */}
@@ -92,9 +92,9 @@ export default function CulturePage() {
             <div className="space-y-6">
               <StaggerItem>
                 <Body className="text-2xl text-white/80 font-light leading-relaxed">
-                  This is a place where you can belong, learn, and build with
-                  people who take engineering seriously—without feeling like you
-                  have to figure everything out alone.
+                  The Lab is an engineering collective. A place where you can
+                  architect, research, and build alongside people who take
+                  systems seriously, without the isolation of building alone.
                 </Body>
               </StaggerItem>
               <StaggerItem>
@@ -226,11 +226,11 @@ export default function CulturePage() {
         <section className="mb-32">
           <FadeIn className="mb-16 max-w-2xl">
             <H2 className="text-3xl md:text-5xl mb-6 tracking-tight">
-              The doors are open.
+              Enter the collective.
             </H2>
             <Body className="text-xl text-white/60 font-light leading-relaxed">
-              Now that you know who we are and what we believe, here are the
-              doors you can walk through to join the conversation.
+              Now that you understand the axioms we build upon, here are the
+              channels you can use to join the discussion.
             </Body>
           </FadeIn>
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">

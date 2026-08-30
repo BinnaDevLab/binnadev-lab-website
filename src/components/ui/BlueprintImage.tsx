@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 
 interface BlueprintImageProps extends ImageProps {
   containerClassName?: string;
-  overlayColor?: "royal" | "gold";
+  overlayColor?: "white" | "gold";
 }
 
 export function BlueprintImage({ 
   containerClassName, 
-  overlayColor = "royal",
+  overlayColor = "white",
   className,
   alt,
   ...props 
@@ -29,10 +29,10 @@ export function BlueprintImage({
     setCoordinates({ x, y });
   };
 
-  const overlayClass = overlayColor === "royal" ? "bg-royal/10" : "bg-gold/10";
-  const lineClass = overlayColor === "royal" ? "bg-royal/40" : "bg-gold/40";
-  const textClass = overlayColor === "royal" ? "text-gold" : "text-gold";
-  const borderClass = overlayColor === "royal" ? "border-royal" : "border-gold";
+  const overlayClass = overlayColor === "white" ? "bg-white/10" : "bg-gold/10";
+  const lineClass = overlayColor === "white" ? "bg-white/40" : "bg-gold/40";
+  const textClass = overlayColor === "white" ? "text-gold" : "text-gold";
+  const borderClass = overlayColor === "white" ? "border-white" : "border-gold";
 
   return (
     <div 
@@ -88,7 +88,7 @@ export function BlueprintImage({
           {/* Coordinate Box */}
           <div 
             className={cn("absolute bg-obsidian/95 border px-2 py-1 text-[10px] font-mono tracking-widest backdrop-blur-md shadow-2xl transition-all duration-75 ease-out", 
-              overlayColor === "royal" ? "border-royal/50" : "border-gold/50",
+              overlayColor === "white" ? "border-white/50" : "border-gold/50",
               textClass
             )}
             style={{ 

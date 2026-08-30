@@ -42,7 +42,7 @@ export function YouTubeSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <span className="w-8 h-[1px] bg-royal" />
+              <span className="w-8 h-[1px] bg-white" />
               <Mono>Broadcasts</Mono>
             </div>
             <H2 className="text-4xl md:text-6xl mb-6">
@@ -121,7 +121,7 @@ export function YouTubeSection() {
                 />
                 <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-royal/90 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/10 group-hover:bg-gold transition-colors duration-300">
                     {activeVideo === featured.id ? (
                       <Loader2 className="w-8 h-8 text-white animate-spin" />
                     ) : (

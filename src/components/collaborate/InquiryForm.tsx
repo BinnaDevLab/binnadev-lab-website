@@ -33,9 +33,10 @@ export function InquiryForm() {
               Tell Us What You&apos;re Building.
             </H2>
             <Body className="text-xl text-white/60 mb-8 font-light leading-relaxed max-w-lg">
-              We do not believe in high-pressure sales funnels. If you have a
-              complex engineering problem, submit the details below. We will
-              review it and let you know if we are the right team to solve it.
+              We do not employ sales funnels. If your protocol requires deep
+              architectural intervention, submit the technical parameters below.
+              We will review the constraints and confirm if we are equipped to
+              execute the solution.
             </Body>
 
             <div className="flex flex-col gap-6 mt-12 pt-12 border-t border-white/10">

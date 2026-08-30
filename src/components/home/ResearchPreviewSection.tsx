@@ -12,7 +12,7 @@ export function ResearchPreviewSection() {
 
   return (
     <section className="py-32 bg-obsidian border-t border-white/5 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(43,76,126,0.15)_0%,_transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(240,200,70,0.03)_0%,_transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
@@ -22,9 +22,7 @@ export function ResearchPreviewSection() {
             </Mono>
             <H2 className="mb-6">Research & Engineering</H2>
             <Body className="text-lg text-muted">
-              Where the Lab&apos;s thinking becomes observable. Protocols,
-              security research, and open-source fuzzing harnesses. The actual
-              output of the practice.
+              Where our thinking becomes real. See the actual projects, security research, and open-source tools built by the Lab.
             </Body>
           </div>
           <Link href="/research">

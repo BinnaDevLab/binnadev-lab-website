@@ -10,7 +10,7 @@ import { MANIFESTO_POINTS } from "@/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Philosophy | Our Engineering Principles",
+  title: "Philosophy | Engineering First Principles",
   description:
     "The core engineering principles of BinnaDev Lab: Interrogating systems, prioritizing mental models, and treating security as an emergent property of deep comprehension.",
   alternates: {
@@ -50,8 +50,7 @@ export default function PhilosophyPage() {
             </H1>
             <Body className="text-2xl text-muted font-light max-w-2xl mx-auto">
               BinnaDev Lab exists to bridge the gap between writing code and
-              architecting resilient, secure, and permanent digital
-              infrastructure.
+              architecting resilient, secure digital infrastructure. A space where global protocols meet elite local talent.
             </Body>
           </FadeIn>
         </Container>
@@ -72,11 +71,7 @@ export default function PhilosophyPage() {
               <span className="text-gold">We are optimizing for truth.</span>
             </H2>
             <Body className="text-xl text-muted leading-relaxed">
-              Most educational platforms fail because they treat programming as
-              a trade. They teach you the syntax of a language, but not the
-              architecture of a system. They teach you how to deploy a contract,
-              but not how to mathematically prove it cannot be exploited. We
-              believe this paradigm is broken.
+              It is easy to memorize a framework or follow a tutorial to deploy a smart contract. But what happens when you encounter a system architecture you have never seen before? We believe that instead of merely learning syntax, developers must master the fundamental reasoning that governs all resilient systems.
             </Body>
           </div>
         </Container>
@@ -112,7 +107,7 @@ export default function PhilosophyPage() {
                     src={point.image}
                     alt={point.title}
                     fill
-                    overlayColor={idx % 2 === 0 ? "royal" : "gold"}
+                    overlayColor={idx % 2 === 0 ? "white" : "gold"}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
@@ -124,69 +119,57 @@ export default function PhilosophyPage() {
 
       {/* 4. The Practice */}
       <section className="py-40 bg-obsidian relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(43,76,126,0.2)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(240,200,70,0.03)_0%,_transparent_70%)] pointer-events-none" />
 
         <Container className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center max-w-4xl mx-auto mb-20">
             <Mono className="text-gold mb-6 block tracking-[0.2em] uppercase text-sm">
-              The Consequence
+              The Three Pillars
             </Mono>
             <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">
-              From Philosophy to Practice
+              Thoughtful. Reliable. Excellent.
             </H2>
             <div className="space-y-6">
               <Body className="text-xl text-white/70 leading-relaxed font-light">
                 The ideas behind BinnaDev Lab are not meant to remain on a page.
-                They shape how we build, how we research, how we teach, and how
-                we engage with other engineers.
+                They shape how we build, how we research, how we collaborate, and how
+                we approach every single line of code.
               </Body>
               <Body className="text-xl text-white/70 leading-relaxed font-light">
-                Through{" "}
-                <strong className="text-white font-medium">
-                  research, technical writing, YouTube, workshops, cohorts,
-                  community discussions, and real engineering work
-                </strong>
-                , the Lab creates spaces where developers can move beyond simply
-                learning how to use tools and begin understanding why systems
-                behave the way they do.
+                Through <strong className="text-white font-medium">cohorts, community discussions, technical writing, and real engineering work</strong>, the Lab creates a space where developers can move beyond simply learning tools, and begin understanding why systems behave the way they do.
               </Body>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-24">
-            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
-              <Cpu className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8" />
-              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">
-                Think Deeper
+            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Cpu className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8 relative z-10" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors tracking-wide relative z-10">
+                Thoughtful
               </H3>
-              <p className="text-base text-white/60 leading-relaxed font-light">
-                Go beneath the syntax. Understand the systems, assumptions,
-                trade-offs, and decisions that make software work. The goal is
-                not to memorize another framework, but to develop the judgment
-                to reason about unfamiliar systems.
+              <p className="text-base text-white/60 leading-relaxed font-light relative z-10">
+                Deep reasoning before action. We prioritize thinking problems through completely, delivering wise, thoroughly considered solutions over rushed execution.
               </p>
             </div>
-            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
-              <Network className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8" />
-              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">
-                Build With Intention
+            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Network className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8 relative z-10" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors tracking-wide relative z-10">
+                Reliable
               </H3>
-              <p className="text-base text-white/60 leading-relaxed font-light">
-                Architecture comes before implementation. We explore how
-                protocols should be designed, how responsibilities should be
-                separated, and how systems can remain understandable as their
-                complexity grows.
+              <p className="text-base text-white/60 leading-relaxed font-light relative z-10">
+                Building trust in all systems. In a Web3 ecosystem centered on trustless verification, being fundamentally reliable establishes dependable bonds with our community and partners.
               </p>
             </div>
-            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group">
-              <ShieldAlert className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8" />
-              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors">
-                Interrogate Everything
+            <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <ShieldAlert className="w-8 h-8 text-white/60 group-hover:text-gold transition-colors mb-8 relative z-10" />
+              <H3 className="text-2xl mb-4 group-hover:text-white transition-colors tracking-wide relative z-10">
+                Excellent
               </H3>
-              <p className="text-base text-white/60 leading-relaxed font-light">
-                Do not trust the happy path. Challenge assumptions through
-                adversarial thinking, property-based testing, invariant fuzzing,
-                experimentation, and rigorous engineering practice.
+              <p className="text-base text-white/60 leading-relaxed font-light relative z-10">
+                The ultimate standard of craftsmanship. Excellence means producing work so refined that it stands as an undeniable benchmark of quality and architectural beauty.
               </p>
             </div>
           </div>

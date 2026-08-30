@@ -14,9 +14,9 @@ import { CTASection } from "@/components/home/CTASection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BinnaDevLab | Reasoning Precedes Coding",
+  title: "BinnaDev Lab | Reasoning Precedes Coding",
   description:
-    "BinnaDevLab is a software engineering laboratory focused on smart contracts, Web3 security, and building developers who reason before they code.",
+    "BinnaDev Lab is an engineering collective specializing in smart contract architecture, Web3 security, and building decentralized systems from first principles.",
   alternates: {
     canonical: "/",
   },

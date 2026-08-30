@@ -15,11 +15,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-mono text-sm tracking-wider uppercase transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-royal disabled:pointer-events-none disabled:opacity-50";
+      "inline-flex items-center justify-center font-mono text-sm tracking-wider uppercase transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white disabled:pointer-events-none disabled:opacity-50";
 
     const variants = {
       primary:
-        "bg-obsidian text-foreground border border-royal/50 hover:border-royal hover:bg-royal/10 hover:shadow-[0_0_15px_rgba(107,63,160,0.5)]",
+        "bg-obsidian text-foreground border border-white/50 hover:border-white hover:bg-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]",
       secondary:
         "bg-carbon text-foreground border border-white/5 hover:border-white/10 hover:bg-white/5",
       outline:

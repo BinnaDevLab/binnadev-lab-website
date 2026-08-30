@@ -103,8 +103,8 @@ export function CaseFileReview() {
             className="absolute inset-0 bg-carbon border border-white/10 p-8 md:p-10 flex flex-col justify-between cursor-grab active:cursor-grabbing"
           >
             {/* Top architectural markers */}
-            <div className="absolute top-0 left-0 w-8 h-[1px] bg-royal" />
-            <div className="absolute top-0 left-0 w-[1px] h-8 bg-royal" />
+            <div className="absolute top-0 left-0 w-8 h-[1px] bg-white" />
+            <div className="absolute top-0 left-0 w-[1px] h-8 bg-white" />
 
             <p className="text-lg md:text-xl text-white font-light leading-relaxed mb-8 flex-grow">
               &quot;{active.quote}&quot;
@@ -118,7 +118,7 @@ export function CaseFileReview() {
                       src={active.avatarUrl}
                       alt={active.author}
                       fill
-                      overlayColor="royal"
+                      overlayColor="white"
                       className="object-cover"
                     />
                   ) : (

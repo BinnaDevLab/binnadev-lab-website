@@ -79,7 +79,7 @@ export default function ArchitectPage() {
     <div className="bg-obsidian min-h-screen pt-32 pb-32 relative selection:bg-gold selection:text-obsidian">
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-royal/5 via-carbon/10 to-transparent opacity-60" />
+        <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-white/5 via-carbon/10 to-transparent opacity-60" />
       </div>
 
       <Container className="relative z-10">
@@ -97,9 +97,11 @@ export default function ArchitectPage() {
               Lab.
             </Body>
             <Body className="text-lg text-muted leading-relaxed mb-10 max-w-xl font-light">
-              My work blends the rigor of secure smart contract engineering with
-              the care of ethical design. I engineer systems that endure by
-              choosing clarity and security over complexity.
+              Bridging the gap between global Web3 protocols and elite local
+              talent. The work blends the extreme rigor of secure smart contract
+              architecture with the human care of ethical design, building
+              systems that survive adversarial conditions by choosing clarity
+              and mathematical certainty over unnecessary complexity.
             </Body>
 
             <div className="flex flex-wrap gap-4">
@@ -166,9 +168,9 @@ export default function ArchitectPage() {
               Engineering Principles
             </H2>
             <Body className="text-xl text-white/60 font-light">
-              Smart contracts handle real value. I build with reliability,
+              Smart contracts handle real value. Building with reliability,
               thoughtfulness, and excellence. These are the axioms that govern
-              my work.
+              the engineering practice.
             </Body>
           </div>
 
@@ -331,9 +333,9 @@ export default function ArchitectPage() {
             <div className="max-w-2xl">
               <H2 className="text-4xl md:text-5xl mb-6">On YouTube</H2>
               <Body className="text-xl text-white/60 font-light">
-                Everything I make is free. Deep-dive sessions, live audits,
-                system walkthroughs. Play directly to see the rigor behind the
-                code.
+                Everything produced is open and free. Deep-dive sessions, live
+                audits, system walkthroughs. Play directly to see the rigor
+                behind the code.
               </Body>
             </div>
             <a
@@ -346,7 +348,6 @@ export default function ArchitectPage() {
             </a>
           </div>
           <ArchitectYouTubeList />
-          `r`n{" "}
         </section>
 
         {/* 6. Closing */}

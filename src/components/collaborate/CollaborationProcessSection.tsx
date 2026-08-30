@@ -28,7 +28,7 @@ export function CollaborationProcessSection() {
                 {step.number}
               </div>
 
-              <Mono className="text-gold mb-6 block text-sm border border-royal/20 bg-royal/5 rounded-full w-fit px-3 py-1">
+              <Mono className="text-gold mb-6 block text-sm border border-white/20 bg-white/5 rounded-full w-fit px-3 py-1">
                 Step {step.number}
               </Mono>
 
