@@ -8,18 +8,36 @@ import { H2, Body, Mono } from "@/components/ui/Typography";
 
 export function ArchitectSection() {
   return (
-    <section id="architect" className="py-32 md:py-48 bg-carbon relative overflow-hidden border-t border-white/5">
+    <section
+      id="architect"
+      className="py-32 md:py-48 bg-carbon relative overflow-hidden border-t border-white/5"
+    >
       {/* Animated SVG Background Layer */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <motion.div 
-          animate={{ x: ["0%", "-5%"], y: ["0%", "5%"] }} 
-          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        <motion.div
+          animate={{ x: ["0%", "-5%"], y: ["0%", "5%"] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
           className="absolute -top-[10%] -left-[10%] w-[120%] h-[120%]"
         >
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="architect-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="0.5" />
+              <pattern
+                id="architect-grid"
+                width="60"
+                height="60"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 60 0 L 0 0 0 60"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
                 <circle cx="30" cy="30" r="1" fill="gold" />
               </pattern>
             </defs>
@@ -39,9 +57,6 @@ export function ArchitectSection() {
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <Mono className="mb-4 block text-gold tracking-widest uppercase text-xs">
-              The Origin
-            </Mono>
             <H2 className="mb-8 text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
               Obinna Franklin Duru
             </H2>
