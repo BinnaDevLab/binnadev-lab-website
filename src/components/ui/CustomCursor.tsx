@@ -56,28 +56,30 @@ export function CustomCursor() {
 
   if (!isVisible) return null;
 
-  // We use a bright neon purple (#9d4edd) instead of the deep white purple (#4c0082)
-  // because deep purple is nearly invisible against the obsidian black background.
+  // We use the brand gold (#f0c846) with a subtle dark outline because gold
+  // holds strong visual contrast on both the dark obsidian sections and the
+  // white/light sections, unlike white which disappears on white backgrounds.
   return (
     <>
       {/* The Core Dot (Immediate Tracking) */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] shadow-[0_0_12px_rgba(255,255,255,0.8)]"
+        className="fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-[9999] [box-shadow:0_0_0_1px_rgba(0,0,0,0.35),0_0_12px_rgba(240,200,70,0.9)]"
         style={{
           x: mouseX,
           y: mouseY,
           translateX: "-50%",
           translateY: "-50%",
+          backgroundColor: "#f0c846",
         }}
       />
 
       {/* The Aura Ring (Spring Physics Delay) */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] border-2 border-white/40 mix-blend-screen"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] border-2 border-[#f0c846] [box-shadow:0_0_0_1px_rgba(0,0,0,0.15),0_0_16px_rgba(240,200,70,0.4)]"
         animate={{
           width: isHovering ? 80 : 48,
           height: isHovering ? 80 : 48,
-          backgroundColor: isHovering ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0)",
+          backgroundColor: isHovering ? "rgba(240, 200, 70, 0.15)" : "rgba(240, 200, 70, 0)",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         style={{

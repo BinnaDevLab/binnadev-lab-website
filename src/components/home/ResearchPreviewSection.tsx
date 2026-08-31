@@ -105,8 +105,8 @@ function ProjectCardContent({ project }: { project: Project }) {
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover opacity-90 transition-all duration-700 transform group-hover:scale-105"
         />
-        {/* Lighter gradient for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent" />
+        {/* Dark gradient for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="absolute top-4 left-4 flex gap-2">
           <Mono className="text-xs text-white bg-purple-900 px-3 py-1 rounded-full font-bold shadow-sm">

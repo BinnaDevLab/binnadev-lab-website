@@ -5,7 +5,13 @@ import { motion, PanInfo } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Body, Mono, H2 } from "@/components/ui/Typography";
 import { testimonials } from "@/data/testimonials";
-import { ChevronLeft, ChevronRight, MessageCircle, Briefcase, GitBranch } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  MessageCircle,
+  Briefcase,
+  GitBranch,
+} from "lucide-react";
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,7 +22,9 @@ export function TestimonialsSection() {
   }, []);
 
   const slideRight = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   }, []);
 
   // Auto-slide every 3 seconds unless hovered
@@ -101,14 +109,13 @@ export function TestimonialsSection() {
       <Container className="relative z-10 flex flex-col items-center">
         {/* Section header */}
         <div className="flex flex-col items-center gap-4 mb-12">
-          <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-gold" />
           <H2 className="text-white text-3xl md:text-5xl font-display tracking-tight uppercase">
             Testimonials
           </H2>
         </div>
 
         {/* Carousel Container */}
-        <div 
+        <div
           className="relative w-full max-w-[1200px] h-[500px] md:h-[400px] flex items-center justify-center perspective-[1000px]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -140,14 +147,16 @@ export function TestimonialsSection() {
                   if (diff === 1) slideLeft();
                 }}
                 className={`absolute w-[90%] md:w-[700px] p-8 md:p-12 border border-white/10 bg-obsidian/90 backdrop-blur-xl flex flex-col justify-between h-auto min-h-[300px] max-h-[100%] overflow-y-auto custom-scrollbar rounded-2xl shadow-2xl transition-all duration-300 ${
-                  isActive ? "cursor-grab active:cursor-grabbing shadow-gold/10 border-gold/30 hover:border-gold/50 hover:shadow-gold/20 transform-gpu" : "cursor-pointer"
+                  isActive
+                    ? "cursor-grab active:cursor-grabbing shadow-gold/10 border-gold/30 hover:border-gold/50 hover:shadow-gold/20 transform-gpu"
+                    : "cursor-pointer"
                 }`}
               >
                 {/* Top accent */}
                 <div className="w-8 h-[2px] bg-gold/80 mb-8 shrink-0 shadow-[0_0_8px_rgba(255,215,0,0.8)]" />
 
                 {/* Quote */}
-                <Body className="text-white/90 leading-relaxed text-lg md:text-xl mb-10 italic font-light">
+                <Body className="text-white/90 leading-relaxed text-lg md:text-xl mb-10 font-light">
                   &ldquo;{testimonial.quote}&rdquo;
                 </Body>
 
@@ -235,11 +244,12 @@ export function TestimonialsSection() {
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
-          
+
           <Mono className="text-white/60 text-xs tracking-widest font-bold">
-            {(currentIndex + 1).toString().padStart(2, "0")} / {testimonials.length.toString().padStart(2, "0")}
+            {(currentIndex + 1).toString().padStart(2, "0")} /{" "}
+            {testimonials.length.toString().padStart(2, "0")}
           </Mono>
-          
+
           <button
             onClick={slideLeft}
             aria-label="Next Testimonial"

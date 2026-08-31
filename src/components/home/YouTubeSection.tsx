@@ -39,16 +39,32 @@ export function YouTubeSection() {
     >
       {/* Animated SVG Background Layer */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
-        <motion.div 
-          animate={{ rotate: 360, scale: [1, 1.1, 1] }} 
+        <motion.div
+          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%]"
         >
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="youtube-grid" width="100" height="100" patternUnits="userSpaceOnUse">
-                <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="0.5"/>
-                <path d="M0,0 L100,100 M100,0 L0,100" stroke="white" strokeWidth="0.2"/>
+              <pattern
+                id="youtube-grid"
+                width="100"
+                height="100"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+                <path
+                  d="M0,0 L100,100 M100,0 L0,100"
+                  stroke="white"
+                  strokeWidth="0.2"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#youtube-grid)" />
@@ -61,16 +77,13 @@ export function YouTubeSection() {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-4 mb-6 text-gold">
-              <PlayCircle className="w-4 h-4" />
-              <Mono className="uppercase tracking-widest text-xs font-semibold">Media</Mono>
-            </div>
             <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">
               Watch the process.
             </H2>
 
             <Body className="text-lg md:text-xl text-white/70 max-w-xl leading-relaxed font-light">
-              No basic syntax drills or surface-level tutorials. We document the real reasoning behind how systems work and where they break.
+              No basic syntax drills or surface-level tutorials. We document the
+              real reasoning behind how systems work and where they break.
             </Body>
           </div>
           <Link
@@ -113,11 +126,12 @@ export function YouTubeSection() {
               )}
 
               {/* Loading State Spinner */}
-              {activeVideo === featured.id && !loadedVideos.has(featured.id) && (
-                <div className="absolute inset-0 z-15 flex items-center justify-center bg-carbon">
-                  <Loader2 className="w-8 h-8 text-gold animate-spin" />
-                </div>
-              )}
+              {activeVideo === featured.id &&
+                !loadedVideos.has(featured.id) && (
+                  <div className="absolute inset-0 z-15 flex items-center justify-center bg-carbon">
+                    <Loader2 className="w-8 h-8 text-gold animate-spin" />
+                  </div>
+                )}
 
               {/* Thumbnail overlay fades out on click */}
               <div

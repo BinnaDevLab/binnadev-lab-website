@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowUpRight, Users } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
+import { H2, Body, Meta } from "@/components/ui/Typography";
 import { socialLinks } from "@/data/social";
 
 const channels = [
@@ -44,60 +44,39 @@ export function CommunitySection() {
       />
 
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          {/* Left Column: Massive Statement */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-4 mb-8 text-gold">
-                <Users className="w-4 h-4" />
-                <Mono className="uppercase tracking-widest text-xs font-semibold">The Environment</Mono>
-              </div>
-              <H2 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-[1.1] tracking-tight text-white">
-                The Bond.
+        <div className="flex flex-col items-center text-center">
+          <H2 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-white">
+            The Bond.
+          </H2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+          {channels.map((channel, i) => (
+            <Link
+              key={channel.id}
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group flex flex-col py-10 md:py-14 px-0 border-white/20 ${
+                i < channels.length - 1 ? "md:border-r" : ""
+              } border-b md:border-b-0 hover:bg-white/[0.02] transition-colors duration-500 ${
+                i > 0 ? "md:pl-12" : ""
+              }`}
+            >
+              <Meta className="text-gold mb-6 block group-hover:text-gold transition-colors text-sm">
+                [0{i + 1}] // {channel.label}
+              </Meta>
+              <H2 className="text-3xl md:text-4xl text-white/80 group-hover:text-white transition-colors mb-6">
+                {channel.headline}
               </H2>
-            </div>
-
-            <Body className="text-lg md:text-xl text-white/80 max-w-md hidden lg:block font-light">
-              A place to sharpen your thinking, share what you know, and build
-              with people who take engineering seriously.
-            </Body>
-          </div>
-
-          {/* Right Column: Brutalist Directory */}
-          <div className="lg:col-span-7 flex flex-col">
-            <Body className="text-xl text-white/50 mb-12 lg:hidden">
-              A place to sharpen your thinking, share what you know, and build
-              with people who take engineering seriously.
-            </Body>
-
-            <div className="border-t border-white/10 flex flex-col">
-              {channels.map((channel, i) => (
-                <Link
-                  key={channel.id}
-                  href={channel.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col sm:flex-row sm:items-center justify-between py-10 md:py-16 border-b border-white/10 hover:bg-white/[0.02] transition-colors duration-500 px-4 -mx-4 sm:px-8 sm:-mx-8"
-                >
-                  <div className="flex flex-col mb-4 sm:mb-0 max-w-sm">
-                    <Meta className="text-gold mb-4 block group-hover:text-gold transition-colors">
-                      [0{i + 1}] // {channel.label}
-                    </Meta>
-                    <H2 className="text-3xl md:text-4xl text-white/80 group-hover:text-white transition-colors">
-                      {channel.headline}
-                    </H2>
-                  </div>
-
-                  <div className="flex flex-col sm:items-end text-left sm:text-right max-w-xs">
-                    <Body className="text-sm mb-4 text-white/60 group-hover:text-white/70 transition-colors">
-                      {channel.body}
-                    </Body>
-                    <ArrowUpRight className="w-8 h-8 text-white/20 group-hover:text-gold transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+              <Body className="text-sm text-white/50 group-hover:text-white/70 transition-colors leading-relaxed">
+                {channel.body}
+              </Body>
+              <div className="mt-8">
+                <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-gold transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
         </div>
       </Container>
     </section>
