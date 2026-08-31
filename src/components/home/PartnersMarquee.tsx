@@ -11,14 +11,9 @@ export function PartnersMarquee() {
     <section className="py-24 border-y border-white/5 bg-obsidian overflow-hidden relative">
       <Container className="relative z-20">
         <div className="text-center mb-16">
-          <Mono className="mb-4 block">Organizations &amp; Ecosystem</Mono>
-          <H2 className="text-3xl md:text-4xl text-white">
-            Protocols & Organisations
+          <H2 className="text-3xl md:text-4xl text-white tracking-tight">
+            Ecosystem & Organisations
           </H2>
-          <Body className="mt-4 max-w-2xl mx-auto">
-            Protocols and organisations BinnaDevLab has engaged with, built for,
-            or is actively building alongside.
-          </Body>
         </div>
       </Container>
 
@@ -29,8 +24,8 @@ export function PartnersMarquee() {
         <div className="flex w-max hover:[&>div]:animation-pause">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 35, repeat: Infinity }}
-            className="flex gap-20 md:gap-32 items-center px-10"
+            transition={{ ease: "linear", duration: 15, repeat: Infinity }}
+            className="flex gap-8 md:gap-32 items-center px-10"
           >
             {/* Double array for seamless loop */}
             {[...partners, ...partners].map((partner, idx) => (

@@ -25,31 +25,31 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="bg-obsidian min-h-screen">
-      {/* 1 — Orientation */}
+      {/* 1 - Orientation */}
       <HeroSection />
-      {/* 1.5 — The Hook */}
+      {/* 1.5 - The Hook */}
       <IntroVideoSection />
-      {/* 2 — The conviction */}
+      {/* 2 - The conviction */}
       <ManifestoSection />
-      {/* 3 — The standard */}
+      {/* 3 - The standard */}
       <StorySection />
-      {/* 4 — Evidence: video */}
+      {/* 4 - Evidence: video */}
       <YouTubeSection />
-      {/* 5 — Evidence: research */}
+      {/* 5 - Evidence: research */}
       <ResearchPreviewSection />
-      {/* 6 — The origin */}
+      {/* 6 - The origin */}
       <ArchitectSection />
-      {/* 7 — Three paths */}
+      {/* 7 - Three paths */}
       <CollaborationPreviewSection />
-      {/* 8 — The environment */}
-      <CommunitySection />
-      {/* 9 — Human validation */}
+      {/* 8 - Human validation */}
       <TestimonialsSection />
-      {/* 10 — Ecosystem */}
+      {/* 9 - The environment */}
+      <CommunitySection />
+      {/* 10 - Ecosystem */}
       <PartnersMarquee />
-      {/* 11 — Stay connected */}
+      {/* 11 - Stay connected */}
       <NewsletterSection />
-      {/* 12 — Final invitation */}
+      {/* 12 - Final invitation */}
       <CTASection />
     </div>
   );

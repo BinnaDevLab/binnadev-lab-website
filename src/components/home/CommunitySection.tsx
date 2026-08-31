@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { socialLinks } from "@/data/social";
@@ -48,16 +48,16 @@ export function CommunitySection() {
           {/* Left Column: Massive Statement */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-4 mb-8">
-                <span className="w-8 h-[1px] bg-white" />
-                <Mono>The Environment</Mono>
+              <div className="flex items-center gap-4 mb-8 text-gold">
+                <Users className="w-4 h-4" />
+                <Mono className="uppercase tracking-widest text-xs font-semibold">The Environment</Mono>
               </div>
-              <H2 className="text-5xl md:text-6xl mb-8 leading-[1.1]">
-                Your home <br className="hidden lg:block" /> away from home.
+              <H2 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-[1.1] tracking-tight text-white">
+                The Bond.
               </H2>
             </div>
 
-            <Body className="text-xl md:text-2xl text-white/50 max-w-md hidden lg:block">
+            <Body className="text-lg md:text-xl text-white/80 max-w-md hidden lg:block font-light">
               A place to sharpen your thinking, share what you know, and build
               with people who take engineering seriously.
             </Body>

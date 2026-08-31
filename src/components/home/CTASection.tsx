@@ -15,7 +15,7 @@ export function CTASection() {
 
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
         <div className="mb-16">
-          <Meta className="text-gold mb-6 block">SYSTEM_STATUS: OPEN</Meta>
+          <Mono className="text-gold tracking-widest uppercase text-sm mb-6 block">Take Action</Mono>
           <Display className="text-white">
             The Work <br className="hidden md:block" /> Starts Here.
           </Display>

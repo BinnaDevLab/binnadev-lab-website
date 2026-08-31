@@ -60,87 +60,59 @@ export function HeroSection() {
       </div>
 
       {/* 3. Main Content Composition */}
-      <Container className="relative z-10 w-full max-w-[1800px] px-6 md:px-12 lg:px-24 flex-grow flex flex-col justify-center pt-32 pb-24">
-        <FadeIn delay={0} direction="up" className="max-w-5xl w-full">
-          {/* Lab Identifier */}
-          <div className="flex items-center gap-4 mb-8 md:mb-12">
-            <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            <Mono className="text-gold tracking-widest uppercase text-xs">
-              BinnaDev Lab_
-            </Mono>
-          </div>
-
+      <Container className="relative z-10 w-full max-w-[1800px] px-6 md:px-12 lg:px-24 flex-grow flex flex-col justify-center pt-10">
+        <FadeIn
+          delay={0}
+          direction="up"
+          className="max-w-3xl lg:max-w-4xl w-full md:w-[60%] lg:w-[50%] relative z-10"
+        >
           {/* Authored Headline */}
-          <H1 className="font-display tracking-tighter leading-[0.85] text-white uppercase flex flex-col gap-2 md:gap-4 mb-12">
-            <span className="text-[clamp(3.5rem,10vw,11rem)]">Reasoning</span>
-            <span className="text-[clamp(3rem,8vw,9rem)] text-white/60 md:pl-16">
+          <H1 className="font-display tracking-tighter leading-[0.9] text-white uppercase flex flex-col gap-1 md:gap-2 mb-10">
+            <span className="text-[clamp(3rem,6vw,6rem)]">Reasoning</span>
+            <span className="text-[clamp(2.5rem,5vw,5rem)] text-white/60 md:pl-8">
               Precedes
             </span>
-            <span className="text-[clamp(4rem,11vw,12rem)] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 relative w-fit">
+            <span className="text-[clamp(3rem,6vw,6rem)] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 relative w-fit">
               Coding.
               {/* Architectural underline on the final word */}
-              <span className="absolute -bottom-2 md:-bottom-4 left-0 w-[60%] h-[4px] md:h-[6px] bg-gold" />
+              <span className="absolute -bottom-1 md:-bottom-2 left-0 w-[60%] h-[4px] bg-gold" />
             </span>
           </H1>
 
           {/* Clear Value Proposition */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
-            <div className="md:col-span-8 lg:col-span-6">
-              <Body className="text-lg md:text-xl text-white/80 leading-relaxed font-light">
-                BinnaDev Lab is an engineering space that connects global Web3 protocols with local talent. We help developers transition from just writing code to architecting secure, reliable systems that survive in the real world.
-              </Body>
-            </div>
+          <div className="mb-12">
+            <Body className="text-lg md:text-xl text-white/90 leading-relaxed font-light max-w-2xl">
+              <strong className="text-white font-medium">BinnaDevLab</strong>{" "}
+              brings thoughtful engineering and local talent to the global Web3
+              ecosystem. We build from first principles, guided by security,
+              reliability, and excellence.
+            </Body>
           </div>
 
-          {/* Interaction & CTAs */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 md:gap-12 w-full">
-            {/* Primary CTA */}
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 w-full max-w-2xl">
             <Link
               href="/cohorts"
-              className="group relative flex items-center gap-6 cursor-pointer"
+              className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-gold hover:bg-gold text-gold hover:text-obsidian rounded-sm transition-all duration-300 w-full sm:w-auto"
             >
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0 h-[1px] bg-gold group-hover:w-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100" />
-              <div className="relative z-10 w-14 h-14 rounded-full border border-gold flex items-center justify-center bg-obsidian transition-colors duration-500 group-hover:bg-gold">
-                <ArrowRight className="w-5 h-5 text-gold group-hover:text-obsidian transition-colors duration-500" />
-              </div>
-              <Mono className="relative z-10 text-white uppercase tracking-widest text-sm font-semibold group-hover:text-gold transition-colors duration-500 bg-obsidian pr-4">
+              <Mono className="uppercase tracking-widest text-sm font-bold text-current">
                 Enter The Lab
               </Mono>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
-            {/* Secondary CTA */}
             <Link
               href="/collaborate"
-              className="group flex items-center gap-3 text-white/60 hover:text-white transition-colors duration-300"
+              className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white/80 hover:text-white rounded-sm transition-all duration-300 w-full sm:w-auto"
             >
-              <Mono className="text-xs uppercase tracking-widest">
-                Request Engineering Services
+              <Mono className="uppercase tracking-widest text-sm font-medium text-current">
+                Engineering Services
               </Mono>
-              <div className="w-4 h-[1px] bg-white/40 group-hover:w-8 group-hover:bg-white transition-all duration-300" />
+              <ArrowRight className="w-5 h-5 text-white/80 group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </FadeIn>
       </Container>
-
-      {/* 4. Reason to Scroll / Narrative Progression */}
-      <div className="relative z-20 w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-24 pb-8 flex justify-between items-end">
-        <div className="flex items-center gap-4">
-          <Mono className="text-[10px] text-white/60 tracking-widest">
-            01 / 05
-          </Mono>
-          <div className="w-[1px] h-8 bg-white/20 relative overflow-hidden">
-            <div className="absolute inset-0 w-full h-1/2 bg-white animate-[scroll-line_2s_linear_infinite]" />
-          </div>
-          <Mono className="text-[10px] text-white/60 tracking-widest uppercase">
-            Begin Progression
-          </Mono>
-        </div>
-
-        {/* Scroll indicator for mobile (hidden on desktop since it might clash with video) */}
-        <div className="md:hidden">
-          <ArrowDown className="w-4 h-4 text-white/60 animate-bounce" />
-        </div>
-      </div>
     </section>
   );
 }

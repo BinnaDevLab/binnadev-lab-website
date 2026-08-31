@@ -82,32 +82,14 @@ export function IntroVideoSection() {
             <div className="absolute inset-0 pointer-events-none transition-opacity duration-700">
               {/* Dark gradient wash to ensure UI legibility */}
               <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-transparent to-obsidian/80 transition-opacity duration-500 group-hover:opacity-80" />
-              
-              {/* Telemetry Data */}
-              <div className="absolute top-6 left-6 md:top-8 md:left-8">
-                <Mono className="text-gold text-[10px] md:text-xs tracking-widest uppercase">
-                  [Playback: Preview]
-                </Mono>
-              </div>
-              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 hidden md:block">
-                <Mono className="text-white/50 text-xs tracking-widest uppercase">
-                  Source: Local Archive
-                </Mono>
-              </div>
-              <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 hidden md:block">
-                <Mono className="text-white/50 text-xs tracking-widest uppercase">
-                  Audio: Muted
-                </Mono>
-              </div>
-
-              {/* Centered Play Action */}
+              {/* Simplified Play UI */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex flex-col items-center gap-6 transition-transform duration-700 md:group-hover:scale-110">
                   <div className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-obsidian/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white md:group-hover:bg-gold md:group-hover:text-obsidian transition-colors duration-500 shadow-2xl">
                     <Play className="w-8 h-8 md:w-10 md:h-10 ml-2" />
                   </div>
                   <Mono className="text-white/70 text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                    Click to Unmute & Restart
+                    Watch the Vision
                   </Mono>
                 </div>
               </div>

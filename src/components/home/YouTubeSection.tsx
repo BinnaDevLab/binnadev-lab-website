@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, ArrowRight, Loader2 } from "lucide-react";
+import { Play, ArrowRight, Loader2, PlayCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { youtubeVideos } from "@/data/youtube";
@@ -35,27 +35,42 @@ export function YouTubeSection() {
   return (
     <section
       id="youtube"
-      className="py-24 md:py-48 bg-obsidian relative overflow-hidden"
+      className="py-24 md:py-48 bg-obsidian border-t border-white/5 relative overflow-hidden"
     >
+      {/* Animated SVG Background Layer */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
+        <motion.div 
+          animate={{ rotate: 360, scale: [1, 1.1, 1] }} 
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%]"
+        >
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="youtube-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="0.5"/>
+                <path d="M0,0 L100,100 M100,0 L0,100" stroke="white" strokeWidth="0.2"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#youtube-grid)" />
+          </svg>
+        </motion.div>
+      </div>
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0c0c0c_80%)] pointer-events-none" />
+
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="w-8 h-[1px] bg-white" />
-              <Mono>Broadcasts</Mono>
+            <div className="flex items-center gap-4 mb-6 text-gold">
+              <PlayCircle className="w-4 h-4" />
+              <Mono className="uppercase tracking-widest text-xs font-semibold">Media</Mono>
             </div>
-            <H2 className="text-4xl md:text-6xl mb-6">
-              Don&apos;t just read about it.
-              <br />
-              Watch it.
+            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">
+              Watch the process.
             </H2>
 
-            <Body className="text-xl">
-              Every video goes past the surface. No syntax drills. No
-              follow-along tutorials that leave you more confused than when you
-              started. Just the real reasoning behind how things work and where
-              they break.
+            <Body className="text-lg md:text-xl text-white/70 max-w-xl leading-relaxed font-light">
+              No basic syntax drills or surface-level tutorials. We document the real reasoning behind how systems work and where they break.
             </Body>
           </div>
           <Link

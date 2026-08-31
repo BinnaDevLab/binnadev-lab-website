@@ -1,22 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, PanInfo } from "framer-motion";
 import { Container } from "@/components/ui/Container";
-import { Body, Mono, Meta } from "@/components/ui/Typography";
+import { Body, Mono, H2 } from "@/components/ui/Typography";
 import { testimonials } from "@/data/testimonials";
 import { ChevronLeft, ChevronRight, MessageCircle, Briefcase, GitBranch } from "lucide-react";
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const slideLeft = () => {
+  const slideLeft = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  }, []);
 
-  const slideRight = () => {
+  const slideRight = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  }, []);
+
+  // Auto-slide every 3 seconds unless hovered
+  useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      slideLeft();
+    }, 3000);
+    // Reset timer when currentIndex changes manually
+    return () => clearInterval(timer);
+  }, [slideLeft, isHovered, currentIndex]);
 
   const handleDragEnd = (e: any, info: PanInfo) => {
     if (info.offset.x < -50) {
@@ -89,15 +100,19 @@ export function TestimonialsSection() {
 
       <Container className="relative z-10 flex flex-col items-center">
         {/* Section header */}
-        <div className="flex flex-col items-center gap-4 mb-16 md:mb-24">
+        <div className="flex flex-col items-center gap-4 mb-12">
           <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-gold" />
-          <Mono className="text-gold uppercase tracking-widest text-xs">
-            Heard in the Lab
-          </Mono>
+          <H2 className="text-white text-3xl md:text-5xl font-display tracking-tight uppercase">
+            Testimonials
+          </H2>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative w-full max-w-[1200px] h-[500px] md:h-[400px] flex items-center justify-center">
+        <div 
+          className="relative w-full max-w-[1200px] h-[500px] md:h-[400px] flex items-center justify-center perspective-[1000px]"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {testimonials.map((testimonial, idx) => {
             const total = testimonials.length;
             let diff = idx - currentIndex;
@@ -124,12 +139,12 @@ export function TestimonialsSection() {
                   if (diff === -1) slideRight();
                   if (diff === 1) slideLeft();
                 }}
-                className={`absolute w-[90%] md:w-[700px] p-8 md:p-12 border border-white/10 bg-obsidian/80 backdrop-blur-md flex flex-col justify-between h-auto min-h-[300px] max-h-[100%] overflow-y-auto custom-scrollbar ${
-                  isActive ? "cursor-grab active:cursor-grabbing" : "cursor-pointer"
+                className={`absolute w-[90%] md:w-[700px] p-8 md:p-12 border border-white/10 bg-obsidian/90 backdrop-blur-xl flex flex-col justify-between h-auto min-h-[300px] max-h-[100%] overflow-y-auto custom-scrollbar rounded-2xl shadow-2xl transition-all duration-300 ${
+                  isActive ? "cursor-grab active:cursor-grabbing shadow-gold/10 border-gold/30 hover:border-gold/50 hover:shadow-gold/20 transform-gpu" : "cursor-pointer"
                 }`}
               >
                 {/* Top accent */}
-                <div className="w-8 h-[2px] bg-gold/50 mb-8 shrink-0" />
+                <div className="w-8 h-[2px] bg-gold/80 mb-8 shrink-0 shadow-[0_0_8px_rgba(255,215,0,0.8)]" />
 
                 {/* Quote */}
                 <Body className="text-white/90 leading-relaxed text-lg md:text-xl mb-10 italic font-light">
@@ -150,12 +165,12 @@ export function TestimonialsSection() {
                         />
                       </div>
                     ) : (
-                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full flex-shrink-0 bg-white/5 border border-white/10 flex items-center justify-center font-mono text-gold text-base md:text-lg">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full flex-shrink-0 bg-white/5 border border-white/20 shadow-inner flex items-center justify-center font-mono text-gold text-base md:text-lg">
                         {testimonial.author.charAt(0)}
                       </div>
                     )}
                     <div>
-                      <p className="text-white text-base md:text-lg font-medium font-display tracking-wide">
+                      <p className="text-white text-base md:text-lg font-medium font-display tracking-wide drop-shadow-md">
                         {testimonial.author}
                       </p>
                       <p className="text-white/50 text-xs md:text-sm font-mono mt-1">
@@ -176,7 +191,7 @@ export function TestimonialsSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => !isActive && e.preventDefault()}
-                          className={`p-2 md:p-3 border border-white/5 hover:border-gold/50 hover:text-gold transition-colors ${!isActive && "pointer-events-none"}`}
+                          className={`p-2 md:p-3 border border-white/10 hover:border-gold/50 hover:text-gold hover:bg-gold/5 rounded-full transition-all duration-300 ${!isActive && "pointer-events-none"}`}
                         >
                           <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
                         </a>
@@ -187,7 +202,7 @@ export function TestimonialsSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => !isActive && e.preventDefault()}
-                          className={`p-2 md:p-3 border border-white/5 hover:border-gold/50 hover:text-gold transition-colors ${!isActive && "pointer-events-none"}`}
+                          className={`p-2 md:p-3 border border-white/10 hover:border-gold/50 hover:text-gold hover:bg-gold/5 rounded-full transition-all duration-300 ${!isActive && "pointer-events-none"}`}
                         >
                           <Briefcase className="w-4 h-4 md:w-5 md:h-5" />
                         </a>
@@ -198,7 +213,7 @@ export function TestimonialsSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => !isActive && e.preventDefault()}
-                          className={`p-2 md:p-3 border border-white/5 hover:border-gold/50 hover:text-gold transition-colors ${!isActive && "pointer-events-none"}`}
+                          className={`p-2 md:p-3 border border-white/10 hover:border-gold/50 hover:text-gold hover:bg-gold/5 rounded-full transition-all duration-300 ${!isActive && "pointer-events-none"}`}
                         >
                           <GitBranch className="w-4 h-4 md:w-5 md:h-5" />
                         </a>
@@ -216,19 +231,19 @@ export function TestimonialsSection() {
           <button
             onClick={slideRight}
             aria-label="Previous Testimonial"
-            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-gold/50 hover:bg-gold/5 hover:text-gold transition-all text-white/50"
+            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-gold hover:bg-gold hover:text-obsidian transition-all duration-300 text-white/70 shadow-lg"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           
-          <Mono className="text-white/40 text-xs tracking-widest">
+          <Mono className="text-white/60 text-xs tracking-widest font-bold">
             {(currentIndex + 1).toString().padStart(2, "0")} / {testimonials.length.toString().padStart(2, "0")}
           </Mono>
           
           <button
             onClick={slideLeft}
             aria-label="Next Testimonial"
-            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-gold/50 hover:bg-gold/5 hover:text-gold transition-all text-white/50"
+            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-gold hover:bg-gold hover:text-obsidian transition-all duration-300 text-white/70 shadow-lg"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
