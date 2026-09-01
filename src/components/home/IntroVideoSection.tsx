@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Play, Pause, Loader2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -10,11 +10,51 @@ export function IntroVideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   // Lazy-load trigger: video only mounts when within 300px of viewport
-  const isInView = useInView(containerRef, { once: true, margin: "300px" });
+  const isLoadedInView = useInView(containerRef, { once: true, margin: "300px" });
+  // For pausing when scrolled out of view
+  const isCurrentlyInView = useInView(containerRef, { margin: "-100px" });
   
   const [isPlayingWithAudio, setIsPlayingWithAudio] = useState(false);
   const [hasStartedFullPlayback, setHasStartedFullPlayback] = useState(false);
   const [isBuffering, setIsBuffering] = useState(false);
+  const [duration, setDuration] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<number>(0);
+
+  useEffect(() => {
+    if (!isCurrentlyInView && isPlayingWithAudio && videoRef.current) {
+      videoRef.current.pause();
+      setIsPlayingWithAudio(false);
+    }
+  }, [isCurrentlyInView, isPlayingWithAudio]);
+
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) {
+      setDuration(videoRef.current.duration);
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      setCurrentTime(videoRef.current.currentTime);
+    }
+  };
+
+  const formatTime = (time: number) => {
+    if (!time || isNaN(time)) return "0:00";
+    const m = Math.floor(time / 60);
+    const s = Math.floor(time % 60);
+    return `${m}:${s.toString().padStart(2, "0")}`;
+  };
+
+  const handleEnded = () => {
+    setIsPlayingWithAudio(false);
+    setHasStartedFullPlayback(false);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(console.error);
+    }
+  };
 
   const handlePlayClick = () => {
     if (!videoRef.current) return;
@@ -23,7 +63,6 @@ export function IntroVideoSection() {
       videoRef.current.pause();
       setIsPlayingWithAudio(false);
     } else {
-      // If it's the very first time clicking, restart from the beginning
       if (!hasStartedFullPlayback) {
         videoRef.current.currentTime = 0;
         setHasStartedFullPlayback(true);
@@ -37,7 +76,6 @@ export function IntroVideoSection() {
           setIsPlayingWithAudio(true);
         }).catch((error) => {
           console.error("Video playback failed:", error);
-          // Fallback if browser blocks audio autoplay unmuting
           setIsPlayingWithAudio(false);
         });
       }
@@ -62,7 +100,7 @@ export function IntroVideoSection() {
           onClick={handlePlayClick}
         >
           {/* Only render video if container is near viewport to save bandwidth on initial load */}
-          {isInView && (
+          {isLoadedInView && (
             <video
               ref={videoRef}
               src="/videos/intro.mp4"
@@ -70,10 +108,13 @@ export function IntroVideoSection() {
               className="w-full h-full object-cover transition-opacity duration-700"
               autoPlay
               muted
-              loop
+              loop={!hasStartedFullPlayback}
               playsInline
               onWaiting={() => setIsBuffering(true)}
               onPlaying={() => setIsBuffering(false)}
+              onLoadedMetadata={handleLoadedMetadata}
+              onTimeUpdate={handleTimeUpdate}
+              onEnded={handleEnded}
             />
           )}
 
@@ -88,8 +129,11 @@ export function IntroVideoSection() {
                   <div className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-obsidian/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white md:group-hover:bg-gold md:group-hover:text-obsidian transition-colors duration-500 shadow-2xl">
                     <Play className="w-8 h-8 md:w-10 md:h-10 ml-2" />
                   </div>
-                  <Mono className="text-white/70 text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                    Watch the Vision
+                  <Mono className="text-white/70 text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center gap-1">
+                    <span>Watch the Vision</span>
+                    {duration > 0 && (
+                      <span className="text-white/50 tracking-widest">{formatTime(duration)}</span>
+                    )}
                   </Mono>
                 </div>
               </div>
@@ -118,6 +162,25 @@ export function IntroVideoSection() {
           {isBuffering && (
             <div className="absolute inset-0 z-20 flex items-center justify-center bg-obsidian/50 backdrop-blur-sm">
               <Loader2 className="w-12 h-12 text-gold animate-spin" />
+            </div>
+          )}
+
+          {/* Progress Bar (Shows during playback or paused state after interaction) */}
+          {hasStartedFullPlayback && (
+            <div className="absolute bottom-0 left-0 right-0 h-1.5 md:h-2 bg-obsidian/40 backdrop-blur-md z-30 group-hover:h-3 transition-all duration-300">
+              <div 
+                className="h-full bg-gold transition-all duration-75 relative"
+                style={{ width: `${(currentTime / (duration || 1)) * 100}%` }}
+              >
+                {/* Subtle glow head on the progress bar */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_8px_rgba(212,175,55,0.8)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              {/* Time indicator on hover */}
+              <div className="absolute bottom-6 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Mono className="text-white text-[10px] md:text-xs drop-shadow-md bg-obsidian/60 px-2 py-1 rounded">
+                  {formatTime(currentTime)} / {formatTime(duration)}
+                </Mono>
+              </div>
             </div>
           )}
         </motion.div>

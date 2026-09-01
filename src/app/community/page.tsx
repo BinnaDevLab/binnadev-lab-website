@@ -12,9 +12,12 @@ import Image from "next/image";
 import { Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "The Collective | BinnaDev Lab Culture",
+  title: "The Community | BinnaDev Lab Culture",
   description:
     "The Engineering Collective. A place to architect, research, and build alongside people who take decentralized systems seriously.",
+  alternates: {
+    canonical: "/community",
+  },
 };
 
 const channels = [

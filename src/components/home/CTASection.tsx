@@ -15,7 +15,6 @@ export function CTASection() {
 
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
         <div className="mb-16">
-          <Mono className="text-gold tracking-widest uppercase text-sm mb-6 block">Take Action</Mono>
           <Display className="text-white">
             The Work <br className="hidden md:block" /> Starts Here.
           </Display>
@@ -31,30 +30,28 @@ export function CTASection() {
 
           <div className="md:col-span-7 lg:col-span-8 flex flex-col sm:flex-row gap-4 md:gap-8 justify-end w-full">
             <Link
-              href={socialLinks.discord}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/cohorts"
               className="group flex-1 max-w-sm flex items-center justify-between p-8 border border-white/20 hover:border-gold hover:bg-white/[0.02] transition-all duration-300"
             >
               <div className="flex flex-col gap-2">
                 <Meta className="text-white/60 group-hover:text-gold/50 transition-colors">
-                  Action
+                  Learn
                 </Meta>
                 <Mono className="text-white group-hover:text-gold transition-colors">
-                  Join Discord
+                  Join Cohort
                 </Mono>
               </div>
               <ArrowRight className="w-6 h-6 text-white/50 group-hover:text-gold group-hover:translate-x-2 transition-all duration-300" />
             </Link>
 
             <Link
-              href="/cohorts"
+              href="/collaborate"
               className="group flex-1 max-w-sm flex items-center justify-between p-8 border border-white/10 hover:border-white/40 transition-all duration-300"
             >
               <div className="flex flex-col gap-2">
-                <Meta className="text-white/60 transition-colors">Explore</Meta>
+                <Meta className="text-white/60 transition-colors">Build</Meta>
                 <Mono className="text-white/70 group-hover:text-white transition-colors">
-                  View Cohorts
+                  Commission Lab
                 </Mono>
               </div>
               <ArrowRight className="w-6 h-6 text-white/30 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />

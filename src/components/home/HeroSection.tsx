@@ -15,12 +15,6 @@ export function HeroSection() {
         <div className="absolute left-6 md:left-12 top-0 bottom-0 w-[1px] bg-white/5" />
         <div className="absolute right-6 md:right-12 top-0 bottom-0 w-[1px] bg-white/5" />
 
-        {/* Corner markers */}
-        <div className="absolute top-24 left-6 md:left-12 w-4 h-[1px] bg-white/30" />
-        <div className="absolute top-24 left-6 md:left-12 w-[1px] h-4 bg-white/30" />
-        <div className="absolute bottom-12 right-6 md:right-12 w-4 h-[1px] bg-white/30" />
-        <div className="absolute bottom-12 right-6 md:right-12 w-[1px] h-4 bg-white/30 transform -translate-y-full translate-x-full" />
-
         {/* Lab Origin Coordinates */}
         <div className="absolute top-24 right-6 md:right-12 hidden md:flex flex-col items-end gap-1">
           <Mono className="text-[10px] text-white/30 tracking-widest">
@@ -68,11 +62,11 @@ export function HeroSection() {
         >
           {/* Authored Headline */}
           <H1 className="font-display tracking-tighter leading-[0.9] text-white uppercase flex flex-col gap-1 md:gap-2 mb-10">
-            <span className="text-[clamp(3rem,6vw,6rem)]">Reasoning</span>
-            <span className="text-[clamp(2.5rem,5vw,5rem)] text-white/60 md:pl-8">
+            <span className="text-[clamp(4rem,8vw,6rem)]">Reasoning</span>
+            <span className="text-[clamp(3.5rem,7vw,5rem)] text-white/60 md:pl-8">
               Precedes
             </span>
-            <span className="text-[clamp(3rem,6vw,6rem)] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 relative w-fit">
+            <span className="text-[clamp(4rem,8vw,6rem)] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 relative w-fit">
               Coding.
               {/* Architectural underline on the final word */}
               <span className="absolute -bottom-1 md:-bottom-2 left-0 w-[60%] h-[4px] bg-gold" />
@@ -96,7 +90,7 @@ export function HeroSection() {
               className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-gold hover:bg-gold text-gold hover:text-obsidian rounded-sm transition-all duration-300 w-full sm:w-auto"
             >
               <Mono className="uppercase tracking-widest text-sm font-bold text-current">
-                Enter The Lab
+                Join Cohort
               </Mono>
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
@@ -106,7 +100,7 @@ export function HeroSection() {
               className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white/80 hover:text-white rounded-sm transition-all duration-300 w-full sm:w-auto"
             >
               <Mono className="uppercase tracking-widest text-sm font-medium text-current">
-                Engineering Services
+                Commission Lab
               </Mono>
               <ArrowRight className="w-5 h-5 text-white/80 group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
             </Link>

@@ -118,6 +118,33 @@ export function Header() {
                   !link.external &&
                   (pathname === link.href ||
                     (link.href !== "/" && pathname.startsWith(link.href)));
+                
+                if (link.isCTA) {
+                  return (
+                    <div key={link.label} className="relative group">
+                      <motion.div
+                        animate={{ 
+                          opacity: [0.3, 0.6, 0.3], 
+                          scale: [1, 1.05, 1],
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute inset-0 bg-white/40 rounded-sm blur-md"
+                      />
+                      <Link
+                        href={link.href}
+                        className="relative z-10 overflow-hidden flex items-center justify-center px-6 py-2.5 bg-white rounded-sm text-obsidian text-sm font-mono font-bold tracking-wider hover:bg-white/90 transition-all duration-300 shadow-md"
+                      >
+                        <span className="relative z-10">{link.label}</span>
+                        <motion.div
+                          animate={{ x: ["-200%", "200%"] }}
+                          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                          className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/5 to-transparent skew-x-12 w-full"
+                        />
+                      </Link>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.label}
@@ -201,6 +228,8 @@ export function Header() {
                       (pathname === link.href ||
                         (link.href !== "/" && pathname.startsWith(link.href)));
 
+                    if (link.isCTA) return null; // We'll render CTA at the bottom
+
                     return (
                       <motion.div key={link.label} variants={itemVariants}>
                         <Link
@@ -209,6 +238,7 @@ export function Header() {
                           rel={
                             link.external ? "noopener noreferrer" : undefined
                           }
+                          onClick={() => setMobileMenuOpen(false)}
                           className="group flex items-center gap-6 py-3 px-4 rounded-xl hover:bg-white/5 transition-colors"
                         >
                           <Mono
@@ -240,6 +270,32 @@ export function Header() {
                       </motion.div>
                     );
                   })}
+                  
+                  {/* Mobile CTA Button */}
+                  <motion.div variants={itemVariants} className="mt-8 px-4">
+                    <div className="relative group w-full">
+                      <motion.div
+                        animate={{ 
+                          opacity: [0.3, 0.6, 0.3], 
+                          scale: [1, 1.02, 1],
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute inset-0 bg-white/40 rounded-sm blur-md"
+                      />
+                      <Link
+                        href="/donate"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="relative z-10 overflow-hidden w-full flex justify-center items-center py-4 bg-white text-obsidian rounded-sm font-mono font-bold tracking-widest hover:bg-white/90 transition-colors shadow-lg"
+                      >
+                        <span className="relative z-10 uppercase">Support Lab</span>
+                        <motion.div
+                          animate={{ x: ["-200%", "200%"] }}
+                          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                          className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/5 to-transparent skew-x-12 w-full"
+                        />
+                      </Link>
+                    </div>
+                  </motion.div>
                 </nav>
 
                 <div className="mt-auto pt-12 pb-8">

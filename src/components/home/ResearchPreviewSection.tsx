@@ -15,7 +15,7 @@ export function ResearchPreviewSection() {
   return (
     <section className="py-32 bg-[#F5F5F7] border-t border-black/5 relative overflow-hidden">
       {/* Animated SVG Network Background Layer */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-5 pointer-events-none overflow-hidden">
         <motion.div
           animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -56,7 +56,7 @@ export function ResearchPreviewSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
             <H2 className="mb-6 text-obsidian">Research & Engineering</H2>
-            <Body className="text-lg text-obsidian/70">
+            <Body className="text-lg text-obsidian/80">
               Where our thinking becomes real. See the actual projects, security
               research, and open-source tools built by the Lab.
             </Body>
@@ -123,7 +123,7 @@ function ProjectCardContent({ project }: { project: Project }) {
           {project.title}
           <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity text-purple-800" />
         </H3>
-        <p className="text-obsidian/70 text-sm leading-relaxed mb-6 flex-1">
+        <p className="text-obsidian/80 text-sm leading-relaxed mb-6 flex-1">
           {project.description}
         </p>
 

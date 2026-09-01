@@ -11,38 +11,31 @@ const narrative = [
     phase: "The Problem",
     title: "Reasoning Precedes Coding",
     desc: "We don't just write code. We engineer systems from first principles.",
-    image: "/images/shared/shared-asset-3.jpeg",
+    image: "/images/shared/shared-asset-13.jpeg",
   },
   {
     id: "02",
     phase: "The Philosophy",
     title: "Security is Architecture",
     desc: "Security isn't a checklist. It is the natural outcome of a deeply understood system.",
-    image: "/images/shared/shared-asset-13.jpeg",
+    image: "/images/shared/shared-asset-17.jpeg",
   },
   {
     id: "03",
     phase: "The Foundation",
     title: "Infrastructure That Holds",
     desc: "Master state, components, and execution flows. The core of systems that do not fail.",
-    image: "/images/shared/shared-asset-5.jpeg",
+    image: "/images/shared/shared-asset-18.jpeg",
   },
   {
     id: "04",
     phase: "The Offense",
     title: "Anticipate the Attack",
     desc: "To defend a system, you must know how to compromise it.",
-    image: "/images/shared/shared-asset-4.jpeg",
+    image: "/images/shared/shared-asset-19.jpeg",
   },
   {
     id: "05",
-    phase: "The Standard",
-    title: "Mathematical Certainty",
-    desc: "We push beyond standard testing using adversarial fuzzing and deep invariant research.",
-    image: "/images/shared/shared-asset-14.jpeg",
-  },
-  {
-    id: "06",
     phase: "The Cohort",
     title: "Collective Intelligence",
     desc: "Engineering in isolation is flawed. We research, challenge assumptions, and build together.",
@@ -57,7 +50,7 @@ export function StorySection() {
       className="py-24 md:py-32 bg-white relative overflow-hidden border-b border-black/5"
     >
       {/* Animated SVG Background Layer */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
         <motion.div
           animate={{ x: ["0%", "-100%"] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -117,7 +110,7 @@ export function StorySection() {
                 {/* Image Side */}
                 <div
                   className={cn(
-                    "relative w-full aspect-[4/3] lg:aspect-square overflow-hidden bg-black/5 rounded-2xl shadow-lg border border-black/10 group-hover:border-purple-800/40 transition-all duration-700",
+                    "relative w-full aspect-video lg:aspect-[16/9] overflow-hidden bg-black/5 rounded-2xl shadow-lg border border-black/10 group-hover:border-purple-800/40 transition-all duration-700",
                     isEven
                       ? "lg:col-span-5 lg:order-1"
                       : "lg:col-span-5 lg:order-2",
@@ -145,9 +138,7 @@ export function StorySection() {
                   )}
                 >
                   <div className="flex items-baseline gap-4 mb-2">
-                    <Meta className="text-purple-800">
-                      [{item.id}]
-                    </Meta>
+                    <Meta className="text-purple-800">[{item.id}]</Meta>
                     <Mono className="text-black/60 uppercase tracking-widest text-sm font-semibold">
                       {item.phase}
                     </Mono>
@@ -155,7 +146,7 @@ export function StorySection() {
                   <H3 className="text-3xl lg:text-5xl font-display tracking-tight text-black group-hover:text-purple-800 transition-colors duration-500">
                     {item.title}
                   </H3>
-                  <Body className="text-lg lg:text-xl text-black/60 leading-relaxed max-w-2xl font-light">
+                  <Body className="text-lg lg:text-xl text-black/80 leading-relaxed max-w-2xl font-light">
                     {item.desc}
                   </Body>
                 </div>

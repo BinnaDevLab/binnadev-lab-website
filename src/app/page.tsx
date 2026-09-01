@@ -6,7 +6,6 @@ import { YouTubeSection } from "@/components/home/YouTubeSection";
 import { ResearchPreviewSection } from "@/components/home/ResearchPreviewSection";
 import { ArchitectSection } from "@/components/home/ArchitectSection";
 import { CollaborationPreviewSection } from "@/components/home/CollaborationPreviewSection";
-import { CommunitySection } from "@/components/home/CommunitySection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { PartnersMarquee } from "@/components/home/PartnersMarquee";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
@@ -43,13 +42,11 @@ export default function Home() {
       <CollaborationPreviewSection />
       {/* 8 - Human validation */}
       <TestimonialsSection />
-      {/* 9 - The environment */}
-      <CommunitySection />
-      {/* 10 - Ecosystem */}
+      {/* 9 - Ecosystem */}
       <PartnersMarquee />
-      {/* 11 - Stay connected */}
+      {/* 10 - Stay connected */}
       <NewsletterSection />
-      {/* 12 - Final invitation */}
+      {/* 11 - Final invitation */}
       <CTASection />
     </div>
   );

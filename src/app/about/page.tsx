@@ -10,15 +10,15 @@ import { MANIFESTO_POINTS } from "@/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Philosophy | Engineering First Principles",
+  title: "About | BinnaDev Lab",
   description:
     "The core engineering principles of BinnaDev Lab: Interrogating systems, prioritizing mental models, and treating security as an emergent property of deep comprehension.",
   alternates: {
-    canonical: "/philosophy",
+    canonical: "/about",
   },
 };
 
-export default function PhilosophyPage() {
+export default function AboutPage() {
   return (
     <div className="bg-obsidian min-h-screen relative selection:bg-gold selection:text-obsidian">
       {/* 1. Immersive Hero */}
@@ -50,7 +50,8 @@ export default function PhilosophyPage() {
             </H1>
             <Body className="text-2xl text-muted font-light max-w-2xl mx-auto">
               BinnaDev Lab exists to bridge the gap between writing code and
-              architecting resilient, secure digital infrastructure. A space where global protocols meet elite local talent.
+              architecting resilient, secure digital infrastructure. A space
+              where global protocols meet elite local talent.
             </Body>
           </FadeIn>
         </Container>
@@ -71,7 +72,11 @@ export default function PhilosophyPage() {
               <span className="text-gold">We are optimizing for truth.</span>
             </H2>
             <Body className="text-xl text-muted leading-relaxed">
-              It is easy to memorize a framework or follow a tutorial to deploy a smart contract. But what happens when you encounter a system architecture you have never seen before? We believe that instead of merely learning syntax, developers must master the fundamental reasoning that governs all resilient systems.
+              It is easy to memorize a framework or follow a tutorial to deploy
+              a smart contract. But what happens when you encounter a system
+              architecture you have never seen before? We believe that instead
+              of merely learning syntax, developers must master the fundamental
+              reasoning that governs all resilient systems.
             </Body>
           </div>
         </Container>
@@ -132,11 +137,18 @@ export default function PhilosophyPage() {
             <div className="space-y-6">
               <Body className="text-xl text-white/70 leading-relaxed font-light">
                 The ideas behind BinnaDev Lab are not meant to remain on a page.
-                They shape how we build, how we research, how we collaborate, and how
-                we approach every single line of code.
+                They shape how we build, how we research, how we collaborate,
+                and how we approach every single line of code.
               </Body>
               <Body className="text-xl text-white/70 leading-relaxed font-light">
-                Through <strong className="text-white font-medium">cohorts, community discussions, technical writing, and real engineering work</strong>, the Lab creates a space where developers can move beyond simply learning tools, and begin understanding why systems behave the way they do.
+                Through{" "}
+                <strong className="text-white font-medium">
+                  cohorts, community discussions, technical writing, and real
+                  engineering work
+                </strong>
+                , the Lab creates a space where developers can move beyond
+                simply learning tools, and begin understanding why systems
+                behave the way they do.
               </Body>
             </div>
           </div>
@@ -149,7 +161,9 @@ export default function PhilosophyPage() {
                 Thoughtful
               </H3>
               <p className="text-base text-white/60 leading-relaxed font-light relative z-10">
-                Deep reasoning before action. We prioritize thinking problems through completely, delivering wise, thoroughly considered solutions over rushed execution.
+                Deep reasoning before action. We prioritize thinking problems
+                through completely, delivering wise, thoroughly considered
+                solutions over rushed execution.
               </p>
             </div>
             <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group relative overflow-hidden">
@@ -159,7 +173,9 @@ export default function PhilosophyPage() {
                 Reliable
               </H3>
               <p className="text-base text-white/60 leading-relaxed font-light relative z-10">
-                Building trust in all systems. In a Web3 ecosystem centered on trustless verification, being fundamentally reliable establishes dependable bonds with our community and partners.
+                Building trust in all systems. In a Web3 ecosystem centered on
+                trustless verification, being fundamentally reliable establishes
+                dependable bonds with our community and partners.
               </p>
             </div>
             <div className="p-10 bg-carbon/30 border border-white/5 rounded-xl hover:bg-carbon hover:border-gold/50 transition-all duration-500 group relative overflow-hidden">
@@ -169,7 +185,9 @@ export default function PhilosophyPage() {
                 Excellent
               </H3>
               <p className="text-base text-white/60 leading-relaxed font-light relative z-10">
-                The ultimate standard of craftsmanship. Excellence means producing work so refined that it stands as an undeniable benchmark of quality and architectural beauty.
+                The ultimate standard of craftsmanship. Excellence means
+                producing work so refined that it stands as an undeniable
+                benchmark of quality and architectural beauty.
               </p>
             </div>
           </div>
