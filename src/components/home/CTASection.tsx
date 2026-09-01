@@ -6,7 +6,7 @@ import { socialLinks } from "@/data/social";
 
 export function CTASection() {
   return (
-    <section className="relative py-32 md:py-64 bg-obsidian border-t border-white/5 overflow-hidden flex flex-col justify-center">
+    <section className="relative py-24 md:py-40 bg-obsidian border-t border-white/5 overflow-hidden flex flex-col justify-center">
       {/* Structural background lines */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20" />
@@ -14,13 +14,13 @@ export function CTASection() {
       </div>
 
       <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
-        <div className="mb-16">
+        <div className="mb-10">
           <Display className="text-white">
             The Work <br className="hidden md:block" /> Starts Here.
           </Display>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end border-t border-white/10 pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end border-t border-white/10 pt-10">
           <div className="md:col-span-5 lg:col-span-4">
             <Body className="text-xl md:text-2xl text-white/50">
               The community is open. The cohorts are running. The work is

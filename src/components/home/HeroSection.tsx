@@ -8,7 +8,7 @@ import { preload } from "react-dom";
 export function HeroSection() {
   preload("/videos/hero-poster.jpg", { as: "image" });
   return (
-    <section className="relative min-h-[100svh] w-full bg-obsidian flex flex-col justify-between overflow-hidden">
+    <section className="relative min-h-[85svh] pt-24 md:pt-12 pb-24 w-full bg-obsidian flex flex-col justify-between overflow-hidden">
       {/* 1. Architectural Notation & Framing (The "Visual Language") */}
       <div className="absolute inset-0 pointer-events-none z-20">
         {/* Frame borders */}
@@ -54,7 +54,7 @@ export function HeroSection() {
       </div>
 
       {/* 3. Main Content Composition */}
-      <Container className="relative z-10 w-full max-w-[1800px] px-6 md:px-12 lg:px-24 flex-grow flex flex-col justify-center pt-10">
+      <Container className="relative z-10 w-full max-w-[1800px] px-6 md:px-12 lg:px-24 flex-grow flex flex-col">
         <FadeIn
           delay={0}
           direction="up"

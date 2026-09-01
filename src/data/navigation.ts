@@ -12,7 +12,7 @@ export const mainNavigation: NavLink[] = [
   { label: "Cohorts", href: "/cohorts" },
   { label: "Collaborate", href: "/collaborate" },
   { label: "Community", href: "/community" },
-  { label: "Support Lab", href: "/donate", isCTA: true },
+  { label: "Support the Lab", href: "/donate", isCTA: true },
 ];
 
 export const mobileNavigation: NavLink[] = [
@@ -34,7 +34,7 @@ export const footerNavigation = {
   services: [
     { label: "Collaborate", href: "/collaborate" },
     { label: "Cohorts", href: "/cohorts" },
-    { label: "Support Lab", href: "/donate" },
+    { label: "Support the Lab", href: "/donate" },
   ],
   socials: [
     { label: "YouTube", href: socialLinks.youtube, icon: "youtube" },

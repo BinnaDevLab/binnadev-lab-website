@@ -287,7 +287,7 @@ export function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                         className="relative z-10 overflow-hidden w-full flex justify-center items-center py-4 bg-white text-obsidian rounded-sm font-mono font-bold tracking-widest hover:bg-white/90 transition-colors shadow-lg"
                       >
-                        <span className="relative z-10 uppercase">Support Lab</span>
+                        <span className="relative z-10 uppercase">Support the Lab</span>
                         <motion.div
                           animate={{ x: ["-200%", "200%"] }}
                           transition={{ duration: 3, repeat: Infinity, ease: "linear" }}

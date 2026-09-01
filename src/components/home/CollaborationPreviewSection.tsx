@@ -1,9 +1,11 @@
+"use client";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { socialLinks } from "@/data/social";
+import { motion } from "framer-motion";
 
 const paths = [
   {
@@ -26,11 +28,15 @@ const paths = [
 
 export function CollaborationPreviewSection() {
   return (
-    <section className="py-32 md:py-48 relative overflow-hidden bg-obsidian flex items-center justify-center border-t border-white/5">
+    <section className="py-24 md:py-32 relative overflow-hidden bg-obsidian flex items-center justify-center border-t border-white/5">
       {/* Background Visual Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-obsidian overflow-hidden">
         {/* Animated SVG Grid */}
-        <div className="absolute inset-0 w-full h-full opacity-[0.03]">
+        <motion.div 
+          animate={{ y: [0, -80] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 w-full h-[200%] opacity-15"
+        >
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern
@@ -49,7 +55,7 @@ export function CollaborationPreviewSection() {
             </defs>
             <rect width="100%" height="100%" fill="url(#collab-grid)" />
           </svg>
-        </div>
+        </motion.div>
         
         {/* Clean architectural feel without heavy images */}
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-carbon/40 to-obsidian" />
@@ -57,7 +63,7 @@ export function CollaborationPreviewSection() {
       </div>
 
       <Container className="relative z-20 px-6 flex flex-col items-center w-full">
-        <H2 className="text-4xl md:text-6xl mb-16 leading-[1.05] tracking-tight text-white text-center">
+        <H2 className="text-4xl md:text-6xl mb-12 leading-[1.05] tracking-tight text-white text-center">
           Learn. Build.
         </H2>
 
