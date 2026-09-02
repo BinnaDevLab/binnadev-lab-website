@@ -15,7 +15,7 @@ export function Footer() {
           <div className="md:col-span-2 pr-8">
             <div className="flex items-center gap-3 mb-6">
               <span className="font-display font-semibold tracking-wider text-foreground text-xl">
-                BinnaDev<span className="text-gold">_</span>Lab
+                BinnaDevLab
               </span>
             </div>
             <Body className="text-muted max-w-sm mb-8">

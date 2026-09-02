@@ -29,17 +29,9 @@ export function YouTubeShowcase() {
     <section className="mb-32">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div className="max-w-2xl">
-          <Mono className="text-gold mb-4 tracking-widest uppercase flex items-center gap-2">
-            <Video className="w-4 h-4" /> Archive
-          </Mono>
           <H2 className="text-3xl md:text-5xl mb-4 tracking-tight">
             Ideas Worth Taking Home
           </H2>
-          <Body className="text-xl text-white/60 font-light leading-relaxed mt-2">
-            Some conversations deserve more than a passing message. We capture
-            questions, debates, experiments, and lessons that are worth carrying
-            beyond the Lab.
-          </Body>
         </div>
         <a
           href="https://www.youtube.com/@obinna-franklin-duru"

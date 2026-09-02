@@ -19,7 +19,8 @@ export interface TimelineNode {
 
 export interface Principle {
   title: string;
-  description: string;
+  summary: string;
+  actionPoints: string[];
   icon?: LucideIcon;
 }
 
@@ -83,20 +84,32 @@ export const TIMELINE: TimelineNode[] = [
 export const PRINCIPLES: Principle[] = [
   {
     title: "Reliable",
-    description:
-      "Architecting systems that deserve to be trusted. Reliability begins with questioning assumptions. 'It works' is never treated as the finish line. The true test is what happens when inputs change, the state becomes corrupted, the environment turns hostile, or an adversary deliberately pushes the system to its absolute limits.",
+    summary: "Architecting systems that deserve to be trusted.",
+    actionPoints: [
+      "Question all assumptions",
+      "Model hostile environments",
+      "Defend against edge cases"
+    ],
     icon: CheckCircle,
   },
   {
     title: "Thoughtful",
-    description:
-      "Thinking before building. Good engineering is not about writing more code; it is about understanding the problem deeply enough to know what should be built, what should not be built, and exactly why. Designing with extreme intention is non-negotiable when engineering financial systems where mistakes are permanent.",
+    summary: "Thinking deeply before building anything.",
+    actionPoints: [
+      "Understand the core problem",
+      "Design with extreme intention",
+      "Minimize moving parts"
+    ],
     icon: BrainCircuit,
   },
   {
     title: "Excellent",
-    description:
-      "Refusing to confuse 'working' with 'finished.' Excellence lives in the rigorous details: a correctly defined invariant, a simpler state transition, a safer abstraction, a mathematically sound test, and the deliberate removal of all unnecessary complexity.",
+    summary: "Refusing to confuse 'working' with 'finished'.",
+    actionPoints: [
+      "Define rigorous invariants",
+      "Use mathematically sound tests",
+      "Remove unnecessary complexity"
+    ],
     icon: Award,
   },
 ];

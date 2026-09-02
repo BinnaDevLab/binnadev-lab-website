@@ -24,13 +24,15 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
   if (events.length === 0) return null;
 
   return (
-    <section className="mb-40 relative z-10">
-      <Container>
+    <section className="py-24 md:py-32 relative z-10 bg-obsidian overflow-hidden">
+      {/* Subtle SVG Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_20%,transparent_100%)] animate-[pulse_8s_ease-in-out_infinite]" />
+      </div>
+
+      <Container className="relative z-10">
         <div className="mb-16">
-          <Mono className="text-gold mb-4 block tracking-[0.2em] uppercase text-xs">
-            Horizon
-          </Mono>
-          <H2 className="text-3xl md:text-5xl tracking-tight">
+          <H2 className="text-4xl md:text-5xl lg:text-6xl tracking-tight">
             Upcoming Events.
           </H2>
         </div>
@@ -85,18 +87,19 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
                       {evt.description}
                     </Body>
 
-                    {evt.registrationUrl && (
+                    {evt.registrationUrl ? (
                       <a
                         href={evt.registrationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-4 bg-gold text-obsidian rounded font-medium hover:bg-white transition-colors uppercase tracking-widest text-sm w-full sm:w-auto"
                       >
-                        {isVirtual
-                          ? "Join Online Session"
-                          : "Register for Event"}{" "}
-                        <ArrowRight className="w-4 h-4" />
+                        {isVirtual ? "Join Online Session" : "Register for Event"} <ArrowRight className="w-4 h-4" />
                       </a>
+                    ) : (
+                      <div className="inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-4 bg-gold/50 text-obsidian/50 rounded font-medium cursor-not-allowed uppercase tracking-widest text-sm w-full sm:w-auto">
+                        Anticipate <ArrowRight className="w-4 h-4 opacity-50" />
+                      </div>
                     )}
                   </div>
 

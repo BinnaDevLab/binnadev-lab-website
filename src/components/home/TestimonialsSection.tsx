@@ -146,9 +146,9 @@ export function TestimonialsSection() {
                   if (diff === -1) slideRight();
                   if (diff === 1) slideLeft();
                 }}
-                className={`absolute w-[90%] md:w-[700px] p-8 md:p-12 border border-white/10 bg-obsidian/90 backdrop-blur-xl flex flex-col justify-between h-auto min-h-[300px] max-h-[100%] overflow-y-auto custom-scrollbar rounded-2xl shadow-2xl transition-all duration-300 ${
+                className={`absolute w-[90%] md:w-[700px] p-8 md:p-12 border border-white/10 bg-obsidian/90 backdrop-blur-xl flex flex-col justify-between h-auto min-h-[300px] max-h-[100%] overflow-y-auto custom-scrollbar rounded-2xl shadow-2xl transition-colors duration-300 ${
                   isActive
-                    ? "cursor-grab active:cursor-grabbing shadow-gold/10 border-gold/30 hover:border-gold/50 hover:shadow-gold/20 transform-gpu"
+                    ? "cursor-grab active:cursor-grabbing shadow-gold/10 border-gold/30 hover:border-gold/50 hover:shadow-gold/20"
                     : "cursor-pointer"
                 }`}
               >

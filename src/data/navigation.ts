@@ -40,7 +40,5 @@ export const footerNavigation = {
     { label: "YouTube", href: socialLinks.youtube, icon: "youtube" },
     { label: "GitHub", href: socialLinks.github, icon: "github" },
     { label: "X (Twitter)", href: socialLinks.twitter, icon: "twitter" },
-    { label: "Discord", href: socialLinks.discord, icon: "discord" },
-    { label: "Telegram", href: socialLinks.telegram, icon: "telegram" },
   ],
 };

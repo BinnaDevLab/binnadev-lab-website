@@ -11,7 +11,7 @@ interface CohortOverviewProps {
 
 export function CohortOverview({ cohort }: CohortOverviewProps) {
   return (
-    <section className="mb-40 relative z-10">
+    <section className="mb-24 relative z-10">
       <Container>
         <div className="bg-carbon/50 border border-gold/20 rounded-xl relative overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(212,175,55,0.05)]">
           {/* Subtle architectural accent */}

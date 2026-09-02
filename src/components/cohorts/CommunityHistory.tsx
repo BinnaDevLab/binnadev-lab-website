@@ -29,9 +29,6 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
           transition={{ duration: 0.8 }}
           className="mb-32 text-center max-w-3xl mx-auto relative z-10"
         >
-          <Mono className="text-white/60 tracking-[0.2em] text-xs uppercase mb-6 block">
-            The Bond
-          </Mono>
           <H2 className="text-3xl md:text-5xl leading-tight tracking-tight mb-6">
             The community predates the curriculum.
           </H2>

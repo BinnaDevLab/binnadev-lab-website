@@ -13,6 +13,7 @@ import Link from "next/link";
 import { TIMELINE, PRINCIPLES, RESEARCH } from "@/data/architect";
 import { socialLinks } from "@/data/social";
 import { ArchitectYouTubeList } from "@/components/architect/ArchitectYouTubeList";
+import { EngineeringPrinciples } from "@/components/architect/EngineeringPrinciples";
 
 import { Metadata } from "next";
 
@@ -69,12 +70,6 @@ export default function ArchitectPage() {
     );
   };
 
-  const principleSubtitles = [
-    "Stability • Consistency • Resilience",
-    "Systems Thinking • Deliberation",
-    "Precision • Refinement • Standards",
-  ];
-
   return (
     <div className="bg-obsidian min-h-screen pt-32 pb-32 relative selection:bg-gold selection:text-obsidian">
       {/* Background Ambience */}
@@ -86,9 +81,6 @@ export default function ArchitectPage() {
         {/* 1. Hero Section */}
         <section className="mb-48 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <Mono className="text-gold mb-6 block tracking-widest uppercase flex items-center gap-2">
-              <Terminal className="w-4 h-4" /> The Architect
-            </Mono>
             <H1 className="mb-8 text-5xl md:text-7xl leading-tight">
               Obinna Franklin Duru
             </H1>
@@ -159,62 +151,15 @@ export default function ArchitectPage() {
         </section>
 
         {/* 2. Engineering Principles */}
-        <section className="mb-48">
-          <div className="mb-20 text-center max-w-3xl mx-auto">
-            <Mono className="text-gold tracking-widest uppercase text-xs mb-4 block">
-              Axioms
-            </Mono>
-            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-              Engineering Principles
-            </H2>
-            <Body className="text-xl text-white/60 font-light">
-              Smart contracts handle real value. Building with reliability,
-              thoughtfulness, and excellence. These are the axioms that govern
-              the engineering practice.
-            </Body>
-          </div>
+      </Container>
+      
+      <EngineeringPrinciples />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {PRINCIPLES.map((principle, idx) => (
-              <div
-                key={idx}
-                className="relative p-10 border border-white/10 rounded-xl bg-carbon/30 hover:border-gold/50 transition-all duration-500 group overflow-hidden flex flex-col h-full"
-              >
-                {/* Architectural background pattern */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
-
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-10">
-                    <Mono className="text-gold/50 text-xl font-light">
-                      0{idx + 1}
-                    </Mono>
-                    <div className="w-12 h-12 rounded-lg border border-white/10 flex items-center justify-center bg-obsidian/50 text-white/60 group-hover:text-gold group-hover:scale-110 transition-all duration-300">
-                      {idx === 0 && <CheckCircle className="w-5 h-5" />}
-                      {idx === 1 && <BrainCircuit className="w-5 h-5" />}
-                      {idx === 2 && <Award className="w-5 h-5" />}
-                    </div>
-                  </div>
-                  <H3 className="text-3xl mb-3 text-white group-hover:text-gold transition-colors tracking-tight">
-                    {principle.title}
-                  </H3>
-                  <Mono className="text-[10px] text-white/60 uppercase tracking-widest mb-6 block border-b border-white/10 pb-4">
-                    {principleSubtitles[idx]}
-                  </Mono>
-                  <p className="text-white/60 leading-relaxed font-light text-base md:text-lg flex-1">
-                    {principle.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+      <Container className="relative z-10">
 
         {/* 3. Journey Timeline / Evolution */}
         <section className="mb-48">
           <div className="mb-24 md:text-center max-w-4xl mx-auto">
-            <Mono className="text-gold tracking-[0.2em] uppercase text-xs mb-6 block">
-              The Evolution
-            </Mono>
             <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1] tracking-tight">
               From learning how systems work <br className="hidden md:block" />{" "}
               to building systems worthy of trust.

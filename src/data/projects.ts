@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "A defensive escrow protocol for milestone-based crowdfunding with a 10,000 BPS accounting boundary and dynamic proportional abandonment refunds.",
     technologies: ["Solidity", "Foundry", "UUPS", "ERC-4337"],
     imageUrl: "/images/shared/shared-asset-7.jpeg",
-    link: "https://github.com/Blackspectre-tech/smartcontract/blob/main/README.md",
+    link: "https://polygonscan.com/address/0xf83aaB5f1fAA1a7a74AD27E2f8058801EaA31393",
     status: "Completed",
     date: "2026",
   },

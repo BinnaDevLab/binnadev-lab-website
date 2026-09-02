@@ -60,15 +60,7 @@ export default function ResearchPage() {
         </div>
 
         <Container className="relative z-10 pb-16 pt-40">
-          <Mono className="text-gold mb-4 block tracking-widest uppercase">
-            Research
-          </Mono>
           <H1 className="mb-6 max-w-3xl">Open work. Shared knowledge.</H1>
-          <Body className="text-lg text-muted max-w-2xl">
-            The Lab engineers, audits, and open-sources tools that push the
-            boundaries of decentralized systems. Every architecture we deconstruct
-            is rigorously documented and shared. Publicly.
-          </Body>
         </Container>
       </div>
 

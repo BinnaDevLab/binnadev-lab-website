@@ -104,7 +104,7 @@ export function Header() {
               />
               {/* Desktop: Wordmark only */}
               <span className="hidden md:inline-block font-display font-semibold tracking-wider text-foreground text-xl">
-                BinnaDev<span className="text-gold">_</span>Lab
+                BinnaDevLab
               </span>
             </Link>
 
@@ -118,16 +118,20 @@ export function Header() {
                   !link.external &&
                   (pathname === link.href ||
                     (link.href !== "/" && pathname.startsWith(link.href)));
-                
+
                 if (link.isCTA) {
                   return (
                     <div key={link.label} className="relative group">
                       <motion.div
-                        animate={{ 
-                          opacity: [0.3, 0.6, 0.3], 
+                        animate={{
+                          opacity: [0.3, 0.6, 0.3],
                           scale: [1, 1.05, 1],
                         }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
                         className="absolute inset-0 bg-white/40 rounded-sm blur-md"
                       />
                       <Link
@@ -137,7 +141,11 @@ export function Header() {
                         <span className="relative z-10">{link.label}</span>
                         <motion.div
                           animate={{ x: ["-200%", "200%"] }}
-                          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
                           className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/5 to-transparent skew-x-12 w-full"
                         />
                       </Link>
@@ -166,12 +174,17 @@ export function Header() {
               className="xl:hidden relative z-[110] w-12 h-12 flex justify-center items-center focus:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
+              aria-label={
+                mobileMenuOpen ? "Close navigation" : "Open navigation"
+              }
             >
               <div className="relative w-6 h-6">
                 <motion.div
                   initial={false}
-                  animate={{ opacity: mobileMenuOpen ? 0 : 1, rotate: mobileMenuOpen ? 90 : 0 }}
+                  animate={{
+                    opacity: mobileMenuOpen ? 0 : 1,
+                    rotate: mobileMenuOpen ? 90 : 0,
+                  }}
                   transition={{ duration: 0.2 }}
                   className="absolute inset-0 flex flex-col justify-center gap-1.5"
                 >
@@ -179,14 +192,27 @@ export function Header() {
                   <span className="block w-6 h-[2px] bg-white rounded-full" />
                   <span className="block w-4 h-[2px] bg-white rounded-full self-end" />
                 </motion.div>
-                
+
                 <motion.div
                   initial={false}
-                  animate={{ opacity: mobileMenuOpen ? 1 : 0, rotate: mobileMenuOpen ? 0 : -90 }}
+                  animate={{
+                    opacity: mobileMenuOpen ? 1 : 0,
+                    rotate: mobileMenuOpen ? 0 : -90,
+                  }}
                   transition={{ duration: 0.2 }}
                   className="absolute inset-0 flex items-center justify-center"
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white"
+                  >
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
@@ -270,16 +296,20 @@ export function Header() {
                       </motion.div>
                     );
                   })}
-                  
+
                   {/* Mobile CTA Button */}
                   <motion.div variants={itemVariants} className="mt-8 px-4">
                     <div className="relative group w-full">
                       <motion.div
-                        animate={{ 
-                          opacity: [0.3, 0.6, 0.3], 
+                        animate={{
+                          opacity: [0.3, 0.6, 0.3],
                           scale: [1, 1.02, 1],
                         }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
                         className="absolute inset-0 bg-white/40 rounded-sm blur-md"
                       />
                       <Link
@@ -287,10 +317,16 @@ export function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                         className="relative z-10 overflow-hidden w-full flex justify-center items-center py-4 bg-white text-obsidian rounded-sm font-mono font-bold tracking-widest hover:bg-white/90 transition-colors shadow-lg"
                       >
-                        <span className="relative z-10 uppercase">Support the Lab</span>
+                        <span className="relative z-10 uppercase">
+                          Support the Lab
+                        </span>
                         <motion.div
                           animate={{ x: ["-200%", "200%"] }}
-                          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
                           className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/5 to-transparent skew-x-12 w-full"
                         />
                       </Link>

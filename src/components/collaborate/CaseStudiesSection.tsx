@@ -72,25 +72,50 @@ function ArchitectureDiagram({ nodes }: { nodes: ArchNode[] }) {
   );
 }
 
+import { motion } from "framer-motion";
+
 export function CaseStudiesSection() {
   return (
     <section
       id="architectural-evidence"
-      className="py-24 relative z-10 border-t border-white/5 bg-carbon/20"
+      className="py-24 relative z-10 border-t border-white/5 bg-carbon/20 overflow-hidden"
     >
-      <Container>
+      {/* Real Animated SVG Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div
+          animate={{ y: [0, -80] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 w-full h-[200%] opacity-20"
+        >
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="case-studies-grid"
+                width="80"
+                height="80"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 80 0 L 0 0 0 80"
+                  fill="none"
+                  stroke="rgba(212,175,55,0.25)"
+                  strokeWidth="1.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#case-studies-grid)" />
+          </svg>
+        </motion.div>
+
+        {/* Gradients to fade out the grid edges so it blends nicely into the dark theme */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(10,10,10,1)_100%)] pointer-events-none" />
+      </div>
+
+      <Container className="relative z-10">
         <FadeIn className="mb-32 max-w-2xl">
-          <Mono className="text-gold mb-4 block tracking-widest uppercase">
-            Proof of Work
-          </Mono>
           <H2 className="text-4xl md:text-5xl tracking-tight leading-tight mb-6">
             Architectural Evidence
           </H2>
-          <Body className="text-xl text-white/60 font-light leading-relaxed">
-            We don&apos;t expect you to trust our marketing copy. Here is how we
-            reason about institutional rules, financial failure, and economic
-            infrastructure in our own production systems.
-          </Body>
         </FadeIn>
 
         <div className="space-y-40">
@@ -139,6 +164,24 @@ export function CaseStudiesSection() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Highly Visible Repository Link - MOVED TO ALIGN WITH IMAGE */}
+                  {study.projectLink && (
+                    <div className="mt-8 pt-6 border-t border-white/5">
+                      <a
+                        href={study.projectLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-between gap-3 px-6 py-4 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/30 rounded-lg text-white/80 hover:text-gold transition-all duration-300 font-mono text-xs tracking-widest uppercase group"
+                      >
+                        <span className="flex items-center gap-3">
+                          <Code className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                          View Source
+                        </span>
+                        <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </FadeIn>
 
@@ -223,22 +266,6 @@ export function CaseStudiesSection() {
                     &quot;{study.outcome}&quot;
                   </Body>
                 </StaggerItem>
-
-                {/* Highly Visible Repository Link */}
-                {study.projectLink && (
-                  <StaggerItem className="pt-8">
-                    <a
-                      href={study.projectLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/30 rounded-lg text-white/80 hover:text-gold transition-all duration-300 font-mono text-sm tracking-widest uppercase group"
-                    >
-                      <Code className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                      View Source Repository
-                      <ExternalLink className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100" />
-                    </a>
-                  </StaggerItem>
-                )}
               </StaggerGroup>
             </div>
           ))}

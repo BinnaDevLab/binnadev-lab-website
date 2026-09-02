@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono } from "@/components/ui/Typography";
 import { AlertCircle, Terminal } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { motion } from "framer-motion";
 
 export function InquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,24 +22,45 @@ export function InquiryForm() {
   };
 
   return (
-    <section id="contact" className="py-32 relative bg-obsidian">
-      <Container>
+    <section id="contact" className="py-32 relative bg-obsidian overflow-hidden">
+      {/* Real Animated SVG Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div 
+          animate={{ y: [0, -80] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 w-full h-[200%] opacity-20"
+        >
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="contact-grid"
+                width="80"
+                height="80"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 80 0 L 0 0 0 80"
+                  fill="none"
+                  stroke="rgba(212,175,55,0.15)"
+                  strokeWidth="1.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#contact-grid)" />
+          </svg>
+        </motion.div>
+        
+        {/* Gradients to fade out the grid edges */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(10,10,10,1)_100%)] pointer-events-none" />
+      </div>
+
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Left: Context */}
           <FadeIn className="lg:col-span-5">
-            <Mono className="text-gold mb-6 block text-sm tracking-widest uppercase">
-              Contact
-            </Mono>
             <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1]">
               Tell Us What You&apos;re Building.
             </H2>
-            <Body className="text-xl text-white/60 mb-8 font-light leading-relaxed max-w-lg">
-              We do not employ sales funnels. If your protocol requires deep
-              architectural intervention, submit the technical parameters below.
-              We will review the constraints and confirm if we are equipped to
-              execute the solution.
-            </Body>
-
             <div className="flex flex-col gap-6 mt-12 pt-12 border-t border-white/10">
               <div>
                 <Mono className="text-gold text-xs tracking-widest uppercase mb-2">

@@ -1,116 +1,91 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "@/components/ui/Container";
-import { H2, H3, Body, Mono, Meta } from "@/components/ui/Typography";
+import { H2, H3, Mono } from "@/components/ui/Typography";
 import { services } from "@/data";
-import { cn } from "@/lib/utils";
-import { FadeIn } from "@/components/ui/FadeIn";
-import Image from "next/image";
+
+import { motion } from "framer-motion";
 
 export function ServicesGrid() {
-  const [activeIdx, setActiveIdx] = useState(0);
-
   return (
-    <section id="services" className="py-32 bg-obsidian relative overflow-hidden">
-      
-      <Container className="relative z-10 max-w-[1800px] px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          
-          {/* Left Column: Context & Visual */}
-          <FadeIn className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="w-8 h-[1px] bg-gold" />
-              <Mono className="text-gold uppercase tracking-widest text-sm">Capabilities</Mono>
-            </div>
-            <H2 className="text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.1]">
-              Engineering &<br/>Security Domains.
-            </H2>
-            <Body className="text-xl text-white/70 max-w-xl font-light mb-12">
-              We do not offer commodity packages. We offer deep technical expertise applied to specific problem domains where failure is expensive.
-            </Body>
+    <section
+      id="services"
+      className="py-24 md:py-32 bg-white relative overflow-hidden"
+    >
+      {/* Real Animated SVG Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div 
+          animate={{ y: [0, -80] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 w-full h-[200%] opacity-40"
+        >
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="services-grid"
+                width="80"
+                height="80"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 80 0 L 0 0 0 80"
+                  fill="none"
+                  stroke="rgba(168,85,247,0.25)"
+                  strokeWidth="1.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#services-grid)" />
+          </svg>
+        </motion.div>
+        
+        {/* Gradients to fade out the grid edges so it blends nicely into the white */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(255,255,255,1)_100%)] pointer-events-none" />
+      </div>
 
-            {/* Visual Addition - Made taller (4/5) to prevent dry space */}
-            <div className="mt-12 relative aspect-[4/5] max-h-[500px] rounded-xl overflow-hidden border border-white/10 opacity-80 hover:opacity-100 transition-opacity duration-700 shadow-2xl">
-              <Image 
-                src="/images/shared/shared-asset-1.jpeg" 
-                alt="Engineering Capabilities" 
-                fill 
-                className="object-cover" 
-              />
-              <div className="absolute inset-0 bg-obsidian/40 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-obsidian/80 via-transparent to-transparent" />
-            </div>
+      <Container className="relative z-10 max-w-[1400px] px-6 md:px-12 lg:px-24">
+        <div className="mb-16 text-center max-w-4xl mx-auto">
+          <H2 className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-obsidian leading-[1.1]">
+            Engineering &<br /> Software Development
+          </H2>
+        </div>
 
-            {/* Stats addition to fill the sticky space gracefully */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
-              <div className="p-6 border border-white/5 bg-white/[0.02] rounded-lg">
-                <Mono className="text-gold text-2xl mb-1">05</Mono>
-                <Meta className="text-white/60 uppercase tracking-widest text-[10px]">Specialized Domains</Meta>
-              </div>
-              <div className="p-6 border border-white/5 bg-white/[0.02] rounded-lg">
-                <Mono className="text-gold text-2xl mb-1">E2E</Mono>
-                <Meta className="text-white/60 uppercase tracking-widest text-[10px]">Architecture Design</Meta>
-              </div>
-            </div>
-          </FadeIn>
-
-          {/* Right Column: Dense Interactive List */}
-          <div className="lg:col-span-7 flex flex-col border-t border-white/10 mt-12 lg:mt-0">
-            {services.map((service, idx) => {
-              const isActive = activeIdx === idx;
-              return (
-                <div 
-                  key={service.id}
-                  className={cn(
-                    "group relative border-b border-white/10 py-12 transition-colors duration-500 cursor-default",
-                    isActive ? "bg-white/[0.02]" : "hover:bg-white/[0.01]"
-                  )}
-                  onMouseEnter={() => setActiveIdx(idx)}
-                >
-                  <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 px-6">
-                    <div className="flex-shrink-0 mt-1">
-                      <Meta className={cn("transition-colors duration-300 font-mono", isActive ? "text-gold" : "text-white/30 group-hover:text-white/50")}>
-                        0{idx + 1}
-                      </Meta>
-                    </div>
-                    
-                    <div className="flex-grow">
-                      <Mono className={cn("text-sm uppercase tracking-widest mb-3 transition-colors duration-300", isActive ? "text-gold" : "text-white/60 group-hover:text-white/60")}>
-                        {service.problem}
-                      </Mono>
-                      <H3 className={cn("text-2xl md:text-3xl mb-4 transition-colors duration-300", isActive ? "text-white" : "text-white/60 group-hover:text-white/80")}>
-                        {service.title}
-                      </H3>
-                      
-                      <div className={cn(
-                        "grid transition-all duration-500 ease-in-out overflow-hidden",
-                        isActive ? "grid-rows-[1fr] opacity-100 mt-6" : "grid-rows-[0fr] opacity-0"
-                      )}>
-                        <div className="min-h-0">
-                          <Body className="text-lg text-white/70 mb-8 max-w-2xl font-light leading-relaxed">
-                            {service.description}
-                          </Body>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
-                            {service.capabilities.map((cap, cIdx) => (
-                              <div key={cIdx} className="flex items-center gap-3">
-                                <span className="w-1 h-1 bg-gold/50 rounded-full" />
-                                <Mono className="text-xs text-white/60 uppercase tracking-wider">{cap}</Mono>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          {services.map((service, idx) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={service.id}
+                className="p-8 lg:p-10 border border-black/5 bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:-translate-y-2 hover:border-purple-500/30 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] rounded-2xl relative group overflow-hidden transition-all duration-500 flex flex-col"
+              >
+                <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity duration-500 font-display text-[8rem] leading-none text-obsidian -mt-10 -mr-4 pointer-events-none">
+                  0{idx + 1}
                 </div>
-              );
-            })}
-          </div>
 
+                <div className="w-12 h-12 rounded-xl bg-purple-600/10 flex items-center justify-center mb-8 text-purple-600 group-hover:scale-110 group-hover:bg-purple-600/20 transition-all duration-500 relative z-10">
+                  <Icon className="w-6 h-6" />
+                </div>
+
+                <H3 className="text-xl md:text-2xl mb-8 text-obsidian relative z-10 min-h-[3.5rem]">
+                  {service.title}
+                </H3>
+
+                <div className="flex flex-col gap-4 relative z-10 flex-grow">
+                  {service.capabilities.map((cap, cIdx) => (
+                    <div key={cIdx} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 bg-purple-500/50 rounded-full mt-1.5 shrink-0 group-hover:bg-purple-600 transition-colors" />
+                      <span className="text-sm text-obsidian/70 font-light leading-snug">
+                        {cap}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>
   );
 }
-

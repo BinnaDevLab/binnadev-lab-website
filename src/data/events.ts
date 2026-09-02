@@ -39,22 +39,22 @@ export type CommunityEvent = {
 export const COMMUNITY_EVENTS: CommunityEvent[] = [
   {
     id: "systems-workshop-1",
-    title: "Engineering Workshop",
-    subtitle: "Systems Thinking & Architecture in Monad",
-    date: "2026-10-19T10:00:00Z",
+    title: "Why Build Alone, Build on Monad",
+    subtitle: "December 2026, Live Summit",
+    date: "2026-12-05T09:00:00Z", // 10:00 AM WAT (UTC+1)
     status: "UPCOMING",
     description:
-      "An intensive half-day engineering workshop. We will deconstruct real-world architectures, analyze state layouts, and understand the deep trade-offs of building scalable infrastructure within the Monad Ecosystem.",
-    category: "Workshop",
+      "A community meeting focused on networking, showcasing projects, and strengthening the community bond.",
+    category: "Live Event",
     location: {
       type: "in-person",
-      venue: "Federal University of Technology Owerri (FUTO)",
+      venue: "FUTO, Department of Cyber Security Hall Building",
       address: "PMB, 1526, Ihiagwa, Owerri, Imo State, Nigeria",
-      latitude: 5.3927,
+      latitude: 5.3927, // Approximate FUTO coordinates
       longitude: 6.9863,
     },
-    registrationUrl: "https://api.whatsapp.com/send?phone=2348064248389",
-    speakers: ["Obinna Duru", "Console XYZ"],
+    registrationUrl: "", // Just using the luma link provided for the cohort unless a separate one exists
+    speakers: ["Obinna Duru"],
     image: "/images/community/community-asset-2.jpeg",
   },
   {

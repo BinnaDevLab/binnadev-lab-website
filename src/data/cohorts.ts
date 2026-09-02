@@ -2,6 +2,7 @@ export type CohortCurriculumItem = {
   id: string;
   title: string;
   description: string;
+  facilitator?: string;
 };
 
 export type Cohort = {
@@ -28,17 +29,17 @@ export type Cohort = {
 export const COHORTS: Cohort[] = [
   {
     id: "cohort-01",
-    title: "BinnaDev Lab First Official Cohort",
+    title: "September 2026 Edition",
     status: "UPCOMING",
-    startDate: "2026-09-01T00:00:00Z",
+    startDate: "2026-09-18T18:30:00Z", // 7:30 PM WAT (WAT is UTC+1, so 18:30 UTC)
     duration: "2 weeks",
-    price: "Free",
-    sessionDays: "Tuesdays and Thursdays",
+    price: "Free (50 Slots Only)",
+    sessionDays: "Fridays and Saturdays",
     sessionsPerWeek: 2,
     format: "Live Sessions",
     platform: "Google Meet",
     description:
-      "A concentrated 2-week technical sprint designed to strip away abstraction. We rebuild your foundational understanding of decentralized systems, focusing heavily on protocol architecture and secure smart contract mechanics.",
+      "A 2-week cohort focused on trust in decentralized systems. Understand decentralization, see how smart contracts turn rules into verifiable code, and build with a clearer view of the systems behind the code.",
     topics: [
       "Protocol architecture",
       "EVM mechanics",
@@ -48,33 +49,37 @@ export const COHORTS: Cohort[] = [
     ],
     curriculum: [
       {
-        id: "c-1",
-        title: "Deconstruction",
+        id: "Session 1 - Theory",
+        title: "Why Trust Matters",
+        facilitator: "Uchenna Ofoma (Facilitator)",
         description:
-          "Breaking down high-level concepts into their primitive components. We don't write code until we understand the system.",
+          "Understand how blockchain removes the need for a central authority and distributes trust across the network.",
       },
       {
-        id: "c-2",
-        title: "Navigation",
+        id: "Session 1 - Practical",
+        title: "Build the Logic of Trust",
+        facilitator: "Obinna Duru (Facilitator)",
         description:
-          "How to read, navigate, and make sense of massive open-source repositories without feeling lost.",
+          "Build a smart contract that acts as a neutral arbiter. See how code can enforce rules without human intervention.",
       },
       {
-        id: "c-3",
-        title: "Reasoning",
+        id: "Session 2 - Theory",
+        title: "Why Trust the Code",
+        facilitator: "Uchenna Ofoma (Facilitator)",
         description:
-          "Questioning assumptions, tracing state, and understanding why systems behave the way they do.",
+          "Understand immutability and why deployed code can be trusted to keep enforcing the same rules.",
       },
       {
-        id: "c-4",
-        title: "Application",
+        id: "Session 2 - Practical",
+        title: "Build on the Rock",
+        facilitator: "Obinna Duru (Facilitator)",
         description:
-          "Hands-on coding exercises to reinforce understanding and build confidence in applying concepts.",
+          "See what makes smart contracts permanent. Build with code that cannot be changed after deployment.",
       },
     ],
-    registrationUrl: "https://api.whatsapp.com/send?phone=2348064248389",
+    registrationUrl: "https://luma.com/t77y7n1y",
     recordingUrl: "Recordings published free on YouTube",
     featured: true,
-    image: "/images/shared/shared-asset-14.jpeg",
+    image: "/images/events/event-asset-1.jpeg",
   },
 ];

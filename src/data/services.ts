@@ -1,90 +1,56 @@
-import {
-  LucideIcon,
-  Shield,
-  Blocks,
-  Code2,
-  GraduationCap,
-  LayoutTemplate,
-} from "lucide-react";
+import { LucideIcon, Shield, Globe, Code2, GraduationCap } from "lucide-react";
 
 export interface ServiceCategory {
   id: string;
   title: string;
-  problem: string;
-  description: string;
   icon: LucideIcon; // Lucide icon
   capabilities: string[];
 }
 
 export const services: ServiceCategory[] = [
   {
-    id: "smart-contracts",
+    id: "smart-contract-development",
     title: "Smart Contract Development",
-    problem: "When the rules matter.",
-    description:
-      "For systems where ownership, permissions, state transitions, financial logic, and irreversible actions must be absolutely correct. We don't just write code; we enforce systemic invariants.",
     icon: Code2,
     capabilities: [
-      "State Machine Design",
-      "Cryptoeconomic Invariants",
-      "Access Control Architecture",
-      "Gas-Optimized Implementation",
+      "Solidity / Yul Smart Contracts",
+      "Protocol Design",
+      "Gas Optimization",
+      "Unit / Invariant Testing",
     ],
   },
   {
-    id: "full-stack",
-    title: "End-to-End Decentralized Systems",
-    problem: "When the protocol needs a production-grade interface.",
-    description:
-      "From protocol-level smart contracts and robust backend relayers to seamless web and mobile interfaces. We architect the entire decentralized application stack.",
-    icon: LayoutTemplate,
+    id: "web-development",
+    title: "Decentralized Application & Full-Stack Development",
+    icon: Globe,
     capabilities: [
-      "Hybrid Web2/Web3 Architectures",
-      "Indexer & Relayer Development",
-      "Next.js Frontends",
-      "Account Abstraction Integration",
+      "Frontend Development & Onchain Integration",
+      "Backend & API Development",
+      "Database Architecture",
+      "Hosting & Domain Name Regration",
+    ],
+  },
+  {
+    id: "protocol-security",
+    title: "Protocol Architecture & Security",
+    icon: Shield,
+    capabilities: [
+      "Threat Modeling",
+      "Invariant Testing",
+      "Access Control",
+      "Adversarial Analysis",
+      "Security Reviews",
     ],
   },
   {
     id: "training",
-    title: "Engineering Enablement",
-    problem: "When the internal team needs architectural rigor.",
-    description:
-      "Corporate workshops, engineering upskilling, technical enablement, and developer relations designed for teams that need to elevate their architectural rigor.",
+    title: "Engineering Training",
     icon: GraduationCap,
     capabilities: [
-      "Security Workshops",
-      "Adversarial Thinking",
-      "Architecture Seminars",
+      "Smart Contract Development",
+      "Security Engineering",
       "Developer Onboarding",
-    ],
-  },
-  {
-    id: "security",
-    title: "Protocol Architecture & Security",
-    problem: "When failure is not an option.",
-    description:
-      "Threat modelling, architecture review, smart contract security, adversarial analysis, and deep audit work. We look for edge cases in complex mathematical and economic models.",
-    icon: Shield,
-    capabilities: [
-      "Threat Modelling",
-      "Defensive Escrow Design",
-      "Invariant Testing",
-      "Incident Response Architecture",
-    ],
-  },
-  {
-    id: "custom",
-    title: "Advanced Diagnostics & R&D",
-    problem: "When the problem defies standard solutions.",
-    description:
-      "We are available for difficult technical problems that require serious engineering thinking. If your problem sits somewhere between protocol design, application engineering, security, and infrastructure, that is exactly where we can help.",
-    icon: Blocks,
-    capabilities: [
-      "Custom Solutions",
-      "Research & Development",
-      "System Diagnostics",
-      "Strategic Consultation",
+      "Hackathathon",
     ],
   },
 ];

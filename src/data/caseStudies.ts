@@ -42,7 +42,7 @@ export const caseStudies: CaseStudy[] = [
       "Merkle Trees",
       "Hybrid Architecture",
     ],
-    imageUrl: "/images/shared/shared-asset-7.jpeg",
+    imageUrl: "/images/shared/shared-asset-15.jpeg",
     projectLink:
       "https://github.com/Ikenga-Software-Solutions-LTD/libertasalpha-academy-certification-contracts/blob/main/README.md",
     architectureNodes: [
@@ -72,9 +72,9 @@ export const caseStudies: CaseStudy[] = [
       "UUPS Upgradeability",
       "State Machines",
     ],
-    imageUrl: "/images/caseStudies/caseStudies-asset-1.jpeg",
+    imageUrl: "/images/shared/shared-asset-7.jpeg",
     projectLink:
-      "https://github.com/Blackspectre-tech/smartcontract/blob/main/README.md",
+      "https://polygonscan.com/address/0xf83aaB5f1fAA1a7a74AD27E2f8058801EaA31393",
     architectureNodes: [
       { style: "milestone", label: "Milestone 1", value: "2,000 BPS" },
       { style: "milestone", label: "Milestone 2", value: "3,000 BPS" },
@@ -105,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
       "EIP-712",
       "O(1) Yield Claims",
     ],
-    imageUrl: "/images/caseStudies/caseStudies-asset-2.jpeg",
+    imageUrl: "/images/shared/shared-asset-6.jpeg",
     projectLink:
       "https://github.com/LibertasAlpha/lawp-treasury-contracts/blob/main/README.md",
     architectureNodes: [

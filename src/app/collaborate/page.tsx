@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function CollaboratePage() {
   return (
-    <div className="pt-32 pb-20 relative overflow-hidden bg-obsidian selection:bg-gold selection:text-obsidian">
+    <div className="pt-24 pb-16 md:pt-32 md:pb-20 relative overflow-hidden bg-obsidian selection:bg-gold selection:text-obsidian">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -37,35 +37,20 @@ export default function CollaboratePage() {
 
       {/* 1. Hero */}
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-16 items-center mb-32">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-center mb-20">
           <div className="xl:col-span-7">
-            <Mono className="text-gold mb-6 block tracking-widest uppercase flex items-center gap-2">
-              Commercial Engineering
-            </Mono>
-            <H1 className="mb-8 text-5xl md:text-7xl leading-[1.1] tracking-tight">
+            <H1 className="mb-6 text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight">
               We don&apos;t just implement features.{" "}
               <br className="hidden md:block" />
               We architect resilient systems.
             </H1>
-            <div className="space-y-6">
-              <Body className="text-2xl text-white/90 font-light leading-relaxed max-w-2xl">
-                If your protocol faces a complex engineering challenge,
-                BinnaDev Lab provides the architectural clarity, rigorous
-                implementation, and security posture required to deliver it
-                securely.
-              </Body>
-              <Body className="text-xl text-white/60 font-light leading-relaxed max-w-2xl">
-                We design systems where important rules, money, trust, and
-                failure conditions have to be absolutely correct.
-              </Body>
-            </div>
           </div>
 
           {/* Hero Visual */}
           <div className="xl:col-span-5 relative hidden xl:block">
-            <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative aspect-video xl:aspect-[4/3] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
               <Image
-                src="/images/shared/shared-asset-3.jpeg"
+                src="/images/shared/shared-asset-10.jpeg"
                 alt="Engineering Architecture"
                 fill
                 className="object-cover opacity-80"
@@ -95,48 +80,10 @@ export default function CollaboratePage() {
       {/* 3. Peer Reviews (Testimonials as Marquee) */}
       <CollaboratorFieldNotes />
 
-      {/* 4. The Commercial Bridge */}
-      <Container className="relative z-10 py-32 border-y border-white/5 bg-carbon/20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6">
-            <H2 className="text-3xl md:text-5xl mb-8 leading-tight">
-              The systems are different.
-              <br />
-              <span className="text-gold">
-                The engineering discipline is the same.
-              </span>
-            </H2>
-            <Body className="text-xl text-white/70 leading-relaxed font-light mb-8">
-              We bring that discipline to projects involving smart contracts,
-              decentralized applications, financial infrastructure, protocol
-              architecture, security, and technical teams that need deeper
-              engineering capability.
-            </Body>
-            <Body className="text-lg text-white/50 leading-relaxed font-light">
-              Commercial engagements fund our localized research and community
-              building. In turn, that community produces the extreme engineering
-              rigor we deploy to protect your protocol.
-            </Body>
-          </div>
-          <div className="lg:col-span-6">
-            <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image
-                src="/images/shared/shared-asset-4.jpeg"
-                alt="Engineering Discipline"
-                fill
-                className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 bg-obsidian/30 mix-blend-multiply" />
-              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl" />
-            </div>
-          </div>
-        </div>
-      </Container>
-
-      {/* 5. Core Capabilities (Reframed as Problem Domains) */}
+      {/* 4. Core Capabilities (Reframed as Problem Domains) */}
       <ServicesGrid />
 
-      {/* 6. Inquiry Form (Conversational) */}
+      {/* 5. Inquiry Form (Conversational) */}
       <InquiryForm />
     </div>
   );
