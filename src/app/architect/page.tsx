@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Thoughtful. Reliable. Excellent. Obinna Franklin Duru (BinnaDev) is a protocol architect building reliable decentralized systems.",
     images: [
       {
-        url: "/icon/og-image.png",
+        url: "/icons/og-image.png",
         width: 1200,
         height: 630,
         alt: "Obinna Franklin Duru - The Architect",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "The Architect | Obinna Franklin Duru",
     description:
       "Thoughtful. Reliable. Excellent. Obinna Franklin Duru (BinnaDev) is a protocol architect building reliable decentralized systems.",
-    images: ["/icon/og-image.png"],
+    images: ["/icons/og-image.png"],
   },
   alternates: {
     canonical: "/architect",

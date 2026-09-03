@@ -26,7 +26,7 @@ export default function ResearchPage() {
     url: p.link,
     author: {
       "@type": "Organization",
-      name: "BinnaDev Lab",
+      name: "BinnaDevLab",
     },
   }));
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security. Join BinnaDevLab to master decentralized systems.",
     images: [
       {
-        url: COHORTS[0]?.image || "/icon/og-image.png",
+        url: COHORTS[0]?.image || "/icons/og-image.png",
         width: 1200,
         height: 630,
         alt: COHORTS[0]?.title || "Engineering Cohorts | BinnaDevLab",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Engineering Cohorts | BinnaDevLab",
     description:
       "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security.",
-    images: [COHORTS[0]?.image || "/icon/og-image.png"],
+    images: [COHORTS[0]?.image || "/icons/og-image.png"],
   },
   alternates: {
     canonical: "/cohorts",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Hire an elite protocol architect and smart contract engineer for your DeFi project. BinnaDevLab provides Web3 security services and systems engineering.",
     images: [
       {
-        url: "/icon/og-image.png",
+        url: "/icons/og-image.png",
         width: 1200,
         height: 630,
         alt: "Collaborate with BinnaDevLab",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Commercial Engineering | BinnaDevLab",
     description:
       "Hire an elite protocol architect and smart contract engineer for your DeFi project.",
-    images: ["/icon/og-image.png"],
+    images: ["/icons/og-image.png"],
   },
   alternates: {
     canonical: "/collaborate",

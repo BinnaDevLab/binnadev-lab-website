@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       "Support BinnaDevLab. Your contributions fund open-source Web3 research, secure smart contract architecture, and the engineering community.",
     images: [
       {
-        url: "/icon/og-image.png",
+        url: "/icons/og-image.png",
         width: 1200,
         height: 630,
         alt: "Support BinnaDevLab",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Support the Lab | BinnaDevLab",
     description:
       "Support BinnaDevLab. Your contributions fund open-source Web3 research and secure smart contract architecture.",
-    images: ["/icon/og-image.png"],
+    images: ["/icons/og-image.png"],
   },
   alternates: {
     canonical: "/donate",

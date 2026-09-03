@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     siteName: "BinnaDevLab",
     images: [
       {
-        url: "/icon/og-image.png",
+        url: "/icons/og-image.png",
         width: 1200,
         height: 630,
         alt: "BinnaDevLab - Reasoning Precedes Coding",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: "BinnaDevLab | Protocol Architecture & Smart Contract Security",
     description:
       "BinnaDevLab is an engineering laboratory where reasoning precedes coding. We develop people who can think, learn, build, and architect reliable Web3 systems.",
-    images: ["/icon/og-image.png"],
+    images: ["/icons/og-image.png"],
     creator: "@binnadev",
   },
   robots: {
@@ -121,7 +121,7 @@ export default function RootLayout({
               name: "BinnaDev Lab",
               url: "https://binnadevlab.vercel.app",
               logo: "https://binnadevlab.vercel.app/icons/apple-touch-icon.png",
-              image: "https://binnadevlab.vercel.app/icons/og-image.png",
+              image: "https://binnadev.com/icons/og-image.png",
               description:
                 "BinnaDev Lab is a software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts.",
               founder: {

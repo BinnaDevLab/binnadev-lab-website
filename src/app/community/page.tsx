@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Join a Web3 engineering collective focused on learning, building, and researching smart contract security and protocol architecture.",
     images: [
       {
-        url: "/icon/og-image.png",
+        url: "/icons/og-image.png",
         width: 1200,
         height: 630,
         alt: "BinnaDevLab Engineering Community",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "The Community | BinnaDevLab Culture",
     description:
       "Join a Web3 engineering collective focused on learning, building, and researching smart contract security and protocol architecture.",
-    images: ["/icon/og-image.png"],
+    images: ["/icons/og-image.png"],
   },
   alternates: {
     canonical: "/community",
