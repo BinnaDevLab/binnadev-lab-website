@@ -1,16 +1,19 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { IntroVideoSection } from "@/components/home/IntroVideoSection";
-import { ManifestoSection } from "@/components/home/ManifestoSection";
-import { StorySection } from "@/components/home/StorySection";
-import { YouTubeSection } from "@/components/home/YouTubeSection";
-import { ResearchPreviewSection } from "@/components/home/ResearchPreviewSection";
-import { ArchitectSection } from "@/components/home/ArchitectSection";
-import { CollaborationPreviewSection } from "@/components/home/CollaborationPreviewSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
-import { PartnersMarquee } from "@/components/home/PartnersMarquee";
-import { NewsletterSection } from "@/components/home/NewsletterSection";
-import { CTASection } from "@/components/home/CTASection";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+// Dynamically import below-the-fold components to reduce initial JS payload and Total Blocking Time (TBT)
+const ManifestoSection = dynamic(() => import("@/components/home/ManifestoSection").then(mod => mod.ManifestoSection));
+const StorySection = dynamic(() => import("@/components/home/StorySection").then(mod => mod.StorySection));
+const YouTubeSection = dynamic(() => import("@/components/home/YouTubeSection").then(mod => mod.YouTubeSection));
+const ResearchPreviewSection = dynamic(() => import("@/components/home/ResearchPreviewSection").then(mod => mod.ResearchPreviewSection));
+const ArchitectSection = dynamic(() => import("@/components/home/ArchitectSection").then(mod => mod.ArchitectSection));
+const CollaborationPreviewSection = dynamic(() => import("@/components/home/CollaborationPreviewSection").then(mod => mod.CollaborationPreviewSection));
+const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection").then(mod => mod.TestimonialsSection));
+const PartnersMarquee = dynamic(() => import("@/components/home/PartnersMarquee").then(mod => mod.PartnersMarquee));
+const NewsletterSection = dynamic(() => import("@/components/home/NewsletterSection").then(mod => mod.NewsletterSection));
+const CTASection = dynamic(() => import("@/components/home/CTASection").then(mod => mod.CTASection));
 
 export const metadata: Metadata = {
   title: "BinnaDevLab | Reasoning Precedes Coding",

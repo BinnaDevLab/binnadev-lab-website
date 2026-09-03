@@ -14,11 +14,16 @@ export function IntroVideoSection() {
   // For pausing when scrolled out of view
   const isCurrentlyInView = useInView(containerRef, { margin: "-100px" });
   
+  const [isMounted, setIsMounted] = useState(false);
   const [isPlayingWithAudio, setIsPlayingWithAudio] = useState(false);
   const [hasStartedFullPlayback, setHasStartedFullPlayback] = useState(false);
   const [isBuffering, setIsBuffering] = useState(false);
   const [duration, setDuration] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<number>(0);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!isCurrentlyInView && isPlayingWithAudio && videoRef.current) {
@@ -100,7 +105,7 @@ export function IntroVideoSection() {
           onClick={handlePlayClick}
         >
           {/* Only render video if container is near viewport to save bandwidth on initial load */}
-          {isLoadedInView && (
+          {isMounted && isLoadedInView && (
             <video
               ref={videoRef}
               src="/videos/intro.mp4"

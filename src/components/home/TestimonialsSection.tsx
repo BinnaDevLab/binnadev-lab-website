@@ -199,6 +199,7 @@ export function TestimonialsSection() {
                           href={testimonial.socialLinks.twitter}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`${testimonial.author}'s Twitter`}
                           onClick={(e) => !isActive && e.preventDefault()}
                           className={`p-2 md:p-3 border border-white/10 hover:border-gold/50 hover:text-gold hover:bg-gold/5 rounded-full transition-all duration-300 ${!isActive && "pointer-events-none"}`}
                         >
@@ -210,6 +211,7 @@ export function TestimonialsSection() {
                           href={testimonial.socialLinks.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`${testimonial.author}'s LinkedIn`}
                           onClick={(e) => !isActive && e.preventDefault()}
                           className={`p-2 md:p-3 border border-white/10 hover:border-gold/50 hover:text-gold hover:bg-gold/5 rounded-full transition-all duration-300 ${!isActive && "pointer-events-none"}`}
                         >
@@ -221,6 +223,7 @@ export function TestimonialsSection() {
                           href={testimonial.socialLinks.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`${testimonial.author}'s GitHub`}
                           onClick={(e) => !isActive && e.preventDefault()}
                           className={`p-2 md:p-3 border border-white/10 hover:border-gold/50 hover:text-gold hover:bg-gold/5 rounded-full transition-all duration-300 ${!isActive && "pointer-events-none"}`}
                         >
