@@ -2,16 +2,14 @@
 
 > "Reasoning Precedes Coding."
 
-BinnaDevLab is an emerging engineering laboratory built around the work of Obinna Franklin Duru (BinnaDev). It is a place where people learn to think before they code, understand systems before they implement them, and use technology as a tool rather than surrendering their judgment to it.
+BinnaDevLab is an engineering laboratory where reasoning precedes coding. It is a place where people learn to think before they code, understand systems before they implement them, and use technology as a tool rather than surrendering their judgment to it.
 
-The foundation of BinnaDev is expressed in three words: **Thoughtful. Reliable. Excellent.**
-
-BinnaDevLab extends that work beyond the individual, creating a home for teaching, training, research, collaboration, and building meaningful things together. We specialize in smart contract development, Web3 security, protocol architecture, and building reliable decentralized systems from first principles.
+BinnaDevLab extends that work beyond an individual, creating a home for teaching, training, research, collaboration, and building meaningful things together. We specialize in smart contract development, Web3 security, protocol architecture, and building reliable decentralized systems from first principles.
 
 ## The Vision & Axioms
 - **Reasoning Precedes Coding**: Human judgment is increasingly important. We believe in understanding what is being built, why, and what assumptions it depends on.
 - **The Bridge**: The Lab serves to connect the global to the local, blockchain ecosystems to local communities, and experienced experts to learners.
-- **The Bond**: The connective tissue of the work is Love—people being willing to help one another learn, build, grow, and accomplish meaningful things together.
+- **The Bond**: The connective tissue of the work is Love, people being willing to help one another learn, build, grow, and accomplish meaningful things together.
 - **Security as an Emergent Property**: Security is not an afterthought; it emerges from rigorous systemic comprehension.
 
 ## Engineering Domains
