@@ -9,9 +9,29 @@ import { UpcomingEvents } from "@/components/cohorts/UpcomingEvents";
 import { CommunityHistory } from "@/components/cohorts/CommunityHistory";
 
 export const metadata: Metadata = {
-  title: "Engineering Cohorts | Rigorous Smart Contract & Security Training",
+  title: "Engineering Cohorts",
   description:
-    "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security. Learn how to reason about complex decentralized systems.",
+    "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security. Learn how to reason about complex decentralized systems at BinnaDevLab.",
+  openGraph: {
+    title: "Engineering Cohorts | BinnaDevLab",
+    description:
+      "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security. Join BinnaDevLab to master decentralized systems.",
+    images: [
+      {
+        url: COHORTS[0]?.image || "/icon/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: COHORTS[0]?.title || "Engineering Cohorts | BinnaDevLab",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Cohorts | BinnaDevLab",
+    description:
+      "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security.",
+    images: [COHORTS[0]?.image || "/icon/og-image.png"],
+  },
   alternates: {
     canonical: "/cohorts",
   },

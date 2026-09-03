@@ -101,6 +101,11 @@ export default function DonatePage() {
                       transition={{ duration: 0.3 }}
                       className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-white z-20"
                     >
+                      <div className="absolute top-6 flex items-center justify-center w-full left-0">
+                        <span className="bg-green-100 text-green-700 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                          <CheckCircle className="w-3.5 h-3.5" /> Copied
+                        </span>
+                      </div>
                       <motion.div
                         animate={{ scale: [1, 1.15, 1] }}
                         transition={{
@@ -185,6 +190,11 @@ export default function DonatePage() {
                       transition={{ duration: 0.3 }}
                       className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-white z-20"
                     >
+                      <div className="absolute top-6 flex items-center justify-center w-full left-0">
+                        <span className="bg-green-100 text-green-700 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                          <CheckCircle className="w-3.5 h-3.5" /> Copied
+                        </span>
+                      </div>
                       <motion.div
                         animate={{ scale: [1, 1.15, 1] }}
                         transition={{
@@ -321,7 +331,9 @@ export default function DonatePage() {
               const Icon = skill.icon;
               return (
                 <Link
-                  href="/collaborate#contact"
+                  href="https://wa.me/2348064248389"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={idx}
                   className="group p-8 border border-black/5 bg-white/80 backdrop-blur-xl hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_20px_40px_rgba(168,85,247,0.12)] transition-all duration-300 rounded-2xl flex flex-col items-start gap-4"
                 >

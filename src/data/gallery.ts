@@ -2,8 +2,8 @@ export interface GalleryItem {
   id: string;
   title: string;
   category:
-    | "Research"
-    | "Engineering"
+    | "Learning"
+    | "Community"
     | "Collaboration"
     | "Building"
     | "The Lab"
@@ -12,87 +12,87 @@ export interface GalleryItem {
 }
 
 export const galleryPool: GalleryItem[] = [
-  // 1. Research & Analysis
+  // 1. Learning & Growth
   {
     id: "g1",
-    title: "Threat Modeling Analysis",
-    category: "Research",
-    imageUrl: "/images/shared/shared-asset-3.jpeg",
+    title: "Learning Together",
+    category: "Learning",
+    imageUrl: "/images/gallery/gallery-asset-2.jpeg",
   },
   {
     id: "g2",
-    title: "Cryptoeconomic Research",
-    category: "Research",
-    imageUrl: "/images/gallery/gallery-asset-1.jpeg",
+    title: "Growing Through Practice",
+    category: "Learning",
+    imageUrl: "/images/shared/shared-asset-1.jpeg",
   },
 
-  // 2. Engineering & Architecture
+  // 2. Community
   {
     id: "g3",
-    title: "Protocol Architecture",
-    category: "Engineering",
-    imageUrl: "/images/shared/shared-asset-5.jpeg",
+    title: "The BinnaDev Community",
+    category: "Community",
+    imageUrl: "/images/shared/shared-asset-2.jpeg",
   },
   {
     id: "g4",
-    title: "Invariant Testing",
-    category: "Engineering",
-    imageUrl: "/images/gallery/gallery-asset-2.jpeg",
+    title: "Community in Action",
+    category: "Community",
+    imageUrl: "/images/shared/shared-asset-22.jpeg",
   },
 
-  // 3. Collaboration & Whiteboarding
+  // 3. Collaboration
   {
     id: "g5",
-    title: "System State Whiteboarding",
+    title: "Building Together",
     category: "Collaboration",
-    imageUrl: "/images/shared/shared-asset-1.jpeg",
+    imageUrl: "/images/shared/shared-asset-21.jpeg",
   },
   {
     id: "g6",
-    title: "Security Review Session",
+    title: "Ideas in the Room",
     category: "Collaboration",
-    imageUrl: "/images/gallery/gallery-asset-3.jpeg",
+    imageUrl: "/images/shared/shared-asset-23.jpeg",
   },
 
-  // 4. Building & Execution
+  // 4. Building & Creating
   {
     id: "g7",
-    title: "Smart Contract Implementation",
+    title: "Turning Ideas Into Reality",
     category: "Building",
-    imageUrl: "/images/shared/shared-asset-4.jpeg",
+    imageUrl: "/images/shared/shared-asset-13.jpeg",
   },
   {
     id: "g8",
-    title: "EVM Optimization",
+    title: "Builders at Work",
     category: "Building",
-    imageUrl: "/images/shared/shared-asset-2.jpeg",
+    imageUrl: "/images/shared/shared-asset-14.jpeg",
   },
 
-  // 5. The Lab Environment
+  // 5. Life at the Lab
   {
     id: "g9",
-    title: "BinnaDev Headquarters",
+    title: "Inside the Lab",
     category: "The Lab",
     imageUrl: "/images/gallery/gallery-asset-4.jpeg",
   },
   {
     id: "g10",
-    title: "Late Night Operations",
+    title: "Moments at the Lab",
     category: "The Lab",
-    imageUrl: "/images/gallery/gallery-asset-5.jpeg",
+    imageUrl: "/images/gallery/gallery-asset-2.jpeg",
   },
 
-  // 6. Output & Impact
+  // 6. Impact & Community Growth
   {
     id: "g11",
-    title: "Global Deployment",
+    title: "Growing Together",
     category: "Impact",
-    imageUrl: "/images/shared/shared-asset-1.jpeg",
+    imageUrl: "/images/gallery/gallery-asset-5.jpeg",
   },
   {
     id: "g12",
-    title: "Community Education",
+    title: "Sharing What We Learn",
     category: "Impact",
-    imageUrl: "/images/gallery/gallery-asset-2.jpeg",
+    imageUrl: "/images/gallery/gallery-asset-1.jpeg",
   },
 ];

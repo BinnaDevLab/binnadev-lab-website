@@ -3,20 +3,30 @@
 import { useState } from "react";
 import { ArrowRight, Mail } from "lucide-react";
 
+import { subscribeNewsletter } from "@/app/actions/subscribeNewsletter";
+
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
 
     setStatus("loading");
-    // Simulate network request
-    setTimeout(() => {
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const result = await subscribeNewsletter(formData);
+
+    if (result.success) {
       setStatus("success");
       setEmail("");
-    }, 1500);
+    } else {
+      setStatus("error");
+      setErrorMessage(result.error || "Failed to subscribe.");
+    }
   };
 
   return (
@@ -26,6 +36,7 @@ export function NewsletterForm() {
           <Mail className="absolute left-4 w-4 h-4 text-muted" />
           <input
             type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="satoshinakamoto@protocol.xyz"
@@ -50,6 +61,11 @@ export function NewsletterForm() {
         {status === "success" && (
           <p className="absolute -bottom-6 left-0 text-xs text-gold font-mono">
             Subscription confirmed.
+          </p>
+        )}
+        {status === "error" && (
+          <p className="absolute -bottom-6 left-0 text-xs text-red-400 font-mono">
+            {errorMessage}
           </p>
         )}
       </form>

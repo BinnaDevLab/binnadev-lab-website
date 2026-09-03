@@ -20,7 +20,27 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Architect | Protocol Design & Smart Contract Engineering",
   description:
-    "Obinna Franklin Duru is a senior protocol architect and smart contract engineer specializing in EVM mechanics, formal verification, and secure financial infrastructure.",
+    "Obinna Franklin Duru (BinnaDev) is a protocol architect and smart contract engineer building reliable, excellent systems. Thoughtful engineering grounded in systems thinking and EVM mechanics.",
+  openGraph: {
+    title: "The Architect | Protocol Design & Smart Contract Engineering",
+    description:
+      "Thoughtful. Reliable. Excellent. Obinna Franklin Duru (BinnaDev) is a protocol architect building reliable decentralized systems.",
+    images: [
+      {
+        url: "/icon/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Obinna Franklin Duru - The Architect",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Architect | Obinna Franklin Duru",
+    description:
+      "Thoughtful. Reliable. Excellent. Obinna Franklin Duru (BinnaDev) is a protocol architect building reliable decentralized systems.",
+    images: ["/icon/og-image.png"],
+  },
   alternates: {
     canonical: "/architect",
   },

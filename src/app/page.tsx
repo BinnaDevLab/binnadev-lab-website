@@ -13,9 +13,29 @@ import { CTASection } from "@/components/home/CTASection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BinnaDev Lab | Reasoning Precedes Coding",
+  title: "BinnaDevLab | Reasoning Precedes Coding",
   description:
-    "BinnaDev Lab is an engineering collective specializing in smart contract architecture, Web3 security, and building decentralized systems from first principles.",
+    "BinnaDevLab is an engineering laboratory where thoughtful thinking meets rigorous execution. We specialize in smart contract development, Web3 security, protocol architecture, and building reliable decentralized systems from first principles.",
+  openGraph: {
+    title: "BinnaDevLab | Reasoning Precedes Coding",
+    description:
+      "An engineering laboratory where thoughtful thinking meets rigorous execution. Learn to think deeply, build responsibly, and construct reliable systems.",
+    images: [
+      {
+        url: "/icon/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "BinnaDevLab - Reasoning Precedes Coding",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BinnaDevLab | Reasoning Precedes Coding",
+    description:
+      "An engineering laboratory where thoughtful thinking meets rigorous execution. We specialize in smart contract architecture and reliable decentralized systems.",
+    images: ["/icon/og-image.png"],
+  },
   alternates: {
     canonical: "/",
   },

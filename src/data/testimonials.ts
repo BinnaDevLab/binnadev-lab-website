@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "test-3",
     quote:
-      "From what I've seen, BinnaDevLab feels like a serious space for developers to learn, build, research, and collaborate around Web3 engineering and security. I'm not a developer myself, but I can tell there's a strong technical foundation behind what's being built.",
+      "BinnaDevLab feels like a serious space to learn, build, research, and collaborate around Web3 engineering and security. I'm not a developer, but the strong technical foundation is clear.",
     author: "Anthony Shine",
     role: "Web3 Community Manager",
     avatarUrl: "/images/testimonials/testimonials-asset-1.jpeg",
@@ -67,13 +67,24 @@ export const testimonials: Testimonial[] = [
   {
     id: "test-5",
     quote:
-      "I highly recommend BinnaDevLab for smart contract engineering and security. Obinna combines technical depth with precision and professionalism. He also helps developers build stronger skills and better engineering judgment. A reliable engineer to work with and learn from.",
+      "I highly recommend BinnaDevLab for smart contract engineering and security. Obinna combines technical depth, precision, and professionalism while helping developers build stronger skills and engineering judgment.",
     author: "Emmanuel Festus",
     role: "Founder & CEO",
     organization: "Fezgraph",
     avatarUrl: "/images/testimonials/testimonials-asset-4.jpeg",
     socialLinks: {
       twitter: "https://web.facebook.com/emmanuel.festus.794",
+    },
+  },
+  {
+    id: "test-6",
+    quote:
+      "BinnaDev Lab proves that great systems are built on understanding, not memorization. They think ahead, work together, and make security a priority from day one.",
+    author: "Delight Obinna",
+    role: "App Developer",
+    avatarUrl: "/images/testimonials/testimonials-asset-6.jpeg",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/delight-obinna-a3a207375",
     },
   },
 ];

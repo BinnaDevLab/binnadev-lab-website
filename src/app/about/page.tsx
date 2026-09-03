@@ -10,9 +10,29 @@ import { MANIFESTO_POINTS } from "@/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | BinnaDev Lab",
+  title: "About | BinnaDevLab",
   description:
-    "The core engineering principles of BinnaDev Lab: Interrogating systems, prioritizing mental models, and treating security as an emergent property of deep comprehension.",
+    "BinnaDevLab is where thoughtful thinking meets execution. We believe reasoning precedes coding, prioritizing deep mental models, system security, and engineering excellence.",
+  openGraph: {
+    title: "About | BinnaDevLab",
+    description:
+      "BinnaDevLab is where thoughtful thinking meets execution. We believe reasoning precedes coding, prioritizing deep mental models, system security, and engineering excellence.",
+    images: [
+      {
+        url: "/icon/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About BinnaDevLab",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | BinnaDevLab",
+    description:
+      "BinnaDevLab is where thoughtful thinking meets execution. We believe reasoning precedes coding.",
+    images: ["/icon/og-image.png"],
+  },
   alternates: {
     canonical: "/about",
   },

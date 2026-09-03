@@ -12,9 +12,29 @@ import Image from "next/image";
 import { Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "The Community | BinnaDev Lab Culture",
+  title: "The Community | BinnaDevLab Culture",
   description:
-    "The Engineering Collective. A place to architect, research, and build alongside people who take decentralized systems seriously.",
+    "Join a Web3 engineering collective focused on learning, building, and researching smart contract security and protocol architecture. Build meaningful systems together.",
+  openGraph: {
+    title: "The Community | BinnaDevLab Culture",
+    description:
+      "Join a Web3 engineering collective focused on learning, building, and researching smart contract security and protocol architecture.",
+    images: [
+      {
+        url: "/icon/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "BinnaDevLab Engineering Community",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Community | BinnaDevLab Culture",
+    description:
+      "Join a Web3 engineering collective focused on learning, building, and researching smart contract security and protocol architecture.",
+    images: ["/icon/og-image.png"],
+  },
   alternates: {
     canonical: "/community",
   },
@@ -114,14 +134,12 @@ export default function CommunityPage() {
           </StaggerItem>
           <StaggerItem>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link
-                href="/cohorts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-white text-obsidian rounded-lg font-mono text-sm uppercase tracking-widest font-semibold hover:bg-gold hover:text-obsidian transition-colors w-full sm:w-auto hover:-translate-y-1 shadow-lg hover:shadow-gold/20"
+              <button
+                disabled
+                className="px-8 py-4 bg-white/20 text-white/50 cursor-not-allowed rounded-lg font-mono text-sm uppercase tracking-widest font-semibold w-full sm:w-auto"
               >
-                Join the Community
-              </Link>
+                Opening Soon
+              </button>
               <Link
                 href="/cohorts"
                 className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg font-mono text-sm uppercase tracking-widest hover:border-white/60 transition-colors w-full sm:w-auto hover:-translate-y-1"

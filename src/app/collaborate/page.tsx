@@ -10,7 +10,27 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Commercial Engineering | Protocol Architecture & Smart Contracts",
   description:
-    "Engage BinnaDev Lab for protocol architecture, end-to-end decentralized systems, smart contract security, and advanced R&D.",
+    "Hire an elite protocol architect and smart contract engineer for your DeFi project. BinnaDevLab provides Web3 security services, architecture design, and systems engineering.",
+  openGraph: {
+    title: "Commercial Engineering | BinnaDevLab",
+    description:
+      "Hire an elite protocol architect and smart contract engineer for your DeFi project. BinnaDevLab provides Web3 security services and systems engineering.",
+    images: [
+      {
+        url: "/icon/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Collaborate with BinnaDevLab",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Engineering | BinnaDevLab",
+    description:
+      "Hire an elite protocol architect and smart contract engineer for your DeFi project.",
+    images: ["/icon/og-image.png"],
+  },
   alternates: {
     canonical: "/collaborate",
   },

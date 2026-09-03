@@ -7,18 +7,28 @@ import { AlertCircle, Terminal } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { motion } from "framer-motion";
 
+import { submitInquiry } from "@/app/actions/submitInquiry";
+
 export function InquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const result = await submitInquiry(formData);
+
+    setIsSubmitting(false);
+
+    if (result.success) {
       setIsSubmitted(true);
-    }, 1500);
+    } else {
+      setError(result.error || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -79,25 +89,27 @@ export function InquiryForm() {
 
           {/* Right: The Form */}
           <div className="lg:col-span-7">
-            {isSubmitted ? (
-              <FadeIn className="bg-carbon border border-gold/20 p-12 rounded-2xl text-center h-full flex flex-col justify-center items-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
-                  <Terminal className="w-8 h-8 text-gold" />
+            <FadeIn
+              delay={0.2}
+              className="bg-carbon/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl relative overflow-hidden"
+            >
+              {/* Success Overlay */}
+              {isSubmitted && (
+                <div className="absolute inset-0 z-20 bg-carbon/95 backdrop-blur-xl flex flex-col justify-center items-center p-12 text-center border border-gold/20 rounded-2xl animate-in fade-in duration-500">
+                  <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                    <Terminal className="w-8 h-8 text-gold" />
+                  </div>
+                  <H2 className="text-3xl mb-4 text-white">
+                    Transmission Received
+                  </H2>
+                  <Body className="text-white/70 max-w-md mx-auto">
+                    We have securely received your inquiry. We will review the details and reach out to you shortly.
+                  </Body>
                 </div>
-                <H2 className="text-3xl mb-4 text-white">
-                  Transmission Received
-                </H2>
-                <Body className="text-white/70 max-w-md mx-auto">
-                  We have securely received your inquiry. One of our lead
-                  engineers will review the details and reach out to you
-                  shortly.
-                </Body>
-              </FadeIn>
-            ) : (
-              <FadeIn
-                delay={0.2}
-                className="bg-carbon/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden"
-              >
+              )}
+
+              {/* Form Content (Remains in DOM to hold height, but visually hidden if submitted) */}
+              <div className={`p-8 md:p-12 transition-opacity duration-500 ${isSubmitted ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 p-4 border-l border-b border-white/10 bg-obsidian/50 text-xs font-mono text-white/30 uppercase tracking-widest flex items-center gap-2">
                   <Terminal className="w-3 h-3" /> SECURE CHANNEL
@@ -185,6 +197,12 @@ export function InquiryForm() {
                       NDA before reviewing private repositories.
                     </p>
                   </div>
+                  
+                  {error && (
+                    <div className="text-red-400 text-sm font-mono mt-2 bg-red-950/30 p-3 rounded-lg border border-red-500/20">
+                      {error}
+                    </div>
+                  )}
 
                   <div className="pt-4">
                     <button
@@ -205,8 +223,8 @@ export function InquiryForm() {
                     </button>
                   </div>
                 </form>
-              </FadeIn>
-            )}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </Container>
