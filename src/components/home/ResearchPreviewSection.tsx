@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, H3 } from "@/components/ui/Typography";
 import { projects, Project } from "@/data";
-import { ArrowRight, Beaker, GitBranch, ArrowUpRight } from "lucide-react";
+import { ArrowRight, GitBranch, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function ResearchPreviewSection() {

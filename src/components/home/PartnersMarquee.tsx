@@ -3,7 +3,7 @@
 import { partners } from "@/data";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { H2, Mono, Body } from "@/components/ui/Typography";
+import { H2 } from "@/components/ui/Typography";
 
 export function PartnersMarquee() {
   return (
@@ -23,7 +23,7 @@ export function PartnersMarquee() {
         <div className="flex w-max hover:[&>div]:animation-pause">
           <div
             className="flex gap-8 md:gap-32 items-center px-10 animate-marquee hover:paused"
-            style={{ animationPlayState: 'inherit' }}
+            style={{ animationPlayState: "inherit" }}
           >
             {/* Double array for seamless loop */}
             {[...partners, ...partners].map((partner, idx) => (

@@ -92,8 +92,9 @@ export default function AboutPage() {
           <div
             className="absolute inset-0 opacity-15 animate-bg-pan"
             style={{
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83v58.34h-58.34l-.83-.83V0h58.34zM29.5 29.5L30.5 30.5V60h-2V30.5l1-1z\' fill=\'rgba(255,255,255,1)\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")',
-              backgroundRepeat: 'repeat',
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34l-.83-.83V0h58.34zM29.5 29.5L30.5 30.5V60h-2V30.5l1-1z' fill='rgba(255,255,255,1)' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+              backgroundRepeat: "repeat",
             }}
           />
         </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { H2, H3, Body, Mono } from "@/components/ui/Typography";
-import { Play, Video, ArrowRight, ExternalLink } from "lucide-react";
+import { H2, H3, Mono } from "@/components/ui/Typography";
+import { Play, ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { youtubeVideos } from "@/data/youtube";
 

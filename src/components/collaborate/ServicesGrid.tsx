@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Container } from "@/components/ui/Container";
-import { H2, H3, Mono } from "@/components/ui/Typography";
+import { H2, H3 } from "@/components/ui/Typography";
 import { services } from "@/data";
 
 import { motion } from "framer-motion";
@@ -15,7 +15,7 @@ export function ServicesGrid() {
     >
       {/* Real Animated SVG Grid Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <motion.div 
+        <motion.div
           animate={{ y: [0, -80] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 w-full h-[200%] opacity-40"
@@ -39,7 +39,7 @@ export function ServicesGrid() {
             <rect width="100%" height="100%" fill="url(#services-grid)" />
           </svg>
         </motion.div>
-        
+
         {/* Gradients to fade out the grid edges so it blends nicely into the white */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(255,255,255,1)_100%)] pointer-events-none" />
       </div>

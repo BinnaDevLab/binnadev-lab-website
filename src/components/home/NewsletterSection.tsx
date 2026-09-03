@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { H3, Body, Mono } from "@/components/ui/Typography";
+import { H3, Body } from "@/components/ui/Typography";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
 
 import Image from "next/image";

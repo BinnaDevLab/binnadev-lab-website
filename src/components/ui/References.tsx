@@ -1,4 +1,3 @@
-import React from "react";
 import { ExternalLink, BookOpen } from "lucide-react";
 import { H3, Mono } from "./Typography";
 

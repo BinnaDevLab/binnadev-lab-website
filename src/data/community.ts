@@ -6,7 +6,7 @@ export const communityHighlights = [
     actionPoints: [
       "Expanded industry speaker lineup including Dennis Ukonu and Marshall Odii.",
       "Showcased how to achieve global impact from local beginnings.",
-      "Delivered the core message: You are made for more."
+      "Delivered the core message: You are made for more.",
     ],
     date: "June 2024",
     imageUrl: "/images/community/community-asset-3.jpeg",
@@ -15,11 +15,12 @@ export const communityHighlights = [
   {
     id: "high-2",
     title: "What's Next 1.0: Launching Your Tech Journey",
-    summary: "Our inaugural tech webinar designed to empower beginners to enter the technology space.",
+    summary:
+      "Our inaugural tech webinar designed to empower beginners to enter the technology space.",
     actionPoints: [
       "Attracted 173 registrations and over 50 live attendees.",
       "Hosted tech prodigy Clinton Imaro alongside our core engineering team.",
-      "Empowered beginners to take their first actionable steps into tech."
+      "Empowered beginners to take their first actionable steps into tech.",
     ],
     date: "December 2023",
     imageUrl: "/images/community/community-asset-2.jpeg",

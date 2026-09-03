@@ -3,8 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { socialLinks } from "@/data/social";
 import { motion } from "framer-motion";
 
 const paths = [
@@ -32,7 +30,7 @@ export function CollaborationPreviewSection() {
       {/* Background Visual Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-obsidian overflow-hidden">
         {/* Animated SVG Grid */}
-        <motion.div 
+        <motion.div
           animate={{ y: [0, -80] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 w-full h-[200%] opacity-15"
@@ -56,7 +54,7 @@ export function CollaborationPreviewSection() {
             <rect width="100%" height="100%" fill="url(#collab-grid)" />
           </svg>
         </motion.div>
-        
+
         {/* Clean architectural feel without heavy images */}
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-carbon/40 to-obsidian" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.04)_10%,transparent_80%)]" />

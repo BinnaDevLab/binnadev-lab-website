@@ -94,7 +94,10 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-4 bg-gold text-obsidian rounded font-medium hover:bg-white transition-colors uppercase tracking-widest text-sm w-full sm:w-auto"
                       >
-                        {isVirtual ? "Join Online Session" : "Register for Event"} <ArrowRight className="w-4 h-4" />
+                        {isVirtual
+                          ? "Join Online Session"
+                          : "Register for Event"}{" "}
+                        <ArrowRight className="w-4 h-4" />
                       </a>
                     ) : (
                       <div className="inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-4 bg-gold/50 text-obsidian/50 rounded font-medium cursor-not-allowed uppercase tracking-widest text-sm w-full sm:w-auto">

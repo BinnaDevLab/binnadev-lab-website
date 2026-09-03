@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, Share } from "lucide-react";
-import { Mono, Body } from "@/components/ui/Typography";
+import { Body } from "@/components/ui/Typography";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
@@ -118,14 +118,13 @@ export function InstallPrompt() {
               <Download className="w-5 h-5 text-gold" />
             </div>
             <div>
-              <Mono className="text-sm text-gold">System Access</Mono>
-              <h3 className="text-white font-medium">Install BinnaDev Lab</h3>
+              <h3 className="text-white font-medium">Install BinnaDevLab</h3>
             </div>
           </div>
 
           <Body className="text-sm text-muted">
-            Keep the Lab on your home screen. Launch faster, access field notes
-            offline, and maintain continuous architectural alignment.
+            Add the Lab to your home screen for faster access and a better
+            experience.
           </Body>
 
           {showIOSInstructions ? (

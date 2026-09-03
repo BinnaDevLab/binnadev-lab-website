@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { H1, Body, Mono } from "@/components/ui/Typography";
 import { preload } from "react-dom";

@@ -1,16 +1,9 @@
 import { Container } from "@/components/ui/Container";
 import { H1, H2, H3, Body, Mono } from "@/components/ui/Typography";
-import {
-  ArrowRight,
-  Terminal,
-  ExternalLink,
-  CheckCircle,
-  BrainCircuit,
-  Award,
-} from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { TIMELINE, PRINCIPLES, RESEARCH } from "@/data/architect";
+import { TIMELINE, RESEARCH } from "@/data/architect";
 import { socialLinks } from "@/data/social";
 import { ArchitectYouTubeList } from "@/components/architect/ArchitectYouTubeList";
 import { EngineeringPrinciples } from "@/components/architect/EngineeringPrinciples";
@@ -172,11 +165,10 @@ export default function ArchitectPage() {
 
         {/* 2. Engineering Principles */}
       </Container>
-      
+
       <EngineeringPrinciples />
 
       <Container className="relative z-10">
-
         {/* 3. Journey Timeline / Evolution */}
         <section className="mb-48">
           <div className="mb-24 md:text-center max-w-4xl mx-auto">

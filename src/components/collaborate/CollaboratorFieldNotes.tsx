@@ -1,7 +1,7 @@
 "use client";
 
 import { clientTestimonials } from "@/data";
-import { H2, Body, Mono } from "@/components/ui/Typography";
+import { H2, Mono } from "@/components/ui/Typography";
 import { ShieldCheck, Quote } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -22,7 +22,7 @@ export function CollaboratorFieldNotes() {
     <section className="py-20 md:py-32 relative bg-obsidian border-t border-white/5 overflow-hidden">
       {/* Real Animated SVG Grid Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <motion.div 
+        <motion.div
           animate={{ y: [0, -80] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 w-full h-[200%] opacity-20"
@@ -46,7 +46,7 @@ export function CollaboratorFieldNotes() {
             <rect width="100%" height="100%" fill="url(#marquee-grid)" />
           </svg>
         </motion.div>
-        
+
         {/* Gradients to fade out the grid edges */}
         <div className="absolute inset-0 bg-gradient-to-b from-carbon/40 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(10,10,10,1)_100%)] pointer-events-none" />

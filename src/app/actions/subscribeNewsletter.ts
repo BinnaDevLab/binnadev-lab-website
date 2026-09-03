@@ -19,7 +19,7 @@ export async function subscribeNewsletter(formData: FormData) {
     const response = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers: {
-        "Accept": "application/json",
+        Accept: "application/json",
         "Content-Type": "application/json",
         "api-key": API_KEY,
       },

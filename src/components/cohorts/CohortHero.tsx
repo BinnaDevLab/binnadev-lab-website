@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components/ui/Container";
-import { H1, Body, Mono } from "@/components/ui/Typography";
+import { H1 } from "@/components/ui/Typography";
 import { motion } from "framer-motion";
 
 export function CohortHero() {
@@ -8,7 +8,7 @@ export function CohortHero() {
     <section className="relative pt-24 pb-16 md:pt-28 md:pb-20 overflow-hidden flex flex-col justify-center">
       {/* Animated SVG Grid Background */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-obsidian overflow-hidden">
-        <motion.div 
+        <motion.div
           animate={{ y: [0, -80] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 w-full h-[200%] opacity-20"
@@ -32,7 +32,7 @@ export function CohortHero() {
             <rect width="100%" height="100%" fill="url(#cohort-hero-grid)" />
           </svg>
         </motion.div>
-        
+
         {/* Gradients to fade out the grid edges without completely blacking it out */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(10,10,10,1)_100%)] pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-transparent to-obsidian opacity-50" />

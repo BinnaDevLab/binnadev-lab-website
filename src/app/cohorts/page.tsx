@@ -9,7 +9,7 @@ import { UpcomingEvents } from "@/components/cohorts/UpcomingEvents";
 import { CommunityHistory } from "@/components/cohorts/CommunityHistory";
 
 export const metadata: Metadata = {
-  title: "Engineering Cohorts",
+  title: "Engineering Cohorts | BinnaDevLab",
   description:
     "Intensive, rigorous engineering cohorts covering smart contract development, EVM mechanics, protocol architecture, and Web3 security. Learn how to reason about complex decentralized systems at BinnaDevLab.",
   openGraph: {

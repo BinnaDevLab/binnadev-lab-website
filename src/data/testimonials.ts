@@ -79,7 +79,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "test-6",
     quote:
-      "BinnaDev Lab proves that great systems are built on understanding, not memorization. They think ahead, work together, and make security a priority from day one.",
+      "BinnaDevLab proves that great systems are built on understanding, not memorization. They think ahead, work together, and make security a priority from day one.",
     author: "Delight Obinna",
     role: "App Developer",
     avatarUrl: "/images/testimonials/testimonials-asset-6.jpeg",

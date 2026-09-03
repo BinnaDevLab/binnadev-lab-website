@@ -1,7 +1,5 @@
 import { Container } from "@/components/ui/Container";
 import { H1, H2, Body, Mono } from "@/components/ui/Typography";
-import { socialLinks } from "@/data/social";
-import { CaseFileReview } from "@/components/community/TestimonialMarquee";
 import { CinematicGallery } from "@/components/community/CinematicGallery";
 import { YouTubeShowcase } from "@/components/community/YouTubeShowcase";
 import { CommunityHighlightsList } from "@/components/community/CommunityHighlightsList";

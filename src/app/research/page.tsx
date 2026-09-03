@@ -33,7 +33,7 @@ export default function ResearchPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "BinnaDev Lab Research & Projects",
+    name: "BinnaDevLab Research & Projects",
     description: "Smart contract architectures and protocol research.",
     hasPart: projectsJsonLd,
   };

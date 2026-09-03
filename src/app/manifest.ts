@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "BinnaDev Lab",
-    short_name: "BinnaDev Lab",
+    name: "BinnaDevLab",
+    short_name: "BinnaDevLab",
     description:
-      "BinnaDev Lab is an elite software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts.",
+      "BinnaDevLab is an engineering laboratory where thoughtful thinking meets rigorous execution. We specialize in smart contract development, Web3 security, and protocol architecture.",
     start_url: "/",
     display: "standalone",
     background_color: "#050505",

@@ -18,7 +18,7 @@ export async function submitInquiry(formData: FormData) {
 
     // You can set these in your .env, or hardcode them here
     const SENDER_EMAIL = process.env.SENDER_EMAIL || "noreply@binnadev.com";
-    const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "obinna@binnadev.com"; // Your receiving email
+    const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "support@binnadev.com";
 
     const { data, error } = await resend.emails.send({
       from: `BinnaDev Lab <${SENDER_EMAIL}>`,

@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { H1, H2, Body, Mono } from "@/components/ui/Typography";
+import { H1, Mono } from "@/components/ui/Typography";
 import { ServicesGrid } from "@/components/collaborate/ServicesGrid";
 import { CaseStudiesSection } from "@/components/collaborate/CaseStudiesSection";
 import { CollaboratorFieldNotes } from "@/components/collaborate/CollaboratorFieldNotes";

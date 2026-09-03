@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Display, Body, Mono, Meta } from "@/components/ui/Typography";
-import { socialLinks } from "@/data/social";
 
 export function CTASection() {
   return (

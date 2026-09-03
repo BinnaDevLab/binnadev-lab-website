@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, ArrowRight, Loader2, PlayCircle } from "lucide-react";
+import { Play, ArrowRight, Loader2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { H2, Body, Mono, Meta } from "@/components/ui/Typography";
 import { youtubeVideos } from "@/data/youtube";
