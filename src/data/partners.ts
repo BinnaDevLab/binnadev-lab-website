@@ -17,17 +17,7 @@ export const partners: Partner[] = [
   },
   {
     id: "3",
-    name: "Cyfrin",
-    logoUrl: "/partners/cyfrin.svg",
-  },
-  {
-    id: "4",
     name: "Libertas Alpha",
     logoUrl: "/partners/libertas_alpha.svg",
-  },
-  {
-    id: "5",
-    name: "Monad",
-    logoUrl: "/partners/monad.svg",
   },
 ];

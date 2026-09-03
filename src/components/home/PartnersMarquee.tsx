@@ -2,7 +2,6 @@
 
 import { partners } from "@/data";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { H2, Mono, Body } from "@/components/ui/Typography";
 
@@ -22,10 +21,9 @@ export function PartnersMarquee() {
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-obsidian to-transparent z-10 pointer-events-none" />
 
         <div className="flex w-max hover:[&>div]:animation-pause">
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 15, repeat: Infinity }}
-            className="flex gap-8 md:gap-32 items-center px-10"
+          <div
+            className="flex gap-8 md:gap-32 items-center px-10 animate-marquee hover:paused"
+            style={{ animationPlayState: 'inherit' }}
           >
             {/* Double array for seamless loop */}
             {[...partners, ...partners].map((partner, idx) => (
@@ -50,7 +48,7 @@ export function PartnersMarquee() {
                 )}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
