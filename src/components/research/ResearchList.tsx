@@ -25,6 +25,7 @@ export function ResearchList() {
         {currentProjects.map((project) => (
           <div
             key={project.id}
+            id={project.id}
             className="group overflow-hidden rounded-xl border border-white/5 bg-carbon hover:border-gold/50 transition-all duration-300 flex flex-col cursor-pointer"
           >
             <div className="h-48 overflow-hidden relative border-b border-white/5">

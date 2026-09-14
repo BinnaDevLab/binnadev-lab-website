@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "An engineering laboratory where thoughtful thinking meets rigorous execution. Learn to think deeply, build responsibly, and construct reliable systems.",
     images: [
       {
-        url: "/icons/og-image.png",
+        url: "/icons/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "BinnaDevLab - Reasoning Precedes Coding",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "BinnaDevLab | Reasoning Precedes Coding",
     description:
       "An engineering laboratory where thoughtful thinking meets rigorous execution. We specialize in smart contract architecture and reliable decentralized systems.",
-    images: ["/icons/og-image.png"],
+    images: ["/icons/og-image.jpg"],
   },
   alternates: {
     canonical: "/",

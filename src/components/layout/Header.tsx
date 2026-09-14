@@ -344,8 +344,9 @@ export function Header() {
                       resilient digital infrastructure.
                     </p>
                     <Link
-                      href="/collaborate"
-                      className="inline-flex items-center gap-2 text-gold hover:text-white text-sm font-mono uppercase tracking-widest transition-colors"
+                      href="/services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="inline-flex items-center justify-center w-full gap-2 py-4 bg-gold text-obsidian rounded-sm font-mono uppercase tracking-widest font-bold hover:bg-gold/90 transition-colors shadow-lg"
                     >
                       Work with the Lab <ArrowRight className="w-4 h-4" />
                     </Link>

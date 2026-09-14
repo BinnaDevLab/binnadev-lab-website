@@ -44,7 +44,7 @@ export function CTASection() {
             </Link>
 
             <Link
-              href="/collaborate"
+              href="/services"
               className="group flex-1 max-w-sm flex items-center justify-between p-8 border border-white/10 hover:border-white/40 transition-all duration-300"
             >
               <div className="flex flex-col gap-2">

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Thoughtful. Reliable. Excellent. Obinna Franklin Duru (BinnaDev) is a protocol architect building reliable decentralized systems.",
     images: [
       {
-        url: "/icons/og-image.png",
+        url: "/icons/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Obinna Franklin Duru - The Architect",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "The Architect | Obinna Franklin Duru",
     description:
       "Thoughtful. Reliable. Excellent. Obinna Franklin Duru (BinnaDev) is a protocol architect building reliable decentralized systems.",
-    images: ["/icons/og-image.png"],
+    images: ["/icons/og-image.jpg"],
   },
   alternates: {
     canonical: "/architect",
@@ -86,6 +86,30 @@ export default function ArchitectPage() {
   return (
     <div className="bg-obsidian min-h-screen pt-32 pb-32 relative selection:bg-gold selection:text-obsidian">
       {/* Background Ambience */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Obinna Franklin Duru",
+            alternateName: "BinnaDev",
+            jobTitle: "Protocol Architect & Smart Contract Engineer",
+            url: "https://www.binnadev.com/architect",
+            sameAs: [
+              "https://github.com/obinnafranklinduru",
+              "https://x.com/binnadev",
+              "https://linkedin.com/in/obinna-franklin-duru",
+            ],
+            worksFor: {
+              "@type": "Organization",
+              name: "BinnaDevLab",
+            },
+            description:
+              "Smart Contract Engineer. Security Researcher. Founder of BinnaDevLab.",
+          }),
+        }}
+      />
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 inset-x-0 h-[800px] bg-gradient-to-b from-white/5 via-carbon/10 to-transparent opacity-60" />
       </div>
@@ -111,7 +135,7 @@ export default function ArchitectPage() {
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/collaborate"
+                href="/services"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-obsidian rounded-sm font-medium hover:bg-gold transition-colors"
               >
                 Collaborate <ArrowRight className="w-4 h-4" />

@@ -8,31 +8,31 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Commercial Engineering | Protocol Architecture & Smart Contracts",
+  title: "Services | Protocol Architecture & Smart Contracts",
   description:
-    "Hire an elite protocol architect and smart contract engineer for your DeFi project. BinnaDevLab provides Web3 security services, architecture design, and systems engineering.",
+    "Thoughtful, reliable, and excellent engineering. BinnaDevLab provides Web3 security services, smart contract architecture design, and systems engineering.",
   openGraph: {
-    title: "Commercial Engineering | BinnaDevLab",
+    title: "Services | BinnaDevLab",
     description:
-      "Hire an elite protocol architect and smart contract engineer for your DeFi project. BinnaDevLab provides Web3 security services and systems engineering.",
+      "Thoughtful, reliable, and excellent engineering. BinnaDevLab provides Web3 security services, smart contract architecture design, and systems engineering.",
     images: [
       {
-        url: "/icons/og-image.png",
+        url: "/icons/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Collaborate with BinnaDevLab",
+        alt: "Services by BinnaDevLab",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Engineering | BinnaDevLab",
+    title: "Services | BinnaDevLab",
     description:
-      "Hire an elite protocol architect and smart contract engineer for your DeFi project.",
-    images: ["/icons/og-image.png"],
+      "Thoughtful, reliable, and excellent engineering. BinnaDevLab provides Web3 security services, smart contract architecture design, and systems engineering.",
+    images: ["/icons/og-image.jpg"],
   },
   alternates: {
-    canonical: "/collaborate",
+    canonical: "/services",
   },
 };
 
@@ -44,11 +44,11 @@ export default function CollaboratePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Collaborate with BinnaDev Lab",
+            "@type": "Service",
+            name: "Smart Contract Engineering & Architecture Services",
             description:
-              "Engage BinnaDev Lab for smart contract development, protocol architecture, and Web3 security services.",
-            url: "https://binnadevlab.vercel.app/collaborate",
+              "Engage BinnaDevLab for smart contract development, protocol architecture, and Web3 security services.",
+            url: "https://www.binnadev.com/services",
           }),
         }}
       />

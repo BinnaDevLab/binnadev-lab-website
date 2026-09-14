@@ -96,8 +96,8 @@ export function HeroSection() {
             </Link>
 
             <Link
-              href="/collaborate"
-              className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white/80 hover:text-white rounded-sm transition-all duration-300 w-full sm:w-auto"
+              href="/services"
+              className="group relative overflow-hidden flex items-center justify-center px-6 py-4 lg:px-8 lg:py-5 border border-white/20 rounded-sm text-white font-mono font-bold tracking-wider hover:border-white/40 transition-all duration-300 min-w-[200px]"
             >
               <Mono className="uppercase tracking-widest text-sm font-medium text-current">
                 Commission Lab

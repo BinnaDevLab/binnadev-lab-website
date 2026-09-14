@@ -45,6 +45,7 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
             return (
               <motion.div
                 key={evt.id}
+                id={evt.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

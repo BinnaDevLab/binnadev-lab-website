@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "BinnaDevLab is where thoughtful thinking meets execution. We believe reasoning precedes coding, prioritizing deep mental models, system security, and engineering excellence.",
     images: [
       {
-        url: "/icons/og-image.png",
+        url: "/icons/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "About BinnaDevLab",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "About | BinnaDevLab",
     description:
       "BinnaDevLab is where thoughtful thinking meets execution. We believe reasoning precedes coding.",
-    images: ["/icons/og-image.png"],
+    images: ["/icons/og-image.jpg"],
   },
   alternates: {
     canonical: "/about",
@@ -215,7 +215,7 @@ export default function AboutPage() {
             </H2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
               <Link
-                href="/collaborate"
+                href="/services"
                 className="group relative overflow-hidden flex items-center justify-center px-8 py-4 bg-white rounded-sm text-obsidian font-mono font-bold tracking-wider hover:bg-white/90 transition-all duration-300 shadow-md min-w-[220px]"
               >
                 <span className="relative z-10 uppercase">Commission Lab</span>

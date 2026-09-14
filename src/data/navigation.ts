@@ -10,7 +10,7 @@ export interface NavLink {
 export const mainNavigation: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "Cohorts", href: "/cohorts" },
-  { label: "Collaborate", href: "/collaborate" },
+  { label: "Services", href: "/services" },
   { label: "Community", href: "/community" },
   { label: "Support the Lab", href: "/donate", isCTA: true },
 ];
@@ -32,7 +32,7 @@ export const footerNavigation = {
     { label: "Community", href: "/community" },
   ],
   services: [
-    { label: "Collaborate", href: "/collaborate" },
+    { label: "Services", href: "/services" },
     { label: "Cohorts", href: "/cohorts" },
     { label: "Support the Lab", href: "/donate" },
   ],

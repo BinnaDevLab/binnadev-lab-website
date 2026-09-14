@@ -19,7 +19,7 @@ const paths = [
     label: "Commission Lab",
     description:
       "Commercial engineering services. We architect secure smart contracts, conduct rigorous security research, and ship production-grade systems built on first principles.",
-    href: "/collaborate",
+    href: "/services",
     external: false,
   },
 ];

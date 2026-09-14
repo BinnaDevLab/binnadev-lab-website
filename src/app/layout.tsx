@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://binnadev.com"),
+  metadataBase: new URL("https://www.binnadev.com"),
   title: {
     template: "%s | BinnaDevLab",
     default: "BinnaDevLab | Protocol Architecture & Smart Contract Security",
@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     title: "BinnaDevLab | Protocol Architecture & Smart Contract Security",
     description:
       "BinnaDevLab is an engineering laboratory where reasoning precedes coding. We develop people who can think, learn, build, and architect reliable Web3 systems.",
-    url: "https://binnadev.com",
+    url: "https://www.binnadev.com",
     siteName: "BinnaDevLab",
     images: [
       {
-        url: "/icons/og-image.png",
+        url: "/icons/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "BinnaDevLab - Reasoning Precedes Coding",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: "BinnaDevLab | Protocol Architecture & Smart Contract Security",
     description:
       "BinnaDevLab is an engineering laboratory where reasoning precedes coding. We develop people who can think, learn, build, and architect reliable Web3 systems.",
-    images: ["/icons/og-image.png"],
+    images: ["/icons/og-image.jpg"],
     creator: "@binnadev",
   },
   robots: {
@@ -119,9 +119,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["Organization", "ProfessionalService"],
               name: "BinnaDev Lab",
-              url: "https://binnadevlab.vercel.app",
-              logo: "https://binnadevlab.vercel.app/icons/apple-touch-icon.png",
-              image: "https://binnadev.com/icons/og-image.png",
+              url: "https://www.binnadev.com",
+              logo: "https://www.binnadev.com/icons/apple-touch-icon.png",
+              image: "https://www.binnadev.com/icons/og-image.jpg",
               description:
                 "BinnaDev Lab is a software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts.",
               founder: {
@@ -130,25 +130,9 @@ export default function RootLayout({
               },
               knowsAbout: [
                 "Smart Contract Architecture Lab",
-                "Smart Contract Development",
-                "Smart Contract Security",
-                "Smart Contract Auditing",
-                "Smart Contract Engineering",
-                "Web3 Engineering Cohort",
-                "Web3 Engineering Live Events",
-                "Web3 Engineering Events",
-                "Web3 Engineering Workshops",
-                "Web3 Engineering Seminars",
                 "Web3 Security",
-                "Solidity",
-                "Rust",
-                "Yul",
-                "Vyper",
                 "Formal Verification",
-                "Ethereum Virtual Machine (EVM)",
-                "Protocol Architecture",
-                "Decentralized Finance (DeFi)",
-                "Blockchain Engineering",
+                "Protocol Architecture"
               ],
             }),
           }}

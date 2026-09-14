@@ -113,6 +113,7 @@ export function IntroVideoSection() {
               className="w-full h-full object-cover transition-opacity duration-700"
               autoPlay
               muted
+              preload="metadata"
               loop={!hasStartedFullPlayback}
               playsInline
               onWaiting={() => setIsBuffering(true)}

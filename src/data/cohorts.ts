@@ -2,6 +2,7 @@ export type CohortCurriculumItem = {
   id: string;
   title: string;
   description: string;
+  datetime?: string;
   facilitator?: string;
 };
 
@@ -10,6 +11,7 @@ export type Cohort = {
   title: string;
   status: "UPCOMING" | "LIVE" | "COMPLETED";
   startDate: string;
+  startDateDisplay?: string;
   endDate?: string;
   duration: string;
   price: string;
@@ -32,6 +34,7 @@ export const COHORTS: Cohort[] = [
     title: "September 2026 Edition",
     status: "UPCOMING",
     startDate: "2026-09-18T18:30:00Z", // 7:30 PM WAT (WAT is UTC+1, so 18:30 UTC)
+    startDateDisplay: "Friday, September 18, 2026 | 7:30 PM WAT",
     duration: "2 weeks",
     price: "Free (50 Slots Only)",
     sessionDays: "Fridays and Saturdays",
@@ -51,6 +54,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 1 - Theory",
         title: "Why Trust Matters",
+        datetime: "Friday, November 13, 2026 | 7:30 PM WAT",
         facilitator: "Uchenna Ofoma (Facilitator)",
         description:
           "Understand how blockchain removes the need for a central authority and distributes trust across the network.",
@@ -58,6 +62,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 1 - Practical",
         title: "Build the Logic of Trust",
+        datetime: "Saturday, November 14, 2026 | 10:30 AM WAT",
         facilitator: "Obinna Duru (Facilitator)",
         description:
           "Build a smart contract that acts as a neutral arbiter. See how code can enforce rules without human intervention.",
@@ -65,6 +70,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 2 - Theory",
         title: "Why Trust the Code",
+        datetime: "Friday, November 20, 2026 | 7:30 PM WAT",
         facilitator: "Uchenna Ofoma (Facilitator)",
         description:
           "Understand immutability and why deployed code can be trusted to keep enforcing the same rules.",
@@ -72,6 +78,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 2 - Practical",
         title: "Build on the Rock",
+        datetime: "Saturday, November 21, 2026 | 10:30 AM WAT",
         facilitator: "Obinna Duru (Facilitator)",
         description:
           "See what makes smart contracts permanent. Build with code that cannot be changed after deployment.",

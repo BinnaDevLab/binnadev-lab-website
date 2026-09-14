@@ -11,7 +11,7 @@ interface CohortOverviewProps {
 
 export function CohortOverview({ cohort }: CohortOverviewProps) {
   return (
-    <section className="mb-24 relative z-10">
+    <section id={cohort.id} className="mb-24 relative z-10">
       <Container>
         <div className="bg-carbon/50 border border-gold/20 rounded-xl relative overflow-hidden backdrop-blur-sm shadow-[0_0_50px_rgba(212,175,55,0.05)]">
           {/* Subtle architectural accent */}
@@ -21,13 +21,6 @@ export function CohortOverview({ cohort }: CohortOverviewProps) {
           <div className="flex flex-col lg:flex-row gap-0">
             {/* Left: Content */}
             <div className="flex-1 p-8 md:p-16 lg:pr-12 relative z-10">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                <Mono className="text-gold tracking-[0.2em] text-xs uppercase">
-                  Active Mission • {cohort.price}
-                </Mono>
-              </div>
-
               <H2 className="text-3xl md:text-5xl mb-6 tracking-tight leading-tight">
                 {cohort.title}
               </H2>
@@ -38,6 +31,12 @@ export function CohortOverview({ cohort }: CohortOverviewProps) {
 
               <div className="mb-12">
                 <CohortCountdown startDate={cohort.startDate} />
+                {cohort.startDateDisplay && (
+                  <div className="mt-4 flex items-center gap-2 text-gold/80 font-mono text-sm tracking-widest uppercase">
+                    <Calendar className="w-4 h-4" />
+                    {cohort.startDateDisplay}
+                  </div>
+                )}
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-12 text-sm text-white/60 font-light border-t border-white/10 pt-8">
@@ -55,7 +54,7 @@ export function CohortOverview({ cohort }: CohortOverviewProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-obsidian rounded-sm font-medium hover:bg-white transition-colors uppercase tracking-widest text-xs"
               >
-                Enter the Cohort <ArrowRight className="w-4 h-4" />
+                Secure your Spot <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 
@@ -78,10 +77,6 @@ export function CohortOverview({ cohort }: CohortOverviewProps) {
               )}
 
               <div className="p-8 md:p-12 bg-carbon">
-                <Mono className="text-white/60 tracking-[0.2em] text-[10px] uppercase mb-8 block">
-                  Logistics
-                </Mono>
-
                 <div className="space-y-8">
                   <div className="flex items-start gap-4">
                     <Calendar className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
