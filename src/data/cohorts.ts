@@ -54,7 +54,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 1 - Theory",
         title: "Why Trust Matters",
-        datetime: "Friday, November 13, 2026 | 7:30 PM WAT",
+        datetime: "Friday, September 18, 2026 | 7:30 PM WAT",
         facilitator: "Uchenna Ofoma (Facilitator)",
         description:
           "Understand how blockchain removes the need for a central authority and distributes trust across the network.",
@@ -62,7 +62,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 1 - Practical",
         title: "Build the Logic of Trust",
-        datetime: "Saturday, November 14, 2026 | 10:30 AM WAT",
+        datetime: "Saturday, September 19, 2026 | 10:30 AM WAT",
         facilitator: "Obinna Duru (Facilitator)",
         description:
           "Build a smart contract that acts as a neutral arbiter. See how code can enforce rules without human intervention.",
@@ -70,7 +70,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 2 - Theory",
         title: "Why Trust the Code",
-        datetime: "Friday, November 20, 2026 | 7:30 PM WAT",
+        datetime: "Friday, September 25, 2026 | 7:30 PM WAT",
         facilitator: "Uchenna Ofoma (Facilitator)",
         description:
           "Understand immutability and why deployed code can be trusted to keep enforcing the same rules.",
@@ -78,7 +78,7 @@ export const COHORTS: Cohort[] = [
       {
         id: "Session 2 - Practical",
         title: "Build on the Rock",
-        datetime: "Saturday, November 21, 2026 | 10:30 AM WAT",
+        datetime: "Saturday, September 26, 2026 | 10:30 AM WAT",
         facilitator: "Obinna Duru (Facilitator)",
         description:
           "See what makes smart contracts permanent. Build with code that cannot be changed after deployment.",
