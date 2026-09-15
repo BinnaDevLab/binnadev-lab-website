@@ -87,7 +87,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 w-full max-w-2xl">
             <Link
               href="/cohorts"
-              className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-gold hover:bg-gold text-gold hover:text-obsidian rounded-sm transition-all duration-300 w-full sm:w-auto"
+              className="group relative flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-gold hover:bg-gold text-gold hover:text-obsidian rounded-sm transition-all duration-300 w-full sm:w-auto min-w-[240px]"
             >
               <Mono className="uppercase tracking-widest text-sm font-bold text-current">
                 Join Cohort
@@ -97,12 +97,12 @@ export function HeroSection() {
 
             <Link
               href="/services"
-              className="group relative overflow-hidden flex items-center justify-center px-6 py-4 lg:px-8 lg:py-5 border border-white/20 rounded-sm text-white font-mono font-bold tracking-wider hover:border-white/40 transition-all duration-300 min-w-[200px]"
+              className="group relative overflow-hidden flex items-center justify-between gap-6 px-8 py-4 bg-transparent border border-white/20 rounded-sm text-white hover:border-white/40 transition-all duration-300 w-full sm:w-auto min-w-[240px]"
             >
-              <Mono className="uppercase tracking-widest text-sm font-medium text-current">
+              <Mono className="uppercase tracking-widest text-sm font-bold text-current">
                 Commission Lab
               </Mono>
-              <ArrowRight className="w-5 h-5 text-white/80 group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 text-white/80 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </FadeIn>
