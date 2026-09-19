@@ -21,7 +21,7 @@ export async function submitInquiry(formData: FormData) {
     const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "support@binnadev.com";
 
     const { data, error } = await resend.emails.send({
-      from: `BinnaDev Lab <${SENDER_EMAIL}>`,
+      from: `BinnaDevLab <${SENDER_EMAIL}>`,
       to: [CONTACT_EMAIL],
       subject: `New Collaboration Inquiry from ${name}`,
       replyTo: email,

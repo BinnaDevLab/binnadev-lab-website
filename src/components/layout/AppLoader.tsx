@@ -35,7 +35,7 @@ export function AppLoader() {
               className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.2)_0%,_transparent_70%)] animate-pulse"
             />
 
-            {/* The Official BinnaDev Lab Logo */}
+            {/* The Official BinnaDevLab Logo */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export function AppLoader() {
             >
               <Image
                 src="/favicon.svg"
-                alt="BinnaDev Lab"
+                alt="BinnaDevLab"
                 width={180}
                 height={120}
                 className="relative z-10 animate-pulse"

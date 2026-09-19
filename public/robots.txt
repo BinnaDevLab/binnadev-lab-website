@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://www.binnadev.com/sitemap.xml
+Content-Signal: ai-train=no, search=yes, ai-input=no

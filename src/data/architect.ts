@@ -69,10 +69,10 @@ export const TIMELINE: TimelineNode[] = [
   },
   {
     id: "binnadev",
-    phase: "04. BinnaDev Lab",
+    phase: "04. BinnaDevLab",
     title: "The Bond & The Institution",
     description: [
-      "BinnaDev Lab is the natural evolution of that journey, born from a profound realization: engineering in isolation has a ceiling.",
+      "BinnaDevLab is the natural evolution of that journey, born from a profound realization: engineering in isolation has a ceiling.",
       "Through organizing local events and leading communities, it became clear that while enthusiasm is easy to generate, producing world-class engineers requires a deep, enduring commitment. It requires **The Bond**, a collective of people willing to learn, fail, and build together.",
       "The Lab is a **research and engineering institution** built around rigorous reasoning, shared knowledge, and the belief that you can build world-class infrastructure from a small place, provided you have the right people.",
       "Because the core principle remains simple:\n\n> **Code is not meant to be memorized. It is meant to be interrogated.**",

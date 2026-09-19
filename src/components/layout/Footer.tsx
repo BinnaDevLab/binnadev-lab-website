@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 md:gap-4">
           <Mono className="text-xs text-muted text-center md:text-left">
-            &copy; {new Date().getFullYear()} BinnaDev Lab. All rights reserved.
+            &copy; {new Date().getFullYear()} BinnaDevLab. All rights reserved.
           </Mono>
 
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-4 max-w-[280px] md:max-w-none">

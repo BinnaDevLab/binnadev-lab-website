@@ -211,7 +211,7 @@ export function CommunityHistory({ events }: CommunityHistoryProps) {
                     NOW
                   </Mono>
                   <span className="text-white font-medium text-base">
-                    BinnaDev Lab Cohorts
+                    BinnaDevLab Cohorts
                   </span>
                 </div>
 

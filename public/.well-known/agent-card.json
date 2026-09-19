@@ -1,0 +1,21 @@
+{
+  "$schema": "https://a2a-protocol.org/latest/schema/agent-card.json",
+  "name": "BinnaDevLab Agent",
+  "version": "1.0.0",
+  "description": "BinnaDevLab AI agent: Representing an emerging engineering laboratory built around the principle that 'Reasoning precedes Coding'. Focused on thoughtful research, reliable systems, and excellent execution in Web3.",
+  "supportedInterfaces": [
+    {
+      "type": "a2a-chat",
+      "url": "https://www.binnadev.com/api/agent",
+      "protocol": "http"
+    }
+  ],
+  "capabilities": ["chat", "code-analysis", "security-audit", "research"],
+  "skills": [
+    {
+      "id": "security-audit",
+      "name": "Smart Contract Audit",
+      "description": "Analyzes smart contracts through deep interrogation and reasoning to ensure system reliability and security."
+    }
+  ]
+}

@@ -11,7 +11,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Research & Publications | Web3 Security & EVM Architecture",
   description:
-    "Deep technical research, security disclosures, and architectural patterns published by BinnaDev Lab on EVM mechanics, smart contracts, and decentralized systems.",
+    "Deep technical research, security disclosures, and architectural patterns published by BinnaDevLab on EVM mechanics, smart contracts, and decentralized systems.",
   alternates: {
     canonical: "/research",
   },

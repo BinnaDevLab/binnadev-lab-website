@@ -1,0 +1,29 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "name": "BinnaDevLab",
+    "description": "BinnaDevLab is an engineering laboratory where Reasoning precedes Coding, focused on building reliable systems, conducting deep research, and fostering collaboration."
+  },
+  "entries": [
+    {
+      "urn": "urn:air:www.binnadev.com:mcp:server-card",
+      "displayName": "BinnaDevLab MCP Server",
+      "type": "application/json",
+      "url": "https://www.binnadev.com/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "Connect to BinnaDevLab MCP",
+        "Load BinnaDevLab tools"
+      ]
+    },
+    {
+      "urn": "urn:air:www.binnadev.com:a2a:agent-card",
+      "displayName": "BinnaDevLab A2A Agent",
+      "type": "application/json",
+      "url": "https://www.binnadev.com/.well-known/agent-card.json",
+      "representativeQueries": [
+        "Chat with BinnaDevLab agent",
+        "Audit smart contract via BinnaDev agent"
+      ]
+    }
+  ]
+}

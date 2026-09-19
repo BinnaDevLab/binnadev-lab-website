@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export default function CohortsPage() {
-  const upcomingCohort = COHORTS[0]; // BinnaDev Lab First Official Cohort
+  const upcomingCohort = COHORTS[0]; // BinnaDevLab First Official Cohort
 
   // Dynamically partition events
   const upcomingEvents = COMMUNITY_EVENTS.filter(

@@ -63,7 +63,7 @@ export function DonatePageContent() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/shared/shared-asset-24.jpeg"
-            alt="BinnaDev Lab Collaboration"
+            alt="BinnaDevLab Collaboration"
             fill
             className="object-cover object-center opacity-40 mix-blend-luminosity"
           />

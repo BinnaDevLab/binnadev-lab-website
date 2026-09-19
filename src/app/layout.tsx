@@ -118,12 +118,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["Organization", "ProfessionalService"],
-              name: "BinnaDev Lab",
+              name: "BinnaDevLab",
               url: "https://www.binnadev.com",
               logo: "https://www.binnadev.com/icons/apple-touch-icon.png",
               image: "https://www.binnadev.com/icons/og-image.jpg",
               description:
-                "BinnaDev Lab is a software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts.",
+                "BinnaDevLab is a software engineering laboratory specializing in smart contract development, Web3 security, protocol architecture, and technical cohorts.",
               founder: {
                 "@type": "Person",
                 name: "Obinna Franklin Duru",
@@ -135,6 +135,24 @@ export default function RootLayout({
                 "Protocol Architecture"
               ],
             }),
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('DOMContentLoaded', () => {
+                if (typeof navigator !== 'undefined' && navigator.modelContext) {
+                  navigator.modelContext.provideContext({
+                    tools: [{
+                      name: 'getSiteInfo',
+                      description: 'Get the core vision, principles, and information about BinnaDevLab.',
+                      inputSchema: { type: 'object', properties: {} },
+                      execute: async () => ({ result: 'BinnaDevLab is an emerging engineering laboratory built around the principle that Reasoning precedes Coding. We are thoughtful, reliable, and excellent engineers who build systems carefully, emphasizing understanding before implementation, and fostering a community where people can think, learn, build, research, and grow together.' })
+                    }]
+                  });
+                }
+              });
+            `
           }}
         />
         <AppLoader />

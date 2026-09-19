@@ -29,7 +29,7 @@ export function InquiryNotification({
         <Body className="bg-white font-sans text-gray-900">
           <Container className="mx-auto py-10 px-4 max-w-[600px]">
             <Heading className="text-2xl font-bold text-gray-900 mb-6 uppercase tracking-tight">
-              New BinnaDev Lab Inquiry
+              New BinnaDevLab Inquiry
             </Heading>
             
             <Section className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">

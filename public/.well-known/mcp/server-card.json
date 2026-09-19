@@ -1,0 +1,15 @@
+{
+  "serverInfo": {
+    "name": "BinnaDevLab",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "sse",
+    "endpoint": "https://www.binnadev.com/mcp/sse"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": true
+  }
+}

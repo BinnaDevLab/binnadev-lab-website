@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/index.json",
+  "skills": [
+    {
+      "name": "AuditSmartContract",
+      "type": "openapi",
+      "description": "Performs a security audit on a given smart contract code.",
+      "url": "https://www.binnadev.com/skills/audit.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
