@@ -1,18 +1,23 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const accept = request.headers.get('accept') || '';
   
   if (accept.includes('text/markdown')) {
-    // If it's the homepage, rewrite to llms.txt (assuming it has markdown content)
+    // If it's the homepage, return llms.txt content as text/markdown
     if (request.nextUrl.pathname === '/') {
       const url = request.nextUrl.clone();
       url.pathname = '/llms.txt';
-      const response = NextResponse.rewrite(url);
-      response.headers.set('Content-Type', 'text/markdown');
-      response.headers.set('x-markdown-tokens', 'true');
-      return response;
+      const fileResponse = await fetch(url);
+      const content = await fileResponse.text();
+      
+      return new NextResponse(content, {
+        headers: {
+          'Content-Type': 'text/markdown',
+          'x-markdown-tokens': '1000'
+        }
+      });
     }
   }
 

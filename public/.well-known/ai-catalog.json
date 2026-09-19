@@ -6,7 +6,7 @@
   },
   "entries": [
     {
-      "urn": "urn:air:www.binnadev.com:mcp:server-card",
+      "identifier": "urn:air:www.binnadev.com:mcp:server-card",
       "displayName": "BinnaDevLab MCP Server",
       "type": "application/json",
       "url": "https://www.binnadev.com/.well-known/mcp/server-card.json",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "urn": "urn:air:www.binnadev.com:a2a:agent-card",
+      "identifier": "urn:air:www.binnadev.com:a2a:agent-card",
       "displayName": "BinnaDevLab A2A Agent",
       "type": "application/json",
       "url": "https://www.binnadev.com/.well-known/agent-card.json",
