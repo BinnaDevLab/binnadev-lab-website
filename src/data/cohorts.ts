@@ -31,60 +31,48 @@ export type Cohort = {
 export const COHORTS: Cohort[] = [
   {
     id: "cohort-01",
-    title: "September 2026 Edition",
+    title: "BinnaDevLab October Cohort",
     status: "UPCOMING",
-    startDate: "2026-09-18T18:30:00Z", // 7:30 PM WAT (WAT is UTC+1, so 18:30 UTC)
-    startDateDisplay: "Friday, September 18, 2026 | 7:30 PM WAT",
-    duration: "2 weeks",
-    price: "Free (50 Slots Only)",
-    sessionDays: "Fridays and Saturdays",
+    startDate: "2026-10-21T19:00:00Z", // 8:00 PM WAT (WAT is UTC+1, so 19:00 UTC)
+    startDateDisplay: "21st & 22nd October 2026 | 8:00 PM – 9:00 PM WAT",
+    duration: "2 days",
+    price: "Free",
+    sessionDays: "Wednesday and Thursday",
     sessionsPerWeek: 2,
     format: "Live Sessions",
     platform: "Google Meet",
     description:
-      "A 2-week cohort focused on trust in decentralized systems. Understand decentralization, see how smart contracts turn rules into verifiable code, and build with a clearer view of the systems behind the code.",
+      "Tokenization is more than creating a token. It is about understanding what value, ownership, or utility belongs onchain, why it belongs there, and how to build the system behind it. In this cohort, explore real-world applications of tokenization and learn to implement ERC-20, ERC-721, and ERC-1155.",
+
     topics: [
-      "Protocol architecture",
-      "EVM mechanics",
-      "Reading complex codebases",
-      "Deconstructing smart contracts",
-      "First-principles reasoning",
+      "Understanding Tokenization",
+      "Identifying Real-World Use Cases",
+      "Bringing Real Impact Onchain",
+      "Choosing the Right Token Standard",
+      "ERC-20: Fungible Tokens",
+      "ERC-721: Non-Fungible Tokens",
+      "ERC-1155: Multi-Token Standard",
+      "Implementing Token Standards in Solidity",
     ],
     curriculum: [
       {
         id: "Session 1 - Theory",
-        title: "Why Trust Matters",
-        datetime: "Friday, September 18, 2026 | 7:30 PM WAT",
-        facilitator: "Uchenna Ofoma (Facilitator)",
+        title: "Tokenization: Bringing Real Impact Onchain",
+        datetime: "Wednesday, October 21, 2026 | 8:00 PM – 9:00 PM WAT",
+        facilitator: "Chinedu Jamike (Facilitator)",
         description:
-          "Understand how blockchain removes the need for a central authority and distributes trust across the network.",
-      },
-      {
-        id: "Session 1 - Practical",
-        title: "Build the Logic of Trust",
-        datetime: "Saturday, September 19, 2026 | 10:30 AM WAT",
-        facilitator: "Obinna Duru (Facilitator)",
-        description:
-          "Build a smart contract that acts as a neutral arbiter. See how code can enforce rules without human intervention.",
-      },
-      {
-        id: "Session 2 - Theory",
-        title: "Why Trust the Code",
-        datetime: "Friday, September 25, 2026 | 7:30 PM WAT",
-        facilitator: "Uchenna Ofoma (Facilitator)",
-        description:
-          "Understand immutability and why deployed code can be trusted to keep enforcing the same rules.",
+          "Explore what tokenization means, where it creates real value, and how to reason about bringing assets, ownership, and utility onchain.",
       },
       {
         id: "Session 2 - Practical",
-        title: "Build on the Rock",
-        datetime: "Saturday, September 26, 2026 | 10:30 AM WAT",
+        title: "Implementing ERC Token Standards",
+        datetime: "Thursday, October 22, 2026 | 8:00 PM – 9:00 PM WAT",
         facilitator: "Obinna Duru (Facilitator)",
         description:
-          "See what makes smart contracts permanent. Build with code that cannot be changed after deployment.",
+          "Move from concepts to code with a guided introduction to ERC-20, ERC-721, and ERC-1155. Understand how the standards differ and explore their core implementation in Solidity.",
       },
     ],
-    registrationUrl: "https://luma.com/t77y7n1y",
+    registrationUrl: "https://luma.com/veydilr6",
     recordingUrl: "Recordings published free on YouTube",
     featured: true,
     image: "/images/events/event-asset-1.jpeg",
